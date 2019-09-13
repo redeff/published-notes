@@ -1,0 +1,96 @@
+:root {
+
+	--primary: #55aa22;
+	--accent: #33aaff;
+}
+
+nav a:hover {
+	background: white;
+	font-style: normal;
+}
+
+a:hover {
+	color: var(--accent);
+	font-style: italic;
+	text-decoration: none;
+}
+
+a {
+	color: var(--primary);
+}
+
+.button {
+	white-space:nowrap;
+}
+
+.navlink {
+	display: inline-block;
+}
+
+.icon {
+	display: inline-block;
+}
+
+nav {
+	background: var(--primary);
+	display: flex;
+}
+
+nav a {
+	padding: 10px;
+	color: white;
+}
+
+main {
+	text-align: center;
+	width: 100%;
+}
+
+body {
+	margin: 0px;
+	font-family: Sans-Serif;
+}
+
+.center {
+	display: inline-block;
+	max-width: 700px;
+	margin: 20px;
+	text-align: justify;
+}
+
+@media (max-width: 700px) {
+	nav {
+		justify-content: space-around;
+		/* flex-flow: row wrap; */
+	}
+
+	nav a {
+		flex: 1 auto;
+		display: flex;
+		padding: auto;
+		justify-content: space-around;
+
+		font-size: 20px;
+	}
+}
+
+@media (min-width: 700px) {
+	.wrapper {
+		display: flex;
+	}
+
+	.button {
+		margin: 0px;
+	}
+
+	nav {
+		flex: 0 auto;
+		height: 100vh;
+		top: 0px;
+		display: sticky;
+		flex-direction: column;
+		justify-content: flex-start;
+		padding-bottom: 100vh;
+	}
+
+}
