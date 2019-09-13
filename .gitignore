@@ -3,3 +3,5 @@
 !*.tex
 !.gitignore
 !*.hs
+!*.html
+!*.css
