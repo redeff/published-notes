@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/repaso/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cuerpo">Cuerpo</h1>
+<p>Es un par <span class="math inline">\((\mathbb{K}, +, \cdot)\)</span> que cumple</p>
+<ul>
+<li><p>asociatividad y conmutatividad de <span class="math inline">\(+\)</span> y de <span class="math inline">\(\cdot\)</span></p></li>
+<li><p>distributividad de <span class="math inline">\(\cdot\)</span> sobre <span class="math inline">\(+\)</span></p></li>
+<li><p>neutro de <span class="math inline">\(+\)</span> (notado <span class="math inline">\(0\)</span>) y <span class="math inline">\(\cdot\)</span> (notado <span class="math inline">\(1\)</span>)</p></li>
+<li><p>inverso de <span class="math inline">\(+\)</span> y de <span class="math inline">\(\cdot\)</span> para los distintos de <span class="math inline">\(0\)</span></p></li>
+</ul>
+<h1 id="espacio-vectorial">Espacio Vectorial</h1>
+<p>Dado un cuerpo <span class="math inline">\(\mathbb{K}\)</span>, un espacio vectorial <span class="math inline">\((\mathbb{V}, +)\)</span> tiene que cumplir</p>
+<ul>
+<li><p>Asociatividad y conmutatividad de <span class="math inline">\(+\)</span> en <span class="math inline">\(\mathbb{V}\)</span></p></li>
+<li><p>inverso aditivo y neutro en <span class="math inline">\(\mathbb{V}\)</span></p></li>
+<li><p><span class="math inline">\((\lambda\mu)v = \lambda(\mu v)\)</span>, con <span class="math inline">\(\lambda, \mu \in \mathbb{K}\)</span>, y <span class="math inline">\(v \in \mathbb{V}\)</span></p></li>
+<li><p><span class="math inline">\((\lambda + \mu)v = \lambda v + \mu v\)</span></p></li>
+<li><p><span class="math inline">\(\lambda(v + u) = \lambda v + \lambda u\)</span></p></li>
+<li><p><span class="math inline">\(1_{\mathbb{K}} \cdot v = v\)</span></p></li>
+</ul>
+<h1 id="matrices-en-mathbbk">Matrices en <span class="math inline">\(\mathbb{K}\)</span></h1>
+<p>Una matriz de <span class="math inline">\(n \times m\)</span> (primero rows, después columns), es una función <span class="math inline">\(f : [n] \times [m] \to \mathbb{K}\)</span>, o equivalentemente <span class="math inline">\(f \in \mathbb{K}^{n \times m}\)</span></p>
+<h2 id="suma-de-matrices">Suma de matrices</h2>
+<p>Es suma punto a punto</p>
+<h2 id="producto-de-matrices">Producto de Matrices</h2>
+<p>dadas <span class="math inline">\(A \in \mathbb{K}^{n \times m}\)</span> y <span class="math inline">\(B \in \mathbb{K}^{m \times p}\)</span>, se define <span class="math inline">\(C \in \mathbb{K}^{n \times p}, C_{ij} = \sum\limits_{k \leq m} A_{ik} \cdot B_{kj}\)</span></p>
+<h2 id="sistema-de-ecuaciones">Sistema de Ecuaciones</h2>
+<p>Si se tiene un sistema de ecuaciones del estilo <span class="math inline">\(\sum\limits_{j \leq m}
+\lambda_{ij}x_j = \mu_i\)</span> para <span class="math inline">\(i \leq n\)</span>, se dice que se tiene un sistema de ecuaciones de <span class="math inline">\(n \times m\)</span>, ya que si tomamos la matriz <span class="math inline">\(\lambda\in
+\mathbb{K}^{n \times m}\)</span> de coeficientes y la matriz (vector) <span class="math inline">\(\mu \in \mathbb{K}^{n \times 1}\)</span> y la matriz (vector) <span class="math inline">\(x \in
+\mathbb{K}^ {m \times 1}\)</span>, el sistema de ecuaciones se reduce a la ecuación: <span class="math display">\[\lambda x = \mu\]</span> Que representa <span class="math display">\[\begin{bmatrix}
+        \lambda_{11} &amp; \lambda_{12} &amp; \dots &amp; \lambda_{1m} \\
+        \lambda_{21} &amp; \lambda_{12} &amp; \dots &amp; \lambda_{2m} \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        \lambda_{n1} &amp; \lambda_{n2} &amp; \dots &amp; \lambda_{nm} \\
+    \end{bmatrix} \times
+    \begin{bmatrix}
+        x_1 \\
+        x_2 \\
+        \vdots \\
+        x_m
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        \mu_1 \\
+        \mu_2 \\
+        \vdots \\
+        \mu_n
+    \end{bmatrix}\]</span></p>
+<h2 id="sistema-homogéneo">Sistema Homogéneo</h2>
+<p>Cuando se tiene un sistema de ecuaciones con <span class="math inline">\(\mu = 0\)</span>, decimos que es homogéneo</p>
+<h1 id="subespacio-vectorial">Subespacio Vectorial</h1>
+<p>Dado <span class="math inline">\(S \in \mathbb{V}\)</span>, decimos que es subespacio <span class="math inline">\(\iff\)</span> contiene al <span class="math inline">\(0\)</span>, es cerrado bajo suma y bajo producto por escalar</p>
+<h2 id="dadas-ecuaciones">Dadas ecuaciones</h2>
+<p>Dado un espacio vectorial <span class="math inline">\(\mathbb{K}^n\)</span> de dimensión <span class="math inline">\(n\)</span>, un subespacio se puede dar como un sistema de ecuaciones homogéneo, es decir, los subespacios son exactamente los expresables como <span class="math display">\[S = \{x \in \mathbb{K}^n
+\mid \lambda x = 0\}\]</span> para alguna matriz <span class="math inline">\(\lambda \in \mathbb{K}^ {* \times n}\)</span></p>
+<h2 id="dados-generadores">Dados generadores</h2>
+<p>El subespacio generado por ciertos vectores <span class="math inline">\(\{v_i\}\)</span>, es decir, el conjunto de combinaciones lineales de todos los <span class="math inline">\(v_i\)</span>, se puede expresar como <span class="math display">\[S = \langle \{v_i\} \rangle = \{\lambda x \mid x \in \mathbb{K}^ {*\times 1}\}
+= \lambda \times \mathbb{K}^*\]</span></p>
+<p>Donde <span class="math inline">\(\lambda \in \mathbb{K}^ {n \times *}= [v_i \mid \dots]\)</span></p>
+<h2 id="pasar-de-ecuaciones-a-generadores">Pasar de Ecuaciones a Generadores</h2>
+<p>Usando el método de Gauss, es posible hacer una función <span class="math inline">\(\text{solve} : \mathbb{K}^{*\times n} \to
+\mathbb{K}^{n \times *}\)</span> tal que <span class="math inline">\(\{x \mid \lambda x = 0\} = \{(\text{solve} \;\lambda)
+x \mid x \in \mathbb{K}^*\}\)</span></p>
+<p>El método de Gauss toma una matriz, y aplicando una serie de operaciones que no alteran las ecuaciones, la pasa a una matriz de forma <em>row echelon</em>, es decir que queda escalonada, y las columnas con leading coefficients son todas 0 excepto el leading coefficient que es 1), es decir que queda escalonada, y las columnas con leading coefficients son todas 0 excepto el leading coefficient que es 1)</p>
+<p>Ahí queda que las variables libres son las columnas sin leading coeffcients, y cada fila no nula representa una variable dependiente, y los coeficientes en esa fila represenca cuánto de cada variable dependiente hay que poner</p>
+<h2 id="generadores-a-ecuaciones">Generadores a Ecuaciones</h2>
+<p>Si tomamos la matriz transpuesta a <span class="math inline">\(A \in \mathbb{K}^{n \times *}\)</span>, obtenemos <span class="math inline">\(A^T\)</span>, que si la interpretamos como sist de ecuaciones nos da el subespacio ortogonal a <span class="math inline">\(\langle A \rangle\)</span></p>
+<p>Esto quiere decir que para pasar de generadores a ecuaciones podemos transponer, pasar de ecuaciones a generadores, y luego transponer de nuevo, es decir, la función <span class="math display">\[\text{unsolve} : \mathbb{K}^{n\times *} \to \mathbb{K}^{* \times n}, \text{unsolve} =
+\text{transpose} \circ \text{solve} \circ \text{transpose}\]</span></p>
+<p>Pasa de generadores a ecuaciones</p>
+<h1 id="intersección-de-subespacios">Intersección de Subespacios</h1>
+<p>Es fácil ver que la intersección de dos subespacios es un subespacio</p>
+<h2 id="intersección-dadas-ecuaciones">Intersección dadas ecuaciones</h2>
+<p>Si se tienen dos sistemas de ecuaciones dados por las matrices <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, luego la intersección está dada por el sistema <span class="math inline">\(\left[\frac{A}{B}\right]\)</span></p>
+<h2 id="intersección-generador---ecuación">Intersección Generador - Ecuación</h2>
+<p>Tenemos <span class="math display">\[\begin{aligned}
+&amp; \{x \mid Ax = 0\} \cap \{Bx \mid x \in \mathbb{K}^n\} \\
+&amp;= \{Bx \mid ABx = 0\} \\
+&amp;= B \{x \mid ABx = 0\} \\
+&amp;= B \{(\text{solve}\; AB)x \mid x \in \mathbb{K}^n\} \\
+&amp;= \{B\times(\text{solve}\; AB)x \mid x \in \mathbb{K}^n\} \\
+&amp;= B\times(\text{solve}\; AB) \times \mathbb{K}^*\end{aligned}\]</span></p>
+<p>Luego la intersección entre el restringido por <span class="math inline">\(A\)</span> y el generado por <span class="math inline">\(B\)</span> es el generado por <span class="math inline">\(B \times (\text{solve}\; AB)\)</span></p>
+<h2 id="intersección-generador---generador">Intersección Generador - Generador</h2>
+<p>Conviene pasar uno a ecuaciones y trabajar de ahí</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

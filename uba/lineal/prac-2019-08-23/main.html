@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/prac-2019-08-23/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Práctica de Lineal</h1>
+</header>
+<h1 id="ejercicio-1">Ejercicio 1</h1>
+<p><span class="math inline">\(A - \overline{A^T}\)</span>.</p>
+<p>Tomamos <span class="math inline">\(T = \{M \in \mathbb{C}^{2 \times 2} \mid M = - M^\dag\}\)</span>, y <span class="math inline">\(S = \{M \in \mathbb{C}^{2 \times 2} \mid M = M^\dag\}\)</span></p>
+<p>Notemos que si <span class="math inline">\((A + A^\dag)^\dag = A^\dag + A\)</span>, luego <span class="math inline">\(A + A^\dag \in S\)</span>, similarmente <span class="math inline">\((A - A^\dag)^\dag = A^\dag - A\)</span>, luego <span class="math inline">\(A - A^\dag \in T\)</span>.</p>
+<p>Entonces <span class="math inline">\(A = \frac{A + A^\dag}{2} + \frac{A - A^\dag}{2}\)</span> es una escritura.</p>
+<h1 id="ejercicio-2">Ejercicio 2</h1>
+<p><span class="math inline">\(S = \{A \in \mathbb{R}^{2 \times 2} : a_{11} + ka_{12} - ka_{21} = (2k+1)a_{11}
+    + 2ka_{12} - ka_{22} = 0\}\)</span></p>
+<p><span class="math inline">\(T = \left\langle
+        \begin{bmatrix}
+            1 &amp; k-2 \\
+            0 &amp; 1
+        \end{bmatrix}
+        \begin{bmatrix}
+            0 &amp; k \\
+            1+k-k^2 &amp; 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            1 &amp; k-2 \\
+            k^2 - k &amp; k
+        \end{bmatrix}
+    \right\rangle\)</span></p>
+<p>Tenemos <span class="math inline">\(1 + k(k-2) - 0 = 0 = k^2 - 2k + 1 = (k-1)^2\)</span>, luego solo anda <span class="math inline">\(k = -1\)</span>. Tenemos: <span class="math inline">\(S = \{A \in \mathbb{R}^{2 \times 2} : a_{11} + a_{12} - a_{21} = 3a_{11}
+    + 2a_{12} - a_{22} = 0\}\)</span></p>
+<p><span class="math inline">\(T = \left\langle
+        \begin{bmatrix}
+            1 &amp; -1 \\
+            0 &amp; 1
+        \end{bmatrix}
+        \begin{bmatrix}
+            0 &amp; 1 \\
+            1 &amp; 2
+        \end{bmatrix}
+        \begin{bmatrix}
+            1 &amp; -1 \\
+            0 &amp; 1
+        \end{bmatrix}
+    \right\rangle\)</span></p>
+<p><span class="math inline">\(T = \left\langle
+        \begin{bmatrix}
+            1 &amp; -1 \\
+            0 &amp; 1
+        \end{bmatrix}
+        \begin{bmatrix}
+            0 &amp; 1 \\
+            1 &amp; 2
+        \end{bmatrix}
+    \right\rangle\)</span></p>
+<p>Además las ecuaciones son li osea que las dimensiones dan. Y luego alcanza con ver que las matrices cumplen.</p>
+<h1 id="ejercicio-3">Ejercicio 3</h1>
+<p>Demostrar <span class="math inline">\(min \{k : A^k = 0\} \leq n\)</span>. Notemos <span class="math inline">\(\Im A^i\)</span> para <span class="math inline">\(i = 0\dots n\)</span>. Sabemos <span class="math inline">\(\Im A^i \subseteq\Im A^{i-1}\)</span>, y además <span class="math inline">\(\Im A^i = A \times \Im A^{i-1}\)</span>, luego las dimensiones tienen que decrecer estrictas o se estancan.</p>
+<h1 id="matrices-de-markov">Matrices de Markov</h1>
+<p>Una cadena de Markov es una sucesión de eventos donde la probabilidad de uno depende sólo del anterior.</p>
+<p>Si hay <span class="math inline">\(n\)</span> estados posibles, las probabilidades se pueden codificar como una matriz dada por <span class="math inline">\(M_{ij} = p_{i \to j}\)</span>.</p>
+<p>Tenemos <span class="math inline">\(M_{ij} \in [0, 1]\)</span>, y además <span class="math inline">\(\sum\limits_j M_{ij} = 1\)</span>.</p>
+<p>Las matrices que cumplen eso se llaman matrices de Markov.</p>
+<h2 id="prop">Prop</h2>
+<p>Si <span class="math inline">\(M, N \in R^{n \times n}\)</span> son Markov, luego <span class="math inline">\(M \times N\)</span> también es Markov. <span class="math display">\[(M \times N)_{ij} = \sum\limits_k M_{ik} \cdot N_{kj}\]</span> <span class="math display">\[\sum\limits_j (M \times N)_{ij} = \sum\limits_j \sum\limits_k M_{ik} \cdot N_{kj}\]</span> <span class="math display">\[\sum\limits_j (M \times N)_{ij} = \sum\limits_k M_{ik} \sum\limits_j \cdot N_{kj}\]</span> <span class="math display">\[\sum\limits_j (M \times N)_{ij} = \sum\limits_k M_{ik} \cdot 1\]</span> <span class="math display">\[\sum\limits_j (M \times N)_{ij} = \sum\limits_k M_{ik}\]</span> <span class="math display">\[\sum\limits_j (M \times N)_{ij} = 1\]</span></p>
+<p>Demo alternativa:</p>
+<p>La condición de Makrov implica <span class="math inline">\(M \times 
+    \begin{bmatrix}
+        1 \\
+        \vdots \\
+        1
+    \end{bmatrix} =
+    \begin{bmatrix}
+        1 \\
+        \vdots \\
+        1
+    \end{bmatrix}\)</span>. La composición trivialmente mantiene esta condición.</p>
+<h2 id="ejemplo">Ejemplo</h2>
+<p><span class="math display">\[\begin{pmatrix}
+        \frac{1}{4} &amp; \frac{1}{4} &amp; \frac{1}{4} &amp; \frac{1}{4} \\
+        \frac{1}{2} &amp; \frac{1}{2} &amp; 0 &amp; 0 \\
+        \frac{1}{2} &amp; 0 &amp; \frac{1}{2} &amp; 0 \\
+        \frac{1}{2} &amp; 0 &amp; 0 &amp; \frac{1}{2}
+    \end{pmatrix}\]</span></p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

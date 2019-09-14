@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/prac-2019-09-10/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Dado <span class="math inline">\(f : \mathbb{K}_2[x] \to \mathbb{K}_2[x]\)</span>, y <span class="math inline">\(fp = p&#39; + x^2p&#39;&#39;\)</span>. Calcular <span class="math inline">\(\mathop{\mathrm{Im}}f\)</span>, <span class="math inline">\(\mathop{\mathrm{Nu}}f\)</span>, y <span class="math inline">\([f]_E\)</span>, y <span class="math inline">\(f^{-1} (2x^2 + 4x -1)\)</span>.</p>
+<p>Notemos que <span class="math inline">\([f]_E = 
+\begin{bmatrix}
+    0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 2 \\
+    0 &amp; 0 &amp; 1 \\
+\end{bmatrix}\)</span></p>
+<p>Notemos que <span class="math inline">\(\mathop{\mathrm{Im}}[f]\)</span> es el generado por las columnas, luego para sacar la <span class="math inline">\(\mathop{\mathrm{Im}}f\)</span>, lo evaluamos en la canónica y estamos.</p>
+<p>Para calcular la preimagen de <span class="math inline">\(4x^2 + 4x - 1\)</span>, traduciéndolo a <span class="math inline">\(\mathbb{K}^3\)</span>, hay que resolver el sistema:</p>
+<p><span class="math display">\[\begin{bmatrix}
+    0 &amp; 1 &amp; 0 \\
+    0 &amp; 0 &amp; 2 \\
+    0 &amp; 0 &amp; 1 \\
+\end{bmatrix} x = 
+\begin{bmatrix}
+    -1 \\ 4 \\ 4
+\end{bmatrix}\]</span></p>
+<p>Que si lo resolvemos tenemos que <span class="math inline">\(x \in (\mathop{\mathrm{Nu}}[f] = \langle (1 \; 0\; 0) \rangle
+)+ (0 \; -1 \; 2)\)</span>. Para sacarlo en <span class="math inline">\(\mathbb{K}_2[x]\)</span>, tenemos que son los de la pinta <span class="math inline">\(px = \lambda - x +
+2x^2\)</span>.</p>
+<h1 id="matrices-equivalentes-y-semejantes" class="unnumbered">Matrices equivalentes y semejantes</h1>
+<p>Decidir si, dados <span class="math inline">\(A = 
+\begin{bmatrix}
+    -4 &amp; -6 \\
+    2 &amp; 3 \\
+\end{bmatrix}
+\quad
+B = 
+\begin{bmatrix}
+    4 &amp; 3 \\
+    1 &amp; 2 \\
+\end{bmatrix}\)</span>, tenemos <span class="math inline">\(A \sim B\)</span>.</p>
+<p>Notemos que <span class="math inline">\(\mathop{\mathrm{rg}}A = 1\)</span>, y <span class="math inline">\(\mathop{\mathrm{rg}}B = 2\)</span>, entonces no se puede.</p>
+<h1 id="ejercicio-3" class="unnumbered">Ejercicio 3</h1>
+<p>Dados <span class="math inline">\(A=
+\begin{bmatrix}
+    7&amp;1&amp;2\\
+    0 &amp; 3 &amp; -1 \\
+    -3 &amp; 4 &amp; -2 \\
+\end{bmatrix}
+\quad
+B=
+\begin{bmatrix}
+    1&amp;0&amp;1\\
+    0 &amp; 2 &amp; 1 \\
+    1 &amp; 1 &amp; 1 \\
+\end{bmatrix}\)</span></p>
+<p>decidir si <span class="math inline">\(A \sim B\)</span>, y si existen <span class="math inline">\(\mathop{\mathrm{tl}}f\)</span> tal que <span class="math inline">\([f]_\mathcal{B}= A\)</span> y que <span class="math inline">\([f]_{\mathcal{B}&#39;\mathcal{B}&#39;&#39;} = B\)</span>.</p>
+<h1 id="condiciones-necesarias-para-semejanza" class="unnumbered">Condiciones necesarias para Semejanza</h1>
+<p>Si dos matrices <span class="math inline">\(A, B\)</span> tienen <span class="math inline">\(A \sim B\)</span>, luego <span class="math inline">\(\mathop{\mathrm{rg}}A = \mathop{\mathrm{rg}}B\)</span>, y <span class="math inline">\(\mathop{\mathrm{tr}}A = \mathop{\mathrm{tr}}
+B\)</span>. Notemos que la vuelta no vale!</p>
+<h1 id="matrices-equivalentes" class="unnumbered">Matrices Equivalentes</h1>
+<p>Dos matrices <span class="math inline">\(A, B \in \mathbb{K}^{n \times m}\)</span> son equivalentes sii <span class="math inline">\(\exists C \in
+\mathop{\mathrm{GL}}\; \mathbb{K}^n, D \in \mathop{\mathrm{GL}}\; \mathbb{K}^m\)</span> tal que <span class="math inline">\(CAD = B\)</span>.</p>
+<p>Además, si <span class="math inline">\(A, B\)</span> inversibles, notemos que: <span class="math inline">\(A^{-1}AB = B\)</span>, entonces todas las inversibles son equivalentes.</p>
+<h1 id="ejercicio-4" class="unnumbered">Ejercicio 4</h1>
+<h2 id="parte-a" class="unnumbered">Parte a</h2>
+<p>Sea <span class="math inline">\(A \in \mathbb{K}^{n \times m}, B \in \mathop{\mathrm{GL}}\; \mathbb{K}^n\)</span>. Probar que <span class="math inline">\(\mathop{\mathrm{rg}}BA = \mathop{\mathrm{rg}}A\)</span>, y lo mismo para el otro lado.</p>
+<p>Si tomamos <span class="math inline">\(f x = Ax, gx = Bx\)</span>, luego como <span class="math inline">\(B\)</span> inversible notemos <span class="math inline">\(\mathop{\mathrm{iso}}g\)</span>, luego <span class="math inline">\(\dim f \mathbb{K}^m = \dim g (f \mathbb{K}^m) = \dim \mathop{\mathrm{Im}}(g \circ f)\)</span></p>
+<h2 id="parte-b" class="unnumbered">Parte b</h2>
+<p>Sea <span class="math inline">\(A \in \mathbb{R}^{4 \times 4}\)</span> de rango <span class="math inline">\(2\)</span>, demostrar que existen <span class="math inline">\(B \in \mathbb{R}^{4
+\times 2}, C \in \mathbb{R}^{2 \times 4}\)</span> tales que <span class="math inline">\(A = BC\)</span></p>
+<p>Tomamos <span class="math inline">\(\mathcal{B}= \{b_1, b_2, b_3, b_4\}\)</span> base de <span class="math inline">\(\mathbb{R}^4\)</span>, conde <span class="math inline">\(\langle b_1, b_2
+\rangle = \mathop{\mathrm{Nu}}A\)</span>.</p>
+<p>Luego tomemos <span class="math inline">\(g b_1 = g b_2 = 0\)</span>, y <span class="math inline">\(g b_3 = (1, 0)\)</span>, <span class="math inline">\(g b_4 = (0, 1)\)</span>, luego tomamos <span class="math inline">\(h (1, 0) = f b_3\)</span>, <span class="math inline">\(h (0, 1) = f b_4\)</span>. Notemos que <span class="math inline">\(h \circ g\)</span> coincide con <span class="math inline">\(f\)</span> en la base <span class="math inline">\(\mathcal{B}\)</span>, luego ya estamos.</p>
+<p>Alternativamente, podemos tomar <span class="math inline">\(h = f|^{\mathop{\mathrm{Im}}f}\)</span>, y <span class="math inline">\(g = \mathop{\mathrm{id}}|_{\mathop{\mathrm{Im}}f}\)</span>, luego tenemos que <span class="math inline">\(f = g \circ h\)</span></p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/algebra-i/prac-2019-08-16/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Segunda Práctica de Álgebra</h1>
+</header>
+<h1 id="ejercicio-1">Ejercicio 1</h1>
+<p>Demostrar <span class="math inline">\(B = \left(A \cap B^c\right) \cup \left(A^c \cap B\right) \iff A = \emptyset\)</span></p>
+<p>Ida: Sea <span class="math inline">\(x \in B\)</span>, luego <span class="math inline">\(x \in A \cap B^c\)</span> ó <span class="math inline">\(x \in A^c \cap B\)</span></p>
+<p>Si <span class="math inline">\(x \in A \cap B^c\)</span>, contradicción, ya que tenemos <span class="math inline">\(x \in B\)</span> y <span class="math inline">\(x \in B^c\)</span>, entonces <span class="math inline">\(x \in A^c \cap B\)</span>, con lo que <span class="math inline">\(B \subseteq A^c\)</span>, es decir <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> disjuntos</p>
+<p>Reemplazamos en la original y tenemos <span class="math inline">\(B = A \cup B\)</span>, osea <span class="math inline">\(A \subseteq B\)</span>, pero <span class="math inline">\(A \subseteq B^c\)</span>, luego <span class="math inline">\(A = \emptyset\)</span></p>
+<p>Ahora la vuelta: si <span class="math inline">\(A = \emptyset\)</span>, reemplazamos <span class="math inline">\(B = (\emptyset \cap B^c)
+    \cup (\emptyset^c \cap B) = \emptyset \cup B = B\)</span>, luego se cumple</p>
+<h1 id="ejercicio-2">Ejercicio 2</h1>
+<p>Demostrar <span class="math inline">\(A \cap C = \emptyset \rightarrow A \cap (B \bigtriangleup C) = A \cap B\)</span>.</p>
+<p>Supongamos <span class="math inline">\(x \in A \cap (B \bigtriangleup C)\)</span>, luego <span class="math inline">\(x \in A\)</span> y <span class="math inline">\(x \in B
+    \bigtriangleup C\)</span>, pero <span class="math inline">\(x \in A\)</span> implica <span class="math inline">\(x \notin C\)</span>, luego <span class="math inline">\(x \in B\)</span>, entonces <span class="math inline">\(x \in A \cap B\)</span></p>
+<p>Si <span class="math inline">\(x \in A \cap B\)</span>, tenemos que <span class="math inline">\(x \notin C\)</span>, luego <span class="math inline">\(x \in B \bigtriangleup C\)</span>, entonces como <span class="math inline">\(x \in A\)</span> tenemos <span class="math inline">\(x \in A \cap (B \bigtriangleup C)\)</span></p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

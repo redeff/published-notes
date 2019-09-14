@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/prac-2019-09-03/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="multipllicación-a-bloques">Multipllicación a Bloques</h1>
+<p>Dadas las matrices <span class="math display">\[A \in \mathbb{K}^{n \times m}, A&#39; \in \mathbb{K}^{m \times n}\]</span> <span class="math display">\[C \in \mathbb{K}^{m \times p}, C&#39; \in \mathbb{K}^ {p \times n}\]</span> <span class="math display">\[B \in \mathbb{K}^{n \times p}, B&#39; \in \mathbb{K}^{o \times m}\]</span> <span class="math display">\[D \in \mathbb{K}^{o \times p}, D&#39; \in \mathbb{K}^{p \times o}\]</span></p>
+<p>Si tenemos las matrices <span class="math inline">\(M = 
+    \begin{bmatrix}
+        A &amp; B \\
+        C &amp; D
+    \end{bmatrix}\)</span>, <span class="math inline">\(M&#39; = 
+    \begin{bmatrix}
+        A&#39; &amp; B&#39; \\
+        C&#39; &amp; D&#39;
+    \end{bmatrix}\)</span></p>
+<p>Luego tenemos que <span class="math inline">\(M \times M&#39; =
+    \begin{bmatrix}
+        A A&#39; + B C&#39; &amp; A B&#39; + B D&#39; \\
+        CA&#39; + DC&#39; &amp; CB&#39; + DD&#39;
+    \end{bmatrix}\)</span></p>
+<h1 id="traza">Traza</h1>
+<p>Dada una Matriz <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>, se tiene <span class="math inline">\(\mathop{\mathrm{tr}}A = \sum\limits_{i &lt; n} a_{ii}\)</span></p>
+<h1 id="ejercicio-4">Ejercicio 4</h1>
+<p>demostrar que <span class="math inline">\(\dim (\mathop{\mathrm{Nu}}f \cap \mathop{\mathrm{Im}}f) = \dim \mathop{\mathrm{Im}}f - \dim \mathop{\mathrm{Im}}f^2\)</span> para <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>.</p>
+<p>Tomemos <span class="math inline">\(f&#39; : \mathop{\mathrm{Im}}f \to \mathbb{V}\)</span>, tal que <span class="math inline">\(f&#39; x = fx\)</span>, luego, por teo de la dimensión:</p>
+<p><span class="math inline">\(\dim \mathop{\mathrm{Im}}f = \dim \mathop{\mathrm{Im}}f&#39; + \dim \mathop{\mathrm{Nu}}f&#39;\)</span>. Notemos que <span class="math inline">\(x \in \mathop{\mathrm{Im}}f&#39; \iff \exists x&#39; \in
+\mathop{\mathrm{Im}}f : f&#39; x&#39; = f x&#39; = x\)</span>, pero como <span class="math inline">\(x&#39; \in \mathop{\mathrm{Im}}f\)</span>, tenemos <span class="math inline">\(f^2 x&#39;&#39; = x\)</span>, luego <span class="math inline">\(\mathop{\mathrm{Im}}f&#39; = \mathop{\mathrm{Im}}f^2\)</span>.</p>
+<p>Además <span class="math inline">\(\mathop{\mathrm{Nu}}f&#39; = \mathop{\mathrm{Nu}}f \cap \mathop{\mathrm{Im}}f\)</span>, trivialmente, entonces ya está.</p>
+<h1 id="interpolación-de-polinomios">Interpolación de Polinomios</h1>
+<p>Dados <span class="math inline">\((a_i, b_i)\)</span> con <span class="math inline">\(0 \leq i \leq n\)</span>, existe un único <span class="math inline">\(p \in \mathbb{R}_n[x]\)</span> tal que <span class="math inline">\(pa_i = b_i\)</span></p>
+<p>Fijemos los <span class="math inline">\(a_i\)</span>, y tomemos la transformación lineal <span class="math inline">\(f : \mathbb{R}_n[x] \to \mathbb{R}^n, f p = (p a_i)_i\)</span>.</p>
+<p>Notemos que es mono ya que si <span class="math inline">\(fp = 0\)</span> luego <span class="math inline">\(p\)</span> evaluado en <span class="math inline">\(n+1\)</span> puntos da <span class="math inline">\(0\)</span>, luego el polinomio <span class="math inline">\(p\)</span> es <span class="math inline">\(0\)</span>, entonces <span class="math inline">\(\mathop{\mathrm{Nu}}f = 0\)</span>.</p>
+<p>Además notemos que los canónicos en el codominio tienen como preimagen a la base de lagrange, entonces también es epi.</p>
+<p>Con cualquiera de estas dos cosas, como las dimensiones dan, sabemos que <span class="math inline">\(f\)</span> es iso.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

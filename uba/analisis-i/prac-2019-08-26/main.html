@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/analisis-i/prac-2019-08-26/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="ejercicio-1">Ejercicio 1</h1>
+<p>Dado el conjunto <span class="math inline">\(A = \{(x, y) \in \mathbb{R}^2 : -x &lt; y, y + x^2 - 2 \leq 0\}\)</span> No es abierto ya que el punto <span class="math inline">\((0, 2)\)</span> está en <span class="math inline">\(A\)</span> pero <span class="math inline">\((0, 2 + \varepsilon) \notin A\)</span> para todo <span class="math inline">\(\varepsilon&gt; 0\)</span>.</p>
+<p><embed src="para.eps" /></p>
+<p>Notemos que tampoco es cerrado, ya que <span class="math inline">\((0, 0) \notin A\)</span>, pero <span class="math inline">\((0, \varepsilon) \in A\)</span> para cualquier <span class="math inline">\(\varepsilon\)</span> suficientemente chico.</p>
+<h1 id="conjuntos-acotados">Conjuntos Acotados</h1>
+<p>Un conjunto <span class="math inline">\(A \subseteq\mathbb{R}^n\)</span> es acotado si existe alguna bola <span class="math inline">\(A \subseteq B_M(0)\)</span></p>
+<h1 id="propiedades">Propiedades</h1>
+<ul>
+<li><p><span class="math inline">\(A^\circ \subseteq A\)</span></p></li>
+<li><p><span class="math inline">\(A^\circ\)</span> es abierto</p></li>
+<li><p>si <span class="math inline">\(A\)</span> abierto luego <span class="math inline">\(A^\circ = A\)</span></p></li>
+</ul>
+<h1 id="punto-de-acumulación-clausura">Punto de Acumulación (Clausura)</h1>
+<p>Un punto <span class="math inline">\(x \in \mathbb{R}^n\)</span> es un punto de acumulación si existe una sucesión <span class="math inline">\(a : \mathbb{N}\to A\)</span> tal que <span class="math inline">\(\lim\limits_{i \to \infty} ai = x\)</span>.</p>
+<p>Se define al conjunto de puntos de acumulación como <span class="math inline">\(\mathop{\mathrm{cl}}A = \overline A\)</span>. Es claro que <span class="math inline">\(A \subseteq\overline A\)</span>, y además <span class="math inline">\(\overline A = \mathop{\mathrm{cl}}A\)</span> es cerrado.</p>
+<h1 id="borde">Borde</h1>
+<p>el borde de <span class="math inline">\(A\)</span> se define como <span class="math inline">\(\partial A = \mathop{\mathrm{cl}}A - A^\circ\)</span>.</p>
+<p>Alternativamente, <span class="math inline">\(\partial A = \{ x : \forall \varepsilon&gt; 0 : B_r(x) \cap A \neq \emptyset,
+B_r(x) \cap A^C \neq \emptyset
+\}\)</span></p>
+<h1 id="ejercicio-2">Ejercicio 2</h1>
+<p>para los siguientes conjuntos, decidir si son acotados, y hallar el interior, la clausura y el borde.</p>
+<ul>
+<li><p><span class="math inline">\(A = [-1, 2)\)</span></p></li>
+<li><p><span class="math inline">\(B = \{(x, y) \in \mathbb{R}^2 : 1 &lt; (x-1)^2 + y^2 &lt; 4\}\)</span></p></li>
+<li><p><span class="math inline">\(C = \{(x, y) : |x| \leq 3\}\)</span></p></li>
+</ul>
+<h1 id="cónicas">Cónicas</h1>
+<p>Una cónica es una es una curva en <span class="math inline">\(\mathbb{R}^2\)</span> que surge de cortar un cono con un plano. Se dividen en:</p>
+<ul>
+<li><p>Circunferencia: <span class="math inline">\(x^2 + y^2 = r^2\)</span>.</p></li>
+<li><p>Elipse: <span class="math inline">\(\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1\)</span></p></li>
+<li><p>Parábola: <span class="math inline">\(y = x^2\)</span></p></li>
+<li><p>Hipérbola: <span class="math inline">\(\frac{x^2}{a^2} - \frac{x^2}{b^2} = 1\)</span></p></li>
+</ul>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

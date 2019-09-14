@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/algebra-i/prac-2019-08-23/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Funciones</h1>
+</header>
+<h1 id="definición">Definición</h1>
+<p>Una función <span class="math inline">\(f : A \to B\)</span> es una relación <span class="math inline">\(f \subseteq A \times B\)</span>, donde <span class="math inline">\(A\)</span> se llama dominio y <span class="math inline">\(B\)</span> codominio que cumple <span class="math inline">\(\forall a \in A \; \exists ! b : (a, b) \in f\)</span>, que se nota <span class="math inline">\(fa = b\)</span>.</p>
+<h1 id="imagen">Imagen</h1>
+<p>Dado <span class="math inline">\(C \subseteq A\)</span>, definimos <span class="math inline">\(f C := \{f c : c \in C\}\)</span>. Al conjunto <span class="math inline">\(fA\)</span> se lo llama imagen de <span class="math inline">\(f\)</span> (<span class="math inline">\(\Im f\)</span>).</p>
+<h1 id="preimagen">Preimagen</h1>
+<p>Dado <span class="math inline">\(D \subseteq B\)</span>, definimos <span class="math inline">\(f^{-1}D = \{a \in A : fa \in D \}\)</span>.</p>
+<h1 id="restricción">Restricción</h1>
+<p>Dado <span class="math inline">\(C \subseteq A\)</span>, definimos <span class="math inline">\(f |_C : C \to B = f \cap (C \times B)\)</span>.</p>
+<h1 id="composición">Composición</h1>
+<p>Dadas <span class="math inline">\(f : A \to B\)</span> y <span class="math inline">\(g : B \to C\)</span>, definimos <span class="math inline">\(g \circ f : A \to C\)</span> como <span class="math inline">\((g \circ f) x = g (fx)\)</span>.</p>
+<h1 id="inyectividad">Inyectividad</h1>
+<p>Si <span class="math inline">\(\forall a, b \in \text{Dom} f :  fa = fb \Rightarrow a = b\)</span>.</p>
+<h2 id="prop">Prop</h2>
+<p><span class="math inline">\(f : A \to B\)</span> es inyectiva <span class="math inline">\(\iff \exists g : B \to A : g \circ f = \text{id}_A\)</span>.</p>
+<h1 id="sobreyectividad">Sobreyectividad</h1>
+<p><span class="math inline">\(f\)</span> es sobreyectiva si <span class="math inline">\(f A = B\)</span>.</p>
+<h2 id="prop-1">Prop</h2>
+<p><span class="math inline">\(f : A \to B\)</span> es sobreyectida <span class="math inline">\(\iff \exists g : B \to A : f \circ g = \text{id}_B\)</span>.</p>
+<h1 id="power-set">Power Set</h1>
+<p>Se Nota <span class="math inline">\(\mathcal{P}(X) = \{Y : Y \subseteq X\}\)</span>.</p>
+<h1 id="ejercicio-1">Ejercicio 1</h1>
+<p>Tenemos <span class="math inline">\(f : \mathcal{P}(\mathbb{N}) \to \mathcal{P}(\mathbb{N}) \times \mathcal{P}(\mathbb{N})\)</span> definida por <span class="math inline">\(f A =
+    (A \cup \{3\}, A \triangle \{3\})\)</span>.</p>
+<p>Demostrar que es inyectiva.</p>
+<p>Definamos <span class="math inline">\(g : \mathcal{P}(\mathbb{N}) \times \mathcal{P}(\mathbb{N}) \to \mathcal{P}(\mathbb{N})\)</span> como <span class="math inline">\(g (\_, x) = x \triangle \{3\}\)</span>. Notemos que <span class="math inline">\(A \triangle \{3\}\triangle \{3\} = A\)</span>, luego <span class="math inline">\(g \circ f = \text{Id}_A\)</span>, luego es inyectiva.</p>
+<p>Además <span class="math inline">\((\emptyset, \emptyset)\)</span> no está en la imagen, porque <span class="math inline">\(3\)</span> siempre pertenece al primer elemento del par, por lo tanto no es sobreyectiva.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

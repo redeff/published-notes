@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/prac-2019-09-13/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="clase-experimental" class="unnumbered">Clase Experimental</h1>
+<p>Dada <span class="math inline">\(v\)</span> base de <span class="math inline">\(\mathbb{V}\)</span>, con <span class="math inline">\(\phi = v^*\)</span>, se tiene las identidades:</p>
+<ul>
+<li><p><span class="math inline">\(\forall x \in \mathbb{V}: ((x)_v)_i = \phi_ix\)</span></p></li>
+<li><p><span class="math inline">\(\forall \phi \in \mathbb{V}^* : ((f)_\phi)_i = f v_i\)</span></p></li>
+</ul>
+<p>Si introducimos otras bases <span class="math inline">\(u^* = \psi\)</span>, luego tenemos:</p>
+<p><span class="math display">\[(C_{uv})_{ij} = ((v_j)_u)_i = \psi_i v_j\]</span> Además <span class="math display">\[(C_{\phi \psi})_{ij} = ((\psi_j)_\phi)_i = \psi_j v_i\]</span></p>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Tomamos <span class="math inline">\(\mathbb{V}= \mathbb{R}^3\)</span>, luego dados</p>
+<p><span class="math inline">\(\phi_1 (x,y,z) = x\)</span>,</p>
+<p><span class="math inline">\(\phi_2 (x, y, z) = y-z\)</span>, y</p>
+<p><span class="math inline">\(\phi_3 (x,y,z) = 2x-y\)</span></p>
+<p>Decidir si son base.</p>
+<p>Tomamos <span class="math inline">\((\phi_i)_{E^*}\)</span> y vemos que son <span class="math inline">\(\mathop{\mathrm{li}}\)</span>.</p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Sean <span class="math inline">\(\mathbb{V}\)</span> con <span class="math inline">\(\dim V = n\)</span>, y <span class="math inline">\(\phi \in \mathbb{V}^*, \phi \neq 0\)</span>, y sea <span class="math inline">\(v \notin
+\ker \phi\)</span>. Hay que demostrar que <span class="math inline">\(\mathbb{V}= \langle v \rangle \oplus \ket \phi\)</span>.</p>
+<p>Notemos que <span class="math inline">\(\dim \mathop{\mathrm{Im}}\phi = 1\)</span>, luego por teo de dimensión <span class="math inline">\(\dim \ket \phi =
+n-1\)</span>.</p>
+<p>Además notemos que <span class="math inline">\(\langle v \rangle \cap \phi = \{0\}\)</span> por hipótesis, osea que por teo de la dimensión ya estamos.</p>
+<p>Osinó podemos escribir, dado <span class="math inline">\(x \in \mathbb{V}\)</span>, que <span class="math inline">\(x = (x - \lambda \cdot v) +
+\lambda \cdot v\)</span>, donde queremos que <span class="math inline">\(\phi (x - \lambda \cdot v) = 0 = \phi x
+-\lambda \phi v\)</span>, es decir, alcanza con <span class="math inline">\(\lambda = \frac{\phi x}{\phi v}\)</span>.</p>
+<h1 id="ejercicio-5" class="unnumbered">Ejercicio 5</h1>
+<p>Dados <span class="math inline">\(\phi, \psi \in \mathbb{V}^* - \{0\}\)</span>, probar que <span class="math inline">\(\ker \phi = \ker \psi \iff\)</span> {, }.</p>
+<h2 id="leftarrow" class="unnumbered"><span class="math inline">\(\Leftarrow\)</span>)</h2>
+<p>Es trivial</p>
+<h2 id="rightarrow" class="unnumbered"><span class="math inline">\(\Rightarrow\)</span>)</h2>
+<p>Supongamos <span class="math inline">\(\ker \phi = \ker \psi\)</span>. Tomemos <span class="math inline">\(v \notin \ker\)</span>, luego dijimos que podemos escribir <span class="math inline">\(\mathbb{V}= \langle v \rangle + \ker\)</span>, es decir, para todo <span class="math inline">\(x\)</span>, se cumple <span class="math inline">\(x = \lambda v + z\)</span>. Luego notemos que <span class="math inline">\(\phi x = \lambda \cdot \phi v\)</span>, y <span class="math inline">\(\psi x = \lambda \cdot \psi v\)</span>, luego <span class="math inline">\(\phi x = \psi x \cdot \frac{\psi
+v}{\phi v}\)</span>. Entonces ya estamos.</p>
+<h2 id="ejercicio-6" class="unnumbered">Ejercicio 6</h2>
+<p>Tomemos <span class="math inline">\(S = \{x \in \mathbb{R}^4 : 2x_1 + x_2 - x_3+ 3x_4 = 0, x_1-x_2+x_4 = 0\}\)</span>.</p>
+<p>Notemos que <span class="math inline">\(\phi_1 = 2x_1 + x_2 - x_3+ 3x_4\)</span>, <span class="math inline">\(\phi_2 = x_1-x_2+x_4\)</span>, entonces estos están en el generador. Además son li y da la dimensión. Entonces ya está.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/teor-2019-08-20/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="dependencia-lineal">Dependencia lineal</h1>
+<h2 id="to-2">1 <span class="math inline">\(\to\)</span> 2</h2>
+<p>Tenemos <span class="math inline">\(\sum\limits\lambda_ix_i = 0\)</span>, y wlog <span class="math inline">\(\lambda_0 \neq 0\)</span>, luego tenemos <span class="math inline">\(x_0 = -\lambda_0^{-1}\sum\limits_{i \geq 1} \lambda_ix_i
+= \sum\limits_{i \geq 1} (-\lambda_0^{-1}\lambda_i)x_i\)</span></p>
+<p>Notemos que <span class="math inline">\(\langle X - x_0 \rangle\subseteq \langle X \rangle\)</span>, ahora veamos para el otro lado</p>
+<p>Sea <span class="math inline">\(v \in \langle X \rangle\)</span>, luego <span class="math inline">\(v = \sum\limits\mu_iw_i\)</span>, <span class="math inline">\(w_i \in X\)</span> wlog <span class="math inline">\(w_0 = x_0\)</span> ó ninguno es <span class="math inline">\(x_0\)</span>.</p>
+<p>Si ninguno es <span class="math inline">\(x_0\)</span>, luego trivialmente <span class="math inline">\(v \in \langle X - x_0 \rangle\)</span></p>
+<p>Si <span class="math inline">\(w_0 = x_0\)</span>, entonces tenemos <span class="math inline">\(v = \mu_0w_0  + \sum\limits_{i \geq 1} \mu_iw_i
+= 
+\mu_0\left(\sum\limits_{i \geq 1} (-\lambda_0^{-1}\lambda_i)x_i\right)
++ \sum\limits_{i \geq 1} \mu_iw_i
+=
+\sum\limits_{i \geq 1} (-\mu_0\lambda_0^{-1}\lambda_i)x_i
++ \sum\limits_{i \geq 1} \mu_iw_i\)</span>, con <span class="math inline">\(x_{i \geq 1}\)</span>, <span class="math inline">\(w_{i \geq 1} \in X - x_0\)</span>, luego <span class="math inline">\(v \in \langle X - x_0 \rangle\)</span></p>
+<h2 id="to-1">2 <span class="math inline">\(\to\)</span> 1</h2>
+<p>Supongamos que <span class="math inline">\(\langle X \rangle = \langle X - x \rangle\)</span>, luego en particular <span class="math inline">\(x \in \langle X - x \rangle\)</span>, luego se puede escribir <span class="math inline">\(x = \sum\limits\lambda_ix_i\)</span>, con <span class="math inline">\(_i \neq x\)</span> es decir <span class="math inline">\(0 = x + \sum\limits\lambda_ix_i\)</span>, osea que <span class="math inline">\(X\)</span> es ld</p>
+<h1 id="lema-2">Lema 2</h1>
+<p>Notemos que <span class="math inline">\(v \in \langle X \rangle\)</span> claramente implica <span class="math inline">\(X + v\)</span> ld.</p>
+<p>Si <span class="math inline">\(X + v\)</span> es ld, luego tenemos <span class="math inline">\(\sum\limits\lambda_ix_i = 0\)</span> con <span class="math inline">\(\lambda_i \neq 0\)</span> y <span class="math inline">\(x_i \in X + v\)</span>.</p>
+<p>Notemos que no puede ser que <span class="math inline">\(x_i \neq v\)</span>, ya que luego <span class="math inline">\(X\)</span> ld. Luego wlog <span class="math inline">\(x_0 = v\)</span>, entonces <span class="math inline">\(\lambda_0v + \sum\limits_{i \geq 1} \lambda_i x_i\)</span>, entonces <span class="math inline">\(v \in \langle X \rangle\)</span>.</p>
+<h1 id="bases">Bases</h1>
+<h2 id="prop">Prop</h2>
+<p>Son equivalentes:</p>
+<ol>
+<li><p><span class="math inline">\(B\)</span> es base de <span class="math inline">\(\mathbb{V}\)</span>.</p></li>
+<li><p><span class="math inline">\(B\)</span> es maximal bajo independencia lineal.</p></li>
+<li><p><span class="math inline">\(B\)</span> es minimal bajo generación de <span class="math inline">\(\mathbb{V}\)</span>.</p></li>
+</ol>
+<h3 id="to-2-1">(1) <span class="math inline">\(\to\)</span> (2)</h3>
+<p>Claramente <span class="math inline">\(B\)</span> base implica <span class="math inline">\(B\)</span> li. Además supongamos que <span class="math inline">\(B \subsetneq C\)</span>. Queremos probar ld.</p>
+<p>Tenemos entonces algún <span class="math inline">\(c \in C, c \notin B\)</span>. Además como <span class="math inline">\(B\)</span> base tenemos <span class="math inline">\(c\)</span> es combinación lineal de elementos de <span class="math inline">\(B\)</span>, luego <span class="math inline">\(B + c\)</span> no puede ser li. Entonces como <span class="math inline">\(B + c \subseteq C\)</span>, tenemos <span class="math inline">\(C\)</span> ld.</p>
+<h3 id="to-3">(2) <span class="math inline">\(\to\)</span> (3)</h3>
+<p>Probemos que <span class="math inline">\(\langle B \rangle = \mathbb{V}\)</span>. Supongamos que hay <span class="math inline">\(v \in V, v \notin B\)</span>, luego tenemos por Lema 1, tenemos que <span class="math inline">\(B + v\)</span> es li, contradicción porque era maximal.</p>
+<p>Supongamos que <span class="math inline">\(C \subsetneq B\)</span> tal que <span class="math inline">\(\langle C \rangle = V\)</span>, luego sea <span class="math inline">\(v \in B - C\)</span>. Notemos que <span class="math inline">\(v \notin \langle C \rangle\)</span> ya que osinó <span class="math inline">\(B\)</span> no sería li, entonces <span class="math inline">\(\langle C \rangle \neq \mathbb{V}\)</span>.</p>
+<h3 id="to-1-1">(3) <span class="math inline">\(\to\)</span> (1)</h3>
+<p>Ya sabemos que <span class="math inline">\(\langle B \rangle = \mathbb{V}\)</span>, osea que hace falta probar <span class="math inline">\(B\)</span> es li supongamos que no, luego por Lema 1, podemos sacar un vector <span class="math inline">\(v \in B\)</span> tal que <span class="math inline">\(\langle B - v \rangle = \langle B \rangle = \mathbb{V}\)</span>, que contradice la minimalidad <span class="math inline">\(\square\)</span>.</p>
+<h1 id="espacios-finitamente-generado">Espacios Finitamente Generado</h1>
+<p>un espacio vectorial <span class="math inline">\(\mathbb{V}\)</span> es finitamente generado si tiene un conjunto de genradores finito.</p>
+<h2 id="lema">Lema</h2>
+<p>Si <span class="math inline">\(X\)</span> finito y <span class="math inline">\(\langle X \rangle = \mathbb{V}\)</span>, luego existe <span class="math inline">\(B \subseteq X\)</span> tal que <span class="math inline">\(B\)</span> es base de <span class="math inline">\(\mathbb{V}\)</span></p>
+<p>Sea <span class="math inline">\(\Gamma = \{X&#39; \subseteq X \mid \langle X&#39; \rangle = \mathbb{V}\}\)</span>. Sabemos que <span class="math inline">\(\Gamma\)</span> es finito, y además es no vacío porque <span class="math inline">\(X \in \Gamma\)</span></p>
+<p>Entonces existe <span class="math inline">\(m = \min \{\#Y \mid Y \in \Gamma\} \in \mathbb{N}\)</span>, y además tomemos <span class="math inline">\(Y \in \Gamma\)</span> tal que <span class="math inline">\(\#Y = m\)</span>. Claramente es minimal bajo generación de <span class="math inline">\(\mathbb{V}\)</span>, entonces ya sabemos que es base.</p>
+<h2 id="clase-que-viene">Clase que viene</h2>
+<p>Si <span class="math inline">\(\langle A \rangle = \mathbb{V}\)</span> y <span class="math inline">\(B \subseteq \mathbb{V}\)</span> li, entonces <span class="math inline">\(\# A \geq \#B\)</span>.</p>
+<p>Esto implica que todas las bases tienen mismo tamaño.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/prac-2019-08-16/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Segunda Práctica</h1>
+</header>
+<p>Dado <span class="math inline">\(S \in \mathbb{V}\)</span>, <span class="math inline">\(\langle S \rangle\)</span> es la combinación. Se dice que <span class="math inline">\(S\)</span> es un sistema de generadores de <span class="math inline">\(\langle S \rangle\)</span> lineal de finitos de ellos.</p>
+<h1 id="sistemas-de-ecuaciones">Sistemas de Ecuaciones</h1>
+<h2 id="generadores-a-ecuación">Generadores a Ecuación</h2>
+<p>Hallar una sistema de ecuaciones para el sub. generado por <span class="math inline">\(\langle v_i\rangle\)</span>.</p>
+<p>Tenemos que son exactamente los <span class="math inline">\(X\)</span> tal que el sist <span class="math inline">\((v_i \mid X)\)</span> tiene solución, entonces triangulamos y le pedimos que sea compatible.</p>
+<h2 id="ecuación-a-generadores">Ecuación a Generadores</h2>
+<p>Tomamos el homogéneo y lo resolvemos</p>
+<h1 id="dependencia-lineal">Dependencia Lineal</h1>
+<p>Un conjunto <span class="math inline">\(X\)</span> es ld si existe alguna combinación lineal no trivial de vectores en <span class="math inline">\(X\)</span> que de <span class="math inline">\(0\)</span></p>
+<h1 id="ejemplo">Ejemplo</h1>
+<p>Dado <span class="math inline">\(\mathbb{R}^\mathbb{N}\)</span> y la base canónica <span class="math inline">\(e_i \; n = n == i\)</span>, tenemos que <span class="math inline">\(\{e_i\} \cap \text{ const } 1\)</span> es li</p>
+<p>Supongamos que no, luego <span class="math inline">\(\sum\limits\lambda_i x_i = 0\)</span>, si todos los <span class="math inline">\(x_i\)</span> son de la canónica, ya estamos Si no, wlog <span class="math inline">\(x_1 = \text{ const } 1\)</span>, y tenemos que a partir de un momento <span class="math inline">\(\left(\sum\limits\lambda_i x_i\right) n\)</span> es siempre <span class="math inline">\(\lambda_1\)</span> para <span class="math inline">\(n\)</span> suficientemente grande, luego <span class="math inline">\(\lambda_1 = 0\)</span> y volvemos al caso anterior</p>
+<h1 id="bases">Bases</h1>
+<p>Dado un <span class="math inline">\(\mathbb{V}\)</span> y un subconjunto <span class="math inline">\(S \subseteq \mathbb{V}\)</span> finito, decimos que <span class="math inline">\(S\)</span> es base iff <span class="math inline">\(\langle S \rangle = \mathbb{V}\)</span> y <span class="math inline">\(S\)</span> es li</p>
+<p>Decimos que <span class="math inline">\(\dim \mathbb{V}= |S|\)</span></p>
+<h2 id="prop">Prop</h2>
+<p>si <span class="math inline">\(\dim \mathbb{V}= n\)</span> y <span class="math inline">\(|S| = n\)</span>, tenemos:</p>
+<p><span class="math inline">\(S\)</span> base iff <span class="math inline">\(\langle S \rangle = \mathbb{V}\)</span> iff <span class="math inline">\(S\)</span> li</p>
+<h2 id="extender-a-una-base">Extender a una Base</h2>
+<p>Si tenemos un conjunto de vectores <span class="math inline">\(S \subseteq \mathbb{R}^n\)</span>, luego triangulamos la matriz <span class="math inline">\(\begin{bmatrix}
+        v_i \\
+        \vdots \\
+        e_i
+    \end{bmatrix}\)</span></p>
+<h2 id="extender-a-bases-de-otros-conjuntos">Extender a Bases de otros Conjuntos</h2>
+<p>Extender <span class="math inline">\(\{(1 \; -1 \; 0 \; 1) \; (0 \; 1\; 0 \; -1)\}\)</span> a una base de <span class="math inline">\(T = \{x \in \mathbb{R}^4 \mid x_2 + x_4 = 0\}\)</span>.</p>
+<p>Notemos que <span class="math inline">\((0 \; 0\; 1\;0)\)</span> está en <span class="math inline">\(T\)</span> y es li con los que tenemos, entonces extenderla con ele alcanza</p>
+<h2 id="ejercicio-3">Ejercicio 3</h2>
+<p>Hallar un conjunto de generadores finit y una base de <span class="math inline">\(S = \{P \in \mathbb{R}[x]_{\leq 5} \mid
+        P(0) = P(2) = 0, P(1) = P(-1)
+    \}\)</span></p>
+<p>Tenemos <span class="math inline">\(P(x) = x(x-2)(a_0 + a_1x + a_2x^2 + a_3x^3)\)</span></p>
+<p><span class="math inline">\(P(1) = -a_0 - a_1 - a_2 - a_3\)</span></p>
+<p><span class="math inline">\(P(-1) = 3a_0 - 3a_1 + 3a_2 - 3a_3\)</span></p>
+<p>Luego <span class="math inline">\(-2 a_0 + a_1 - 2_a2 + a_3 = 0\)</span></p>
+<p><span class="math inline">\(a_1 = 2a_0 + 2a_2 - a_3\)</span></p>
+<p>Y a partir de eso armamos los generadores</p>
+<h1 id="intersección-eq-gen">Intersección Eq-Gen</h1>
+<p>Si se tiene un sub. expresado por generadores y uno expresado por ecuaciones, luego expresamos el de generadores de forma paramétrica y lo enchufamos en las ecuaciones</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

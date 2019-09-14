@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/analisis-i/prac-2019-08-22/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="cuerpo-completo">Cuerpo Completo</h1>
+<p>Un cuerpo completo es aquel en el cual se cumple el axioma del supremo</p>
+<h2 id="mathbbq-no-es-completo"><span class="math inline">\(\mathbb{Q}\)</span> no es completo</h2>
+<p>Sea <span class="math inline">\(A = \{x \in \mathbb{Q}^+ \mid x^2 &lt; 2\}\)</span>.</p>
+<p>Sabemos que <span class="math inline">\(A\)</span> es no vacío (<span class="math inline">\(1 \in A\)</span>), y <span class="math inline">\(2\)</span> es una cota, luego para que se cumpla el axioma del supremo, debería tener supremo.</p>
+<p>Supongamos que <span class="math inline">\(s \in \mathbb{Q}\)</span> es supremo de <span class="math inline">\(A\)</span>. Luego tenemos o bien <span class="math inline">\(s \leq \sqrt{2}\)</span> o <span class="math inline">\(s \geq \sqrt{2}\)</span>.</p>
+<p>Si <span class="math inline">\(s \leq \sqrt{2}\)</span>, luego existe por densidad <span class="math inline">\(q \in \mathbb{Q}\)</span> tal que <span class="math inline">\(s &lt; q &lt; \sqrt{2}\)</span>, entonces <span class="math inline">\(q \in A\)</span>, luego <span class="math inline">\(s\)</span> no es cota.</p>
+<p>Si <span class="math inline">\(s \geq \sqrt{2}\)</span>, luego existe por densidad <span class="math inline">\(q \in \mathbb{Q}\)</span> tal que <span class="math inline">\(\sqrt{2} &lt; q &lt; s\)</span>, entonces <span class="math inline">\(q\)</span> es cota de <span class="math inline">\(A\)</span>, lo que contradice minimalidad de cota.</p>
+<h1 id="sucesiones">Sucesiones</h1>
+<h2 id="ínfimo-de-monótonas">Ínfimo de Monótonas</h2>
+<p>Si tenemos una monotona decreciente <span class="math inline">\((a_i)_i\)</span>, luego tenemos que <span class="math inline">\(\inf \{a_i\} = \lim\limits_{n \to \infty} a_n\)</span>.</p>
+<p>Se demuestra trivialmente (<span class="math inline">\(\forall \varepsilon \dots\)</span>).</p>
+<p>Para todo <span class="math inline">\(\varepsilon &gt; 0\)</span>, necesitamos ver que todos los elementos a partir de un punto están a distancia de <span class="math inline">\(\in A\)</span> menor a <span class="math inline">\(\varepsilon\)</span>.</p>
+<p>Notemos que una vez que pasa, siempre pasa porque es decreciente, luego para que no pase, ninguno de los elementos está a dist menor a epsilon de <span class="math inline">\(\inf A\)</span>.</p>
+<p>Pero luego <span class="math inline">\(\inf A - \varepsilon\)</span> es cota inferior. Contradicción-</p>
+<h2 id="ejercicio-1">Ejercicio 1</h2>
+<p>Hallar, si existe, sup, inf, max, y min de <span class="math inline">\(A = \left\{\frac{4n-2}{2n-9} \;\middle| \; n \in \mathbb{N}\right\}\)</span>.</p>
+<p>Vamos a ver si <span class="math inline">\(a_n &gt; a_{n+1}\)</span>. <span class="math display">\[\begin{aligned}
+    \frac{4n-2}{2n-9} &amp;&gt; \frac{4(n+1)-2}{2(n+1)-9} \\
+    \iff (4n-2)(2(n+1)-9) &amp;&gt; (4(n+1)-2)(2n-9) \quad \text{Para $n \geq 5$}\\
+    \iff (4n-2)(2n-7) &amp;&gt; (4n+2)(2n-9) \\
+    \iff 8n^2-4n-28n+14 &amp;&gt; 8n^2+4n-36n-18 \\
+    \iff -4n-28n+14 &amp;&gt; 4n-36n-18 \\
+    \iff 14 &amp;&gt; -18 \\\end{aligned}\]</span> Vamos a partir a <span class="math inline">\(A\)</span> en <span class="math inline">\(A = A_1 \cap A_2\)</span>, con <span class="math inline">\(A_1 = \{a_{i &lt; 5}\}\)</span>, y <span class="math inline">\(A_2 = \{a_{i\geq 5}\}\)</span></p>
+<p>Luego <span class="math inline">\(\sup A = \max \{\sup A_1, \sup A_2\}\)</span>, donde <span class="math inline">\(\sup A_2 = a_5\)</span>, y <span class="math inline">\(\sup A_1\)</span> se puede sacar porque hay finitos</p>
+<p>Además <span class="math inline">\(\inf A_2 = 2\)</span> por límite, y <span class="math inline">\(\inf A_1\)</span> es fácil</p>
+<h2 id="ejercicio-2">Ejercicio 2</h2>
+<p><span class="math inline">\(A = \left\{\frac{(-1)^n + 7}{n+4} \; \middle| \; n \in \mathbb{N}\right\}\)</span></p>
+<p>Tomamos las dos sumsicesiones <span class="math inline">\(A_1 = \{a_{2k+1}\}\)</span>, <span class="math inline">\(A_2 = \{a_{2k}\}\)</span>.</p>
+<p>Una de estas es decreciente, y la otra es creciente, entonces los ínfimos y supremos se calculan con el límite y promer elemento, y con esos se calculan los de <span class="math inline">\(A\)</span></p>
+<h2 id="ejercicio-3">Ejercicio 3</h2>
+<p>Sucesión definida por recurrencia <span class="math inline">\(b_1 = \sqrt{2}\)</span>, <span class="math inline">\(b_{n+1} = \sqrt{2 + b_n}\)</span>.</p>
+<p>Vamos a probar <span class="math inline">\(b_i &lt; 2\)</span>. Por inducción, <span class="math inline">\(b_1 &lt; 2\)</span> y</p>
+<p><span class="math display">\[\sqrt{2 + b_n} &lt; 2 \iff 2 + b_n &lt; 4\iff b_n &lt; 2\]</span></p>
+<p>Además notemos <span class="math inline">\((b_n)^2 &lt; 2 + b_n\)</span>, ya que <span class="math inline">\(b_n &lt; 2\)</span></p>
+<p>Sea <span class="math inline">\(f(x) = \sqrt{2 + x} - x\)</span>. La derivada es <span class="math inline">\(\frac{1}{2\sqrt{2 + x}} - 1\)</span>, y tenemos <span class="math display">\[\frac{1}{2\sqrt{2 + x}} - 1 &lt; 0\]</span> <span class="math display">\[\frac{1}{2\sqrt{2 + x}} &lt; 1\]</span> <span class="math display">\[1 &lt; 2\sqrt{2 + x}\]</span> <span class="math display">\[1 &lt; 4(2 + x)\]</span> <span class="math display">\[\frac{1}{4} &lt; 2 + x\]</span> <span class="math display">\[\frac{1}{4} -2 &lt; x\]</span> Osea que es decreceiente <span class="math inline">\(f\)</span> para los positivos.</p>
+<p>Además notemos que <span class="math inline">\(f 2 = 2\)</span>, entonces <span class="math inline">\(f x &gt; 0 \;\forall x &lt; 2\)</span></p>
+<p>Supongamos que <span class="math inline">\(\lim\limits_{n \to \infty} a_n = L\)</span> con <span class="math inline">\(L &lt; 2\)</span>, luego tomemos <span class="math inline">\(a_n\)</span> tal que <span class="math inline">\(L - a_n &lt; f(L)\)</span>, entonces notemos que también <span class="math inline">\(L - a_n &lt; f a_n\)</span>, ya que <span class="math inline">\(f\)</span> es decreciente, pero luego <span class="math inline">\(a_{n+1} = a_n + f a_n &gt; L\)</span>. Contradicción.</p>
+<p>Luego <span class="math inline">\(\lim\limits_{n \to \infty} a_n = 2\)</span></p>
+<h1 id="topología">Topología</h1>
+<h2 id="distancia">Distancia</h2>
+<p>A todos los puntos a distancia menor a <span class="math inline">\(\varepsilon\)</span> con centro <span class="math inline">\(C\)</span> se los llama una bola (abierta) de centro <span class="math inline">\(C\)</span> con radio <span class="math inline">\(\varepsilon\)</span>. Se nota <span class="math inline">\(B_\varepsilon(C)\)</span></p>
+<h3 id="en-mathbbr">En <span class="math inline">\(\mathbb{R}\)</span></h3>
+<p>La distancia se mide con módulos.</p>
+<h3 id="en-mathbbrn">En <span class="math inline">\(\mathbb{R}^n\)</span></h3>
+<p>La norma es <span class="math inline">\(||(x_i, \dots)|| = \sqrt{\sum\limits x_i^2}\)</span>, y la distancia es <span class="math inline">\(d(P, Q) = ||P-Q||\)</span></p>
+<h2 id="apertura">Apertura</h2>
+<p>Un subconjunto <span class="math inline">\(S \in \mathbb{R}^n\)</span> es abierto <span class="math inline">\(\iff \;\forall s \in S \;\exists \varepsilon \mid
+B_{\varepsilon}(s) \subseteq S\)</span></p>
+<p><span class="math inline">\(S\)</span> es cerrado <span class="math inline">\(\iff\)</span> <span class="math inline">\(\mathbb{R}^n - S\)</span> es abierto.</p>
+<h2 id="propiedad">Propiedad</h2>
+<p>Se tiene que <span class="math inline">\(|P_x - Q_x| \leq d(P, Q)\)</span>, para todos puntos <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

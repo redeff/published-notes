@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/prac-2019-08-20/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="rec">Rec</h1>
+<p><span class="math inline">\(B \subseteq \mathbb{V}\)</span> es base <span class="math inline">\(\iff\)</span> <span class="math inline">\(B\)</span> es li y <span class="math inline">\(\langle B \rangle = \mathbb{V}\)</span></p>
+<h1 id="ejercicio-1">Ejercicio 1</h1>
+<p>Dado <span class="math inline">\(\mathbb{V}= \mathbb{K}_n[x] =  \{p \in \mathbb{K}[x] \mid p = 0 \text{ ó } \deg(p) \leq n\}\)</span>.</p>
+<p>Si <span class="math inline">\(B = \{p \mid \deg(p) = i | 0 \leq i \leq n\}\)</span>, demostrar que <span class="math inline">\(B\)</span> es base.</p>
+<h2 id="demo-1">Demo 1</h2>
+<p>La matriz en <span class="math inline">\(E = \{x^i \mid 0 \leq i \leq n\}\)</span> es triangular.</p>
+<h2 id="demo-2">Demo 2</h2>
+<p>Inducción. <span class="math inline">\(n = 0\)</span> es trivial.</p>
+<p>Si <span class="math inline">\(n \geq 1\)</span>, supongamos <span class="math inline">\(\sum\limits\lambda_iB_i = 0\)</span>. El coeficiente <span class="math inline">\(n\)</span> de ese polinomio tiene que ser cero, luego <span class="math inline">\(\lambda_n = 0\)</span>, luego <span class="math inline">\(0 = \sum\limits_{i &lt; n} \lambda_iB_i = 0\)</span>, pero esto no puede pasar por la hipótesis inductiva.</p>
+<h1 id="ejercicio-8">Ejercicio 8</h1>
+<p>Tomemos <span class="math inline">\(S = \left\{A \in \mathbb{K}^{n \times n} \; \middle| \; \sum\limits_j A_{ij} = 0 = \sum\limits_i A_{ij}\right\}\)</span></p>
+<p>Calcular <span class="math inline">\(\dim S\)</span>. Notemos que si dejamos libre los <span class="math inline">\(A_{ij}\)</span> con <span class="math inline">\(i &lt; n\)</span> y <span class="math inline">\(j &lt; n\)</span> y tomamos <span class="math inline">\(A_{nj} = -\sum\limits_{i &lt; n} A_{ij}\)</span>, y <span class="math inline">\(A_{in} = -\sum\limits_{j &lt; n} A_{ij}\)</span>, y <span class="math inline">\(A_{nn} = -\sum\limits_{i,j &lt; n} A_{ij}\)</span>, esta matriz cumple, y son todas las que cumplen.</p>
+<p>Luego da <span class="math inline">\(\dim S = (n-1)^2\)</span></p>
+<h1 id="intersección-y-suma-de-subespacios">Intersección y suma de subespacios</h1>
+<p>Dados <span class="math inline">\(S\)</span>, <span class="math inline">\(T\)</span> sub. de <span class="math inline">\(\mathbb{V}\)</span>, se tiene</p>
+<ul>
+<li><p><span class="math inline">\(S \cap T = S \cap T\)</span></p></li>
+<li><p><span class="math inline">\(S + T = \{s + t \mid s \in S, t \in T\}\)</span></p></li>
+<li><p><span class="math inline">\(S \oplus T = S + T\)</span> si están en suma directa, que se da cuando:</p>
+<ul>
+<li><p><span class="math inline">\(S \cap T = {0} \iff\)</span></p></li>
+<li><p><span class="math inline">\(\dim (S + T) = \dim S + \dim T \iff\)</span></p></li>
+<li><p><span class="math inline">\(\forall v \in S + T \; \exists! \; s \in S, t\in T \mid s + t = v\)</span></p></li>
+</ul></li>
+</ul>
+<h1 id="complemento">Complemento</h1>
+<p>Cuando <span class="math inline">\(S \oplus T = \mathbb{V}\)</span>, decimos que <span class="math inline">\(S\)</span> es complemento de <span class="math inline">\(T\)</span>. Se sabe que eso implica <span class="math inline">\(\dim S = n - \dim T\)</span>, es decir la dimensión de los complementos es toda la misma</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

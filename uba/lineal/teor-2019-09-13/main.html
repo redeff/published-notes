@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/teor-2019-09-13/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="espacio-dual" class="unnumbered">Espacio Dual</h1>
+<p>Dado <span class="math inline">\(\mathbb{V}\)</span> un <span class="math inline">\(\mathbb{K}\)</span>-ev, llamo el <em>dual</em> de <span class="math inline">\(\mathbb{V}\)</span> como <span class="math inline">\(\mathbb{V}^* =
+    \mathop{\mathrm{Hom}}_\mathbb{K}(\mathbb{V},\mathbb{K})\)</span>. Si <span class="math inline">\(\dim \mathbb{V}= n\)</span>, luego tenemos <span class="math inline">\(\dim \mathbb{V}^* = n \cdot 1 = n\)</span>.</p>
+<p>A los elementos <span class="math inline">\(f \in \mathbb{V}^*\)</span> se los llama <em>funcionales lineales</em>.</p>
+<h1 id="base-de-mathbbv" class="unnumbered">Base de <span class="math inline">\(\mathbb{V}^*\)</span></h1>
+<p>Dada una base <span class="math inline">\(\mathcal{B}\)</span>, definimos una familia de <span class="math inline">\(n\)</span> transformaciones lineales indejadas por <span class="math inline">\(1 \leq j \leq n\)</span>, definidas por: <span class="math inline">\(\phi_j = \mathcal{B}_i \mapsto
+    \begin{cases}
+        1 &amp; \text{Si $i = j$} \\
+        0 &amp; \text{osino}
+    \end{cases}\)</span>.</p>
+<p>Vamos a probar que <span class="math inline">\(\phi\)</span> es base, y vamos a llamarla la <em>base dual de <span class="math inline">\(\mathcal{B}\)</span></em>, o <span class="math inline">\(\mathcal{B}^*\)</span>.</p>
+<p>Demo: Como <span class="math inline">\(\dim \mathbb{V}^* = n\)</span>, alcanza con probar que los <span class="math inline">\(\phi\)</span> son <span class="math inline">\(\mathop{\mathrm{li}}\)</span>.</p>
+<p>Supongamos que <span class="math inline">\(0 = \sum\limits\lambda_i\phi_i\)</span>, luego evaluamos esta función nula en la base, y tenemos, para cada vector de la base <span class="math inline">\(\mathcal{B}_i\)</span>, se cumple</p>
+<p><span class="math display">\[0\;\mathcal{B}_i = \sum\limits\lambda_j \cdot \phi_j \mathcal{B}_i\]</span> Notemos que se anula para <span class="math inline">\(i \neq j\)</span>, luego <span class="math display">\[0\;\mathcal{B}_i = \lambda_i \cdot \phi_i \mathcal{B}_i\]</span> <span class="math display">\[0 = \lambda_i \cdot 1\]</span> <span class="math display">\[0 = \lambda_i\]</span> Entonces es li.</p>
+<h1 id="expresar-elementos-de-mathbbv-en-una-base" class="unnumbered">Expresar elementos de <span class="math inline">\(\mathbb{V}^*\)</span> en una base</h1>
+<p>Dado un <span class="math inline">\(\psi \in \mathbb{V}^*\)</span>. Se puede expresar como <span class="math display">\[\psi = \sum\limits\lambda_i \cdot \mathcal{B}^*_i\]</span> Para cada <span class="math inline">\(\mathcal{B}_j\)</span>, tomemos <span class="math display">\[\psi = \sum\limits\lambda_i \cdot \mathcal{B}^*_i\]</span> <span class="math display">\[\psi\mathcal{B}_j = \sum\limits\lambda_i \cdot \mathcal{B}^*_i \mathcal{B}_j\]</span> <span class="math display">\[\psi\mathcal{B}_j = \lambda_j \cdot \mathcal{B}^*_j \mathcal{B}_j\]</span> <span class="math display">\[\psi\mathcal{B}_j = \lambda_j\]</span> Luego los coeficientes en la base dual, son las imágenes de la base original.</p>
+<h1 id="bases-diferentes" class="unnumbered">Bases diferentes</h1>
+<p>Sea <span class="math inline">\(v\)</span> y <span class="math inline">\(w\)</span> bases de <span class="math inline">\(\mathbb{V}\)</span>, y sea <span class="math inline">\(\phi = v^*\)</span>, <span class="math inline">\(\psi = w^*\)</span> luego tenemos que: <span class="math display">\[C_{\psi\phi} = (C_{vw})^T\]</span> Sea <span class="math inline">\(C = C_{vw}\)</span>. Tenemos que <span class="math inline">\(v_j = \sum\limits C_{ij}w_i\)</span>.</p>
+<p>Notemos además que <span class="math inline">\(\psi_iv_j = C_{ij}\)</span>. Acordémonos que esto significa que <span class="math inline">\(\psi_i\)</span>.</p>
+<p>Notemos además que <span class="math inline">\(\psi_i = \sum\limits(\psi_i v_j) \cdot \phi_j = \sum\limits C_{ij}
+    \phi_j\)</span>. Luego estamos.</p>
+<h1 id="dual-del-dual" class="unnumbered">Dual del Dual</h1>
+<p>Dado un <span class="math inline">\(\mathbb{V}\)</span>, si tomamos su doble dual <span class="math inline">\(\mathbb{V}^{**}\)</span>, nos podemos definit la función:</p>
+<p><span class="math inline">\(\mathop{\mathrm{ev}}: \mathbb{V}\to (\mathbb{V}^* \to \mathbb{K}) = \mathbb{V}^{**}, \mathop{\mathrm{ev}}= v \mapsto \phi \mapsto
+    \phi v\)</span>.</p>
+<p>Notemos que <span class="math inline">\(\mathop{\mathrm{ev}}v\)</span> es lineal ya que <span class="math inline">\((\alpha \cdot \phi + \beta \cdot \psi)v = 
+    \alpha \cdot \phi v + \beta \cdot \psi v = \alpha \cdot \mathop{\mathrm{ev}}\phi + \beta
+    \cdot \mathop{\mathrm{ev}}\psi\)</span>.</p>
+<p>Además notemos que <span class="math inline">\(\mathop{\mathrm{ev}}\)</span> es lineal ya que <span class="math display">\[\mathop{\mathrm{ev}}(\alpha \cdot v + \beta \cdot w)\]</span><span class="math display">\[= \phi \mapsto \phi (\alpha \cdot v + \beta \cdot w)\]</span><span class="math display">\[= \phi \mapsto \alpha \cdot \phi v + \beta \cdot \phi w\]</span><span class="math display">\[= \phi \mapsto \alpha \cdot \mathop{\mathrm{ev}}v \phi + \beta \cdot \mathop{\mathrm{ev}}w \phi\]</span><span class="math display">\[= \alpha \cdot \mathop{\mathrm{ev}}v + \beta \cdot \mathop{\mathrm{ev}}w\]</span></p>
+<h1 id="mathopmathrmev-es-mono" class="unnumbered"><span class="math inline">\(\mathop{\mathrm{ev}}\)</span> es mono</h1>
+<p>Supongamos que <span class="math inline">\(\mathop{\mathrm{ev}}_v = 0\)</span>, es decir <span class="math inline">\(\forall \phi: \mathop{\mathrm{ev}}_v \phi = 0\)</span>, es decir, <span class="math inline">\(\forall \phi: \phi v = 0\)</span>.</p>
+<p>Si <span class="math inline">\(v \neq 0\)</span>, luego <span class="math inline">\(\mathop{\mathrm{li}}\{v\}\)</span>, luego existe una base <span class="math inline">\(v = \mathcal{B}_1\)</span> de <span class="math inline">\(\mathbb{V}\)</span>, luego tomemos <span class="math inline">\(\mathcal{B}^*_1\)</span>. Por definición <span class="math inline">\(\mathcal{B}^*_1v = 1\)</span>, pero contradicción , ya que <span class="math inline">\(\phi v = 0\)</span> para todo <span class="math inline">\(\phi\)</span>.</p>
+<h1 id="mathopmathrmev-es-epi-en-finitos" class="unnumbered"><span class="math inline">\(\mathop{\mathrm{ev}}\)</span> es epi en finitos</h1>
+<p>Si <span class="math inline">\(\dim \mathbb{V}= n\)</span>, luego <span class="math inline">\(\mathop{\mathrm{ev}}\)</span> es epi</p>
+<h1 id="anuladores" class="unnumbered">Anuladores</h1>
+<p>Dado <span class="math inline">\(X \subseteq\mathbb{V}\)</span>, decimos que el anulador de <span class="math inline">\(X\)</span>, notado <span class="math inline">\(X^0 \subseteq\mathbb{V}^*\)</span>, es el dado por <span class="math display">\[X^0 = \{\phi \in \mathbb{V}^* : \forall x \in X : fx = 0 \in \mathbb{K}\}\]</span></p>
+<h2 id="prop" class="unnumbered">Prop</h2>
+<ol>
+<li><p><span class="math inline">\(\{0\}^0 = \mathbb{V}^*\)</span> y <span class="math inline">\(\mathbb{V}^0 = \{0\}\)</span></p></li>
+<li><p><span class="math inline">\(X \subseteq Y \Rightarrow Y^0 \subseteq X^0\)</span></p></li>
+<li><p><span class="math inline">\(X^0 = \langle X \rangle ^0\)</span></p></li>
+<li><p><span class="math inline">\(S, T \subseteq\mathbb{V}\)</span> subespacios, luego:</p>
+<ul>
+<li><p><span class="math inline">\((S + T)^0 = S^0 \cap T^0\)</span></p></li>
+<li><p><span class="math inline">\(S^0 + T^0 \subseteq(S \cap T)^0\)</span></p></li>
+</ul></li>
+</ol>
+<h2 id="demo" class="unnumbered">Demo</h2>
+<ol>
+<li><p>Trivial</p></li>
+<li><p>Sea <span class="math inline">\(f \subseteq Y^0\)</span>, queremos probar que si <span class="math inline">\(x \in X\)</span>, luego <span class="math inline">\(fx = 0\)</span>, pero eso es verdad ya que <span class="math inline">\(x \in X \subseteq Y\)</span>.</p></li>
+<li><p>Queremos probar que si <span class="math inline">\(f \in X^0\)</span>, luego <span class="math inline">\(f \in \langle X^0
+            \rangle\)</span>. Sea <span class="math inline">\(v = \sum\limits\lambda_i \cdot x_i \in \langle X
+            \rangle\)</span>, luego tenemos que <span class="math inline">\(f v = \sum\limits\lambda_i \cdot fx_i = 0\)</span>, entonces <span class="math inline">\(f \in
+            \langle X \rangle ^ 0\)</span></p></li>
+<li><p><span class="math inline">\(S, T \subseteq\mathbb{V}\)</span> subespacios, luego:</p>
+<ul>
+<li><p>Si tenemos <span class="math inline">\(f \in S^0 \cap T^0\)</span>, queremos probar que <span class="math inline">\(f \in
+                    (S+T)^0\)</span>. Sea <span class="math inline">\(s + t \in S + T\)</span>, luego <span class="math inline">\(f (s+t) = fs + ft = 0\)</span>, luego estamos.</p></li>
+<li><p>Es trivial por el punto <span class="math inline">\(2\)</span>.</p></li>
+</ul></li>
+</ol>
+<h1 id="dinsion-s0" class="unnumbered">Dinsion <span class="math inline">\(S^0\)</span></h1>
+<p>Si tenemos <span class="math inline">\(\dim \mathbb{V}= n\)</span>, luego tomemos <span class="math inline">\(S\)</span> subesp de <span class="math inline">\(\mathbb{V}\)</span>. Demostremos que <span class="math inline">\(\dim S + \dim S^0 = n\)</span>.</p>
+<p>Sea <span class="math inline">\(r = \dim S\)</span>.</p>
+<p>Sea <span class="math inline">\(v\)</span> una base de <span class="math inline">\(\mathbb{V}\)</span> tal que <span class="math inline">\(v_{i &lt; r}\)</span> es base de <span class="math inline">\(S\)</span>, y sea <span class="math inline">\(\phi\)</span> se base dual, luego una <span class="math inline">\(\psi = \sum\limits\lambda_i \cdot \phi_i \in S^0 \iff
+    \forall i &lt; r : \psi v_i = 0 \iff \forall i &lt; r : \lambda_i = 0\)</span>, luego tenemos que <span class="math inline">\(S^0 = \langle \phi_{i \geq r} \rangle\)</span>.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

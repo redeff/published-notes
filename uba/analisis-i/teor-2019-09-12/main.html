@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/analisis-i/teor-2019-09-12/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="lagrange" class="unnumbered">Lagrange</h1>
+<p>Dada <span class="math inline">\(f: [a, b] \to \mathbb{R}\)</span> continua y derivable, tenemos que existe <span class="math inline">\(c\)</span> tal que: <span class="math display">\[\frac{fa - fb}{a-b}  = f&#39;c\]</span></p>
+<h1 id="cauchy" class="unnumbered">Cauchy</h1>
+<p>Dadas <span class="math inline">\(f, g: [a,b] \to \mathbb{R}\)</span>, contínuas en el cerrado, derivables en el aiberto, luego existe <span class="math inline">\(c\)</span> tal que: <span class="math display">\[\frac{fa-fb}{ga - gb} = \frac{f&#39;c}{g&#39;c}\]</span> Para evitar problemas con el <span class="math inline">\(0\)</span>, esto lo escribo como: <span class="math display">\[(fa-fb) \cdot g&#39;c = (ga - gb) \cdot f&#39;c\]</span></p>
+<p>Demo: tomamos <span class="math display">\[hx = 
+    (fa-fb) \cdot gx - (ga - gb) \cdot fx\]</span>una combinación lineal de <span class="math inline">\(f\)</span> y <span class="math inline">\(g\)</span>. Notemos que <span class="math display">\[h&#39;x = (fa-fb) \cdot g&#39;x - (ga - gb) \cdot f&#39;x\]</span> Entonces tenemos que <span class="math inline">\(h\)</span> es contínua y derivable.</p>
+<p>Notemos que <span class="math inline">\(ha = -fb \cdot ga + gb \cdot fa\)</span>, y <span class="math inline">\(hb = gb \cdot fa - fb \cdot
+ga\)</span>, luego <span class="math inline">\(ha = hb\)</span>, entonces por <em>Rolle</em> estamos.</p>
+<h1 id="taylor">Taylor</h1>
+<p>Dado <span class="math inline">\(f: (a-\varepsilon, a+\varepsilon) \to \mathbb{R}\)</span> de clase <span class="math inline">\(f \in \mathcal{C}^k\)</span>, decimos: <span class="math inline">\(P_{k-1}x = \sum\limits_{i &lt; k} \frac{f^{(i)}a}{i!}  \cdot (x-a)\)</span>, y nos queda <span class="math inline">\(fx = R_{ka}x + P_{k-1}x\)</span>, donde <span class="math inline">\(R_{ka}x = \frac{f^{(k)}c}{k!}(x-a)^k\)</span> para algún <span class="math inline">\(c \in (a, b)\)</span>.</p>
+<p>Demo: notemos que <span class="math inline">\(R_{ka}^{(i)}a\)</span> es <span class="math inline">\(0\)</span> para todo <span class="math inline">\(i &lt; k\)</span>. Y si tomamos <span class="math inline">\(Gx = (x-a)^k\)</span>, luego también <span class="math inline">\(G^{(i)}a = 0\)</span> para todo <span class="math inline">\(i &lt; k\)</span>.</p>
+<p>Además, notemos que <span class="math inline">\(G^{(k)}a = k!\)</span>, y <span class="math inline">\(R^{(k)}a = f&#39;a\)</span>.</p>
+<p>Tomemos <span class="math inline">\(\frac{Rx}{Gx} = \frac{Rx - Ra}{Gx-Ga} = \frac{R&#39;c_1}{G&#39;c_1}\)</span> para algún <span class="math inline">\(c_1\)</span>.</p>
+<p>Similarmente <span class="math inline">\(\frac{R&#39;c_1}{G&#39;c_1} = \frac{R&#39;c_1 - R&#39;a}{G&#39;c_1-G&#39;a} =
+\frac{R&#39;&#39;c_2}{G&#39;&#39;c_2}\)</span>,</p>
+<p>así siguiendo, tenemos que <span class="math inline">\(\frac{Rx}{Gx} = \frac{R^{(k)}c_k}{G^{(k)}c_k}\)</span> para algún <span class="math inline">\(c_k \in (a, x)\)</span>, y tenemos:</p>
+<p><span class="math display">\[\frac{Rx}{Gx} = \frac{f^{(k)}c}{k!} \iff Rx = \frac{f^{(k)}c}{k!} \cdot
+    (x-a)^k\]</span> Para algún <span class="math inline">\(c \in (x, a)\)</span>.</p>
+<p>Esto implica <span class="math inline">\(|Rx| \leq \frac{\min \{f^{(k)}c\}_{c \in (a,x)}}{k!} \cdot
+(x-a)^k\)</span>.</p>
+<p>Notemos que <span class="math inline">\(\lim\limits_{k \to \infty} \frac{(x-a)^k}{k!} = 0\)</span>, luego si podemos acotar las derivadas de <span class="math inline">\(f\)</span> en <span class="math inline">\((a, x)\)</span>, tenemos que el límite de los polinomios es la función en cada punto.</p>
+<p>Por ejemplo, para la unción <span class="math inline">\(\sin\)</span>, tenemos que el taylor cuadrático tiene <span class="math inline">\(R_2
+= \left|\cos c \cdot \frac{x^3}{3!}\right| \leq \frac{|x|^3}{3!}\)</span>, es decir, <span class="math inline">\(\sin x = x + \mathcal{O}(x^3)\)</span></p>
+<h1 id="tangentes" class="unnumbered">Tangentes</h1>
+<p>Cuando tomábamos la definición de derivada, teníamos que se definía por el límite:</p>
+<p><span class="math display">\[\lim\limits_{x \to p} \left|\frac{fx-fp}{x-p} -f&#39;p\right| = 0\]</span></p>
+<p>Que expresado en función a la recta tangente tenemos: <span class="math display">\[\lim\limits_{x \to p} \left|\frac{fx-[fp + (x-p) \cdot f&#39;p]}{x-p}\right| = 0\]</span></p>
+<p>Donde <span class="math inline">\([fp + (x-p) \cdot f&#39;p]\)</span> es la recta tangente.</p>
+<p>Equivalentemente, <span class="math inline">\(fx = fp + (x-p) \cdot f&#39;p + \mathop{\mathrm{o}}(x-p)\)</span></p>
+<h1 id="en-varias-dimensiones" class="unnumbered">En varias Dimensiones</h1>
+<p>Tomemos una <span class="math inline">\(f : A \to \mathbb{R}\)</span>, con <span class="math inline">\(A\)</span> un abierto de <span class="math inline">\(\mathbb{R}^n\)</span>. Y sea <span class="math inline">\(p \in A\)</span>.</p>
+<p>Vamos a querer buscar un plano tangente a la gráfica de <span class="math inline">\(f\)</span> en <span class="math inline">\((p, fp)\)</span>.</p>
+<p>El plano va a ser parametrizado por <span class="math inline">\(l = (x \mapsto fp
++ f&#39;p \cdot (x-p)) \in \mathbb{R}^n \to \mathbb{R}\)</span>, donde <span class="math inline">\((.)\)</span> es el producto escalar y <span class="math inline">\(f&#39;p \in \mathbb{R}^n\)</span>. Entonces queremos que el error tienda a <span class="math inline">\(0\)</span>, es decir:</p>
+<p><span class="math display">\[\lim\limits_{x \to p} \frac{fx-lx}{||x-p||} = 0 \iff\]</span></p>
+<p><span class="math display">\[\lim\limits_{x \to p} \frac{fx-[fp + (x-p) \cdot f&#39;p]}{||x-p||} = 0\]</span></p>
+<p>si tomamos una dirección específica <span class="math inline">\(d \in R^n\)</span>, podemos tomar el límite en la recta de la forma <span class="math inline">\(x = p + \lambda \cdot d\)</span> dirección, es decir: <span class="math display">\[\lim\limits_{\lambda \to 0} \frac{f(p + \lambda \cdot d)-
+    l(p + \lambda \cdot d)}{|\lambda| \cdot ||d||} = 0 \iff\]</span></p>
+<p><span class="math display">\[\lim\limits_{\lambda \to 0} \frac{f(p + \lambda \cdot d)-
+    [fp + (\lambda \cdot d) \cdot f&#39;p]}{|\lambda| \cdot ||d||} = 0 \iff\]</span></p>
+<p>Si tomamos <span class="math inline">\(d = (1, 0)\)</span>, tenemos la derivada parcial, que se nota <span class="math display">\[\frac{\partial f}{\partial x_i} (p) =
+    \lim\limits_{\lambda \to 0} \frac{f(p + \lambda \cdot e_i)-
+    fp}{\lambda}\]</span></p>
+<h1 id="diferenciabilidad" class="unnumbered">Diferenciabilidad</h1>
+<p>Dada una función <span class="math inline">\(f : A \to \mathbb{R}\)</span>, y <span class="math inline">\(p \in A\)</span>, se dice <span class="math inline">\(f\)</span> <em>diferenciable</em> en <span class="math inline">\(p\)</span> sii:</p>
+<ul>
+<li><p>existen las derivadas parciales <span class="math inline">\(\frac{\partial f}{\partial x_i}(p)\)</span></p></li>
+<li><p><span class="math inline">\(\lim\limits_{x \to p} \frac{fx-\left[fp + \left(\frac{\partial f}{\partial x_i}
+            (p)\right)_i \cdot (x-p)\right]}{||x-p||} = 0\)</span></p></li>
+</ul>
+<p>Vimos que para que un plano tangente ande, necesariamente <span class="math inline">\(f&#39; p =
+\left(\frac{\partial f}{\partial x_i} (p)\right)_i\)</span>.</p>
+<h1 id="derivada-direccional" class="unnumbered">Derivada Direccional</h1>
+<p>Dado <span class="math inline">\(d \in \mathbb{R}^n\)</span>, se define:</p>
+<p><span class="math display">\[\frac{\partial f}{\partial d}(p) =
+    \lim\limits_{\lambda \to 0} \frac{f(p + \lambda \cdot d)-
+    fp }{|\lambda| \cdot ||d||}\]</span></p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

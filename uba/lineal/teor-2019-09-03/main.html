@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/teor-2019-09-03/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="transformaciones-lineales">Transformaciones Lineales</h1>
+<p>Dada una <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}\)</span>, decimos que es trans. lineal iff <span class="math inline">\(f (a+b) = fa + fb\)</span> y <span class="math inline">\(f (\lambda \cdot a) = \lambda \cdot f a\)</span></p>
+<h1 id="monomorfismo">Monomorfismo</h1>
+<p><span class="math inline">\(\mathop{\mathrm{tl}}f\)</span> es <em>monomorfismo</em> iff <span class="math inline">\(\forall L \in \mathbb{V}: L \mathop{\mathrm{li}}\Rightarrow fL \mathop{\mathrm{li}}\)</span></p>
+<h1 id="epimorfismo">Epimorfismo</h1>
+<p><span class="math inline">\(\mathop{\mathrm{tl}}f\)</span> es <em>epimorfismo</em> iff <span class="math inline">\(\forall L \in \mathbb{V}: \langle L\rangle = \mathbb{V}\Rightarrow\langle fL\rangle = \mathbb{W}\)</span></p>
+<h1 id="isomorfismo">Isomorfismo</h1>
+<p>Una transformación lineal <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}\)</span> es <em>isomorfismo</em> iff existe <span class="math inline">\(g : \mathbb{W}\to \mathbb{V}\)</span> tal que <span class="math inline">\(f \circ g = \mathop{\mathrm{Id}}_\mathbb{W}\)</span>, y <span class="math inline">\(g \circ f = \mathop{\mathrm{Id}}_\mathbb{V}\)</span>.</p>
+<h2 id="prop">Prop</h2>
+<p>Dada <span class="math inline">\(\mathop{\mathrm{tl}}f\)</span>, es isomorfismo iff es bijectiva. Si <span class="math inline">\(f\)</span> es isomorfismo por definición es biyectiva.</p>
+<p>Supongamos entonces que <span class="math inline">\(f\)</span> tiene una inversa <span class="math inline">\(g\)</span>, vamos a probar que <span class="math inline">\(\mathop{\mathrm{tl}}g\)</span>. Notemos que: <span class="math display">\[g v + g w = g (f (g v + gw))  = g (f(gv) + f(gw)) = g(v + w)\]</span> y <span class="math display">\[\lambda \cdot (g v) = g(f(\lambda \cdot g(v))) = g (\lambda \cdot f(g(v))) =
+g (\lambda \cdot v)\]</span></p>
+<h2 id="prop-1">Prop</h2>
+<p>Los isomorfismos son epi y mono, luego mandan bases a bases.</p>
+<h1 id="espacios-isomorfos">Espacios Isomorfos</h1>
+<p>Decimos que <span class="math inline">\(\mathbb{V}\)</span> y <span class="math inline">\(\mathbb{W}\)</span> es pacios vectoriales son <em>isomorfos</em> (<span class="math inline">\(\mathbb{V}\cong \mathbb{W}\)</span>) si hay un simorfismo entre ellos. Es to es claramente una relación de equivalencia.</p>
+<h2 id="notación">Notación</h2>
+<p>Las funciones <span class="math inline">\(f : A^\mathbb{N}\)</span> con finitos elementos no nulos se escriben <span class="math inline">\(f : A^{(\mathbb{N})}\)</span>.</p>
+<h1 id="prop-2">Prop</h1>
+<p>Dada <span class="math inline">\(\mathop{\mathrm{tl}}f : \mathbb{V}\to \mathbb{W}\)</span>, son equivalentes:</p>
+<ul>
+<li><p><span class="math inline">\(\mathop{\mathrm{iso}}f\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{Nu}}f = \{0\}\)</span> y <span class="math inline">\(\mathop{\mathrm{Im}}f = \mathbb{W}\)</span>.</p></li>
+<li><p><span class="math inline">\(B\)</span> base de <span class="math inline">\(\mathbb{V}\)</span> implica <span class="math inline">\(f B\)</span> base de <span class="math inline">\(\mathbb{W}\)</span>.</p></li>
+</ul>
+<h1 id="dimesión-de-espacios-isomorfos">Dimesión de Espacios Isomorfos</h1>
+<p>Todos los <span class="math inline">\(\mathbb{K}\)</span> espacios vectoriales de dimensión finita <span class="math inline">\(n\)</span> (con <span class="math inline">\(n \in \mathbb{N}\)</span> fijo) son isomorfos entre sí.</p>
+<h1 id="teorema-de-la-dimensión-2.0">Teorema de la Dimensión 2.0</h1>
+<p>Dados <span class="math inline">\(\mathbb{V}\)</span> y <span class="math inline">\(\mathbb{W}\)</span> ev, y <span class="math inline">\(\mathop{\mathrm{tl}}f: \mathbb{V}\to \mathbb{W}\)</span> son equivalentes:</p>
+<ul>
+<li><p><span class="math inline">\(\dim \mathbb{V}\in \mathbb{N}\)</span></p></li>
+<li><p><span class="math inline">\(\dim \mathop{\mathrm{Nu}}f, \dim \mathop{\mathrm{Im}}f \in \mathbb{N}\)</span></p></li>
+</ul>
+<p>Y si se cumple esto tenemos <span class="math inline">\(\dim \mathbb{V}= \dim \mathop{\mathrm{Nu}}f + \dim \mathop{\mathrm{Im}}f\)</span> Esto se demuestra ya que podemos tener una base <span class="math inline">\(B = B_I + B_N\)</span> de <span class="math inline">\(\mathbb{V}\)</span> donde <span class="math inline">\(B_N\)</span> es base de <span class="math inline">\(\mathop{\mathrm{Nu}}f\)</span>. Luego tenemos que <span class="math inline">\(f B_I\)</span> es base de <span class="math inline">\(\mathop{\mathrm{Im}}f\)</span>, ya que para todo <span class="math inline">\(w \in \mathop{\mathrm{Im}}f\)</span> nos podemos encontrar <span class="math inline">\(v : fv = w\)</span>, y si lo expresamos como combinación lineal de <span class="math inline">\(B\)</span>, cuando lo pasemos por <span class="math inline">\(f\)</span> todos los elementos de <span class="math inline">\(B\)</span> que no estén en <span class="math inline">\(B_I\)</span> van a ser <span class="math inline">\(0\)</span>, luego todo vector <span class="math inline">\(w \in \mathop{\mathrm{Im}}f\)</span> va a set combinación lineal de <span class="math inline">\(f B_I\)</span>.</p>
+<p>Luego <span class="math inline">\(\dim \mathbb{V}= |B| = |B_I| + |B_N| = \dim \mathop{\mathrm{Im}}f + \dim \mathop{\mathrm{Nu}}f\)</span></p>
+<p>Para el otro lado, supongamos <span class="math inline">\(u_i\)</span> base de <span class="math inline">\(\mathop{\mathrm{Nu}}f\)</span> y <span class="math inline">\(f v_i\)</span> base de <span class="math inline">\(\mathop{\mathrm{Im}}f\)</span>.</p>
+<p>Luego para todo <span class="math inline">\(x \in \mathbb{V}\)</span>, notemos que <span class="math inline">\(fx = \sum\limits\lambda_i \cdot f v_i = f \sum\limits\lambda_i \cdot v_i\)</span>, luego <span class="math inline">\(f \left(x - \sum\limits\lambda_i \cdot v_i\right) = 0\)</span>, pero luego, de forma única, <span class="math inline">\(x - \sum\limits\lambda_i \cdot v_i = \sum\limits\mu_i \cdot u_i\)</span>, es decir, <span class="math inline">\(x = \sum\limits\lambda_i \cdot v_i + \sum\limits\mu_i \cdot u_i\)</span>, de forma única, luego <span class="math inline">\(v \cup u\)</span> es una base de <span class="math inline">\(\mathbb{V}\)</span>.</p>
+<h2 id="corolarios">Corolarios</h2>
+<p>Si <span class="math inline">\(f\)</span> es epi y <span class="math inline">\(\dim \mathbb{V}&lt; \infty\)</span>, tenemos que <span class="math inline">\(\dim \mathbb{W}\leq \dim \mathbb{V}\)</span>.</p>
+<p>Si <span class="math inline">\(f\)</span> es mono y <span class="math inline">\(\dim \mathbb{W}&lt; \infty\)</span>, tenemos que <span class="math inline">\(\dim \mathbb{V}\leq \dim \mathbb{W}\)</span>.</p>
+<h1 id="dimensiones-y-morfismos">Dimensiones y Morfismos</h1>
+<p>Si tenemos <span class="math inline">\(\mathbb{V}\)</span> y <span class="math inline">\(\mathbb{W}\)</span> de dimensión finita y una <span class="math inline">\(\mathop{\mathrm{tl}}f : \mathbb{V}\to \mathbb{W}\)</span>, entonces son equivalentes:</p>
+<ul>
+<li><p><span class="math inline">\(\mathop{\mathrm{iso}}f\)</span></p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{mono}}f\)</span></p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{epi}}f\)</span></p></li>
+</ul>
+<p>Sale trivial por el teorema de la dimensión.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

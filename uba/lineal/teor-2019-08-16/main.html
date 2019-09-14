@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/teor-2019-08-16/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Clase 2 de Álgebra Lineal</h1>
+</header>
+<h1 id="subespacio-propio">Subespacio Propio</h1>
+<p>Los subespacios de <span class="math inline">\(\mathbb{V}\)</span> dintintos de <span class="math inline">\(\mathbb{V}\)</span> y de <span class="math inline">\(\{0\}\)</span> (el subespacio nulo)</p>
+<h2 id="ej">Ej</h2>
+<p>Si <span class="math inline">\(\mathbb{V}= \mathbb{R}^{[0, 1]}\)</span>, y <span class="math inline">\(S = \{f \in \mathbb{V}\mid f \; cont\}\)</span>, <span class="math inline">\(S\)</span> es sub. propio</p>
+<h1 id="intersección-de-subespacios">Intersección de Subespacios</h1>
+<p>Si <span class="math inline">\(S\)</span> y <span class="math inline">\(T\)</span> son subespacios de <span class="math inline">\(\mathbb{V}\)</span>, luego <span class="math inline">\(S \cap T\)</span> es sub. de <span class="math inline">\(\mathbb{V}\)</span>, y en gral, si <span class="math inline">\(\mathcal{W}\)</span> es un conjunto de subespacios, luego <span class="math inline">\(\mathbb{U}= \bigcap_{\mathbb{W}\in \mathcal{W}} \mathbb{W}\)</span> es subespacio</p>
+<p>Demo</p>
+<p>Notemos que <span class="math inline">\(0 \in \mathbb{U}\)</span> ya que <span class="math inline">\(0 \in \mathbb{W}\; \forall \mathbb{W}\in \mathcal{W}\)</span></p>
+<p>Notemos que si <span class="math inline">\(v, w \in \mathbb{U}\)</span>, luego para todo <span class="math inline">\(\mathbb{W}\in \mathcal{W}\)</span>, tenemos <span class="math inline">\(v, w \in \mathbb{W}\)</span>, que implica <span class="math inline">\(v + w \in \mathbb{W}\)</span> ya que es subespacio</p>
+<p>Notemos que si <span class="math inline">\(v \in \mathbb{U}\)</span> y <span class="math inline">\(\lambda \in \mathbb{K}\)</span>, luego para todo <span class="math inline">\(\mathbb{W}\in \mathcal{W}\)</span> tenemos <span class="math inline">\(\lambda v \in \mathbb{W}\)</span>, ya que es subespacio</p>
+<h1 id="unión-de-subespacios">Unión de subespacios</h1>
+<p>La unión de dos subespacios <span class="math inline">\(\mathbb{S}\cap \mathbb{T}\)</span> de <span class="math inline">\(\mathbb{V}\)</span> es sub <span class="math inline">\(\iff\)</span> <span class="math inline">\(\mathbb{S}\subseteq \mathbb{T}\)</span> ó <span class="math inline">\(\mathbb{T}\subseteq \mathbb{S}\)</span></p>
+<p>Demo</p>
+<p>Si se cumple la pertenencia claramente es subespacio</p>
+<p>Si no, tomemos <span class="math inline">\(v \in \mathbb{S}- \mathbb{T}\)</span>, y <span class="math inline">\(u \in \mathbb{T}- \mathbb{S}\)</span>, luego para que sea subespacio tenemos que <span class="math inline">\(v + u \in \mathbb{S}\cup \mathbb{T}\)</span>, wlog <span class="math inline">\(u + v \in \mathbb{S}\)</span>, pero <span class="math inline">\(v \in \mathbb{S}\)</span>, luego <span class="math inline">\(u \in \mathbb{S}\)</span>, contradicción.</p>
+<h1 id="combinaciones-lineales">Combinaciones lineales</h1>
+<p>Sea <span class="math inline">\(\mathbb{V}\)</span> un <span class="math inline">\(\mathbb{K}\)</span>-espac vectorial, y sea <span class="math inline">\(\emptyset \neq X \in \mathbb{V}\)</span>, luego <span class="math inline">\(\langle X \rangle = \left\{\sum\limits_{i \leq n}\lambda_ix_i \;\middle|\;
+\begin{matrix}
+x_i \in X\\ \lambda_i \in \mathbb{K}\\ n \in \mathbb{N}
+\end{matrix}
+\right\}\)</span> Nótese que todas las sumas son de finitos términos</p>
+<h2 id="langle-x-rangle-es-subespacio"><span class="math inline">\(\langle X \rangle\)</span> es subespacio</h2>
+<p>dado <span class="math inline">\(X \in \mathbb{V}\)</span>, el generado por <span class="math inline">\(X\)</span> (<span class="math inline">\(\langle X \rangle\)</span>) es un subespacio de <span class="math inline">\(\mathbb{V}\)</span> que contiene a <span class="math inline">\(X\)</span></p>
+<p>Demo</p>
+<p>Notemos que el <span class="math inline">\(0 \in X\)</span></p>
+<p>Si <span class="math inline">\(u, v \in \langle X \rangle\)</span>, luego <span class="math inline">\(u = \sum\limits\lambda_ix_i\)</span>, y <span class="math inline">\(v = \sum\limits\mu_ix_i\)</span> (los <span class="math inline">\(x\)</span>s que aparecían en una y no en otra le pongo coeficiente <span class="math inline">\(0\)</span>), entonces <span class="math inline">\(u + v = \sum\limits(\lambda_i + \mu_i)x_i \in \langle X\rangle\)</span></p>
+<p>Si <span class="math inline">\(v \in \langle X \rangle\)</span>, luego <span class="math inline">\(v = \sum\limits\lambda_i x_i\)</span>, luego para todo <span class="math inline">\(\mu \in \mathbb{K}\)</span> tenemos <span class="math inline">\(\mu v = \sum\limits(\mu\lambda_i) x_i \in \langle X \rangle\)</span></p>
+<h2 id="langle-x-rangle-es-el-subespacio-más-chico"><span class="math inline">\(\langle X \rangle\)</span> es el subespacio más chico</h2>
+<p>Supongamos que <span class="math inline">\(X \subseteq \mathbb{T}\)</span>, <span class="math inline">\(\mathbb{T}\)</span> sub. Notemos que <span class="math inline">\(\langle X \rangle \subseteq \mathbb{T}\)</span> ya que por ser subespacio, <span class="math inline">\(\mathbb{T}\)</span> contiene todas las combinaciones lineales de cosas en <span class="math inline">\(X\)</span></p>
+<p>Decimos que <span class="math inline">\(\langle\{\}\rangle = \{0\}\)</span></p>
+<h2 id="otra-definición-de-generador">Otra definición de generador</h2>
+<p>Sea <span class="math inline">\(U = \bigcap_{
+    \begin{matrix}
+        S \text{ sub. } V \\
+        X \subseteq S
+    \end{matrix}
+} S\)</span>, vamos a ver <span class="math inline">\(U = \langle X\rangle\)</span></p>
+<p>Es claro que <span class="math inline">\(X\)</span> está contenido en la intersección pq está contenido en cada uno, y además la intersección es subespacio pq es intersección de subespacios, luego <span class="math inline">\(\langle X \rangle \subseteq U\)</span></p>
+<p>Además <span class="math inline">\(\langle X \rangle\)</span> es uno de los elementos de la intersección, luego <span class="math inline">\(U \subseteq \langle X\rangle\)</span></p>
+<h1 id="dependencia-lineal">Dependencia Lineal</h1>
+<p>Dado <span class="math inline">\(X \subseteq \mathbb{V}\)</span>, <span class="math inline">\(X = \{x_i\}\)</span> es linearmente independiente si cuando <span class="math inline">\(\sum\limits\lambda_i x_i = 0\)</span>, entonces <span class="math inline">\(\lambda_i = 0\)</span></p>
+<p>Para <span class="math inline">\(X\)</span> infinito, se dice que <span class="math inline">\(X\)</span> es LI si todo subconjunto finito de <span class="math inline">\(X\)</span> es LI</p>
+<p>Notemos que <span class="math inline">\(\emptyset\)</span> es LI, y que si <span class="math inline">\(0 \in X\)</span>, luego X es LD</p>
+<h2 id="prop">Prop</h2>
+<p>Si <span class="math inline">\(X \subseteq Y\)</span>, entonces <span class="math inline">\(X\)</span> ld implica <span class="math inline">\(Y\)</span> ld, y <span class="math inline">\(Y\)</span> li implica <span class="math inline">\(X\)</span> li</p>
+<h2 id="independencia-iff-unicidad-de-representación">Independencia <span class="math inline">\(\iff\)</span> unicidad de representación</h2>
+<p>Tenemos que <span class="math inline">\(X\)</span> es li <span class="math inline">\(\iff\)</span> para todos <span class="math inline">\(\sum\limits\lambda_ix_i = \sum\limits\mu_ix_i\)</span> se tiene <span class="math inline">\(\lambda_i = \mu_i\)</span></p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

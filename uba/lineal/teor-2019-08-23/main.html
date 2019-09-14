@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/teor-2019-08-23/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="teorema">Teorema</h1>
+<p>Para <span class="math inline">\(\mathbb{V}\)</span> finitamente ganerado. Si <span class="math inline">\(\langle X \rangle = \mathbb{V}\)</span> y <span class="math inline">\(Y \subseteq \mathbb{V}\)</span> es li, luego <span class="math inline">\(\# X \geq \#Y\)</span>.</p>
+<h2 id="demo">Demo</h2>
+<p>Como genera, tenemos <span class="math inline">\(Y_i = \sum\limits\lambda_{ij} X_j\)</span>. Consideremos el sist. homogeneo dado por:</p>
+<p><span class="math inline">\(\sum\limits_j \lambda_{ij} x_{i} = 0\)</span> para <span class="math inline">\(i &lt; \# X\)</span></p>
+<p>Sea <span class="math inline">\(\beta_{i &lt; \# Y}\)</span> una solución del sistema.</p>
+<p>Consideremos:</p>
+<p><span class="math display">\[\sum\limits_i \beta_i Y_i\]</span> <span class="math display">\[\sum\limits_i \beta_i \left(\sum\limits_j \lambda_{ij} X_j\right)\]</span> <span class="math display">\[\sum\limits_i \sum\limits_j \beta_i \lambda_{ij} X_j\]</span> <span class="math display">\[\sum\limits_j \sum\limits_i \beta_i \lambda_{ij} X_j\]</span> <span class="math display">\[\sum\limits_j X_j \left(\sum\limits_i \beta_i \lambda_{ij} \right)\]</span> <span class="math display">\[\sum\limits_j X_j \cdot 0 = 0\]</span></p>
+<p>Contonces tomamos una combinación lineal de los <span class="math inline">\(Y\)</span> y nos dio <span class="math inline">\(0\)</span>, luego necesariamente <span class="math inline">\(\beta_i = 0\)</span>, entonces la única solución del sistema lineal es la trivial, por lo que necesariamente tiene más ecuaciones que incógnitas.</p>
+<h2 id="corolario">Corolario</h2>
+<p>Todas las bases de un <span class="math inline">\(\mathbb{V}\)</span> f.g. tienen el mismo cardinal.</p>
+<p>Notar que si un conjunto tiene una base finita, entonces todas sus bases son finitas.</p>
+<p>Notar que <span class="math inline">\(\dim_\mathbb{K}\mathbb{V}= 0 \iff \mathbb{V}= \{0\}\)</span></p>
+<h1 id="dimensión">Dimensión</h1>
+<p>Si <span class="math inline">\(\mathbb{V}\)</span> un <span class="math inline">\(\mathbb{K}\)</span>-es.vec. es f.g. la dimensión de <span class="math inline">\(\mathbb{V}\)</span> (<span class="math inline">\(\dim_\mathbb{K}\mathbb{V}\)</span>) es el cardinal de cada una de sus bases.</p>
+<p>Si <span class="math inline">\(\mathbb{V}\)</span> no es f.g., decimos <span class="math inline">\(\dim_\mathbb{K}\mathbb{V}= \infty\)</span></p>
+<h1 id="espacios-infinitos">Espacios Infinitos</h1>
+<p>Si <span class="math inline">\(\mathbb{V}\)</span> no es f.g., luego existe un subconjunto infinito <span class="math inline">\(X \subseteq \mathbb{V}\)</span> que es l.i.</p>
+<p>Demo: Vamos a probar que <span class="math display">\[\forall i \in \mathbb{N}_0 \; \exists X_i \in \mathbb{V}\mid \#X_i = i  \;
+\text{y} \; 
+X_i \; \text{l.i.} \; \text{y} \; X_{i-1} \subseteq X_i\]</span> Y con eso alcanza porque tomamos <span class="math inline">\(X = \bigcup X_i\)</span></p>
+<p>Vamos a demostrar por inducción. Para <span class="math inline">\(i = 0\)</span> tomamos <span class="math inline">\(X_0 = \emptyset\)</span>.</p>
+<p>Para <span class="math inline">\(n+1\)</span>, dado que ya construimos <span class="math inline">\(X_n\)</span> li, queremos construir <span class="math inline">\(X_{n+1}\)</span> li que lo contiene.</p>
+<p>Es claro que podemos encontrar uno, ya que osinó <span class="math inline">\(X_n\)</span> sería un conjunto li maximal, osea que sería una base, entonces <span class="math inline">\(\mathbb{V}\)</span> era finitamente generado.</p>
+<h1 id="dimensión-de-subespacios">Dimensión de Subespacios</h1>
+<p>Sea <span class="math inline">\(\mathbb{V}\)</span> tal que <span class="math inline">\(\dim \mathbb{V}= n\)</span>. Sea <span class="math inline">\(\mathbb{U}\)</span> subesp. de <span class="math inline">\(\mathbb{V}\)</span>. Notemos que <span class="math inline">\(\mathbb{U}\)</span> tiene dimensión finita y <span class="math inline">\(\dim \mathbb{U}\leq \dim \mathbb{V}\)</span>.</p>
+<p>Notemos que si <span class="math inline">\(\mathbb{U}\)</span> fuese de dimensión infinita, podríamos encontrarnos un subconj. de <span class="math inline">\(\mathbb{U}\)</span> li de tamaño arbitrario. En particular de tamaño <span class="math inline">\(n+1\)</span>, entonces habría <span class="math inline">\(n+1\)</span> vectores li en <span class="math inline">\(\mathbb{V}\)</span>, por qlo que no puede tener dimensión <span class="math inline">\(\dim \mathbb{V}= n\)</span>.</p>
+<p>Luego <span class="math inline">\(\mathbb{U}\)</span> tiene una base finita <span class="math inline">\(X\)</span>. Tendremos que <span class="math inline">\(X\)</span> es li., y además <span class="math inline">\(X \subseteq \mathbb{V}\)</span>, pero luego necesariamente <span class="math inline">\(\# X \leq \dim \mathbb{V}\)</span> (pq son li), entonces ya está.</p>
+<h2 id="si-las-dimensiones-son-iguales">Si las dimensiones son iguales</h2>
+<p>Supongamos que <span class="math inline">\(\mathbb{U}\subseteq \mathbb{V}\)</span> es subespacio de <span class="math inline">\(\mathbb{V}\)</span> y que <span class="math inline">\(\dim \mathbb{U}= \dim \mathbb{V}\)</span>. Qvq <span class="math inline">\(\mathbb{U}= \mathbb{V}\)</span></p>
+<p>Supongamos que no, luego existe un <span class="math inline">\(v \in \mathbb{V}- \mathbb{U}\)</span>, luego tomemos una base <span class="math inline">\(\# B = \dim \mathbb{V}\)</span> de <span class="math inline">\(\mathbb{U}\)</span>, luego <span class="math inline">\(v\)</span> no es generado por <span class="math inline">\(B\)</span>, ya que osinó <span class="math inline">\(v \in \mathbb{U}\)</span>, luego necesariamente <span class="math inline">\(B \cap \{v\}\)</span> es li. Contradicción porque existe un conjunto de <span class="math inline">\(n+1\)</span> vectores li.</p>
+<h1 id="caracterizando-las-bases">Caracterizando las Bases</h1>
+<p>Sea <span class="math inline">\(\dim \mathbb{V}= n\)</span> y sea <span class="math inline">\(X \subseteq \mathbb{V}\mid \#X = n\)</span>. demostremos que: <span class="math display">\[X \;\text{li} \iff \langle X \rangle = \mathbb{V}\iff X \;\text{base}\]</span></p>
+<p>Supongamos que <span class="math inline">\(X\)</span> es li. Luego notemos que <span class="math inline">\(X\)</span> es base de <span class="math inline">\(\langle X \rangle\)</span>, luego <span class="math inline">\(\dim \langle X \rangle = n\)</span>, luego <span class="math inline">\(\langle X \rangle = \mathbb{V}\)</span>.</p>
+<p>Supongamos que <span class="math inline">\(\langle X \rangle = \mathbb{V}\)</span>. Notemos que para cualquier <span class="math inline">\(Y \subsetneq X\)</span> tenemos <span class="math inline">\(\# Y &lt; n\)</span>, luego <span class="math inline">\(\langle Y \rangle \neq \mathbb{V}\)</span>, ya que osinó <span class="math inline">\(\dim \mathbb{V}\leq n-1\)</span>. Entonces <span class="math inline">\(X\)</span> es generador minimal.</p>
+<h1 id="agrandando-bases">Agrandando Bases</h1>
+<p>Dado <span class="math inline">\(\mathbb{V}\)</span> de dimensión <span class="math inline">\(\dim \mathbb{V}= n\)</span>. Sea <span class="math inline">\(X\subseteq\mathbb{V}\)</span> li, luego existe <span class="math inline">\(X \subseteq B \subseteq\mathbb{V}\)</span> tal que <span class="math inline">\(B\)</span> base de <span class="math inline">\(\mathbb{V}\)</span>.</p>
+<p>Sea <span class="math inline">\(\Gamma = \{Y \subseteq\mathbb{V}\mid X \subseteq Y \;\text{y}\; Y \;\text{li}\}\)</span>. Notemos que lis cardinales de <span class="math inline">\(Y \in \Gamma\)</span> están acotados por <span class="math inline">\(n\)</span>, luego tomemeos un <span class="math inline">\(Y \in \Gamma\)</span> de cardinal máximo.</p>
+<p>Si <span class="math inline">\(\# Y = n\)</span> ya estamos. Notemos que <span class="math inline">\(Y\)</span> es un conjunto li maximal. Luego es base de <span class="math inline">\(\mathbb{V}\)</span>, luego <span class="math inline">\(\# Y = n\)</span>, ya estamos.</p>
+<h1 id="suma-de-subespacios">Suma de Subespacios</h1>
+<p>Dado <span class="math inline">\(S, T \subseteq\mathbb{V}\)</span> subespacios, se define: <span class="math display">\[S + T = \{s + t \mid s \in S, t\in T\}\]</span></p>
+<p>Demostremos <span class="math inline">\(S + T\)</span> subespacio. Notemos</p>
+<ul>
+<li><p><span class="math inline">\(S + T \neq \emptyset\)</span></p></li>
+<li><p>dados <span class="math inline">\(v, w \in S + T\)</span> tomemos <span class="math inline">\(s + t = v\)</span>, <span class="math inline">\(s&#39; + t&#39; = w\)</span>, luego <span class="math inline">\(v + w = (s + s&#39;) + (t + t&#39;) \in S+T\)</span></p></li>
+<li><p>dado <span class="math inline">\(v \in S + T\)</span> y <span class="math inline">\(k \in \mathbb{K}\)</span>, notemos <span class="math inline">\(v = s + t\)</span>, luego <span class="math inline">\(k \cdot v =
+        k \cdot t + k \cdot s \in S + T\)</span>.</p></li>
+</ul>
+<p>Demostremos <span class="math inline">\(S + T = \langle S \cup T\rangle\)</span>. Tenemos claramente <span class="math inline">\(S \cup T \subseteq S + T\)</span>, además como es subespacio, tenemos <span class="math inline">\(\langle S \cup T \rangle \subseteq S + T\)</span>.</p>
+<p>Además claramente todo <span class="math inline">\(v \in S + T\)</span> es una combinación lineal de cosas de <span class="math inline">\(S \cup T\)</span>, luego <span class="math inline">\(S + T \subseteq\langle S \cup T \rangle\)</span>, y ya estamos.</p>
+<h1 id="teorema-de-la-dimensión">Teorema de la Dimensión</h1>
+<p>Dados <span class="math inline">\(S, T\)</span> subespacios de <span class="math inline">\(\mathbb{V}\)</span> con <span class="math inline">\(\dim \mathbb{V}= n\)</span>, se tiene: <span class="math display">\[\dim S + T = \dim S + \dim T - \dim S \cap T\]</span></p>
+<p>Sea <span class="math inline">\(B\)</span> base de <span class="math inline">\(S \cap T\)</span>. Tomemos <span class="math inline">\(B \subseteq B_T\)</span> base de <span class="math inline">\(T\)</span> y <span class="math inline">\(B \subseteq B_S\)</span> base de <span class="math inline">\(S\)</span>. Tomemos <span class="math inline">\(B_{S + T} = B_S \cup B_T\)</span>.</p>
+<p>Notemos que <span class="math inline">\(B_S \cap B_T\)</span> es <span class="math inline">\(B\)</span>, ya que si hubiera <span class="math inline">\(v \in B_S \cap B_T - B\)</span>, tendríamos que <span class="math inline">\(B\)</span> no es li maximal (<span class="math inline">\(v\)</span> es li con <span class="math inline">\(B\)</span>).</p>
+<p>Supogamos además que Hay una combinación lineal de <span class="math inline">\(B_{S+T}\)</span> que da 0, contradicción. Entonces <span class="math inline">\(B_{S + T}\)</span> es uba base.</p>
+<p>Notemos <span class="math inline">\(\# B_{S + T} = \# B_S + \# B_T - \# B = \dim S + \dim T - \dim S \cap T\)</span></p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

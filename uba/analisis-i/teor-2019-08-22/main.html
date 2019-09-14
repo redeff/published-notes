@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/analisis-i/teor-2019-08-22/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="espacio">Espacio</h1>
+<p>Se trabaja en el espacio <span class="math inline">\(\mathbb{R}^d\)</span>, que es el espacio euclídeo <span class="math inline">\(d\)</span>-dimensional.</p>
+<h2 id="espacio-vectorial">Espacio Vectorial</h2>
+<p><span class="math inline">\(\mathbb{R}^d\)</span> tiene estructura de <em>espacio vectorial</em> bajo <span class="math inline">\(\mathbb{R}\)</span></p>
+<h2 id="norma-y-distancia">Norma y Distancia</h2>
+<p>La norma está definida como <span class="math inline">\(||P|| = \sqrt{\sum\limits(P_i)^2}\)</span>. Propiedades de la norma:</p>
+<ul>
+<li><p><span class="math inline">\(||P|| \geq 0\)</span>, y da <span class="math inline">\(0\)</span> solo para el vector <span class="math inline">\(0\)</span>.</p></li>
+<li><p><span class="math inline">\(||\lambda \cdot P|| = |\lambda|\cdot||P||\)</span>.</p></li>
+<li><p><span class="math inline">\(||P+Q|| \leq ||P|| + ||Q||\)</span> (Desigualdad Triangular).</p></li>
+<li><p><span class="math inline">\(||P-Q|| \geq \big|||P|| - ||Q||\big|\)</span> (Desigualdad Triangular<span class="math inline">\(&#39;\)</span>).</p></li>
+</ul>
+<p>La distancia en <span class="math inline">\(\mathbb{R}^d\)</span> se define como <span class="math inline">\(d(P, Q) = ||P-Q||\)</span>.</p>
+<h1 id="límite-en-mathbbrd">Límite en <span class="math inline">\(\mathbb{R}^d\)</span></h1>
+<p>Notemos que <span class="math inline">\(\mathbb{N}\to \{d\} \to \mathbb{R}\sim \{d\} \to \mathbb{N}\to \mathbb{R}\)</span>.</p>
+<p>Dada <span class="math inline">\(a : \mathbb{N}\to \{d\} \to \mathbb{R}\)</span>, se define el límite como:</p>
+<p><span class="math display">\[\lim\limits_{n \to \infty} an = \ell \iff \forall \varepsilon&gt; 0 \;
+    \exists n_0 \in \mathbb{N}\;\forall
+n &gt; n_0 : ||\ell - an|| &lt; \varepsilon\]</span></p>
+<h2 id="bolas-en-mathbbrd">Bolas en <span class="math inline">\(\mathbb{R}^d\)</span></h2>
+<p>Se dice que <span class="math inline">\(B(P, \varepsilon) = \{Q \in \mathbb{R}^d : ||P - Q|| &lt; \varepsilon\}\)</span> es una bola abierta.</p>
+<h2 id="teorema">Teorema</h2>
+<p>Dada <span class="math inline">\(a : \mathbb{N}\to \{d\} \to \mathbb{R}\)</span>, tenemos <span class="math inline">\(\lim\limits_{n \to \infty} an = \ell \iff \forall i \in \{d\}, \lim\limits_{n \to \infty} ani = \ell i\)</span></p>
+<p>O equivalentemente <span class="math inline">\(\lim\limits a = \lim\limits\circ \; \text{swap} \; a\)</span></p>
+<h3 id="demo">Demo</h3>
+<p>Supongamos <span class="math inline">\(\lim\limits a = \ell\)</span>, luego tenemos <span class="math inline">\(\forall \varepsilon&gt; 0 \; \exists n_0 \; \forall n &gt; n_0 :
+||an - \ell|| &lt; \varepsilon\)</span></p>
+<p>Notemos que <span class="math inline">\(||an - \ell|| &lt; |(an - \ell) i|| \;\forall i \in \{d\}\)</span>, luego estamos.</p>
+<p>Ahora hagamos el otro lado. Supongamos que <span class="math inline">\(\lim\limits\circ \;\text{swap}\; a = \ell\)</span>. Luego tomémonos, dado un <span class="math inline">\(\varepsilon&gt; 0\)</span>, un <span class="math inline">\(n_0\)</span> tal que <span class="math inline">\(|ani - \ell i| &lt; \frac{\varepsilon}{\sqrt{d}}
+\forall n &gt; n_0, i \leq d\)</span></p>
+<p>Luego tenemos que, a apartir de <span class="math inline">\(n_0\)</span>, <span class="math inline">\(||an - \ell|| = \sqrt{\sum\limits(ani - \ell i)^2}
+&lt; \sqrt{\sum\limits\left(\frac{\varepsilon^2}{d} \right)} = \sqrt{\varepsilon^2} = \varepsilon\)</span>, entonces estamos.</p>
+<h1 id="clasificación-de-conjuntos">Clasificación de Conjuntos</h1>
+<p>Dado un conjunto <span class="math inline">\(A \subseteq \mathbb{R}^d\)</span>, un punto <span class="math inline">\(x \in A\)</span> es <em>interior</em> a <span class="math inline">\(A\)</span> si existe un <span class="math inline">\(\varepsilon\)</span> tal que <span class="math inline">\(B(x, \varepsilon) \subseteq A\)</span>. Un punto es <em>exterior</em> si es interior el complemento. Un punto está en la <em>frontera</em> de <span class="math inline">\(A\)</span>, si no está ni en el interior ni en el exterior de <span class="math inline">\(A\)</span>.</p>
+<p>Los interiores a <span class="math inline">\(A\)</span> se notan <span class="math inline">\(A^\circ\)</span>, los exteriores se notan <span class="math inline">\(A^{\text{ext}}\)</span>, y la frontera se nota <span class="math inline">\(\partial A\)</span>.</p>
+<h2 id="abierto">Abierto</h2>
+<p><span class="math inline">\(A\)</span> es abierto si <span class="math inline">\(A = A^\circ\)</span>. <span class="math inline">\(A\)</span> es cerrado si <span class="math inline">\(\partial A \subseteq A\)</span>.</p>
+<p>Alternativamente, <span class="math inline">\(A\)</span> es cerrado si para toda <span class="math inline">\(a : \mathbb{N}\to A\)</span>, si existe <span class="math inline">\(\lim\limits a\)</span>, luego <span class="math inline">\(\lim\limits a \in A\)</span></p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

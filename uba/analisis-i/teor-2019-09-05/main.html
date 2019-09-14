@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/analisis-i/teor-2019-09-05/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Teórica de Análisis 2019-09-05</h1>
+</header>
+<h1 id="funciones-contínuas">Funciones Contínuas</h1>
+<h2 id="por-sucesiones">Por Sucesiones</h2>
+<p>Una función <span class="math inline">\(f : A \to B\)</span> es contíua iff para toda sucesión <span class="math inline">\(x \in \mathbb{N}\to A :
+    \lim\limits_{\infty} x = p\)</span>, se fiene que <span class="math inline">\(\lim\limits_{\infty} f \circ x = fp\)</span>.</p>
+<h2 id="por-coordenada">Por coordenada</h2>
+<p>Supongamos que tenemos <span class="math display">\[f : \mathbb{R}^d \to \mathbb{R}^n \sim (d \to \mathbb{R}) \to (n \to \mathbb{R}) \sim
+    n \to (d \to \mathbb{R}) \to \mathbb{R}\]</span></p>
+<p>Tomando la última definición, la continuidad de <span class="math inline">\(f\)</span>, es equivalente a que sean contínuas <span class="math inline">\(fi \forall i \in n\)</span></p>
+<h2 id="propiedades">Propiedades</h2>
+<p>Suma, difrencia, producto, y división de contínuas es contínua. (división si la de abajo no es cero en el punto)</p>
+<h2 id="composición-de-contínuas">Composición de Contínuas</h2>
+<p>Sean <span class="math inline">\(f, g: \mathbb{R}^d \to \mathbb{R}^n\)</span>, con <span class="math inline">\(f\)</span> contínua en <span class="math inline">\(p\)</span> y <span class="math inline">\(g\)</span> contínua en <span class="math inline">\(fp\)</span>, tenemos que <span class="math inline">\(g \circ f\)</span> es contínua en <span class="math inline">\(p\)</span>.</p>
+<p>Supongamos <span class="math inline">\(\lim\limits_{i \to \infty} xi = p\)</span>, luego tenemos por continuidad <span class="math inline">\(\lim\limits f \circ x = fp\)</span>, luego, por continuidad, <span class="math inline">\(\lim\limits g \circ f \circ x = gfp\)</span>, luego <span class="math inline">\(g \circ f\)</span> es contínua.</p>
+<h2 id="suma-de-contínuas">Suma de Contínuas</h2>
+<p>Tomémonos <span class="math inline">\(f : \mathbb{R}^d \to \mathbb{R}^n\)</span> y <span class="math inline">\(g : \mathbb{R}^d \to \mathbb{R}^n\)</span> contínuas en <span class="math inline">\(p\)</span>, luego tomémonos <span class="math inline">\(t : \mathbb{R}^d \to \mathbb{R}^{2n}, tp = (fp, gp)\)</span>, y la función <span class="math inline">\(s(x, y) = x+y\)</span>, luego tenemos que <span class="math inline">\(f + g = s \circ t\)</span>, y por composición de contínuas, la suma es contínua en <span class="math inline">\(p\)</span>.</p>
+<h1 id="conjuntos-cerrados">Conjuntos Cerrados</h1>
+<p>Son aquellos conjuntos <span class="math inline">\(A\)</span> tales que <span class="math inline">\(\partial A \subseteq A\)</span>. Equivalentemente, <span class="math inline">\(A\)</span> es cerrado si para toda sucesión <span class="math inline">\(x \in \mathbb{N}\to A\)</span> que converge a algún <span class="math inline">\(L = \lim\limits x\)</span>, se tiene <span class="math inline">\(L \in A\)</span>.</p>
+<h1 id="weierstrass">Weierstrass</h1>
+<p>Dado <span class="math inline">\(A \in \mathbb{R}^d\)</span> un compacto (osea cerrado y acotado) y una función contínua <span class="math inline">\(f : A \to \mathbb{R}\)</span>, entonces:</p>
+<ul>
+<li><p><span class="math inline">\(f A \subseteq\mathbb{R}\)</span> es un conjunto acotado.</p></li>
+<li><p>Existe un <span class="math inline">\(x \in A\)</span> tal que <span class="math inline">\(fx = \sup f A\)</span> (osea <span class="math inline">\(f\)</span> alcanza su máximo en <span class="math inline">\(A\)</span>).</p></li>
+<li><p>Equivalntemente, existen <span class="math inline">\(x_1, x_2 \in
+        A : \forall x \in A : fx_1 \leq fx \leq fx_2\)</span></p></li>
+</ul>
+<p>Demo:</p>
+<p>Veamos que <span class="math inline">\(f\)</span> está acotada superiormente. Supongamos que no, luego tomemos <span class="math inline">\(x : \mathbb{N}\to A\)</span>, donde <span class="math inline">\(\forall n: fx_n &gt; n\)</span>. Luego existe una subsucesión <span class="math inline">\(y : \mathbb{N}\to A, y = x \circ \sigma\)</span>, <span class="math inline">\(\sigma\)</span> creciente. que converge <span class="math inline">\(\lim\limits y = p\)</span>, que por clausura de <span class="math inline">\(A\)</span> sabemos que <span class="math inline">\(p \in A\)</span>.</p>
+<p>Además, por continuidad <span class="math inline">\(\lim\limits f \circ y = f \lim\limits y = fp\)</span>, pero también <span class="math inline">\(fp = \lim\limits f \circ x \circ \sigma &gt; \lim\limits\sigma &gt;
+    \lim\limits_{n \to \infty} n = +\infty\)</span>, absurdo.</p>
+<p>Ahora veamos que se alcanza el máximo. Sea <span class="math inline">\(M = \sup f A\)</span>. Si el máximo no se alcanza, considerémonos la función <span class="math inline">\(f&#39; : A \to \mathbb{R}, f&#39; a = \frac{1}{M - fa}\)</span>, que va a estar bien definida ya que <span class="math inline">\(fa \neq M\)</span>.</p>
+<p>Claramente <span class="math inline">\(f&#39;\)</span> es contínua, entonces tiene una cota <span class="math inline">\(N\)</span>, entonces se tiene que <span class="math inline">\(\frac{1}{M - fa} &lt; N\)</span> para algún <span class="math inline">\(N\)</span>. pero entonces <span class="math inline">\(M - fa &gt; \frac{1}{N}\)</span>, para todo <span class="math inline">\(a\)</span>, pero luego <span class="math inline">\(M\)</span> no era supremo ya que está acotada la distancia a <span class="math inline">\(M\)</span>.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

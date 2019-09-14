@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/analisis-i/prac-2019-08-19/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Práctica de Análisis</h1>
+</header>
+<h1 id="desigualdad-triangular">Desigualdad triangular</h1>
+<p>Dados <span class="math inline">\(a\)</span>, <span class="math inline">\(b\)</span>, tenemos <span class="math inline">\(|a + b| \leq |a| + |b|\)</span>, esta implica <span class="math display">\[||a| - |b|| \leq |a-b|\]</span></p>
+<p>Demo</p>
+<p><span class="math display">\[\begin{aligned}
+    |a+b| &amp;\leq |a| + |b| \\
+    \iff |a+b|^2 &amp;\leq (|a| + |b|)^2 \\
+    \iff (a+b)^2 &amp;\leq a^2 + 2|a||b| + b^2 \\
+    \iff a^2 + 2ab + b^2 &amp;\leq a^2 + 2|a||b| + b^2 \\
+    \iff 2ab &amp;\leq 2|a||b| \\
+    \iff ab  &amp;\leq |ab| \\\end{aligned}\]</span></p>
+<p>Demo de la otra <span class="math display">\[|a| = |a-b+b| \leq |a-b| + |b|\]</span> <span class="math display">\[|a| \leq |a-b| + |b|\]</span> <span class="math display">\[|a| - |b| \leq |a-b|\]</span> Análogamente, <span class="math display">\[|b| - |a| \leq |b-a| = |a-b|\]</span> Luego <span class="math display">\[max \; \{|b| - |a| \quad |a| - |b|\} \leq |a-b|\]</span> <span class="math display">\[||a| - |b|| \leq |a-b|\]</span></p>
+<h1 id="supremo">Supremo</h1>
+<p>Dado <span class="math inline">\(A \subseteq \mathbb{R}\)</span>, un <span class="math inline">\(c \in \mathbb{R}\)</span> es cota superior <span class="math inline">\(\iff \forall a \in A: a \leq c\)</span></p>
+<h2 id="acotadez">Acotadez</h2>
+<p>Un conjunto <span class="math inline">\(A \subseteq \mathbb{R}\)</span> es acotado superiormente <span class="math inline">\(\iff\)</span> admite cota superior</p>
+<p>Es acotado si es acotado superior y inferior</p>
+<h2 id="supremo-1">Supremo</h2>
+<p>Menor de las cotas superiores</p>
+<h2 id="axioma-del-supremo">Axioma del supremo</h2>
+<p>Para todo <span class="math inline">\(A \subseteq \mathbb{R}\)</span>, con <span class="math inline">\(A \ne \emptyset\)</span> acotado superiormente, existe el supremo llamado <span class="math inline">\(\sup A\)</span></p>
+<h1 id="máximo">Máximo</h1>
+<p>El máximo de un conjunto <span class="math inline">\(A \subseteq \mathbb{R}\)</span> vale <span class="math inline">\(\sup A\)</span> si <span class="math inline">\(\sup A \in A\)</span></p>
+<h1 id="arquímedes">Arquímedes</h1>
+<p>el conjunto <span class="math inline">\(\mathbb{R}\)</span> es arquimediano. es decir, para todo <span class="math inline">\(x&gt;0\)</span>, <span class="math inline">\(y\in \mathbb{R}\)</span>, existe un <span class="math inline">\(n \in N\)</span> tal que <span class="math inline">\(nx &gt; y\)</span></p>
+<p>Supongamos que no, luego tomemos el conjunto <span class="math inline">\(A = \{xn \mid n \in N\}\)</span>, luego <span class="math inline">\(y\)</span> es cota superior, entonces tiene supremo, luego existe <span class="math inline">\(s = \sup A\)</span> cota superior de <span class="math inline">\(A\)</span> tal que hay un <span class="math inline">\(t \in A\)</span> con <span class="math inline">\(t + x &gt; s\)</span>; pero <span class="math inline">\(t + x \in A \;\forall t \in A\)</span>, luego contradicción, la que <span class="math inline">\(s\)</span> ya no es cota superior</p>
+<h1 id="ejercicio">Ejercicio</h1>
+<p>Dado <span class="math inline">\(A = \left\{\frac{n+1}{n} \;\middle|\; n \in N \right\}\)</span>, encontrar <span class="math inline">\(\sup A\)</span>, <span class="math inline">\(\max A\)</span>, <span class="math inline">\(\inf A\)</span> y <span class="math inline">\(\min A\)</span>, si es que existen</p>
+<p>Notemos que la sucesión <span class="math inline">\(a_n = \frac{n+1}{n}\)</span> es decreciente, luego <span class="math inline">\(a_1 = 2 = \max A = \sup A\)</span></p>
+<p>Ahora vamos a demostrar que <span class="math inline">\(1\)</span> es ínfimo. Es claro que <span class="math inline">\(1 &lt; a_i \; \forall i \in N\)</span>, ahora necesitamos demostrar que para todo <span class="math inline">\(\varepsilon &gt; 0 \; \exists a_i &lt; 1 + \varepsilon\)</span></p>
+<p>Tenemos <span class="math display">\[\frac{n+1}{n} &lt; 1 + \varepsilon\]</span> <span class="math display">\[\frac{n+1}{n} - 1 &lt; \varepsilon\]</span> <span class="math display">\[\frac{1}{n} &lt; \varepsilon\]</span> <span class="math display">\[1 &lt; n\varepsilon\]</span> Que siempre existe por arquímedes</p>
+<h1 id="ejercicio-2">Ejercicio 2</h1>
+<p>Calcular <span class="math inline">\(\sup \left\{\frac{n^2}{5^n} \;\middle|\; n \in N\right\}\)</span>. Veamos que <span class="math inline">\(a_n = \frac{n^2}{5^n}\)</span> es decreciente <span class="math display">\[\frac{n^2}{5^n} \ge \frac{(n+1)^2}{5^{n+1}}\]</span> <span class="math display">\[5n^2 \ge (n+1)^2\]</span> Que es verdad. Y como decrece, el primer elemento es el supremo y el máximo</p>
+<h1 id="ejercicio-3">Ejercicio 3</h1>
+<p>Calcular <span class="math inline">\(\inf \left\{n^2 - 13n + 40 \;\middle|\; n \in N\right\}\)</span></p>
+<p>El vértice de la parábola está en <span class="math inline">\(\frac{13}{2}\)</span>, entonces el mínimo se da en <span class="math inline">\(6\)</span> ó <span class="math inline">\(7\)</span></p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/analisis-i/teor-2019-09-09/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="bolzano">Bolzano</h1>
+<p>Si se tiene una función contínua <span class="math inline">\(f : [a, b] \to \mathbb{R}\)</span>, y se cumple <span class="math inline">\(fa \cdot
+    fb \leq 0\)</span>, luego existe <span class="math inline">\(c \in [a, b] : fc = 0\)</span></p>
+<h2 id="equivalente-teorema-de-los-valores-intermedios">Equivalente Teorema de los Valores Intermedios</h2>
+<p>Dada una función contínua <span class="math inline">\(f : [a, b] \to \mathbb{R}\)</span>, con <span class="math inline">\(fa &lt; fb\)</span>, luego tenemos <span class="math inline">\([fa, fb] \subseteq f [a, b]\)</span></p>
+<h2 id="lema">Lema</h2>
+<p>Sea <span class="math inline">\(f : \mathbb{R}\to \mathbb{R}\)</span> contínua, luego si <span class="math inline">\(fx &gt; 0\)</span> para algún <span class="math inline">\(x\)</span>, luego existe un entorno alrededor de <span class="math inline">\(x\)</span> donde la función es positiva.</p>
+<p>Por continuidad, notemos que la preimagen de <span class="math inline">\(\left(\frac{fx}{2}, \frac{3 \cdot
+    fx}{2}\right)\)</span> es un abierto, contiene a <span class="math inline">\(x\)</span>, y además las imágenes son todas positivas, luego ya estamos.</p>
+<h2 id="demo-con-binary-search">Demo con Binary Search</h2>
+<p>WLOG <span class="math inline">\(fa &lt; 0\)</span> y <span class="math inline">\(fb &gt; 9\)</span> Si <span class="math inline">\(fa \cdot fb = 0\)</span>, luego tomo <span class="math inline">\(x = a\)</span> o <span class="math inline">\(x = b\)</span> y estoy. Definamos <span class="math inline">\(a_0 = a\)</span>, <span class="math inline">\(b_0 = b\)</span>, y <span class="math inline">\(c_i = \frac{a_i + b_i}{2}\)</span>. Podemos asumir que en ningún momento <span class="math inline">\(fa_i\)</span>, <span class="math inline">\(fb_i\)</span>, o <span class="math inline">\(fc_i\)</span> es cero osinó ya estamos. Definimos: <span class="math display">\[b_{i+1} = 
+        \begin{cases}
+            b_i &amp; \text{Si $c_i &lt; 0$} \\
+            c_i &amp; \text{Osinó}
+        \end{cases}\]</span><span class="math display">\[a_{i+1} = 
+        \begin{cases}
+            a_i &amp; \text{Si $c_i &gt; 0$} \\
+            c_i &amp; \text{Osinó}
+        \end{cases}\]</span></p>
+<p>Por inducción, <span class="math inline">\(fa_i &lt; 0\)</span> y <span class="math inline">\(fb_i &gt; 0\)</span>; y también notemos que <span class="math inline">\(a_i &lt; b_i\)</span>, y además que <span class="math inline">\(b_i - a_i = 2^{-i}
+    \cdot (b - a)\)</span>, ya que en cada paso se divide en dos su distancia.</p>
+<p>Además notemos que <span class="math inline">\(a_i\)</span> es creciente y <span class="math inline">\(b_i\)</span> es decreciente.</p>
+<p>Entonces sea <span class="math inline">\(e = \lim\limits a\)</span>. Pero notemos que <span class="math display">\[|b_i - e| = |(b_i - a_i) +
+    (a_i - e)| \leq |b_i - a_i| + |a_i - e|\]</span> Y notemos que ambos sumandos tienden a <span class="math inline">\(0\)</span>, luego <span class="math inline">\(\lim\limits|b_i - e| = 0\)</span>, por lo que <span class="math inline">\(\lim\limits b = e\)</span></p>
+<p>Notemos que si <span class="math inline">\(fe \neq 0\)</span>, hay un entorno de <span class="math inline">\(e\)</span> con imágenes de un mismo signo que <span class="math inline">\(fe\)</span>. Pero como tanto <span class="math inline">\(a_i\)</span> como <span class="math inline">\(b_i\)</span> se meten en ese entorno, y los <span class="math inline">\(a_i\)</span> son todos negativos y los <span class="math inline">\(b_i\)</span> son todos positivos, contradicción. Luego <span class="math inline">\(fe = 0\)</span></p>
+<h1 id="arcoconexo">Arcoconexo</h1>
+<p>Un conjunto <span class="math inline">\(C \subseteq\mathbb{R}^n\)</span> es arcoconexo sii para cualquiera <span class="math inline">\(p, q \in C\)</span>, los puedo unir por una curva contínua dentro de <span class="math inline">\(C\)</span>. Es decir: <span class="math display">\[\forall p, q \in C : \exists \alpha \mathop{\mathrm{cont}}
+    : [0; 1] \to C : \alpha 0 = p, \alpha 1 = q\]</span></p>
+<h1 id="bolzano-multidimensional">Bolzano Multidimensional</h1>
+<p>Dado <span class="math inline">\(C \subseteq\mathbb{R}^n\)</span> arcoconexo, y una función contínua <span class="math inline">\(f : C \to \mathbb{R}\)</span>, y dos puntos <span class="math inline">\(p, q \in C\)</span> con <span class="math inline">\(fp &lt; 0\)</span> y <span class="math inline">\(fq &gt; 0\)</span>, luego existe algún <span class="math inline">\(x
+        \in C\)</span> tal que <span class="math inline">\(fx = 0\)</span></p>
+<p>Demo: por arcoconectividad, tenemos alguna <span class="math inline">\(\alpha \mathop{\mathrm{cont}}: [0, 1] \to C\)</span>, con <span class="math inline">\(\alpha 0 = p\)</span>, <span class="math inline">\(\alpha 1 = q\)</span>, entonces por bolzano en una varibale en <span class="math inline">\(f \circ \alpha\)</span>, ya estamos.</p>
+<h1 id="derivadas">Derivadas</h1>
+<p>Dada una función <span class="math inline">\(f : \mathbb{R}\to \mathbb{R}\)</span>, decimos que <em>La derivaba de f en x</em>, notada como <span class="math inline">\(f&#39;x\)</span>, se define por: <span class="math display">\[f&#39;x = \lim\limits_{h \to 0} \frac{f(x+h) - fx}{h}\]</span></p>
+<h1 id="principio-de-fermat">Principio de Fermat</h1>
+<p>Dada una función <span class="math inline">\(f : [a, b] \to \mathbb{R}\)</span>, y algún <span class="math inline">\(c \in (a, b)\)</span>, con <span class="math inline">\(f\)</span> derivable en <span class="math inline">\(c\)</span>, si <span class="math inline">\(f\)</span> tiene un máximo o un mínimo local en <span class="math inline">\(c\)</span> entonces tenemos <span class="math inline">\(f&#39;c = 0\)</span>.</p>
+<p>Demo: Supongamos que hay un mínimo local en <span class="math inline">\(c\)</span>, luego se tiene que en un entorno de <span class="math inline">\(c\)</span>, se tiene <span class="math inline">\(fc &lt; f(c+h)\)</span>, pera todo <span class="math inline">\(h &lt; \delta\)</span> para algún <span class="math inline">\(\delta\)</span>.</p>
+<p>Luego tenemos:</p>
+<p><span class="math inline">\(\lim\limits_{h \to 0^+} \frac{fc - f(c+h)}{h} \geq 0\)</span>, y <span class="math inline">\(\lim\limits_{h \to 0^-} \frac{fc - f(c+h)}{h} \leq 0\)</span>, luego si el límite existe, debe ser <span class="math inline">\(0\)</span>.</p>
+<h2 id="punto-de-ensilladura">Punto de Ensilladura</h2>
+<p>Es un punto en una función donde la derivada es <span class="math inline">\(0\)</span>, pero no es un extremo.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

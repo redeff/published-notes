@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/lineal/prac-2019-09-06/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="ejercicio-1">Ejercicio 1</h1>
+<p>Sea <span class="math inline">\(\mathbb{K}-\mathop{\mathrm{tl}}f: \mathbb{V}\to \mathbb{W}\)</span>. <span class="math inline">\(\dim \mathbb{V}= n\)</span>, <span class="math inline">\(\dim \mathbb{W}= m\)</span>. Demostrar que existen <span class="math inline">\(B, B&#39;\)</span> bases tal que <span class="math display">\[[f]_{BB&#39;} = 
+    \begin{pmatrix}
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+    \end{pmatrix}\]</span></p>
+<p>Tomo una base <span class="math inline">\(v_{i \leq k}\)</span> de <span class="math inline">\(\mathop{\mathrm{Nu}}f\)</span>, y la extendemos a una base <span class="math inline">\(v_{i \leq
+n}\)</span> de <span class="math inline">\(\mathbb{V}\)</span>.</p>
+<p>Notemos que si tomamos <span class="math inline">\(w_i = f v_{k &lt; i \leq n}\)</span>, estos son li, ya que sinó habría una combinación lineal que dá 0, y por linearidad habría una combinación lineal de los <span class="math inline">\(v_{k &lt; i \leq n}\)</span> está en el núcleo <span class="math inline">\(\mathop{\mathrm{Nu}}f\)</span>.</p>
+<p>Entonces si tomamos <span class="math inline">\(w_i = f v_i\)</span> para <span class="math inline">\(k &lt; i \leq n\)</span>, y completamos la base con cosas li, entonces ya estamos.</p>
+<h1 id="ejercicio-2">Ejercicio 2</h1>
+<p>Sea <span class="math inline">\(p: \mathbb{V}\to \mathbb{V}\)</span>. Sea <span class="math inline">\(S \subseteq\mathbb{V}\)</span> sev. tal que <span class="math inline">\(\mathop{\mathrm{Im}}p \subseteq S\)</span>. Demostrar que <span class="math inline">\(\mathop{\mathrm{Im}}p = S \iff \mathop{\mathrm{Nu}}p \cap S = \{0\}\)</span></p>
+<p>Notemos que la parte <span class="math inline">\((\Rightarrow)\)</span> es trivial. Tomemos <span class="math inline">\(v \in \mathop{\mathrm{Nu}}f \cap \mathop{\mathrm{Im}}f\)</span>. Sea <span class="math inline">\(x : fx = v\)</span>. Notemos <span class="math inline">\(v = fx = f^2x = f(fx) = fv = 0\)</span>, luego <span class="math inline">\(v = 0\)</span>.</p>
+<p>Notemos además que para <span class="math inline">\((\Leftarrow)\)</span>, tenemos que <span class="math inline">\(\mathop{\mathrm{Nu}}p + \mathop{\mathrm{Im}}p = \mathbb{V}\)</span>, pero <span class="math inline">\(\mathop{\mathrm{Im}}f \subseteq S\)</span>, luego <span class="math inline">\(\mathop{\mathrm{Nu}}p + S = \mathbb{V}\)</span>, pero como la intersección es <span class="math inline">\(0\)</span>, por lo que están en suma directa <span class="math inline">\(\mathop{\mathrm{Nu}}f \oplus S\)</span>.</p>
+<p>Por dimensión <span class="math inline">\(\dim S = n - \dim \mathop{\mathrm{Nu}}f = \dim \mathop{\mathrm{Im}}f\)</span>, luego <span class="math inline">\(S = \mathop{\mathrm{Im}}f\)</span>.</p>
+<h1 id="ejercicio-3">Ejercicio 3</h1>
+<p>Sea <span class="math inline">\(S = \langle (1 \;0 \;-1 \;1), (0 \;1 \;0 \;0) \rangle\)</span> Definir <span class="math inline">\(p: \mathbb{R}^4 \to \mathbb{R}^4\)</span>, <span class="math inline">\(p\)</span> proyector tal que <span class="math inline">\(p \neq 0\)</span> y <span class="math inline">\(\mathop{\mathrm{Im}}p \subseteq S\)</span> y <span class="math inline">\(\mathop{\mathrm{Nu}}p \cap S \neq \{0\}\)</span>.</p>
+<p>Tomemos <span class="math inline">\(p (0\;1\;0\;0) = (0\;1\;0\;0)\)</span>, y <span class="math inline">\(pE = 0\)</span> donde <span class="math inline">\(E\)</span> es uno de los otros cańonicos.</p>
+<h1 id="ejercicio-4">Ejercicio 4</h1>
+<p>Sea <span class="math inline">\(\mathbb{V}\)</span>, <span class="math inline">\(S, T \subseteq\mathbb{V}\)</span>, <span class="math inline">\(S\cap T = \{0\}\)</span>, y tenemos:</p>
+<p><span class="math inline">\(f : S \to \mathbb{V}\)</span> mono</p>
+<p><span class="math inline">\(g : \mathbb{V}\to T\)</span> epi</p>
+<p><span class="math inline">\(\mathop{\mathrm{Nu}}g = \mathop{\mathrm{Im}}f\)</span></p>
+<p>Demostrar <span class="math inline">\(\mathbb{V}= S \oplus T\)</span>.</p>
+<p>Notemos que <span class="math inline">\(\dim S = \dim S - \dim \mathop{\mathrm{Nu}}f = \dim \mathop{\mathrm{Im}}f = \dim \mathop{\mathrm{Nu}}g =
+n - \dim \mathop{\mathrm{Im}}g = n - \dim T\)</span>, entonces ya estás.</p>
+<h1 id="ejercicio-5">Ejercicio 5</h1>
+<p>Sea <span class="math inline">\(f : \mathbb{R}^9 \to \mathbb{R}^9 : \dim \mathop{\mathrm{Im}}f = 6, \mathop{\mathrm{Nu}}f \subseteq\mathop{\mathrm{Im}}f\)</span>.</p>
+<p>Hallar <span class="math inline">\(\dim \mathop{\mathrm{Im}}f^2\)</span></p>
+<h1 id="ejercicio-6">Ejercicio 6</h1>
+<p>Sea <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}\)</span>, <span class="math inline">\(g : \mathbb{V}\to \mathbb{U}\)</span>, todos los espacios de dimensión finita. Probar que son equivalentes:</p>
+<ul>
+<li><p>Existe <span class="math inline">\(h : \mathbb{W}\to \mathbb{U}\)</span> tal que <span class="math inline">\(h \circ f = g\)</span></p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{Nu}}f \subseteq\mathop{\mathrm{Nu}}g\)</span></p></li>
+</ul>
+<p><span class="math inline">\(a \Rightarrow b\)</span> es trivial.</p>
+<p><span class="math inline">\(b \Rightarrow a\)</span>, tomemos base <span class="math inline">\(B = B_f \cap B_g \cap B_v\)</span> de <span class="math inline">\(\mathbb{V}\)</span>, tal que <span class="math inline">\(B_f\)</span> es base de <span class="math inline">\(\mathop{\mathrm{Nu}}f\)</span> y <span class="math inline">\(B_f \cap B_g\)</span> es base de <span class="math inline">\(\mathop{\mathrm{Nu}}g\)</span>.</p>
+<p>Notemos que <span class="math inline">\(f (B_g \cap B_v)\)</span> es base de <span class="math inline">\(\mathbb{W}\)</span>. Luego tomemos <span class="math inline">\(h(fB_g) = 0\)</span> y <span class="math inline">\(h(fB_v) = gB_v\)</span>.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

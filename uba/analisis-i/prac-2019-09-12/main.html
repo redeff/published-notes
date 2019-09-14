@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/analisis-i/prac-2019-09-12/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="ejercicio-1-continuidad" class="unnumbered">Ejercicio 1 (Continuidad)</h1>
+<p>tenemos la función dada por <span class="math display">\[fxy
+    \begin{cases}
+        = \frac{(y-2x) \cdot \sin (x \cdot y)}{yx^2+x} &amp;
+        \text{Si $xy \neq -1, x \neq 0$}
+        \\ \\
+        = y^2 &amp; \text{cc}
+    \end{cases}\]</span></p>
+<p>Queremos ver que: <span class="math display">\[\lim\limits_{(x, y) \to (0, a)} \frac{(y-2x) \cdot \sin (x \cdot y)}{yx^2+x}
+    = a^2 \iff\]</span> <span class="math display">\[\lim\limits_{(x, y) \to (0, a)} \frac{(y-2x) \cdot \sin (x \cdot y)}{x(yx+1)}
+    =\]</span> Si <span class="math inline">\(y \neq 0\)</span>, pero ya vimos esa curva. <span class="math display">\[\lim\limits_{(x, y) \to (0, a)} \frac{(y-2x) \cdot \sin (x \cdot y)}{xy(yx+1)}
+    \cdot \frac{xy}{x} 
+    =\]</span> <span class="math display">\[\lim\limits_{(x, y) \to (0, a)} \frac{(y-2x)}{yx+1}
+    \cdot y
+    = a^2\]</span></p>
+<p>Ahora veamos <span class="math display">\[\lim\limits_{(x, y) \to (a, -\frac{1}{a} )}
+    \frac{(y-2x) \cdot \sin (x \cdot y)}{yx^2+x}
+    = \frac{1}{a^2}\]</span></p>
+<p>Como <span class="math inline">\(-\frac{1}{a} -2a = 0 \iff -1 - 2a^2 = 0 \iff a^2 = -\frac{1}{2}\)</span>, tenemos que el límite no se indetermina y es <span class="math inline">\(\infty\)</span>.</p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Definimos <span class="math display">\[f(x,y) = 
+    \begin{cases}
+        \frac{[1-\cos(x-1)] \cdot (y^2 - 4)}{(x-1)^2 + e^{x-1}(y-2)^2} 
+        \\ \\
+        1 &amp; \text{Osinó}
+    \end{cases}\]</span></p>
+<p>Tomamos el límite hacia <span class="math inline">\((1, 2)\)</span> donde <span class="math inline">\(x = 1\)</span>, luego tenemos: <span class="math display">\[\frac{[1-\cos(1-1)] \cdot (y^2 - 4)}{(1-1)^2 + e^{1-1}(y-2)^2}\]</span> <span class="math display">\[\frac{0 \cdot (y^2 - 4)}{1 \cdot (y-2)^2} = 0\]</span></p>
+<p>Luego si existe el límite es <span class="math inline">\(0\)</span>, veámoslo:</p>
+<p><span class="math display">\[\frac{[1-\cos(x-1)] \cdot (y^2 - 4)}{(x-1)^2 + e^{x-1}(y-2)^2} =\]</span> <span class="math display">\[\frac{[1-\cos(x-1)]}{(x-1)^2} \cdot \frac{(x-1)^2(y+2)(y-2)}{(x-1)^2
+    + e^{x-1}(y-2)^2}\]</span> Notemos que a partir de un punto, <span class="math inline">\(e^{x-1} &gt; 0.5\)</span> <span class="math display">\[\frac{[1-\cos(x-1)]}{(x-1)^2} \cdot \frac{(x-1)^2(y+2)(y-2)}{(x-1)^2
+    + e^{x-1}(y-2)^2} \leq\]</span> <span class="math display">\[\frac{[1-\cos(x-1)]}{(x-1)^2} \cdot \frac{(x-1)^2(y+2)(y-2)}{(x-1)^2
+    + 0.5(y-2)^2} \leq\]</span> <span class="math display">\[\frac{[1-\cos(x-1)]}{(x-1)^2} \cdot \frac{(x-1)^2(y+2)(y-2)}{0.5(x-1)^2
+    + 0.5(y-2)^2} =\]</span> <span class="math display">\[\frac{[1-\cos(x-1)](y+2)}{(x-1)^2} \cdot \frac{(x-1)^2(y-2)}{0.5||P - (1,
+    2)||^2} \leq\]</span> <span class="math display">\[\frac{[1-\cos(x-1)](y+2)}{(x-1)^2} \cdot \frac{||P - (1,2)||^3}{0.5||P - (1,
+    2)||^2} \leq\]</span> <span class="math display">\[\frac{2[1-\cos(x-1)](y+2)}{(x-1)^2} \cdot ||P - (1,2)||\]</span></p>
+<p>y como <span class="math inline">\(\lim\limits\frac{2[1-\cos(x-1)](y+2)}{(x-1)^2} = 2\)</span>, tenemos <span class="math display">\[\lim\limits\frac{2[1-\cos(x-1)](y+2)}{(x-1)^2} \cdot ||P - (1,2)|| = 0\]</span> Y estamos.</p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

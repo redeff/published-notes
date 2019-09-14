@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<link rel="stylesheet" href="../../..//stylesheet.css"></link>
+	<head>
+		<title>Test</title>
+		<meta name="vewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>uba/analisis-i/prac-2019-09-05/main.tex</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+<h1 id="ejercicio-1">Ejercicio 1</h1>
+<p>Sea <span class="math inline">\(f(x, y) = \frac{x \cdot y}{x^2 + y^2}\)</span>. Calcular <span class="math inline">\(\lim\limits_{(x, y) \to (0, 0)} fxy\)</span>.</p>
+<p>Necesitamos hacer un límite por curva, es decir, encontrar <span class="math inline">\(\alpha : (0,1) \to \mathbb{R}^2\)</span> tal que <span class="math inline">\(\lim\limits_{t \to 0} \alpha t = (0, 0)\)</span>, y evaluar <span class="math inline">\(\lim\limits_{t \to 0} f(\alpha t)\)</span> para encontrar un candidato.</p>
+<p>Tomemos <span class="math inline">\(\alpha_1 t = (t, 0)\)</span>, luego <span class="math inline">\(f(\alpha_1 t) = \frac{0}{t^2} = 0\)</span>, luego tenemos que <span class="math inline">\(\lim\limits_{t \to 0} f (\alpha_1 t) = 0\)</span>.</p>
+<p>Si tomamos <span class="math inline">\(\alpha_2 t = (t, t)\)</span>, luego <span class="math inline">\(f(\alpha_2 t) = \frac{t^2}{2 \cdot t^2}
+= \frac{1}{2}\)</span>, luego el límite es <span class="math inline">\(\lim\limits_{t \to 0} f(\alpha_2 t) = \frac{1}{2}\)</span>. Entonces el límite no existe.</p>
+<p>Podemos probar todas las rectas juntas: <span class="math inline">\(\alpha_{ab}t = (at, bt)\)</span>, luego la composición va a ser <span class="math inline">\(f \circ \alpha_{ab} =
+t \mapsto \frac{a \cdot t \cdot b \cdot t}{(a \cdot t)^2 + (b \cdot t)^2} =
+\frac{a \cdot b}{a^2 + b^2}\)</span>, cuyo límite no es constante en <span class="math inline">\(a, b\)</span>.</p>
+<h1 id="ejercicio-2">Ejercicio 2</h1>
+<p>Sea <span class="math inline">\(f = x,y \mapsto \frac{x \cdot y^2}{x^2 + y^4}\)</span>. Calculemos el <span class="math inline">\(\lim\limits_{\to(0, 0)} f\)</span>.</p>
+<p>Sea <span class="math inline">\(\alpha_{ab} = t \mapsto (a \cdot t, b \cdot t)\)</span>. Luego <span class="math inline">\(f \circ \alpha = t \mapsto
+\frac{t^3 \cdot a \cdot b^2}{a^2 \cdot t^2 + b^4 \cdot t^4}
+= \frac{a \cdot b^2 \cdot t}{a^2 + b^4 \cdot t^2}\)</span>. Si <span class="math inline">\(a \neq 0\)</span>, luego el límite da <span class="math inline">\(0\)</span>, porque lo de arriba tiende a <span class="math inline">\(0\)</span> y lo de abajo no. Si <span class="math inline">\(a = 0\)</span> lo de arriba es <span class="math inline">\(0\)</span>, y lo de abajo no, luego el límite también es <span class="math inline">\(0\)</span>.</p>
+<p>Entonces el límite es <span class="math inline">\(0\)</span> para todas las rectas.</p>
+<p>tomemos <span class="math inline">\(\alpha t = (t^2, t)\)</span>, luego <span class="math inline">\(f \circ \alpha = t \mapsto \frac{t^4}{2t^4}
+= \frac{1}{2}\)</span>, luego el límite es <span class="math inline">\(\frac{1}{2}\)</span>, entonces no existe el límite.</p>
+<h1 id="ejercicio-3">Ejercicio 3</h1>
+<p>Dada <span class="math inline">\(f = x,y \mapsto \frac{x^2 \cdot y}{x^2 + x - y}\)</span>, calcular el límite <span class="math inline">\(\lim\limits_{\to(0,0)} f\)</span>.</p>
+<p>Tomemos <span class="math inline">\(\alpha t = (t, t + t^2 + t^3)\)</span>, tenemos</p>
+<p><span class="math inline">\(f \circ \alpha = t\mapsto \frac{t^2 \cdot (t + t^2 + t^3)}{-t^3} = -(1 + t + t^2) = -1\)</span>, luego el límite por esta curva es <span class="math inline">\(-1\)</span>, entonces el límite total no existe.</p>
+<h1 id="composición-de-límites">Composición de Límites</h1>
+<p>Dadas <span class="math inline">\(f : \mathbb{R}\to \mathbb{R}\)</span> y <span class="math inline">\(g : \mathbb{R}^2 \to \mathbb{R}\)</span>, si <span class="math inline">\(\lim\limits_{x \to x_0} gx = L\)</span>, y si <span class="math inline">\(\lim\limits_{x \to L} fx = K\)</span>, luego <span class="math inline">\(\lim\limits_{x \to x_0} f (gx) = K\)</span>.</p>
+<h1 id="ejercicio-5">Ejercicio 5</h1>
+<p>Calcular limite de <span class="math inline">\(f = x,y \mapsto \frac{1 - \cos (x^2 \cdot y)}{x^2 + y^2}\)</span>.</p>
+<p>Notamos que <span class="math inline">\(\frac{1 - \cos(x^2 \cdot y)}{x^2 \cdot y} \cdot \frac{x^2 \cdot y}{x^2 + y^2}\)</span>.</p>
+<p>Queremos acotar por la norma de <span class="math inline">\(||x,y||\)</span> la expresión <span class="math inline">\(\left|\frac{x^2 \cdot y}{x^2 + y^2}\right| =
+\frac{x^2 \cdot |y|}{||x,y||^2} \leq
+\frac{||x,y||^2 \cdot ||x,y||}{||x,y||^2} \leq
+||x,y||\)</span></p>
+</body>
+</html>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
