@@ -1,7 +1,7 @@
-code{white-space: pre-wrap;}
+/* code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
 span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.column{display: inline-block; vertical-align: top; width: 50%;} */
 
 :root {
 
@@ -57,10 +57,11 @@ body {
 }
 
 .center {
-	display: inline-block;
+	/* display: inline-block; */
 	max-width: 700px;
 	margin: 20px;
-	text-align: justify;
+	/* text-align: justify; */
+	text-align: left;
 }
 
 @media (max-width: 900px) {
