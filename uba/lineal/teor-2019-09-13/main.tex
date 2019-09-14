@@ -1,0 +1,158 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+	\section*{Espacio Dual}
+	Dado $\V$ un $\K$-ev, llamo el \emph{dual} de $\V$ como $\V^* =
+	\Hom_\K(\V,\K)$.
+	Si $\dim \V = n$, luego tenemos $\dim \V^* = n \cdot 1 = n$.
+
+	A los elementos $f \in \V^*$ se los llama \emph{funcionales lineales}.
+
+	\section*{Base de $\V^*$}
+	Dada una base $\BB$, definimos una familia de $n$ transformaciones
+	lineales indejadas por $1 \leq j \leq n$, definidas por:
+	$\phi_j = \BB_i \mapsto
+	\begin{cases}
+		1 & \text{Si $i = j$} \\
+		0 & \text{osino}
+	\end{cases}
+	$. 
+
+	Vamos a probar que $\phi$ es base, y vamos a llamarla la \emph{base dual
+	de $\BB$}, o $\BB^*$.
+
+	Demo: Como $\dim \V^* = n$, alcanza con probar que los $\phi$ son $\li$.
+
+	Supongamos que $0 = \sum \lambda_i\phi_i$, luego evaluamos esta función nula
+	en la base, y tenemos, para cada vector de la base $\BB_i$, se cumple
+
+	\[
+		0\;\BB_i = \sum \lambda_j \cdot \phi_j \BB_i
+	\]
+	Notemos que se anula para $i \neq j$, luego 
+	\[
+		0\;\BB_i = \lambda_i \cdot \phi_i \BB_i
+	\]
+	\[
+		0 = \lambda_i \cdot 1
+	\]
+	\[
+		0 = \lambda_i
+	\]
+	Entonces es li.
+
+	\section*{Expresar elementos de $\V^*$ en una base}
+	Dado un $\psi \in \V^*$. Se puede expresar como
+	\[
+		\psi = \sum \lambda_i \cdot \BB^*_i
+	\]
+	Para cada $\BB_j$, tomemos
+	\[
+		\psi = \sum \lambda_i \cdot \BB^*_i
+	\]
+	\[
+		\psi\BB_j = \sum \lambda_i \cdot \BB^*_i \BB_j
+	\]
+	\[
+		\psi\BB_j = \lambda_j \cdot \BB^*_j \BB_j
+	\]
+	\[
+		\psi\BB_j = \lambda_j
+	\]
+	Luego los coeficientes en la base dual, son las imágenes de la base
+	original.
+
+	\section*{Bases diferentes}
+	Sea $v$ y $w$ bases de $\V$, y sea $\phi = v^*$, $\psi = w^*$
+	luego tenemos que:
+	\[
+		C_{\psi\phi} = (C_{vw})^T
+	\]
+	Sea $C = C_{vw}$. Tenemos que $v_j = \sum C_{ij}w_i$.
+
+	Notemos además que $\psi_iv_j = C_{ij}$. Acordémonos que esto significa que
+	$\psi_i$.
+
+	Notemos además que $\psi_i = \sum (\psi_i v_j) \cdot \phi_j = \sum C_{ij}
+	\phi_j$. Luego estamos.
+
+	\section*{Dual del Dual}
+	Dado un $\V$, si tomamos su doble dual $\V^{**}$, nos podemos definit la
+	función:
+
+	$\ev : \V \to (\V^* \to \K) = \V^{**}, \ev = v \mapsto \phi \mapsto
+	\phi v$.
+
+	Notemos que $\ev v$ es lineal ya que $(\alpha \cdot \phi + \beta \cdot \psi)v = 
+	\alpha \cdot \phi v + \beta \cdot \psi v = \alpha \cdot \ev \phi + \beta
+	\cdot \ev \psi
+	$.
+
+	Además notemos que $\ev$ es lineal ya que \[
+		\ev (\alpha \cdot v + \beta \cdot w)
+	\]\[
+		= \phi \mapsto \phi (\alpha \cdot v + \beta \cdot w)
+	\]\[
+		= \phi \mapsto \alpha \cdot \phi v + \beta \cdot \phi w
+	\]\[
+		= \phi \mapsto \alpha \cdot \ev v \phi + \beta \cdot \ev w \phi
+	\]\[
+		= \alpha \cdot \ev v + \beta \cdot \ev w \]
+
+	\section*{$\ev$ es mono}
+	Supongamos que $\ev_v = 0$, es decir $\forall \phi: \ev_v \phi = 0$, es
+	decir, $\forall \phi: \phi v = 0$.
+
+	Si $v \neq 0$, luego $\li \{v\}$, luego existe una base $v = \BB_1$ de $\V$,
+	luego tomemos $\BB^*_1$. Por definición $\BB^*_1v = 1$, pero contradicción ,
+	ya que $\phi v = 0$ para todo $\phi$.
+
+	\section*{$\ev$ es epi en finitos}
+	Si $\dim \V = n$, luego $\ev$ es epi
+
+	\section*{Anuladores}
+	Dado $X \inn \V$, decimos que el anulador de $X$, notado $X^0 \inn \V^*$, es
+	el dado por
+	\[X^0 = \{\phi \in \V^* : \forall x \in X : fx = 0 \in \K \}\]
+
+	\subsection*{Prop}
+	\begin{enumerate}
+		\item $\{0\}^0 = \V^*$ y $\V^0 = \{0\}$
+		\item $X \inn Y \To Y^0 \inn X^0$
+		\item $X^0 = \langle X \rangle ^0$
+		\item $S, T \inn \V$ subespacios, luego:
+			\begin{itemize}
+				\item $(S + T)^0 = S^0 \cap T^0$
+				\item $S^0 + T^0 \inn (S \cap T)^0$
+			\end{itemize}
+	\end{enumerate}
+	\subsection*{Demo}
+	\begin{enumerate}
+		\item Trivial
+		\item Sea $f \inn Y^0$, queremos probar que si $x \in X$, luego $fx = 0$,
+			pero eso es verdad ya que $x \in X \inn Y$.
+		\item Queremos probar que si $f \in X^0$, luego $f \in \langle X^0
+			\rangle$. Sea $v = \sum \lambda_i \cdot x_i \in \langle X
+			\rangle$, luego
+			tenemos que $f v = \sum \lambda_i \cdot fx_i = 0$, entonces $f \in
+			\langle X \rangle ^ 0$
+		\item $S, T \inn \V$ subespacios, luego:
+			\begin{itemize}
+				\item Si tenemos $f \in S^0 \cap T^0$, queremos probar que $f \in
+					(S+T)^0$. Sea $s + t \in S + T$, luego $f (s+t) = fs + ft = 0$,
+					luego estamos.
+				\item Es trivial por el punto $2$.
+			\end{itemize}
+	\end{enumerate}
+
+	\section*{Dinsion $S^0$}
+	Si tenemos $\dim \V = n$, luego tomemos $S$ subesp de $\V$. Demostremos que
+	$\dim S + \dim S^0 = n$.
+
+	Sea $r = \dim S$.
+
+	Sea $v$ una base de $\V$ tal que $v_{i < r}$ es base de $S$, y sea $\phi$ se
+	base dual, luego una $\psi = \sum \lambda_i \cdot \phi_i \in S^0 \iff
+	\forall i < r : \psi v_i = 0 \iff \forall i < r : \lambda_i = 0$, luego
+	tenemos que $S^0 = \langle \phi_{i \geq r} \rangle$.
+\end{document}

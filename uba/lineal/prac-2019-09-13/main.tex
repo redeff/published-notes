@@ -1,0 +1,66 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Clase Experimental}
+Dada $v$ base de $\V$, con $\phi = v^*$, se tiene las identidades:
+\begin{itemize}
+	\item $\forall x \in \V : ((x)_v)_i = \phi_ix$
+	\item $\forall \phi \in \V^* : ((f)_\phi)_i = f v_i$
+\end{itemize}
+
+Si introducimos otras bases $u^* = \psi$, luego tenemos:
+
+\[
+(C_{uv})_{ij} = ((v_j)_u)_i = \psi_i v_j
+\]
+Además
+\[
+(C_{\phi \psi})_{ij} = ((\psi_j)_\phi)_i = \psi_j v_i
+\]
+
+\section*{Ejercicio 1}
+Tomamos $\V = \R^3$, luego dados
+
+$\phi_1 (x,y,z) = x$,
+
+$\phi_2 (x, y, z) = y-z$, y
+
+$\phi_3 (x,y,z) = 2x-y$
+
+Decidir si son base.
+
+Tomamos $(\phi_i)_{E^*}$ y vemos que son $\li$.
+
+\section*{Ejercicio 2}
+Sean $\V$ con $\dim V = n$, y $\phi \in \V^*, \phi \neq 0$, y sea $v \notin
+\ker \phi$. Hay que demostrar que $\V = \langle v \rangle \oplus \ket \phi$.
+
+Notemos que $\dim \Ima \phi = 1$, luego por teo de dimensión $\dim \ket \phi =
+n-1$.
+
+Además notemos que $\langle v \rangle \cap \phi = \{0\}$ por hipótesis, osea
+que por teo de la dimensión ya estamos.
+
+Osinó podemos escribir, dado $x \in \V$, que $x = (x - \lambda \cdot v) +
+\lambda \cdot v$, donde queremos que $\phi (x - \lambda \cdot v) = 0 = \phi x
+-\lambda \phi v$, es decir, alcanza con $\lambda = \frac{\phi x}{\phi v}$.
+
+\section*{Ejercicio 5}
+Dados $\phi, \psi \in \V^* - \{0\}$, probar que $\ker \phi = \ker \psi \iff$
+\{\phi, \psi\}.
+
+\subsection*{$\From$)}
+Es trivial
+\subsection*{$\To$)}
+Supongamos $\ker \phi = \ker \psi$. Tomemos $v \notin \ker$, luego dijimos que
+podemos escribir $\V = \langle v \rangle + \ker$, es decir, para todo $x$, se
+cumple $x = \lambda v + z$. Luego notemos que $\phi x = \lambda \cdot \phi v$, y
+$\psi x = \lambda \cdot \psi v$, luego $\phi x = \psi x \cdot \frac{\psi
+v}{\phi v} $. Entonces ya estamos.
+
+\subsection*{Ejercicio 6}
+Tomemos $S = \{x \in \R^4 : 2x_1 + x_2 - x_3+ 3x_4 = 0, x_1-x_2+x_4 = 0\}$.
+
+Notemos que $\phi_1 = 2x_1 + x_2 - x_3+ 3x_4$, $\phi_2 = x_1-x_2+x_4$, entonces
+estos están en el generador. Además son li y da la dimensión. Entonces ya está.
+\end{document}
