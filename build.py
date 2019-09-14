@@ -31,7 +31,6 @@ def comp(d):
     data.insert(2, '\\input{../../../style/extra.tex}\n')
     result = subprocess.run([
         'pandoc',
-        '-s',
         '--from',
         'latex',
         '--mathjax',
@@ -69,4 +68,4 @@ for f in files:
     body += item.replace('{link}', f).replace('{content}', f)
 
 write_to_file('notes.html', with_path('notes.html').replace('{content}',
-    body))
+    read_from_file('notes_pre.html').replace('{content}', body)))
