@@ -1,3 +1,8 @@
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+
 :root {
 
 	--primary: #55aa22;
@@ -58,7 +63,7 @@ body {
 	text-align: justify;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
 	nav {
 		justify-content: space-around;
 		/* flex-flow: row wrap; */
@@ -74,7 +79,7 @@ body {
 	}
 }
 
-@media (min-width: 700px) {
+@media (min-width: 901px) {
 	.wrapper {
 		display: flex;
 	}
@@ -95,7 +100,3 @@ body {
 
 }
 
-code{white-space: pre-wrap;}
-span.smallcaps{font-variant: small-caps;}
-span.underline{text-decoration: underline;}
-div.column{display: inline-block; vertical-align: top; width: 50%;}
