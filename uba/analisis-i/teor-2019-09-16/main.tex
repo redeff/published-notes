@@ -1,0 +1,46 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Notación $\OO$ y $o$}
+Decimos que $f x = \OO(g x) \iff \exists c > 0 : fx < c \cdot
+gx$.
+
+\section*{Derivada en $\R$}
+Se tenemos $f : \R \to \R$, y $p \in \R$. Decimos que
+\[f' \; p = \alpha \iff \lim_{h \to 0} \frac{f \; p - (f \; (p + h) + h
+\alpha)}{||h||} \]
+
+Decimos que $f x = o(g x) \iff \lim \frac{f x}{g x} = 0$
+\section*{Deferenciación Multivaraible}
+\subsection*{Plano Tangente}
+Un plano dado por $\pi q = fp + \alpha(p-q)_x + \beta(p-q)_y$ es tangente a la
+función $f$ en el punto $p$ sii:
+
+\[
+	\lim_{q \to p} \frac{fq - \pi q}{||p-q||} = 0
+\]
+
+\subsection{Ejemplo}
+Dada la función $f \; xy = x^2 + y^3$, notemos que 
+\[f \; (1+h) \; (2+k) = 1 + 2h + h^2 + 2^2 + 12k + 6k^2 + k^3 =\]
+\[9 + (2h + 12k) + (h^2 + 2^2 + 6k^2 + k^3)\]
+
+\subsection{Diferencial de $f$}
+Dada una función $f : \R^n \to R$, la diferencial de $f$ en el punto $p$,
+notada $\nabla f p \in \R^n$ dada por:
+\[
+	\lim_{q \to p} \frac{fq - fp - (q-p) \cdot \nabla f p}{||p-q||} = 0
+\]
+Cuando existe, se dice diferenciable, y se cumple:
+\[(\nabla f p)_i = \frac{\partial f}{\partial e_i} \; p\]
+Y en general, diferenciabilidad implica la existencia de los límites
+direccionales y se cumple:
+\[\frac{\partial f}{\partial v} \; p = v \cdot \nabla f p\]
+En particular, con $||v||$ constante, la derivada direccional se maximiza con
+$v$ paralelo a $\nabla fp$.
+
+\section*{Teorema}
+Sea $f : (\Omega \in \R^n) \to \R$, con $p \in \Omega^\circ$. Si las derivadas
+parciales $\frac{\partial f}{\partial e_i} $ existen y son contínuas en un
+entorno de $p$, entonces $f$ es diferenciable en $p$.
+\end{document}

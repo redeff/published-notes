@@ -1,0 +1,82 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Prop}
+si tenemos $f : \V \to \W$, luego:
+\begin{itemize}
+	\item $\ker f^t = (\Ima f)^0$
+	\item $\Ima f^t \inn (\ker f)^0$, la igualdad vale con dimensión finita.
+	\item $f \mono \iff f^t \epi$
+	\item $\rg f = \rg f^t$
+\end{itemize}
+
+\section*{Matriz de la Transpuesta}
+Si tenemos $f : \V \to \W$, y $v, w$ bases de $\V, \W$, entonces:
+\[
+	(f^t)_{w^*v^*} = (f_{vw})^t
+\]
+
+Demo: si tomamos $A = f_{vw}$, luego tenemos:
+\[
+	fv_i = \sum a_{ji}w_j
+\]
+
+Notemos además que
+\[
+	(f^tw^*_j)_{v^*i} = f^tw^*_jv_i = w^*_j(fv_i) = w^*_j \sum a_{ji}w_j = a_{ji}
+\]
+Entonces ya estamos.
+
+\section*{Determinantes}
+Se define como una función $\det : \K^{n \times n} \to \K$ que toma $n$ vectores en $\K^n$, y devuelve el volumen signado del hiperparalepípedo formado por esos vectores. Por propuedades geométricas llegamos a que:
+\begin{itemize}
+	\item $\det (A_1 \dots A_i + v \dots A_n) = \det (A_i\dots) + \det (A_1 \dots v \dots)$ (se dice $f$ es multilineal alternado por columna)
+	\item $\det (A_1 \dots \lambda A_i\dots) = \lambda \det A$ ()
+	\item itercambiar columnas cambia de signo
+	\item Si son li, entonces $\det A = 0$
+	\item $\det A \cdot B = \det A \cdot \det B$
+\end{itemize}
+
+\subsection*{Notación}
+Si tenemos una sucesión $A_{i < n}$, luego $k^iA$ es la sucesión $A$ pero con la $i$-ésima posición cambiada por $k$
+
+Sea $A(i|j)$ la matriz que resulta de sacarle la fila $i$ y la columna $j$ a $A$.
+
+\subsection*{Función multilineal alternada}
+Una función $f : \K^{n \times n} \to \K$ se dice \emph{multilineal alternada} si:
+\begin{itemize}
+	\item Si se finan todas las columnas de una matriz $M$ excepto la $i$-ésima, entonces la función es lineal en la $i$-ésima columna. Es decir, $v \mapsto f (v^iA )$ es lineal.
+	\item Si hay columnas repetidas entonces $f$ vale $0$. Es decir, $f (v^iv^jA) = 0$ para $i \neq j$
+\end{itemize}
+
+\subsubsection*{Propiedades de las Multilineales Alternadas}
+\begin{itemize}
+	\item Si una fila es $0$, entonces vale $fA = 0$. Demo trivial por linearidad.
+	\item Intercambiar filas cambia el signo del determinante. Demo: si tomamos la igualdad $f(A_1 \mid \dots \mid A_i + A_j \mid \dots \mid A_i + A_j \mid A_n)$ y expandimos en los cuatro sumandos por linearidad, nos quedan dos cosas que son $0$ y las otras dos tienen que ser opuestas y estamos.
+
+		\[f ((v+w)^i(v+w)^jA) = 0\]
+	\[f (v^iv^jA) + f (v^iw^jA) + f (w^iv^jA) + f(w^iw^jA) = 0\]
+	\[f (v^iw^jA) + f (w^iv^jA) = 0\]
+
+	Entonces estamos.
+
+	\item $fA = f(A_1 \mid \dots \mid A_i + \alpha A_j \mid \dots \mid A_n)$
+	\item Si alguna columna es combinación lineal de las otras, entonces $fA = 0$.
+\end{itemize}
+
+\subsection*{La única multilineal alternada es $\det$}
+Para cualquier $\alpha \in \K$, y $n \in \N$, existe una única multilineal alternada $f : \K^{n \times n} \to K$ tal que $f I_n = \alpha$. Demo:
+
+\subsubsection*{Existencia}
+Para $n=1$, luego existe $f[a] = \alpha a$.
+
+Ahora por inducción, asumimos que existe para $g : \K^{n \times n} \to \K$ multilineal.
+
+Definamos $f A = \sum_{i = 0}^n (-1)^i \cdot a_{0i}\cdot g \; A(0|i)$. Vamos a ver que cumple las condiciones de multilinearidad alternada.
+
+Para ver que es lineal en la $k$-ésima fila, alcanza con ver que cada término de la suma es lineal. El $k$-ésimo término es de la forma $a_{0k} \cdot c$, con $c$ constante, por lo que claramente es lineal en la columna $k$.
+
+En un térmono que no es el $k$-ésimo, nos queda una constante por algo que depende de $g \; A(0|i)$, que por inducción es lineal en la $k$-ésima columna sin el primer elemento.
+
+Además $f (v^iv^jA) = \sum g \; (v^iv^jA)(0|k) + g (v^iv^jA)(0|i) + g(v^iv^jA)(0|j)$, y ya estamos.
+\end{document}

@@ -1,0 +1,107 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Ejercicio 1}
+Sea $S = \langle (1 \; 2 \; 3), (2 \; 2 \;  4) \rangle$. Halar ecuaciones que
+describan $S$.
+
+Tomamos la base $\BB = \{(1 \; 2 \; 3) , (2 \; 2\; 4) , (0 \; 0 \; 1)\}$ de
+$\R^3$, y tomamos la base dual $\BB^* = \{\phi_1, \phi_2, \phi_3\}$. Luego
+tenemos que $S^0 = \langle \phi_3 \rangle$, donde:
+
+\[\phi_3 \; (1 \; 2 \; 3) = 0\]
+\[\phi_3 \; (2 \; 2 \; 4) = 0\]
+\[\phi_3 \; (0 \; 0 \; 1) = 1\]
+Entonces ya estamos
+
+\section*{Ejercicio 2}
+Tomemos $
+\BB = \left\{
+	\begin{pmatrix}
+		1 & 0 \\
+		1 & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+		0 & 1 \\
+		0 & 1
+	\end{pmatrix}
+	\begin{pmatrix}
+		1 & 1 \\
+		0 & 0
+	\end{pmatrix}
+	\begin{pmatrix}
+		0 & 0 \\
+		1 &-1 
+	\end{pmatrix}
+\right\}
+$ base de $R^{2 \times 2}$.
+
+Sea $\phi = \BB^*$. Sea $S \inn \V$ tal que $S^0 = \langle \phi_1 - \phi_3 +
+\phi_4, \phi_2 - 2\phi_4 \rangle$. Hallar $S$.
+
+Tenemos que $S = \{A : (\phi_1-\phi_3+\phi_4) A = 0 = (\phi_2 - 2\phi_4) A\}$.
+
+Si tenemos que si $A_\BB = \alpha$, entonces $(\phi_1-\phi_3+\phi_4) A = 
+\alpha_1 - \alpha_3 + \alpha_4
+$, y $(\phi_2 - 2\phi_4) A = \alpha_2 - 2\alpha_4$. Entonces tenemos el sistema
+de ecuaciones
+\[
+	\begin{cases}
+		\alpha_1 - \alpha_3 + \alpha_4 &= 0 \\
+		\alpha_2 - 2\alpha_4 &= 0
+	\end{cases}
+\]
+
+Resolviendo nos queda $S = \left\langle
+\begin{pmatrix}
+	2 & 1 \\
+	1 & 0
+\end{pmatrix}
+\begin{pmatrix}
+	-1 & 2 \\
+	0 & 1
+\end{pmatrix}
+\right\rangle$
+
+\section*{Ejercicio 3}
+Sea $\BB' = \{\phi_1, \phi_2, \phi_3\}$ base de $\R^{3*}$. Sean $v_1, v_2, v_3
+\in \R^3$ tales que:
+
+\begin{itemize}
+	\item $\langle v_1, v_2 \rangle ^0 = \langle 2\phi_1-2\phi_2+3\phi_3 \rangle$
+	\item $\langle v_3 \rangle ^0 = \langle 4\phi_1+2\phi_2+5\phi_3, \phi_1 +
+		2\phi_2 + \phi_3 \rangle$
+\end{itemize}
+
+Notemos que \[n-\dim \langle v_1, v_2, v_3 \rangle = \dim \langle v_1, v_2,
+v_3 \rangle^0 = \dim (\langle v_1, v_2 \rangle + \langle v_3 \rangle)^0 = \]
+\[\dim(\langle v_1, v_2 \rangle + \langle v_3 \rangle)^0$
+\[\dim\langle v_1, v_2 \rangle^0 \cap \langle v_3 \rangle^0$
+\[\dim\langle 2\phi_1-2\phi_2+3\phi_3 \rangle \cap \langle 4\phi_1+2\phi_2
+	+5\phi_3, \phi_1 +
+2\phi_2 + \phi_3 \rangle\]
+\[\dim\langle (2 \; -2 \; 3) \rangle \cap \langle (4 \; 2 \; 5) (1 \; 2 \; 1)
+\rangle = 1\]
+
+Luego el resultado es $2$
+
+\section*{Ejercicio 4}
+Sean $f,g,h \in \V^*$, demostrar que $T : \V \to \K^3, Tv = (fv, gv,
+hv)$. Probar que $T$ es epi iff $\{f, g, h\} \li$.
+
+Si es epi, tomemos $v_1, v_2, v_3$ que dan los canónicos evaluados en $T$,
+luego si tomamos una cominación lineal $\alpha f + \beta g + \gamma h = 0$,
+tenemos que $\alpha = 0$, ya que evaluamos en $v_1$ y así.
+
+Si $\alpha f + \beta g + \gamma h = 0$, luego sabemos que $\alpha fv + \beta gv
++ \gamma hv = 0$. WLOG $\alpha \neq 0$ y tenemos que el $(1 \; 0 \; 0)$ no se
+genera.
+
+Tomemeos la transpuesta $T^t : (\K^3)^* \to \V^*$, donde $T^t \phi = \phi \circ
+T$.
+
+Tenemos que $\dim \Ima T^t$ es la dimansión del generado por la canónica, que
+es $\langle f, g, h \rangle$
+
+\section*{Ejercicio 5}
+\end{document}

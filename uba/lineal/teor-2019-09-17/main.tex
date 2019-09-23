@@ -1,0 +1,104 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Anulador}
+Dado $S$ un subespacio de $\V$, si definimos
+$T = \{x : \V : \forall \phi \in S^0 : \phi x = 0\}$, luego $S = T$.
+
+Es claro que $S \inn T$. Vemos que $T \inn S$. Sea $x \in T$, $x \notin S$,
+tomemos $v$ una base de $\V$, con $v_{i < r}$ base de $S$, y $v_r = x$. Sea
+la base dual $\phi = v^*$. Como $\phi_{i \geq r}v_{i < r} = 0$, tenemos que
+$\phi_{i \geq r}$ es base de $S^0$.
+
+Luego $\phi_r \inn S^0$, entonces $\phi_r x = 0$, pero $x = v_r$, pero
+entonces por definición de base dual tenemos $\phi_r x = 1$. Contradicción.
+
+\subsection*{Observación}
+Dado $\V$ finitamente generado y $S$ sub de $\V$, lugo si $\phi$ es base de
+$S^0$, luego $S = \{x \in \V : \forall i : \phi_ix = 0\}$.
+
+\section*{Doble dual}
+Tenemos la función $\ev \in (\V \to \V^{**} = \V \to \V^{*} \to \K)$
+dada por $\ev_x \phi = \phi x$. La función $\ev$ también se llama $\Phi$.
+
+Esta función es $\iso$ para $\V$ finitamente generado.
+
+\section*{Anulador del Anulador}
+Tenemos $S^{00} = \{\Phi : \V^{**} : \forall \phi \in S^0 : \Phi\phi = 0\}$.
+Por lo anterior, tenemos que
+\[
+S^{00} = \{\Phi \in \V^{**} : \forall \phi \in S^0 : \Phi\phi = 0\} =
+\]
+\[
+\{\ev_x : x \in \V : \forall \phi \in S^0 : \ev_x\phi = 0\} =
+\]
+\[
+\{\ev_x : x \in \V : \forall \phi \in S^0 : \phi x = 0\} =_{\iso}
+\]
+\[
+\{x : x \in \V : \forall \phi \in S^0 : \phi x = 0\} = S
+\]
+Luego tenemos $S^{00} =_{\iso} S$
+
+\section*{Operaciones de Subespacios sobre Anulación}
+Se cumple que:
+\begin{itemize}
+	\item $(S+T)^0 = S^0 \cap T^0$
+	\item $(S\cap T)^0 \inn^T S^0 + T^0$
+\end{itemize}
+Y para dimensión finita,
+\begin{itemize}
+	\item $(S+T)^0 = S^0 \cap T^0$
+	\item $(S\cap T)^0 = S^0 + T^0$
+\end{itemize}
+
+\section*{Función Transpuesta}
+Dada $f : \V \to \W$, la función transpuesta $f^t : \W^* \to \V^*$ es la dada
+por $f^t \phi = \phi \circ f$, es decir $f^t = (\circ f)$. notemos que
+$(*^t) : (\V \to \W) \to (\W^* \to \V^*)$ es lineal. Esto es ya que:
+\begin{itemize}
+	\item $f^t \phi$ es lineal.
+	\item $f^t$ es lineal
+	\item $(*^t)$ es lineal
+\end{itemize}
+
+\subsection*{Transpuesta de la Identidad}
+Dada $\id : \V \to \V$, tenemos que $\id^t = \id_{\V^*}$
+
+\subsection*{Composición}
+Dada $f : \U \to \V$ y $g : \V \to \W$, tenemos que $(g \circ f)^t = f^t \circ
+g^t : \W^* \to \U^*$.
+
+Demo:
+\[(g \circ f)^t \phi\]
+\[= \phi \circ (g \circ f)\]
+\[= (\phi \circ g) \circ f\]
+\[= g^t \phi \circ f\]
+\[= f^t (g^t \phi)\]
+\[= (f^t \circ g^t) \phi\]
+
+\subsection*{Isomorfismo}
+Si $f : \V \to_{\iso} \W$, luego $f^t : \W \to_{\iso} \V$, y además $(f^{-1})^t
+= (f^t)^{-1}$
+
+Notemos que \[f^t \circ (f^{-1})^t = (f^{-1} \circ f)^t = \id^t = \id\]
+y similarmente, \[(f^{-1})^t \circ f^t = (f \circ f^{-1})^t = \id^t = \id\]
+
+\subsection*{Anuladores}
+Si $f: \V \to \W$, luego $\ker f^t = (\Ima f)^0$. Además, $\Ima f^t \inn (\ker
+f)^0$, la igualdad dándose para dimensión finita.
+
+Notemos que
+\[(\Ima f)^0 = \{\phi : \phi (\Ima f) = 0\} = \]
+\[\{\phi : (\phi \circ f) \V = 0\}\]
+\[\{\phi : f^t \phi \V = 0\}\]
+\[\{\phi : f^t \phi = 0\} = \ker f^t\]
+
+Supongamos $f^t \psi = \phi$, tenemos
+\[f^t \psi = \phi\]
+\[\psi \circ f = \phi\]
+\[(\psi \circ f) \ker f = \phi \ker f\]
+\[\psi (f \ker f) = \phi \ker f\]
+\[\psi 0 = \phi \ker f\]
+\[0 = \phi \ker f \To \phi \inn (\ker f) ^0\]
+\end{document}

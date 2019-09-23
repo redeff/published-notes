@@ -1,0 +1,123 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Cauchy}
+Dadas $f, g$ continuas y derivables en $[a, b]$, existe un $c \in (a, b)$ tal
+que:
+\[f'c \cdot (gb - ga) = g'c \cdot (fb - fa)\]
+
+\section*{Ejercicio 1}
+Calcular $\sup_{(x,y) \in [0,3]^2} fxy$, donde:
+
+\[
+	fxy =
+	\begin{cases}
+		\frac{(x^5 + 5x^3) - (y^5 + 5y^3)}{x^3 - y^3} & \text{Si $x \neq y$} \\
+		\\
+		0 & \text{cc}
+	\end{cases}
+\]
+
+Si $x = y$, el supremo es $0$. Si no, tomemos $\phi t = t^5+5t^3$, y $\psi t =
+t^3$. WLOG, $x < y$, y podemos hacer Cauchy en el intervalo $(x, y)$ con las
+funciones $\phi, \psi$. Luego tenemos:
+
+\[
+	\frac{(x^5 + 5x^3) - (y^5 + 5y^3)}{x^3 - y^3} =
+\]
+\[
+	\frac{\phi x - \phi y}{\psi x - \psi y} =
+\]
+\[
+	\frac{\phi' c}{\psi' c} =
+\]
+\[
+	\frac{5c^4+15c^2}{3c^2}
+\]
+Para algún $c \in (x, y) \inn (0, 3)$. Entonces ahora queremos el supremo:
+\[
+	\sup_{c \in (0,3)}\frac{5c^4+15c^2}{3c^2} =
+\]
+\[
+	\sup_{c \in (0,3)}\frac{5c^2+15}{3} =
+\]
+\[
+	\sup_{c \in (0,3)}\frac{5}{3} \cdot c^2 + 5 =
+\]
+\[
+	5 + \frac{5}{3} \cdot \sup_{c \in (0,3)} c^2 =
+\]
+\[
+	5 + \frac{5}{3} \cdot 9 = 5 + 15 = 20
+\]
+Como la función es contínua, entonces el supremo es 20.
+
+\section*{Derivadas Multivariables}
+Dada una $f : \R^2 \to \R$, queremos las condiciones necesarias para la
+existencia de un plano tangente al gráfico de $f$ en un punto $p \in \R^2$.
+
+Es decir, queremos un plano definido por $\pi q = p + (p-q) \cdot m$, con $m, q
+\in \R^2$.
+
+Si queremos calcular la derivada en la recta $\phi_v = \lambda \mapsto p +
+\lambda v$, para alguna dirección $v$, es lo mismo que calcular
+$\phi_v' \; 0$, con $\phi : \R \to \R$.
+
+Entonces, dado un vector $v \in \R^n$ con $||v|| = 1$, se dice que:
+
+\[
+	\frac{\partial f}{\partial v} \; p = (\lambda \mapsto f\;(p + \lambda v))' \; 0
+	= \lim_{\lambda \to 0} \frac{f \; (p + \lambda v) - f \; p}{\lambda} 
+\]
+
+\section*{Ejercicio 2}
+Calcular todas las derivadas direccionales en $(0, 0)$ de:
+
+\[
+	f \; x \; y =
+	\begin{cases}
+		\frac{x^4 + x^2y}{2y^2} & y \neq 0 \\
+		\\
+		0 & y = 0
+	\end{cases}
+\]
+
+Si $v_y = 0$, luego claramente $\frac{\partial f}{\partial v} \; 0 = 0$, luego
+tomemos $v_y \neq 0$, entonces la función siempre toma la primer forma, y
+tenemos:
+
+$\frac{\partial f}{\partial v} \; (0, 0) = (\lambda \mapsto f \; ((0, 0) +
+\lambda v))' = 
+(\lambda \to f \; \lambda v)' \; 0 = $
+\[\left(\lambda \mapsto
+\frac{\lambda^4v_x^4 + \lambda^3v_x^2v_y}{2\lambda^2v_y^2} \right)' \; 0= \]
+\[\left(\lambda \mapsto
+\lambda \cdot \frac{\lambda v_x^4 + v_x^2v_y}{2v_y^2} \right)' \; 0= \]
+\[\text{Como en la derivada del producto, la parte con $\lambda$ se va,}
+	\left(\lambda \mapsto
+\frac{\lambda v_x^4 + v_x^2v_y}{2v_y^2} \right) \; 0= \]
+\[\left(\lambda \mapsto
+\frac{v_x^2v_y}{2v_y^2} \right) \; 0= \frac{v_x^2}{2v_y}\]
+
+\section*{Derivadas Parciales}
+Es una derivada direccional donde $v$ es un canónico. Esta se puede calcular
+fácilmente tomando, por ejemplo,
+\[
+	\frac{\partial f}{\partial x} \; (x, y) = (\lambda \mapsto f \; (\lambda, y))' \; x
+\]
+Es decir, derivamos en una variable como si la otra fuese constante.
+
+Por ejemplo, si tenemos:
+\[f \; (x, y, z) = e^{zy} \cdot \ln (x^2 + y^2)\]
+Entonces las derivadas son
+\[f_x \; (x, y, z) = e^{zy} \cdot \frac{2x}{x^2+y^2} \]
+\[f_y \; (x, y, z) = z e^{zy} \ln (x^2 + y^2) +
+\frac{e^{zy}}{x^2+y^2} \]
+\[f_z \; (x, y, z) = ye^{zy} \cdot \ln (x^2 + y^2)\]
+
+\section*{Diferenciabilidad}
+Dada $f : \R^n \to \R$ es diferenciable en $p$ si existen las derivadas parciales
+f_{x_i} \; p$ y
+\[\lim_{q \to p} \frac{f \; p - \sum \; (q_i - p_i) \cdot f_{x_i} \;
+p}{||q - p||} \]
+\end{document}

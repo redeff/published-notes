@@ -1,0 +1,132 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Producto interno}
+El producto interno se define $\langle , \rangle : \R^n \to \R^n \to \R$, por la ecuación $\langle x, y \rangle = \sum x_iy_i$.
+
+\subsection*{Cauchy-Schwarz}
+Se tiene que $|\langle v, w \rangle| \leq ||v|| \cdot ||w||$
+
+Demo:
+
+tomemos $\lambda = \frac{\langle v, w \rangle}{\langle v, v \rangle}$, entonces tenemos
+\[0 \leq \langle w - \lambda v, w - \lambda v \rangle =\]
+\[||w||^2 - 2\lambda\langle v, w\rangle + \lambda^2 ||v||^2 =\]
+\[||w||^2 - 2\frac{\langle v, w\rangle^2}{\langle v, v \rangle} + \lambda^2 ||v||^2 =\]
+\[||w||^2 - 2\frac{\langle v, w\rangle^2}{\langle v, v \rangle} + \frac{\langle v, w\rangle^2}{\langle v, v \rangle} =\]
+\[||w||^2 - 2\frac{\langle v, w\rangle^2}{||v||^2} + \frac{\langle v, w\rangle^2}{||v||^2} =\]
+\[||w||^2 - \frac{\langle v, w\rangle^2}{||v||^2} \To\]
+\[||v||^2 \cdot||w||^2 \geq \langle v, w\rangle^2\]
+
+\section*{Máximo Crecimiento}
+Como corolario de lo anterior, la dirección de máximo creciemeinto de una función en un punto no crítico es $\frac{\nabla f p}{||\nabla f p||} $. Esto se usa para el método de \emph{gradient descent}, para encontrar mínimos de funciones feas.
+
+\section*{Diferenciación de funciones en $\R^n \to \R^m$}
+\subsection*{Transformación Lineal}
+Una $T : \R^n \to \R^m$ se dice \emph{transformación lineal} si $T (v+w) = Tv + Tw$, y $T (\lambda v) = \lambda Tv$
+
+\subsection*{Diferencial}
+Dada una función $f : \R^n \to \R^m$ y un punto $p \in \R^n$, decimos que una transformación lineal $T : \R^n \to \R^m$ \emph{aproxima bien la función} si se cumple que:
+\[
+	\lim_{x \to p}\frac{fx - fp - T(x-p)}{||x-p||} = 0_{\R^m}
+\]
+notemos que si descomponemos $f$ en sus componentes $f_iv = (fv)_i$, luego tenemos que es necesario y suficiente que cada una de las $f_i$ sea diferenciabla para que $f$ sea diferenciable. Y aún más tenemos:
+\[[T] =
+\begin{bmatrix}
+	\vdots \\
+	\nabla f_i p \\
+	\vdots 
+\end{bmatrix}
+\]
+
+Decimos entonces que la función $f:\R^n \to \R^m$ es \emph{diferenciable} si existe tal $T$, y la \emph{diferencial} de $f$ en $p$ es $[T] \in \R^{m \times n}$
+, y se nota $Df(p) = [T]$
+
+\subsection*{Ejemplo}
+Si tenemos $fxy = (x+y, xy, x^2 + y^3)$, luego tenemos
+\[Df(x, y) = 
+\begin{bmatrix}
+	1 & 1 \\
+	y & x \\
+	2x & 3y^2 \\
+\end{bmatrix}\]
+Y es claramente diferenciable porque cada componente es $\CC_1$.
+
+Luego tenemos que
+\[Df(1, 2) = 
+\begin{bmatrix}
+	1 & 1 \\
+	2 & 1 \\
+	2 & 12 \\
+\end{bmatrix}\]
+Entonces podemos aproximar la función cerca de $(1, 2)$:
+\[
+	f(x,y) \approx f(1, 2) + 
+\begin{bmatrix}
+	1 & 1 \\
+	2 & 1 \\
+	2 & 12 \\
+\end{bmatrix} \times
+\begin{bmatrix}
+	x - 1 \\
+	y - 2 \\
+\end{bmatrix}
+\]
+
+\section*{Acotar con transformaciones lineales}
+Para cualquier norma, para toda matriz $T \in \R^m \times \R^n$, tenemos que existe una constante $M$ tal que $||Tv|| \leq M ||v||$.
+
+Demo:
+Si tomamos $A = \partial B(0, 1) \in \R^n$ la $n$-esfera de radio $1$, luego como $A$ es compacto y $x \mapsto ||Tx||$ es contínua, tenemos que la función alcanza un máximo $M$ en $A$. Además, como $T$ es lineal, este máximo será el mismo para toda esfera. Entonces ya está. En otras palabras:
+\[||Tx|| = ||x|| \cdot \left|\left|T\frac{x}{||x||}\right|\right| \leq ||x|| \cdot |M|\]
+Entonces estamos. A este valor lo llamamaos $M = ||T||$.
+
+\section*{Propiedad}
+Si $f : (A \inn \R^n) \to \R^m$ es deferenciable en $p \inn A^\circ$, luego existe una bola $p \in B \inn A$ y una constante $c > 0$ tal que:
+\[
+	\forall x \in B : \frac{||fx - fp||}{||x-p||} < c
+\]
+
+Demo: Tenemos $fx = fp + Dfp \cdot (x-p) + o(x-p)$. Luego tomemos
+\[||fx - fp - Dfp \cdot (x-p)|| \leq ||x-p||\]
+\[\frac{||fx - fp - Dfp \cdot (x-p)||}{||x-p||} \leq 1\]
+\[\frac{||fx - fp||}{||x-p||} - \frac{||Dfp \cdot (x-p)||}{||x-p||} \leq 1\]
+\[\frac{||fx - fp||}{||x-p||} \leq 1+ \frac{||Dfp \cdot (x-p)||}{||x-p||}\]
+\[\frac{||fx - fp||}{||x-p||} \leq 1+ ||Dfp||\]
+Entonces estamos.
+
+\section*{Regla de la Cadena}
+Tenemos $A \inn R^n$, $B \inn \R^m$, $C \inn \R^t$, y funciones $f : A \to B$, $g : B \to C$. Y sea $p \inn A$.
+
+Supongamos que $f$ diferenciable en $p$, y $g$ diferenciable en $fp$, luego tenemos que $g \circ f$ es diferenciable en $p$ y se tiene:
+\[D(g \circ f)p = Dg(fp) \times Dfp\]
+
+Demo:
+Tenemos
+\[fx = fp + Dfp \cdot (x-p) + r_fx\]
+\[gx = g(fp) + Dg(fp) \cdot (x-fp) + r_gx\]
+
+Reemplazamos $fx$ en $g$ y tenemos:
+\[g(fx) = g(fp) + Dg(fp) \cdot (fx-fp) + r_g(fx)\]
+\[g(fx) = g(fp) + Dg(fp) \cdot (Dfp \cdot (x-p) + r_fx) + r_g(fx)\]
+\[g(fx) = g(fp) + Dg(fp) \cdot Dfp \cdot (x-p) + Dg(fp) \cdot r_fx + r_g(fx)\]
+
+Entonces nos falta chequear que
+\[\lim_{x \to p} \frac{||Dg(fp) \cdot r_fx + r_g(fx)||}{||x-p||} = 0\]
+
+Notemos que
+\[\lim_{x \to p} \frac{||Dg(fp) \cdot r_fx||}{||x-p||} = 0 \From\]
+\[\lim_{x \to p} \frac{||Dg(fp)|| \cdot ||r_fx||}{||x-p||} = 0 \From\]
+\[||Dg(fp)|| \cdot\lim_{x \to p} \frac{ ||r_fx||}{||x-p||} = 0\]
+Que es verdad por definición de $r_f$
+
+Para el segundo cacho, tenemos
+\[\lim_{x \to p} \frac{||r_g(fx)||}{||x-p||} = 0 \From\]
+Si $fx = fp$ entonces ya estamos. Si no:
+\[\lim_{x \to p} \frac{||r_g(fx)||}{||fx-fp||} \cdot \frac{||fx-fp||}{||x-p||} = 0\]
+
+Como vimos que $\frac{||fx-fp||}{||x-p||}$ está acotado, ya estamos.
+
+\section*{Ejemplo}
+Si tenemos $hx = x^x$, entonce podemos excribirla como $h = (x,y \mapsto x^y) \circ (x \mapsto (x,x))$. Y diferenciamos las dos y multiplicamos.
+\end{document}

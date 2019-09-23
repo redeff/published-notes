@@ -1,0 +1,103 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{$\CC^1$}
+	Una función $f : \R^n \to \R$ se dice que $f : \in \CC^1$ si existen todas las derivadas parciales y son contínuas.
+
+	Tenemos las siguientes implicaciones:
+	\begin{itemize}
+		\item $\CC^1 \To $ diferenciable
+		\item diferenciable $\To$ contínua
+		\item diferenciable $\To$ existen las derivadas direccionales
+		\item existen las derivadas direccionales $\To$ existen las parciales
+	\end{itemize}
+
+\section*{Ejemplo}
+\[f(x, y) = 
+\begin{cases}
+	\frac{x^4+x^2y}{x^2 + y^2} & \text{Si $(x,y) \neq (0,0)$}\\
+	0 & \text{Si $(x,y) = (0,0)$}
+\end{cases}\]
+
+Las derivadas parciales existen y dan $0$ (son fáciles)
+
+Para continuidad tenemos
+\[\frac{x^4+x^2y}{x^2+y^2} \leq\]
+\[\frac{||-||^4+||-||^3}{||-||} \leq\]
+\[2||-||\]
+
+Para diferenciabilidad, queremos ver que:
+\[\lim\frac{x^4+x^2y}{(x^2+y^2)||x,y||} = 0\]
+\[\lim\frac{x^4+x^2y}{||x,y||^3} =\]
+
+Si tomamos $x = y$, entonces
+\[\lim\frac{x^4+x^3}{||x,x||^3} =\]
+\[\lim\frac{x^4+x^3}{2^{3/2}x^3} =\]
+\[\lim 2^\frac{2}{3}(1+x) \neq 0\]
+Entonces no es diferenciable.
+
+\section*{Ejercicio 2}
+\[
+	f = 
+	\begin{cases}
+		\frac{x^2(7y+3)+y^2(7x+3)}{7(x^2+y^2)} & (x,y) \neq (0,0)\\
+		\frac{3}{7} & (x,y) = (0,0)
+	\end{cases}
+\]
+Ver que es contínua, que existen las direccionales y que no es difernciable
+\[\frac{x^2(7y+3)+y^2(7x+3)}{7(x^2+y^2)} - \frac{3}{7}=\]
+\[\frac{x^2(7y+3)+y^2(7x+3) - 3x^2 - 3y^2}{7(x^2+y^2)}=\]
+\[\frac{7x^2y+7y^2x}{7(x^2+y^2)}=\]
+\[\frac{x^2y+y^2x}{x^2+y^2}\leq\]
+\[\frac{2||x,y||^3}{||x,y||^2}=\]
+\[2||x,y||\]
+
+Ahora la continuidad
+\[\frac{f(ta, tb) - f0}{t}=\]
+\[\frac{(ta)^2(tb)+(tb)^2(ta)}{t((ta)^2+(tb)^2)}=\]
+\[\frac{t^3(a^2b+b^2a)}{t^3(a^2+b^2)}=\]
+\[\frac{a^2b+b^2a}{a^2+b^2}=\]
+\[a^2b+b^2a=\]
+\[ab(a+b)=\]
+
+Pero entonces $\frac{\partial f}{\partial x} = \frac{\partial f}{\partial y} = 0$, pero entonces todas las direccionales son $0$, pero si tomamos $a = b= \frac{1}{\sqrt{2}}$, la cuanta da no nula, entonces $f$ no es diferenciable.
+
+\section*{Ejercicio 3}
+\[
+	f(x,y) =
+	\begin{cases}
+		xy\sin\left(\frac{1}{x^2+y^2} \right) & (x,y) \neq 0 \\
+		0
+	\end{cases}
+\]
+
+Las parciales son trivialmente $0$. Queremos ver si es diferenciable.
+\[\lim\frac{xy\sin\left(\frac{1}{x^2+y^2} \right)}{||x,y||}=\]
+\[\lim\frac{xy}{||x,y||}=\]
+\[\lim\frac{||x,y||^2}{||x,y||}=\]
+\[\lim||x,y|| = 0\]
+Entonces es diferenciable.
+
+Ahora calculemos $\frac{\partial f}{\partial x} $ como función
+\[\frac{\partial f}{\partial x}(x,y) = y\sin \left(\frac{1}{x^2+y^2}\right) + xy\cos \left(\frac{1}{x^2+y^2}\right)\frac{-1}{(x^2+y^2)^2}2x\]
+
+Si tomamos $x = y$, queda
+\[\frac{\partial f}{\partial x}(x,y) = x\sin \left(\frac{1}{2x^2}\right) + x^2\cos \left(\frac{1}{2x^2}\right)\frac{-1}{4x^4}2x\]
+\[\frac{\partial f}{\partial x}(x,y) = x\sin \left(\frac{1}{2x^2}\right) - \frac{1}{2x}\cos \left(\frac{1}{2x^2}\right)\]
+Tomemos una sucesión $a_n$ tal que $\cos\frac{1}{2a_n^2} = 1$ y $a_n \to 0$, entonces tendremos que nuestra derivada parcial tiene una subsucesión que tiende a $\infty$. Luego tomamos $\frac{1}{2a_n^2} = 2n\pi$, entonces si tomamos $a_n = \frac{1}{2\sqrt{n\pi}}$ cumple lo que queremos, y está.
+
+\section*{Ejercicio 4}
+Tenemos $f$ deferenciable en $(2,3)$, y
+\[v_1 = \left(\frac{1}{\sqrt{2}} , \frac{1}{\sqrt{2}} \right)\]
+\[v_2 = \left(\frac{3}{5} , \frac{4}{5} \right)\]
+Nos dicen $\frac{\partial f}{\partial v_1}(2,3) = 2$, y $\frac{\partial f}{\partial v_2} (2,3) = 1$
+
+si las direccionales son $a, b$, tenemos el sistema de ecuaciones:
+\[
+\begin{cases}
+	\frac{a}{\sqrt{2}} + \frac{b}{\sqrt{2}} = 2 \\
+	\\
+	\frac{3a}{5} + \frac{4b}{5} = 1 \\
+\end{cases}\]
+Si lo resolvemos tenemos que $(a,b) = (8\sqrt{2} - 5, 5-6\sqrt{2})$
+\end{document}

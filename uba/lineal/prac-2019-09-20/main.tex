@@ -1,0 +1,61 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Ejercicio 1}
+Consideremos $D : \R_n[x] \to \R_n[x]$ la derivación. Hallar una base de $\ker D^t$.
+
+Notemos que $\ker D^t = (\Ima D)^0$. Es decir, son las funciones que se anulan en la $\Ima D$, que son los polinomios con el coeficiente de $x^n$ nulo.
+
+Una base, por lo tanto, está formada por la función
+\[
+	\phi x^i = 
+	\begin{cases}
+		1 & \text{Si $i = n$} \\
+	0 & \text{Si no}
+	\end{cases}
+\]
+Y esto genera ya que por teo de la dimensión $\dim \ker D^t = 1$ y $\phi \neq 0$. La función $\phi$ tablién se puede expresar como $\phi P = D^nP (0)$
+
+\subsection*{Nota}
+La base dual de los polinomios se puede escribir:
+\[
+	E^*_i = \frac{1}{i!} \cdot \ev_0 \circ D^i
+\]
+
+\section*{Determinantes}
+\begin{itemize}
+	\item $\det ((\lambda v)^iA) = \lambda \det v^iA$, que implica
+	\item $\det (\lambda A) = \lambda^n \det A$
+	\item $\det ((v+w)^iA) = \det v^iA + \det w^iA$
+	\item $\det (v^iw^jA) = - \det (v^jw^iA)$
+	\item $\det A = \det A^t$
+\end{itemize}
+
+\section*{Ejercicio 2}
+Tenemos $A = (C_1 \mid C_2 \mid C_3)$. Tenemos que $\det (5C_1 \mid 2C_2+C_3 \mid C_1 - C_3) = 20$. Calcular $\det A$.
+
+Notemos que:
+\[\det (5C_1 \mid 2C_2+C_3 \mid C_1 - C_3) = 20\]
+\[\det (5C_1 \mid 2C_2 \mid C_1 - C_3) +\det (5C_1 \mid C_3 \mid C_1 - C_3) = 20\]
+\[\det (5C_1 \mid 2C_2 \mid C_1 - C_3) = 20\]
+\[\det (5C_1 \mid 2C_2 \mid - C_3) = 20\]
+\[-10\det (C_1 \mid C_2 \mid C_3) = 20\]
+\[\det A = -2\]
+
+\section*{Ejercicio 6 de la Práctica Det}
+Dada la matriz:
+\[
+	V(\alpha_1, \dots, \alpha_n) = 
+	\begin{bmatrix}
+		1 & 1 & \dots & 1 \\
+		\alpha_1 & \alpha_2 & \dots & \alpha_n \\
+		\vdots & \vdots & \ddots & \vdots \\
+		\alpha_1^n & \alpha_2^n & \dots & \alpha_n^n
+	\end{bmatrix}
+\]
+Demostrar que $\det V(\alpha_i) = \prod_{i < j} (\alpha_j - \alpha_i)$.
+
+Notemos que la función $P(x) = \det V (\alpha_i, \dots,  x)$ es un polinomio, con raíces en $\alpha_i$, ya que ahí tomamos la determinante de una matriz con funciones repetidas. Luego $P(x) = \lambda \cdot \prod_{i < n} (x - \alpha_i)$, donde $\lambda$ es el coeficiente principal, que si hacemos la expansion por columnas vemos que es $\lambda = \det V(\alpha_1, \dots, \alpha_{n-1})$, luego evaluándolo en $x = \alpha_n$, y con hpótesis inductiva, tenemos:
+
+\[P(\alpha_n) = \prod_{i < j < n} (\alpha_j - \alpha_i) \cdot \prod (\alpha_n - \alpha_i) = \prod_{i < j} (\alpha_j - \alpha_i)\]
+\end{document}
