@@ -1,0 +1,91 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Determinentes de la Adjunta}
+Se tiene $\det \adj A = (\det A)^{n-1}$
+\section*{Rango de la Adjunta}
+Si $\rg A = n$, luego claramente $\rg \adj A = n$.
+
+Si $\rg A \leq n-2$, luego toda submatriz de tamaño $n-1$ tiene determinante $0$, luego $\adj A = 0$.
+
+Si $\rg A = n-1$, tenemos que $A \cdot \adj A = \det A \cdot I = 0$, luego tenemos que $\rg \adj A \leq 1$, ya que pensamos el producto como composición. Pero $\adj A \neq 0$, luego $\rg A = 1$.
+
+\section*{Ejercicio}
+Dadas:
+\[
+	A = 
+	\begin{bmatrix}
+		-6 & -1 & 11 \\
+		10 & 0 & -15 \\
+		1 & 1 & -1
+	\end{bmatrix}
+\]
+\[
+	B = 
+	\begin{bmatrix}
+		2 & 1 & 2 \\
+		1 & 4 & 2 \\
+		1 & 1 & 1
+	\end{bmatrix}
+\]
+
+encontrar $\adj^{-1} A$, y demostrar que no existe para $B$.
+Notemos que:
+\[
+	C \cdot \adj C = \Id \cdot \det C
+\]
+\[
+	C \cdot A = \Id \cdot \det C
+\]
+\[
+	C = A^{-1} \cdot \det C
+\]
+\[
+	C = A^{-1} \cdot (\det A)^{\frac{1}{n-1}}
+\]
+\[
+	C = A^{-1} \cdot (\det A)^{\frac{1}{2}}
+\]
+Para $A$ esto anda ya que $\det A = 25$. Pero para $\det B = -1$ no podemos, ya que ningún número al cuadrado da $-1$.
+
+\section*{Ejercicio 2}
+Probar que si $A \in \K^{n \times n}$ es triengular inferior, luego $\adj A$ también los es.
+
+Tenemos que probar que si $i < j$, entonces $\det A(j|i) = 0$. Vamos a hacer eso probando que es triangular superior y le faltan cosas en la diagonal (Es fácil, hay que hacer los casitos)
+
+\section*{Ejercicio 3}
+Sea $A \in GL(n, \K)$ tq $\{A, \dots, A^n\}$ son li. Demostrar que $\{\adj A, \adj A^2, \dots, \adj A^n\}$ son li.
+
+Si tomamos:
+\[
+	\sum \lambda_i \adj A^i
+\]
+\[
+	A^n \sum \lambda_i \adj A^i
+\]
+\[
+	\sum A^n \lambda_i \adj A^i
+\]
+\[
+	\sum A^{n-i} A^i \lambda_i \adj A^i
+\]
+\[
+	\sum \lambda_i A^{n-i} \det A^i
+\]
+Ya estamos
+
+\section*{Comentario}
+Si tenemos :
+\[
+	M = 
+	\begin{bmatrix}
+		A & B \\
+		C & D
+	\end{bmatrix}
+	M^{-1} = 
+	\begin{bmatrix}
+		P & Q \\
+		R & S
+	\end{bmatrix}
+\]
+\end{document}

@@ -1,0 +1,123 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Polinomio de Taylor}
+Tenemos por ejemplo $fx = \sqrt{x}$. Las derivadas son:
+\[f x = x^{1/2}\]
+\[f' x = \frac{1}{2} \cdot x^{-1/2}\]
+\[f'' x = -\frac{1}{4} \cdot x^{-3/2}\]
+\[f''' x = \frac{3}{8} \cdot x^{-5/2}\]
+
+Luego el polinomio de Taylor en $1$ es:
+\[
+	P_2x = 1 + \frac{1}{2}(x-1) - \frac{1}{8}(x-1)^2
+\]
+
+Y el resto está dado por \[
+	R_2x = \frac{1}{6} f'''c (x-1)^3
+\]
+\[
+	R_2x = \frac{1}{16} c ^{-5/2} (x-1)^3
+\]
+Además, tenemos $c^{-5/2} < 1$, luego podemos acotar el polinomio por $\frac{1}{16} \cdot 0.2^3 < \frac{1}{100}$, luego tenemos que aproxima en $1.2$ con una precisión menor a $\frac{1}{100}$
+
+\section*{Taylor Multivarible}
+El polinomio de Taylor de orden dos está dado por:
+\[
+	P_2X = fP + \langle \nabla fP, X-P \rangle + \frac{1}{2} (X-P) (\Hs f P) (X-P)^t
+\]
+
+\section*{Ejercicio 1}
+Dado \[
+	f (x,y) = e^{3x+\sin y}
+\]
+Hallar el polinomio de orden $2$ en el origen.
+
+Las derivadas parciales son:
+\[
+	f_{x} (x,y) = 3e^{3x + \sin y}
+\]
+\[
+	f_{y} (x,y) = \cos y \cdot e^{3x + \sin y}
+\]
+\[
+	f_{xx} (x,y) = 9e^{3x + \sin y}
+\]
+\[
+	f_{yx} (x,y) = 3\cos y \cdot e^{3x + \sin y}
+\]
+\[
+f_{xy} (x,y) = 3 \cos y \cdot e^{3x + \sin y}
+\]
+\[
+	f_{yy} (x,y) = \cos^2 y \cdot e^{3x + \sin y} - \sin y \cdot e^{3x + \sin y}
+\]
+
+Luego el Hessiano en el origen es:
+\[
+	\Hs f (0,0) = 
+	\begin{bmatrix}
+		9 & 3 \\
+		3 & 1
+	\end{bmatrix}
+\]
+
+Y el gradiente vale:
+\[
+	\nabla f (0,0) =
+	\begin{bmatrix}
+		3 & 1
+	\end{bmatrix}
+\]
+
+Y $f (0,0) = 1$
+
+Luego el Taylor de orden 1 está dado por:
+\[
+	P_2 x = 1 + 
+	\begin{bmatrix}
+		3 & 1 \\
+	\end{bmatrix} x^t + 
+	\frac{1}{2} \cdot x \begin{bmatrix}
+		9 & 3 \\
+		3 & 1
+	\end{bmatrix} x^t
+\]
+\[
+	P_2 (x,y) = 1 + 3x + y + \frac{1}{2}(9x^2 + y^2 + 6xy)
+\]
+\[
+	P_2 (x,y) = 1 + 3x + y + \frac{1}{2}(9x^2 + y^2 + 6xy)
+\]
+
+\section*{Ejercicio 2}
+Tenemos $g (x,y) = (y \sin x + y - 1, x)$, y sea $f$ tal que el polinomio de Taylor de orden 2 de $f \circ g$ en $(0, 0)$ es
+\[P_2(x,y) = 3 + 2x + 3x^2 + 2xy\]
+Hallar el taylor 1 de $f$ en $(1,0)$
+
+Notemos que $f (g (0, 0)) = f (1, 0)$, y como tenemo el polinomio de taylor, tenemos $f (1, 0) = 3$.
+
+Además, veamos que
+\[\D (f \circ g) (0, 0) = \D f (g (0, 0)) \cdot \D g (0, 0)\]
+\[
+\begin{bmatrix}
+	2 & 0 \\
+\end{bmatrix}= \D f (g (0, 0)) \cdot
+\begin{bmatrix}
+	0 & 1 \\
+	1 & 0
+\end{bmatrix}
+\]
+
+Luego queda un sistema lineal, y ya estamos.
+
+\section*{Ejercicio 3}
+Sea $f : \R^2 \to \R$, $f \in \CC^3$, calcular el taylor 2 de $g(x,y) = f(x, y^2)$ en el punto $(0, -1)$, sabiendo que el Taylor de $f(x,y)$ en $(0,1)$ es
+\[P_2(x,y) = 1 + x - y + x^2 - 2xy\]
+
+Tenemos por regla de la cadena:
+\[
+	\D g (0, 1) = \D f(0, 1) \cdot \D (x,y \mapsto x, y^2) (0, -1)
+\]
+Y tenemos todo.
+\end{document}

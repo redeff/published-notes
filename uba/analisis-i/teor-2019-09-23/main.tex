@@ -1,5 +1,84 @@
 \documentclass{article}
 \input{../../../style/header.tex}
+\title{Derivadas de Mayor Orden y Aproximaciones}
 \begin{document}
-	
+\maketitle
+\section*{Notación}
+$f^{(n)}$ es derivar $f$ $n$ veces.
+\section*{Lagrange Multivariable}
+Sea $A \in \R^n$ un abierto convexo
+con $f : A \to \R$ diferenciable.
+
+Sean $X, Y \in A$, luego existe $Z$ en el segmento $\overline{XY} \inn A$ tal que:
+\[
+	fX - fY = \langle\nabla f Z, Y-Z \rangle
+\]
+
+Demo: Sea $\alpha : [0,1] \to \R^n, \alpha = t \mapsto (Y-X)t + X$ la función que parametriza el intervalo $\overline{XY}$.
+
+Como $\Ima \alpha \inn A$, luego está bien definida la composición $f \circ \alpha : [0,1] \to \R$, que es diferenciable por regla de la cadena.
+
+Tenemos $\alpha' t = Y-X$, luego $(f \circ \alpha)'t = \nabla f(\alpha t) \cdot \alpha' t$. Notemos que $f \circ \alpha$ cumple las hipótesis de lagrange, entonces tenemos que existe un $t \in (0, 1)$ tal que:
+\[
+	(f \circ \alpha)1 - (f \circ \alpha)0 = (f \circ \alpha)' t
+\]
+\[
+	fY - fX = (f \circ \alpha)' t
+\]
+\[
+	fY - fX = \nabla f(\alpha t) \times \alpha' t
+\]
+\[
+	fY - fX = \nabla fZ \times (Y-Z) 
+\]
+Entonces está.
+
+\subsection*{Corolario}
+Entonces si tenemos $P, X \in \R^n$, luego $fX = fP + \nabla fZ \cdot (X-P)$ para algún $Z \in \overline{XY}$. Notemos que esto se parece al poly de taylor, ya que $\nabla fZ$ es el error de la aproximación trivial por un plano paralelo al dominio.
+
+\section*{Opraciones en Funciones $\CC^k$}
+Si tengo $f, g \in \CC^k$, luego:
+\begin{itemize}
+	\item $f + g$
+	\item $f \cdot g$
+	\item $\frac{f}{g}$, con $gx \neq 0$
+	\item $g \circ f$
+\end{itemize}
+son $\CC^k$
+
+\section*{Derivadas de Orden Superior}
+Tomemos una función $f : \R^n \to \R$, en principio $f \in \CC^\infty$
+Notemos que una derivada parcial en el canónico $x$ es $\frac{\partial f}{\partial x }  = f_x: \R^n \to \R$, entonces la puedo derivar de nuevo.
+
+Las derivadas parciales dobles se notan
+\[
+	\frac{\partial}{\partial y} \left(\frac{\partial f}{\partial x} \right) = \frac{\partial^2f}{\partial y \partial x}  = f_{yx}
+\]
+
+\subsection*{Derivadas Cruzadas (Claraut-Schwarz)}
+Sea $f : (A \inn \R^n) \to \R, f \in \CC^2$.
+
+Luego $f_{xy} = f_{yx}$, para cualesquiera canónicos $x$, $y$.
+
+Como corolario, si tenemos una función en $\CC^n$, luego las derivadas $n$-ésimas son todas permutables.
+
+\section*{Taylor Monovariable}
+Si teníamos $g : (a, b) \to \R, g \in \CC^3$. Sea $p \in (a, b)$, luego para cualquier otro punto $x$, existe un punto $c$ entre $p$ y $x$ tal que:
+\[
+	gx = \sum_{n=0}^{d-1} \frac{g^{(n)}p}{n!} \cdot (x-p)^n + \frac{g^{(d)}c}{d!} \cdot (x-p)^d
+\]
+
+\section*{Taylor Multivariable}
+Dado $P = (a,b)$, $X = (x,y) \in \R^2$, si $f \in \CC^3$, luego existen $C=(c,d)\in\overline{PX}$
+tal que:
+\[f (x,y) = P(x,y) + R(x,y)\]
+Con el polinomio dado por:
+\[P(x,y) = fP\]
+\[ + (x-a)f_xP + (y-b)f_yP\]
+\[ + \frac{1}{2}(x-a)^2f_{xx} + (x-a)(y-b)f_{xy} + \frac{1}{2}(y-b)^2f_{yy}\]
+Y el resto dado por:
+\[R(x,y) = \frac{1}{6}(x-a)^3f_{xxx} C\]
+\[ + \frac{1}{2}(x-a)^2(y-b)f_{xxy}\]
+\[ + \frac{1}{2}(x-a)(y-b)^2f_{xyy}\]
+\[ + \frac{1}{6}(y-b)^3f_{yyy}\]
 \end{document}

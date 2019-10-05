@@ -1,0 +1,84 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\title{Determinantes}
+\begin{document}
+	\maketitle
+\section*{Definición}
+	$\det$ es la única $\det : \K^{n \times n} \to \K$ que es multilineal y alternada y con $\det \Id = 1$
+
+
+\section*{Permutaciones}
+Decimos que , dado $n \in \N$, $[[n]] = \{x \in \N : x < n\}$.
+
+Decimos que $\sigma : [[n]] \to [[n]]$ biyectiva se dice \emph{permutación}, y decimos $\sigma \in S_n$.
+
+Notemos que:
+\begin{itemize}
+	\item $\id \in S_n$
+	\item $|S_n| = n!$
+	\item Si $\sigma, \tau \in S_n$, luego $\sigma \circ \tau \in S_n$
+	\item Si $\sigma \in S_n$, luego $\sigma^{-1} \in S_n$
+\end{itemize}
+
+\subsection*{Transposición}
+una transposición $(rs) \in S_n$ es una permutación que deja todo igual, excepto $r$ y $s$, que los swappea.
+
+\subsection*{Matriz de Permutación}
+Dada $\sigma \in S_n$ Decimos $A(\sigma) \in \K^{n \times n}$ es:
+\[A(\sigma)_{ij} = \delta_{\sigma_ij}\]
+Notemos que producto de matrices corresponde con composición de permutaciones, y que además el inverso coincide con la transpuesta para matrices de permutación.
+
+\subsection*{Signo de una Permutación}
+Dada $\sigma \in S_n$, decimos que $\sg \sigma = \det A_\sigma$.
+
+\section*{Fórmula de Leibniz}
+Tenemos
+\[\det A = \sum_{\sigma \in S_n} \left(\sg \sigma \cdot \prod_i a_{\sigma_ii}\right)\]
+
+Demo:
+La $i$-ésima columna de la matriz $A$ está dada por:
+\[A_i = \sum_j a_{ji} e_j\]
+Luego por multilinearidad:
+\[
+	\det A = \sum_{i \in [[n]]^n} \det (\dots | e_{i_j} | \dots)_j \prod a_{i_jj}
+\]
+Pero cuando agarro $i_{a} = i_{b}$, se me anula, luego me restrinjo a $S_n \inn [[n]]^n$, y queda
+\[
+	\det A = \sum_{\sigma \in S_n} \det (\dots | e_{\sigma_j} | \dots)_j \prod a_{\sigma_jj} =
+\]
+\[
+	\det A = \sum_{\sigma \in S_n} \sg \sigma \cdot \prod a_{\sigma_jj} =
+\]
+
+\section*{Determinantes en $\Z$}
+Si tenemos $A \in \Q^{n \times n}$, con $a_{ij} \in \Z$, tenemos $\det A \in \Z$.
+
+\section*{Adjunta}
+La adjunta está dada por:
+\[
+	(\adj A)_{ij} = (-1)^{i+j} \det A(j|i)
+\]
+Que cumple $A \cdot \adj A = \Id \cdot \det A$
+\section*{Regla de Cramer}
+Si tenemos una ecuación de la forma $Ax = b$ con $A$ inversible, luego:
+\[
+	x_i = \frac{\det (a_1 | \dots | a_{i-1} | b | a_{i+1} | \dots )}{\det A}
+\]
+Esto sale tomando $x = \frac{\adj A}{\det A} \cdot b$ y expandiendo el producto.
+
+\section*{Rango de matrices no cuadradas}
+Si tenemos $A \in \K^{n \times m}$, decimos que una submatriz $B \in \K^{r \times s}$ de $A$ es el resultado de eliminar algunas filas y columnas de $A$.
+Son equivalentes:
+\begin{itemize}
+	\item $\rg A \geq r$
+	\item $\exists B \in \K^{r \times r}$ una submatriz de $A$ con $\det B \neq 0$
+\end{itemize}
+Si tengo $\rg A \geq r$, me tomo $r$ filas li, y luego en la submatriz inducida por esas filas (que se que tiene rango $r$), me tomo $r$ columnas li, y ya estoy.
+
+La vuelta es trivial.
+
+\section*{Determinante de una TL}
+Dado un $\K$-ev $\V$ y un endo $f : \V \to_{\tl} \V$, con $\BB$ una base, decimos que \[\det f = \det [f]_\BB\]
+
+Demostrar que anda bien para la composición, a identidad, y que cambios de base no cambian el determinante.
+\end{document}

@@ -1,0 +1,167 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Ejercicio 1}
+Calular el poly de Taylor de orden 1 de $fxy = (xe^y)^2$ en $(3;0)$, y estimar el error cometido entre lo que dice el polinomio y $2.99e^{0.01}$
+
+Tenemos:
+\[f_x xy = 2xe^{2y}\]
+\[f_y xy = 2x^2e^{2y}\]
+Y las segundas
+\[f_{xx} xy = 2e^{2y}\]
+\[f_{xy} xy = 4xe^{2y}\]
+\[f_{yy} xy = 4x^2e^{2y}\]
+Entonces el Hessiano está dado por:
+\[
+	\Hs f \; xy = 
+	\begin{bmatrix}
+		2e^{2y} & 4xe^{2y} \\
+		4xe^{2y} & 4x^2e^{2y}
+	\end{bmatrix}
+\]
+
+Entonces el resto está dado por:
+\[
+	R_1 xy = \frac{1}{2} \cdot (x-p) \cdot \Hs f \; c \cdot (X - p)^t
+\]
+\[
+	R_1 xy = \frac{1}{2} \cdot
+	[-0.01 \quad 0.01] \cdot
+	\begin{bmatrix}
+		2e^{2c_y} & 4c_xe^{2c_y} \\
+		4c_xe^{2c_y} & 4c_x^2e^{2c_y}
+	\end{bmatrix} \cdot
+	\begin{bmatrix}
+		-0.01 \\
+		0.01
+	\end{bmatrix}
+\]
+\[
+	R_1 xy = 100^{-2}\frac{1}{2} \cdot
+	[-1 \quad 1] \cdot
+	\begin{bmatrix}
+		2e^{2c_y} & 4c_xe^{2c_y} \\
+		4c_xe^{2c_y} & 4c_x^2e^{2c_y}
+	\end{bmatrix} \cdot
+	\begin{bmatrix}
+		-1 \\
+		1
+	\end{bmatrix}
+\]
+Que si hacemos la cuanta da:
+\[
+	R_1 xy = \frac{1}{2 \cdot 10^4} \cdot (2e^{2c_y} - 8c_xe^{2c_y} + 4c_x^2e^{2c_y})
+\]
+\[
+	R_1 xy = \frac{1}{10^4} \cdot (e^{2c_y} - 4c_xe^{2c_y} + 2c_x^2e^{2c_y})
+\]
+\[
+	R_1 xy = \frac{1}{10^4} \cdot e^{2c_y}\cdot (1 - 4c_x + 2c_x^2)
+\]
+\[
+	|R_1 xy| = \frac{1}{10^4} \cdot e^{2c_y}\cdot |1 - 4c_x + 2c_x^2|
+\]
+\[
+	|R_1 xy| \leq \frac{1}{10^4} \cdot e^{2c_y}\cdot (1 + 4|c_x| + 2c_x^2)
+\]
+Como $2.99 \leq c_x \leq 3$, y $0 \leq c_y \leq 0.01$, tenemos
+\[
+	|R_1 xy| \leq \frac{1}{10^4} \cdot e^{2 \cdot 0.01}\cdot (1 + 12 + 18)
+\]
+\[
+	|R_1 xy| \leq \frac{31}{10^4} \cdot e^{0.02} 
+\]
+Como $e^{0.02} < 2$, queda
+\[
+	|R_1 xy| \leq \frac{62}{10^4}
+\]
+
+\section*{Ejercicio 2}
+Sea $f : \R^2 \to \R$ de clase $\CC^3$ tal que su taylor grado 3 en $(1, 1)$ es $P_3 xy = 1-3x+x^2 + xy + y^2 - y^3$.
+
+Calcular $\lim_{x \to (1,1)} \frac{fx}{||x - (1,1)||}$.
+
+Calcular $\lim_{x \to (1,1)} \frac{fx}{||x - (1,1)||^2}$.
+
+Sabemos que $\lim \frac{fx - P_1x}{||x||} = 0$. Luego podemos escribir como:
+
+\[
+	\lim_{x \to (1,1)} \frac{fx - Px}{||x - (1,1)||} + 
+	\lim_{x \to (1,1)} \frac{Px}{||x - (1,1)||} =
+\]
+
+\[
+	0 + \lim_{x \to (1,1)} \frac{Px}{||x - (1,1)||}
+\]
+
+Entonces queremos $P_1$. Vamos a derivar el $P_3$:
+\[
+	\nabla f = \nabla P_3 = (-3 +2x+y, x+2y-3y^2)
+\]
+\[
+	\nabla P_3 (1,1) = (0, 0)
+\]
+Luego el primer límite da $0$.
+
+El hessiano da:
+\[
+	\D \nabla f = \D \nabla P_3 =
+	\begin{bmatrix}
+		2 & 1 \\
+		1 & 2 - 6y
+	\end{bmatrix}
+\]
+Luego $P_2 (x,y) = P_1(x,y) + \frac{1}{2} \cdot
+\begin{bmatrix}
+	x-1 & y-1
+\end{bmatrix} \cdot
+\begin{bmatrix}
+		2 & 1 \\
+		1 & -4 
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+	x-1 \\ y-1
+\end{bmatrix} = (x-1)^2 + (x-1)(y-1) -2(y -1)$
+
+En el segundo límite, cuando ponemos esto y nos acercamos por la recta vertical y horizontal, tenemos que tiende a $1$ y a $-2$
+
+\section*{Parcial Ejemplo}
+\subsection*{Ejercicio 1}
+Calcular, si existe, sup, inf, max, min de:
+\[
+	A = \{ a^2_n - 3a_n - 10 \}
+\]
+donde $a_n = 4 - \frac{9}{n}$
+
+\subsection*{Ejercicio 2}
+Sea $f : \R^2 \to \R$, dado por:
+\[
+	f xy= 
+	\begin{cases}
+		\frac{xy^3}{x^2 + y^6 + (x-2y^3)^2} \\
+		\\
+		0 & (0, 0)
+	\end{cases}
+\]
+
+Probar que $f$ tiende a $0$ en el origen si nos acercamos por rectas.
+Analizar existencia de límite.
+
+\subsection*{Ejercicio 3}
+Sea $f : \R^2 \to \R$
+\[
+	f xy = 
+	\begin{cases}
+		\frac{2x^3 + 2x(x-4)^2y^2 + x^3y}{x^2 + (x-4)^2y^2}  \\
+		\\
+		0
+	\end{cases}
+\]
+Analizar diferenciabilidad en $(0,0)$.
+\subsection*{Ejercicio 4}
+Sea $f(x,y) = 2\cos x - e^y + x^3y$.
+
+Hallar el poly de taylor de orden 2 en $(0,0)$.
+
+Sea $f : \R^2 \to \R$ diff tal que $\nabla(g \circ \nabla f)(0,0) = (3,-1)$. Calcular $\nablag (0,-1)$
+\end{document}

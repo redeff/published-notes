@@ -1,0 +1,145 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Determinantes}
+\begin{itemize}
+	\item $\det AB = \det A \cdot \det B$
+	\item $\det A = \det A^t$
+	\item $\det A \neq 0 \iff \rg A = n \iff A$ inversible
+	\item $\forall i: \det A = \sum_j (-1)^{i+j} A_{ij} \cdot \det \; A(i|j)$
+	\item $\forall j: \det A = \sum_i (-1)^{i+j} A_{ij} \cdot \det \; A(i|j)$
+\end{itemize}
+
+\section*{Ejercicio 1}
+Tenemos:
+\[
+	\det
+	\begin{bmatrix}
+		a & b & c \\
+		d & e & f \\
+		g & h & i
+	\end{bmatrix}
+	= -1
+\]
+Calcular el determinante de:
+\[
+	X = 
+	\begin{bmatrix}
+		3b+3e+3h & 3c+3f+3i & 3a + 3d + 3g \\
+		e-2h & f - 2i & d - 2g \\
+		b + 2e -2h & c+2f-2i & a+2d-2g
+	\end{bmatrix}
+\]
+
+\[
+	\det \begin{bmatrix}
+		3b+3e+3h & 3c+3f+3i & 3a + 3d + 3g \\
+		e-2h & f - 2i & d - 2g \\
+		b + 2e -2h & c+2f-2i & a+2d-2g
+	\end{bmatrix} = 
+\]
+\[
+	\det \begin{bmatrix}
+		3a + 3d + 3g & 3b+3e+3h & 3c+3f+3i\\
+		d-2g & e-2h & f - 2i \\
+		a + 2d - 2g & b + 2e -2h & c+2f-2i
+	\end{bmatrix} = 
+\]
+\[
+	\det \begin{bmatrix}
+		3 & 3 & 3 \\
+		0 & 1 & -2 \\
+		1 & 2 & -2
+	\end{bmatrix}
+	\begin{bmatrix}
+		a & b & c \\
+		d & e & f \\
+		g & h & i
+	\end{bmatrix}
+\]
+\[
+	\det \begin{bmatrix}
+		3 & 3 & 3 \\
+		0 & 1 & -2 \\
+		1 & 2 & -2
+	\end{bmatrix} =
+\]
+\[
+	\det \begin{bmatrix}
+		0 & -3 & 9 \\
+		0 & 1 & -2 \\
+		1 & 2 & -2
+	\end{bmatrix} =
+\]
+
+\section*{Ejercicio 2}
+Dada la matriz en bloques:
+
+\[
+	X = 
+	\begin{bmatrix}
+		A & C \\
+		0 & B
+	\end{bmatrix}
+\]
+Demostrar $\det X = \det A \cdot \det B$
+por inducción, sea $A \in \K^{n \times n}$:
+
+\[\det X = \sum_{i \leq n} a_{i1} \det \; A(i|1) \cdot \det B = \det A \cdot \det B\]
+
+Alternativamente, demostramos que $X \mapsto \det
+\begin{bmatrix}
+	X & C\\
+	0 & B
+\end{bmatrix}
+$ es multilineal y estamos.
+
+\section*{Matriz Compañera}
+Tenemos la matriz:
+\[
+	A_n = 
+	\begin{bmatrix}
+		x & 0 & 0 & \dots &0& 0& a_1 \\
+		-1 & x & 0 & \dots &0& 0& a_2 \\
+		0 & -1 & x & \dots &0&0& a_3 \\
+		\vdots & \vdots & \vdots & \ddots &\vdots& \vdots& \vdots \\
+		0 & 0 & 0 & \dots &-1& x & a_{n-1} \\
+		0 & 0 & 0 & \dots &0& -1 & x+a_n
+	\end{bmatrix}
+\]
+Expandiendo por la primer fila, tenemos:
+\[
+	\det
+	\begin{bmatrix}
+		x & 0 & 0 & \dots &0& 0& a_1 \\
+		-1 & x & 0 & \dots &0& 0& a_2 \\
+		0 & -1 & x & \dots &0&0& a_3 \\
+		\vdots & \vdots & \vdots & \ddots &\vdots& \vdots& \vdots \\
+		0 & 0 & 0 & \dots &-1& x & a_{n-1} \\
+		0 & 0 & 0 & \dots &0& -1 & x+a_n
+	\end{bmatrix} = 
+\]
+\[
+	x\det
+	\begin{bmatrix}
+		0 & 0 & \dots &0& 0& a_1 \\
+		x & 0 & \dots &0& 0& a_2 \\
+		-1 & x & \dots &0&0& a_3 \\
+		\vdots & \vdots & \ddots &\vdots& \vdots& \vdots \\
+		0 & 0 & \dots &-1& x & a_{n-1} \\
+		0 & 0 & \dots &0& -1 & x+a_n
+	\end{bmatrix} + 
+	a_1 \det\begin{bmatrix}
+		x & 0 & 0 & \dots &0& 0\\
+		-1 & x & 0 & \dots &0& 0 \\
+		0 & -1 & x & \dots &0&0 \\
+		\vdots & \vdots & \vdots & \ddots &\vdots& \vdots \\
+		0 & 0 & 0 & \dots &-1& x  \\
+		0 & 0 & 0 & \dots &0& -1 
+	\end{bmatrix}
+\]
+Que por inducción anda
+
+\section*{Regla de Kramer}
+Si tenemo un sistema $Ax = b$, entonces $x_i = \frac{\det \; B_i}{\det A}$, donde $B_i$ es $A$ pero con la $i$-ésima columba reemplazada por $b$.
+\end{document}

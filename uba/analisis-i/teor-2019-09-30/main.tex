@@ -1,0 +1,67 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Extremos}
+Dada $f : (A \inn \R^n) \to \R$, decimos que $f$ tiene mínimo local en $p \in \R$ sii existe un entorno $p \in B^\circ$ tal que $\forall x \in B \cap A : fp \leq fx$.
+
+Un extremo local es algo que es máximo local o mínimo local.
+
+\section*{Fermat}
+Si tenemos un mínimo local en $p \in A^\circ$, de $f : (A \inn \R^n) \to \R$, entonces si $f$ es differenciable en $p$, tenemos:
+\[\nabla f \; p = 0\]
+
+Notemos que no alcanza con que el gradiente sea cero. Por ejemplo en la función $fxy = x^2 - y^2$, el gradiente en $(0,0)$ es $(0,0)$ pero es una silla de montar.
+
+\subsection*{Ejemplos con el mismo Hessiano}
+Si tenemos $f_\pm x \; y = x^2 \pm y^4$, entonces en $(0, 0)$ la diferencial de ambos es $(0,0)$, y los hessianos son en ambos casos:
+\[
+	\begin{bmatrix}
+		2 & 0 \\
+		0 & 0
+	\end{bmatrix}
+\]
+Pero uno tiene un mínimo local en $(0, 0)$ y otro no.
+\section*{Criterio con Hessiano}
+\subsection*{En una variable}
+Si tenemos $f : \R \to \R$, , $f \in \CC^2$ tenemos que si $f' p = 0$:
+\begin{itemize}
+	\item Si $f''p > 0$, luego hay un mínimo local en $p$.
+	\item Si $f''p < 0$, luego hay un máximo local en $p$.
+	\item Si $f''p = 0$ es punto de inflexión y no sabemos nada.
+\end{itemize}
+
+Demo:
+por continuidad, $f''p > 0$ implica que sea positiva en un entorno, luego la derivada crece, luego en un entorno es positiva dps de $p$ y es negativa antes de $p$, luego decrece y deps crece. Ya estamos.
+
+\subsection*{En Varias Variables}
+Sea $f : (A \inn \R^n) \to \R$, $\nabla f \; p = 0$, $f \inn \CC^3$. Vamos a estudiar si $p$ es máximo o mínimo local.
+
+El desarrollo de taylor en p es $P_2 = fp + \langle \nabla f \; p, x-p \rangle + \frac{1}{2} (x-p) \cdot \Hs f p \cdot (x-p)^t$.
+
+Queremos que la forma cuadrática asociada domine al resto de taylor en un intervalo (lo que en particular implica que tiene un signo constante).
+
+\section*{Forma cuadrática}
+una función $f : \R^n \to \R$ es una \emph{forma cuadrática}, si tenemos $fv = vAv^t$, con $A \in \R^{n \times n}$ simétrica.
+
+Notemos que $f \;\lambda x = \lambda^2 \cdot fx$
+
+Todas las formas cuadráticas se pueden escribir como suma de $n$ cuadrados. Si todos los coeficientes de los cuadrados tienen todos el mismo signo, entonces es un paraboloide elíptico, y cuando hagamos taylor nos va a demostrar que hay máximo o mínimo.
+
+Si tienen signo distinto, luego es un punto silla.
+
+Si no tienen distinto signo, pero hay un cero, ya no sé.
+
+\subsection*{Acotar formas cuadráticas}
+Si tenemos una forma cuadrática $q : \R^n \to \R$, luego existen cotas $m, M \in \R$ tales que
+\[
+	m||v||^2 \leq qv \leq M||v||^2
+\]
+Y queremos que las cotas se alcancen.
+
+Tomemos la esfera unitaria $S \inn \R^n$. Como es compacta y $q$ es contínua, tenemos que alcanza su máximo y mínimo.
+
+Además como escalares salen elevados al cuadrado, estamos, ya que aplicamos la cota que obtuvimos para $\frac{v}{||v||}$, que está en $S$.
+
+\section*{Ejercicio}
+para $f : \R^n \to \R^n$, son equivalentes $f$ contínua y la preimagen de todo abierto es abierto.
+\end{document}

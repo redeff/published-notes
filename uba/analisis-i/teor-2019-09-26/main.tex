@@ -1,0 +1,60 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Taylor en una variable}
+Si tomamos el polinomio $Px = \sum_{n \leq N} \frac{f^{(n)}a}{n!} \cdot (x - a)$, con $f \in \CC^N$, luego tenemos, por L'Hôpital repetido que:
+\[
+	\lim \frac{fx - Px}{x-a} = 0
+\]
+
+Además, por Lagrange, tenemos que existe un $c$ entre $a$ y $x$ con:
+\[
+	fx - Px = \frac{f^{(n+1)}c}{(n+1)!} (x-a)^{n+1}
+\]
+
+\section*{Matriz Hessiana}
+Dada una $g : (A \inn \R^2) \to \R$, y un $p \inn A$, la matriz hessiana en $p$ de $g$ está dada pos:
+\[
+	\Hs g p = 
+	\begin{bmatrix}
+		g_{xx} \;p & g_{yx} \;p \\
+		g_{xy} \;p & g_{yy} \;p
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		\nabla g_x \;p \\
+		\nabla g_y \; p
+	\end{bmatrix}
+\]
+
+En general, en $\R^n$, la matriz está dada por:
+\[
+	\Hs gp = \D^2 gp = 
+	\begin{bmatrix}
+		\vdots \\
+		\nabla g_{x_i} \; p \\
+		\vdots
+	\end{bmatrix}
+\]
+Alternativamente, tenemos $\Hs g = \D^2 g$
+
+Notemos que si $g \in \CC^2$, luego $\D^2 g p$ es simétrica.
+
+\section*{Taylor Multivariable}
+Dada $f : (A \inn \R^n) \to \R$, con $f \in \C^3$, con $A$ abierto convexo, luego tenemos el polinomio de taylor de orden dos:
+\[
+	fx = fp + \sum f_{x_i}p (x_i-p_i) + \frac{1}{2}\sum \sum f_{x_ix_j} (x_i-p_i)(x_j-p_j) + R(x)
+\]
+
+Donde $R(x) = \frac{1}{6} \sum \sum \sum f_{x_ix_jx_z} (x_i-p_i) (x_j - p_j)(x_k-p_k)$, que implica que $\frac{R(x)}{||x-p||^2} \to 0$
+
+Alternativamente, el polinomio de taylor se puede escribir como
+\[
+	fx = fp + \nabla f \cdot (x-p) + \frac{1}{2} \Hs fp \cdot (x-p) \cdot (x-p) + R(x)
+\]
+
+Además, tenemos que el resto se escribe:
+\[R(x) = \frac{1}{6} \sum \sum \sum f_{x_ix_jx_z} (x_i-p_i) (x_j - p_j)(x_k-p_k)\]
+Por Lagrange en la composición de $f$ con la curva que mappea $[0,1]$ al segmento $\overline{xp}$
+
+Además, como $f \in \CC^3$, en cualquier entorno compacto convexo de $P$, todas las derivadas terceras están acotadas, luego su suma con módulo está acotado por, digamos, $M$. Pero luego $R(x) \leq M \cdot ||x-p||^3$. Luego estamos.
+\end{document}
