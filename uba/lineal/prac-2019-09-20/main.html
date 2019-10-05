@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Consideremos <span class="math inline">\(D : \mathbb{R}_n[x] \to \mathbb{R}_n[x]\)</span> la derivación. Hallar una base de <span class="math inline">\(\ker D^t\)</span>.</p>
+<p>Notemos que <span class="math inline">\(\ker D^t = (\mathop{\mathrm{Im}}D)^0\)</span>. Es decir, son las funciones que se anulan en la <span class="math inline">\(\mathop{\mathrm{Im}}D\)</span>, que son los polinomios con el coeficiente de <span class="math inline">\(x^n\)</span> nulo.</p>
+<p>Una base, por lo tanto, está formada por la función <span class="math display">\[\phi x^i = 
+    \begin{cases}
+        1 &amp; \text{Si $i = n$} \\
+    0 &amp; \text{Si no}
+    \end{cases}\]</span> Y esto genera ya que por teo de la dimensión <span class="math inline">\(\dim \ker D^t = 1\)</span> y <span class="math inline">\(\phi \neq 0\)</span>. La función <span class="math inline">\(\phi\)</span> tablién se puede expresar como <span class="math inline">\(\phi P = D^nP (0)\)</span></p>
+<h2 id="nota" class="unnumbered">Nota</h2>
+<p>La base dual de los polinomios se puede escribir: <span class="math display">\[E^*_i = \frac{1}{i!} \cdot \mathop{\mathrm{ev}}_0 \circ D^i\]</span></p>
+<h1 id="determinantes" class="unnumbered">Determinantes</h1>
+<ul>
+<li><p><span class="math inline">\(\det ((\lambda v)^iA) = \lambda \det v^iA\)</span>, que implica</p></li>
+<li><p><span class="math inline">\(\det (\lambda A) = \lambda^n \det A\)</span></p></li>
+<li><p><span class="math inline">\(\det ((v+w)^iA) = \det v^iA + \det w^iA\)</span></p></li>
+<li><p><span class="math inline">\(\det (v^iw^jA) = - \det (v^jw^iA)\)</span></p></li>
+<li><p><span class="math inline">\(\det A = \det A^t\)</span></p></li>
+</ul>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Tenemos <span class="math inline">\(A = (C_1 \mid C_2 \mid C_3)\)</span>. Tenemos que <span class="math inline">\(\det (5C_1 \mid 2C_2+C_3 \mid C_1 - C_3) = 20\)</span>. Calcular <span class="math inline">\(\det A\)</span>.</p>
+<p>Notemos que: <span class="math display">\[\det (5C_1 \mid 2C_2+C_3 \mid C_1 - C_3) = 20\]</span> <span class="math display">\[\det (5C_1 \mid 2C_2 \mid C_1 - C_3) +\det (5C_1 \mid C_3 \mid C_1 - C_3) = 20\]</span> <span class="math display">\[\det (5C_1 \mid 2C_2 \mid C_1 - C_3) = 20\]</span> <span class="math display">\[\det (5C_1 \mid 2C_2 \mid - C_3) = 20\]</span> <span class="math display">\[-10\det (C_1 \mid C_2 \mid C_3) = 20\]</span> <span class="math display">\[\det A = -2\]</span></p>
+<h1 id="ejercicio-6-de-la-práctica-det" class="unnumbered">Ejercicio 6 de la Práctica Det</h1>
+<p>Dada la matriz: <span class="math display">\[V(\alpha_1, \dots, \alpha_n) = 
+    \begin{bmatrix}
+        1 &amp; 1 &amp; \dots &amp; 1 \\
+        \alpha_1 &amp; \alpha_2 &amp; \dots &amp; \alpha_n \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        \alpha_1^n &amp; \alpha_2^n &amp; \dots &amp; \alpha_n^n
+    \end{bmatrix}\]</span> Demostrar que <span class="math inline">\(\det V(\alpha_i) = \prod_{i &lt; j} (\alpha_j - \alpha_i)\)</span>.</p>
+<p>Notemos que la función <span class="math inline">\(P(x) = \det V (\alpha_i, \dots,  x)\)</span> es un polinomio, con raíces en <span class="math inline">\(\alpha_i\)</span>, ya que ahí tomamos la determinante de una matriz con funciones repetidas. Luego <span class="math inline">\(P(x) = \lambda \cdot \prod_{i &lt; n} (x - \alpha_i)\)</span>, donde <span class="math inline">\(\lambda\)</span> es el coeficiente principal, que si hacemos la expansion por columnas vemos que es <span class="math inline">\(\lambda = \det V(\alpha_1, \dots, \alpha_{n-1})\)</span>, luego evaluándolo en <span class="math inline">\(x = \alpha_n\)</span>, y con hpótesis inductiva, tenemos:</p>
+<p><span class="math display">\[P(\alpha_n) = \prod_{i &lt; j &lt; n} (\alpha_j - \alpha_i) \cdot \prod (\alpha_n - \alpha_i) = \prod_{i &lt; j} (\alpha_j - \alpha_i)\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

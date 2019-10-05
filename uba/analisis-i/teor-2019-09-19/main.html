@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="producto-interno" class="unnumbered">Producto interno</h1>
+<p>El producto interno se define <span class="math inline">\(\langle , \rangle : \mathbb{R}^n \to \mathbb{R}^n \to \mathbb{R}\)</span>, por la ecuación <span class="math inline">\(\langle x, y \rangle = \sum\limits x_iy_i\)</span>.</p>
+<h2 id="cauchy-schwarz" class="unnumbered">Cauchy-Schwarz</h2>
+<p>Se tiene que <span class="math inline">\(|\langle v, w \rangle| \leq ||v|| \cdot ||w||\)</span></p>
+<p>Demo:</p>
+<p>tomemos <span class="math inline">\(\lambda = \frac{\langle v, w \rangle}{\langle v, v \rangle}\)</span>, entonces tenemos <span class="math display">\[0 \leq \langle w - \lambda v, w - \lambda v \rangle =\]</span> <span class="math display">\[||w||^2 - 2\lambda\langle v, w\rangle + \lambda^2 ||v||^2 =\]</span> <span class="math display">\[||w||^2 - 2\frac{\langle v, w\rangle^2}{\langle v, v \rangle} + \lambda^2 ||v||^2 =\]</span> <span class="math display">\[||w||^2 - 2\frac{\langle v, w\rangle^2}{\langle v, v \rangle} + \frac{\langle v, w\rangle^2}{\langle v, v \rangle} =\]</span> <span class="math display">\[||w||^2 - 2\frac{\langle v, w\rangle^2}{||v||^2} + \frac{\langle v, w\rangle^2}{||v||^2} =\]</span> <span class="math display">\[||w||^2 - \frac{\langle v, w\rangle^2}{||v||^2} \Rightarrow\]</span> <span class="math display">\[||v||^2 \cdot||w||^2 \geq \langle v, w\rangle^2\]</span></p>
+<h1 id="máximo-crecimiento" class="unnumbered">Máximo Crecimiento</h1>
+<p>Como corolario de lo anterior, la dirección de máximo creciemeinto de una función en un punto no crítico es <span class="math inline">\(\frac{\nabla f p}{||\nabla f p||}\)</span>. Esto se usa para el método de <em>gradient descent</em>, para encontrar mínimos de funciones feas.</p>
+<h1 id="diferenciación-de-funciones-en-mathbbrn-to-mathbbrm" class="unnumbered">Diferenciación de funciones en <span class="math inline">\(\mathbb{R}^n \to \mathbb{R}^m\)</span></h1>
+<h2 id="transformación-lineal" class="unnumbered">Transformación Lineal</h2>
+<p>Una <span class="math inline">\(T : \mathbb{R}^n \to \mathbb{R}^m\)</span> se dice <em>transformación lineal</em> si <span class="math inline">\(T (v+w) = Tv + Tw\)</span>, y <span class="math inline">\(T (\lambda v) = \lambda Tv\)</span></p>
+<h2 id="diferencial" class="unnumbered">Diferencial</h2>
+<p>Dada una función <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}^m\)</span> y un punto <span class="math inline">\(p \in \mathbb{R}^n\)</span>, decimos que una transformación lineal <span class="math inline">\(T : \mathbb{R}^n \to \mathbb{R}^m\)</span> <em>aproxima bien la función</em> si se cumple que: <span class="math display">\[\lim\limits_{x \to p}\frac{fx - fp - T(x-p)}{||x-p||} = 0_{\mathbb{R}^m}\]</span> notemos que si descomponemos <span class="math inline">\(f\)</span> en sus componentes <span class="math inline">\(f_iv = (fv)_i\)</span>, luego tenemos que es necesario y suficiente que cada una de las <span class="math inline">\(f_i\)</span> sea diferenciabla para que <span class="math inline">\(f\)</span> sea diferenciable. Y aún más tenemos: <span class="math display">\[[T] =
+\begin{bmatrix}
+    \vdots \\
+    \nabla f_i p \\
+    \vdots 
+\end{bmatrix}\]</span></p>
+<p>Decimos entonces que la función <span class="math inline">\(f:\mathbb{R}^n \to \mathbb{R}^m\)</span> es <em>diferenciable</em> si existe tal <span class="math inline">\(T\)</span>, y la <em>diferencial</em> de <span class="math inline">\(f\)</span> en <span class="math inline">\(p\)</span> es <span class="math inline">\([T] \in \mathbb{R}^{m \times n}\)</span> , y se nota <span class="math inline">\(Df(p) = [T]\)</span></p>
+<h2 id="ejemplo" class="unnumbered">Ejemplo</h2>
+<p>Si tenemos <span class="math inline">\(fxy = (x+y, xy, x^2 + y^3)\)</span>, luego tenemos <span class="math display">\[Df(x, y) = 
+\begin{bmatrix}
+    1 &amp; 1 \\
+    y &amp; x \\
+    2x &amp; 3y^2 \\
+\end{bmatrix}\]</span> Y es claramente diferenciable porque cada componente es <span class="math inline">\(\mathcal{C}_1\)</span>.</p>
+<p>Luego tenemos que <span class="math display">\[Df(1, 2) = 
+\begin{bmatrix}
+    1 &amp; 1 \\
+    2 &amp; 1 \\
+    2 &amp; 12 \\
+\end{bmatrix}\]</span> Entonces podemos aproximar la función cerca de <span class="math inline">\((1, 2)\)</span>: <span class="math display">\[f(x,y) \approx f(1, 2) + 
+\begin{bmatrix}
+    1 &amp; 1 \\
+    2 &amp; 1 \\
+    2 &amp; 12 \\
+\end{bmatrix} \times
+\begin{bmatrix}
+    x - 1 \\
+    y - 2 \\
+\end{bmatrix}\]</span></p>
+<h1 id="acotar-con-transformaciones-lineales" class="unnumbered">Acotar con transformaciones lineales</h1>
+<p>Para cualquier norma, para toda matriz <span class="math inline">\(T \in \mathbb{R}^m \times \mathbb{R}^n\)</span>, tenemos que existe una constante <span class="math inline">\(M\)</span> tal que <span class="math inline">\(||Tv|| \leq M ||v||\)</span>.</p>
+<p>Demo: Si tomamos <span class="math inline">\(A = \partial B(0, 1) \in \mathbb{R}^n\)</span> la <span class="math inline">\(n\)</span>-esfera de radio <span class="math inline">\(1\)</span>, luego como <span class="math inline">\(A\)</span> es compacto y <span class="math inline">\(x \mapsto ||Tx||\)</span> es contínua, tenemos que la función alcanza un máximo <span class="math inline">\(M\)</span> en <span class="math inline">\(A\)</span>. Además, como <span class="math inline">\(T\)</span> es lineal, este máximo será el mismo para toda esfera. Entonces ya está. En otras palabras: <span class="math display">\[||Tx|| = ||x|| \cdot \left|\left|T\frac{x}{||x||}\right|\right| \leq ||x|| \cdot |M|\]</span> Entonces estamos. A este valor lo llamamaos <span class="math inline">\(M = ||T||\)</span>.</p>
+<h1 id="propiedad" class="unnumbered">Propiedad</h1>
+<p>Si <span class="math inline">\(f : (A \subseteq\mathbb{R}^n) \to \mathbb{R}^m\)</span> es deferenciable en <span class="math inline">\(p \subseteq A^\circ\)</span>, luego existe una bola <span class="math inline">\(p \in B \subseteq A\)</span> y una constante <span class="math inline">\(c &gt; 0\)</span> tal que: <span class="math display">\[\forall x \in B : \frac{||fx - fp||}{||x-p||} &lt; c\]</span></p>
+<p>Demo: Tenemos <span class="math inline">\(fx = fp + Dfp \cdot (x-p) + o(x-p)\)</span>. Luego tomemos <span class="math display">\[||fx - fp - Dfp \cdot (x-p)|| \leq ||x-p||\]</span> <span class="math display">\[\frac{||fx - fp - Dfp \cdot (x-p)||}{||x-p||} \leq 1\]</span> <span class="math display">\[\frac{||fx - fp||}{||x-p||} - \frac{||Dfp \cdot (x-p)||}{||x-p||} \leq 1\]</span> <span class="math display">\[\frac{||fx - fp||}{||x-p||} \leq 1+ \frac{||Dfp \cdot (x-p)||}{||x-p||}\]</span> <span class="math display">\[\frac{||fx - fp||}{||x-p||} \leq 1+ ||Dfp||\]</span> Entonces estamos.</p>
+<h1 id="regla-de-la-cadena" class="unnumbered">Regla de la Cadena</h1>
+<p>Tenemos <span class="math inline">\(A \subseteq R^n\)</span>, <span class="math inline">\(B \subseteq\mathbb{R}^m\)</span>, <span class="math inline">\(C \subseteq\mathbb{R}^t\)</span>, y funciones <span class="math inline">\(f : A \to B\)</span>, <span class="math inline">\(g : B \to C\)</span>. Y sea <span class="math inline">\(p \subseteq A\)</span>.</p>
+<p>Supongamos que <span class="math inline">\(f\)</span> diferenciable en <span class="math inline">\(p\)</span>, y <span class="math inline">\(g\)</span> diferenciable en <span class="math inline">\(fp\)</span>, luego tenemos que <span class="math inline">\(g \circ f\)</span> es diferenciable en <span class="math inline">\(p\)</span> y se tiene: <span class="math display">\[D(g \circ f)p = Dg(fp) \times Dfp\]</span></p>
+<p>Demo: Tenemos <span class="math display">\[fx = fp + Dfp \cdot (x-p) + r_fx\]</span> <span class="math display">\[gx = g(fp) + Dg(fp) \cdot (x-fp) + r_gx\]</span></p>
+<p>Reemplazamos <span class="math inline">\(fx\)</span> en <span class="math inline">\(g\)</span> y tenemos: <span class="math display">\[g(fx) = g(fp) + Dg(fp) \cdot (fx-fp) + r_g(fx)\]</span> <span class="math display">\[g(fx) = g(fp) + Dg(fp) \cdot (Dfp \cdot (x-p) + r_fx) + r_g(fx)\]</span> <span class="math display">\[g(fx) = g(fp) + Dg(fp) \cdot Dfp \cdot (x-p) + Dg(fp) \cdot r_fx + r_g(fx)\]</span></p>
+<p>Entonces nos falta chequear que <span class="math display">\[\lim\limits_{x \to p} \frac{||Dg(fp) \cdot r_fx + r_g(fx)||}{||x-p||} = 0\]</span></p>
+<p>Notemos que <span class="math display">\[\lim\limits_{x \to p} \frac{||Dg(fp) \cdot r_fx||}{||x-p||} = 0 \Leftarrow\]</span> <span class="math display">\[\lim\limits_{x \to p} \frac{||Dg(fp)|| \cdot ||r_fx||}{||x-p||} = 0 \Leftarrow\]</span> <span class="math display">\[||Dg(fp)|| \cdot\lim\limits_{x \to p} \frac{ ||r_fx||}{||x-p||} = 0\]</span> Que es verdad por definición de <span class="math inline">\(r_f\)</span></p>
+<p>Para el segundo cacho, tenemos <span class="math display">\[\lim\limits_{x \to p} \frac{||r_g(fx)||}{||x-p||} = 0 \Leftarrow\]</span> Si <span class="math inline">\(fx = fp\)</span> entonces ya estamos. Si no: <span class="math display">\[\lim\limits_{x \to p} \frac{||r_g(fx)||}{||fx-fp||} \cdot \frac{||fx-fp||}{||x-p||} = 0\]</span></p>
+<p>Como vimos que <span class="math inline">\(\frac{||fx-fp||}{||x-p||}\)</span> está acotado, ya estamos.</p>
+<h1 id="ejemplo-1" class="unnumbered">Ejemplo</h1>
+<p>Si tenemos <span class="math inline">\(hx = x^x\)</span>, entonce podemos excribirla como <span class="math inline">\(h = (x,y \mapsto x^y) \circ (x \mapsto (x,x))\)</span>. Y diferenciamos las dos y multiplicamos.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

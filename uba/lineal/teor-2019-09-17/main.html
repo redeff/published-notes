@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="anulador" class="unnumbered">Anulador</h1>
+<p>Dado <span class="math inline">\(S\)</span> un subespacio de <span class="math inline">\(\mathbb{V}\)</span>, si definimos <span class="math inline">\(T = \{x : \mathbb{V}: \forall \phi \in S^0 : \phi x = 0\}\)</span>, luego <span class="math inline">\(S = T\)</span>.</p>
+<p>Es claro que <span class="math inline">\(S \subseteq T\)</span>. Vemos que <span class="math inline">\(T \subseteq S\)</span>. Sea <span class="math inline">\(x \in T\)</span>, <span class="math inline">\(x \notin S\)</span>, tomemos <span class="math inline">\(v\)</span> una base de <span class="math inline">\(\mathbb{V}\)</span>, con <span class="math inline">\(v_{i &lt; r}\)</span> base de <span class="math inline">\(S\)</span>, y <span class="math inline">\(v_r = x\)</span>. Sea la base dual <span class="math inline">\(\phi = v^*\)</span>. Como <span class="math inline">\(\phi_{i \geq r}v_{i &lt; r} = 0\)</span>, tenemos que <span class="math inline">\(\phi_{i \geq r}\)</span> es base de <span class="math inline">\(S^0\)</span>.</p>
+<p>Luego <span class="math inline">\(\phi_r \subseteq S^0\)</span>, entonces <span class="math inline">\(\phi_r x = 0\)</span>, pero <span class="math inline">\(x = v_r\)</span>, pero entonces por definición de base dual tenemos <span class="math inline">\(\phi_r x = 1\)</span>. Contradicción.</p>
+<h2 id="observación" class="unnumbered">Observación</h2>
+<p>Dado <span class="math inline">\(\mathbb{V}\)</span> finitamente generado y <span class="math inline">\(S\)</span> sub de <span class="math inline">\(\mathbb{V}\)</span>, lugo si <span class="math inline">\(\phi\)</span> es base de <span class="math inline">\(S^0\)</span>, luego <span class="math inline">\(S = \{x \in \mathbb{V}: \forall i : \phi_ix = 0\}\)</span>.</p>
+<h1 id="doble-dual" class="unnumbered">Doble dual</h1>
+<p>Tenemos la función <span class="math inline">\(\mathop{\mathrm{ev}}\in (\mathbb{V}\to \mathbb{V}^{**} = \mathbb{V}\to \mathbb{V}^{*} \to \mathbb{K})\)</span> dada por <span class="math inline">\(\mathop{\mathrm{ev}}_x \phi = \phi x\)</span>. La función <span class="math inline">\(\mathop{\mathrm{ev}}\)</span> también se llama <span class="math inline">\(\Phi\)</span>.</p>
+<p>Esta función es <span class="math inline">\(\mathop{\mathrm{iso}}\)</span> para <span class="math inline">\(\mathbb{V}\)</span> finitamente generado.</p>
+<h1 id="anulador-del-anulador" class="unnumbered">Anulador del Anulador</h1>
+<p>Tenemos <span class="math inline">\(S^{00} = \{\Phi : \mathbb{V}^{**} : \forall \phi \in S^0 : \Phi\phi = 0\}\)</span>. Por lo anterior, tenemos que <span class="math display">\[S^{00} = \{\Phi \in \mathbb{V}^{**} : \forall \phi \in S^0 : \Phi\phi = 0\} =\]</span> <span class="math display">\[\{\mathop{\mathrm{ev}}_x : x \in \mathbb{V}: \forall \phi \in S^0 : \mathop{\mathrm{ev}}_x\phi = 0\} =\]</span> <span class="math display">\[\{\mathop{\mathrm{ev}}_x : x \in \mathbb{V}: \forall \phi \in S^0 : \phi x = 0\} =_{\mathop{\mathrm{iso}}}\]</span> <span class="math display">\[\{x : x \in \mathbb{V}: \forall \phi \in S^0 : \phi x = 0\} = S\]</span> Luego tenemos <span class="math inline">\(S^{00} =_{\mathop{\mathrm{iso}}} S\)</span></p>
+<h1 id="operaciones-de-subespacios-sobre-anulación" class="unnumbered">Operaciones de Subespacios sobre Anulación</h1>
+<p>Se cumple que:</p>
+<ul>
+<li><p><span class="math inline">\((S+T)^0 = S^0 \cap T^0\)</span></p></li>
+<li><p><span class="math inline">\((S\cap T)^0 \subseteq^T S^0 + T^0\)</span></p></li>
+</ul>
+<p>Y para dimensión finita,</p>
+<ul>
+<li><p><span class="math inline">\((S+T)^0 = S^0 \cap T^0\)</span></p></li>
+<li><p><span class="math inline">\((S\cap T)^0 = S^0 + T^0\)</span></p></li>
+</ul>
+<h1 id="función-transpuesta" class="unnumbered">Función Transpuesta</h1>
+<p>Dada <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}\)</span>, la función transpuesta <span class="math inline">\(f^t : \mathbb{W}^* \to \mathbb{V}^*\)</span> es la dada por <span class="math inline">\(f^t \phi = \phi \circ f\)</span>, es decir <span class="math inline">\(f^t = (\circ f)\)</span>. notemos que <span class="math inline">\((*^t) : (\mathbb{V}\to \mathbb{W}) \to (\mathbb{W}^* \to \mathbb{V}^*)\)</span> es lineal. Esto es ya que:</p>
+<ul>
+<li><p><span class="math inline">\(f^t \phi\)</span> es lineal.</p></li>
+<li><p><span class="math inline">\(f^t\)</span> es lineal</p></li>
+<li><p><span class="math inline">\((*^t)\)</span> es lineal</p></li>
+</ul>
+<h2 id="transpuesta-de-la-identidad" class="unnumbered">Transpuesta de la Identidad</h2>
+<p>Dada <span class="math inline">\(\mathop{\mathrm{id}}: \mathbb{V}\to \mathbb{V}\)</span>, tenemos que <span class="math inline">\(\mathop{\mathrm{id}}^t = \mathop{\mathrm{id}}_{\mathbb{V}^*}\)</span></p>
+<h2 id="composición" class="unnumbered">Composición</h2>
+<p>Dada <span class="math inline">\(f : \mathbb{U}\to \mathbb{V}\)</span> y <span class="math inline">\(g : \mathbb{V}\to \mathbb{W}\)</span>, tenemos que <span class="math inline">\((g \circ f)^t = f^t \circ
+g^t : \mathbb{W}^* \to \mathbb{U}^*\)</span>.</p>
+<p>Demo: <span class="math display">\[(g \circ f)^t \phi\]</span> <span class="math display">\[= \phi \circ (g \circ f)\]</span> <span class="math display">\[= (\phi \circ g) \circ f\]</span> <span class="math display">\[= g^t \phi \circ f\]</span> <span class="math display">\[= f^t (g^t \phi)\]</span> <span class="math display">\[= (f^t \circ g^t) \phi\]</span></p>
+<h2 id="isomorfismo" class="unnumbered">Isomorfismo</h2>
+<p>Si <span class="math inline">\(f : \mathbb{V}\to_{\mathop{\mathrm{iso}}} \mathbb{W}\)</span>, luego <span class="math inline">\(f^t : \mathbb{W}\to_{\mathop{\mathrm{iso}}} \mathbb{V}\)</span>, y además <span class="math inline">\((f^{-1})^t
+= (f^t)^{-1}\)</span></p>
+<p>Notemos que <span class="math display">\[f^t \circ (f^{-1})^t = (f^{-1} \circ f)^t = \mathop{\mathrm{id}}^t = \mathop{\mathrm{id}}\]</span> y similarmente, <span class="math display">\[(f^{-1})^t \circ f^t = (f \circ f^{-1})^t = \mathop{\mathrm{id}}^t = \mathop{\mathrm{id}}\]</span></p>
+<h2 id="anuladores" class="unnumbered">Anuladores</h2>
+<p>Si <span class="math inline">\(f: \mathbb{V}\to \mathbb{W}\)</span>, luego <span class="math inline">\(\ker f^t = (\mathop{\mathrm{Im}}f)^0\)</span>. Además, <span class="math inline">\(\mathop{\mathrm{Im}}f^t \subseteq(\ker
+f)^0\)</span>, la igualdad dándose para dimensión finita.</p>
+<p>Notemos que <span class="math display">\[(\mathop{\mathrm{Im}}f)^0 = \{\phi : \phi (\mathop{\mathrm{Im}}f) = 0\} =\]</span> <span class="math display">\[\{\phi : (\phi \circ f) \mathbb{V}= 0\}\]</span> <span class="math display">\[\{\phi : f^t \phi \mathbb{V}= 0\}\]</span> <span class="math display">\[\{\phi : f^t \phi = 0\} = \ker f^t\]</span></p>
+<p>Supongamos <span class="math inline">\(f^t \psi = \phi\)</span>, tenemos <span class="math display">\[f^t \psi = \phi\]</span> <span class="math display">\[\psi \circ f = \phi\]</span> <span class="math display">\[(\psi \circ f) \ker f = \phi \ker f\]</span> <span class="math display">\[\psi (f \ker f) = \phi \ker f\]</span> <span class="math display">\[\psi 0 = \phi \ker f\]</span> <span class="math display">\[0 = \phi \ker f \Rightarrow\phi \subseteq(\ker f) ^0\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

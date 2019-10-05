@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="notación-mathcalo-y-o" class="unnumbered">Notación <span class="math inline">\(\mathcal{O}\)</span> y <span class="math inline">\(o\)</span></h1>
+<p>Decimos que <span class="math inline">\(f x = \mathcal{O}(g x) \iff \exists c &gt; 0 : fx &lt; c \cdot
+gx\)</span>.</p>
+<h1 id="derivada-en-mathbbr" class="unnumbered">Derivada en <span class="math inline">\(\mathbb{R}\)</span></h1>
+<p>Se tenemos <span class="math inline">\(f : \mathbb{R}\to \mathbb{R}\)</span>, y <span class="math inline">\(p \in \mathbb{R}\)</span>. Decimos que <span class="math display">\[f&#39; \; p = \alpha \iff \lim\limits_{h \to 0} \frac{f \; p - (f \; (p + h) + h
+\alpha)}{||h||}\]</span></p>
+<p>Decimos que <span class="math inline">\(f x = o(g x) \iff \lim\limits\frac{f x}{g x} = 0\)</span></p>
+<h1 id="deferenciación-multivaraible" class="unnumbered">Deferenciación Multivaraible</h1>
+<h2 id="plano-tangente" class="unnumbered">Plano Tangente</h2>
+<p>Un plano dado por <span class="math inline">\(\pi q = fp + \alpha(p-q)_x + \beta(p-q)_y\)</span> es tangente a la función <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(p\)</span> sii:</p>
+<p><span class="math display">\[\lim\limits_{q \to p} \frac{fq - \pi q}{||p-q||} = 0\]</span></p>
+<h2 id="ejemplo">Ejemplo</h2>
+<p>Dada la función <span class="math inline">\(f \; xy = x^2 + y^3\)</span>, notemos que <span class="math display">\[f \; (1+h) \; (2+k) = 1 + 2h + h^2 + 2^2 + 12k + 6k^2 + k^3 =\]</span> <span class="math display">\[9 + (2h + 12k) + (h^2 + 2^2 + 6k^2 + k^3)\]</span></p>
+<h2 id="diferencial-de-f">Diferencial de <span class="math inline">\(f\)</span></h2>
+<p>Dada una función <span class="math inline">\(f : \mathbb{R}^n \to R\)</span>, la diferencial de <span class="math inline">\(f\)</span> en el punto <span class="math inline">\(p\)</span>, notada <span class="math inline">\(\nabla f p \in \mathbb{R}^n\)</span> dada por: <span class="math display">\[\lim\limits_{q \to p} \frac{fq - fp - (q-p) \cdot \nabla f p}{||p-q||} = 0\]</span> Cuando existe, se dice diferenciable, y se cumple: <span class="math display">\[(\nabla f p)_i = \frac{\partial f}{\partial e_i} \; p\]</span> Y en general, diferenciabilidad implica la existencia de los límites direccionales y se cumple: <span class="math display">\[\frac{\partial f}{\partial v} \; p = v \cdot \nabla f p\]</span> En particular, con <span class="math inline">\(||v||\)</span> constante, la derivada direccional se maximiza con <span class="math inline">\(v\)</span> paralelo a <span class="math inline">\(\nabla fp\)</span>.</p>
+<h1 id="teorema" class="unnumbered">Teorema</h1>
+<p>Sea <span class="math inline">\(f : (\Omega \in \mathbb{R}^n) \to \mathbb{R}\)</span>, con <span class="math inline">\(p \in \Omega^\circ\)</span>. Si las derivadas parciales <span class="math inline">\(\frac{\partial f}{\partial e_i}\)</span> existen y son contínuas en un entorno de <span class="math inline">\(p\)</span>, entonces <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(p\)</span>.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

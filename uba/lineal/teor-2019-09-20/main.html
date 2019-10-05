@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="prop" class="unnumbered">Prop</h1>
+<p>si tenemos <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}\)</span>, luego:</p>
+<ul>
+<li><p><span class="math inline">\(\ker f^t = (\mathop{\mathrm{Im}}f)^0\)</span></p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{Im}}f^t \subseteq(\ker f)^0\)</span>, la igualdad vale con dimensión finita.</p></li>
+<li><p><span class="math inline">\(f \mathop{\mathrm{mono}}\iff f^t \mathop{\mathrm{epi}}\)</span></p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{rg}}f = \mathop{\mathrm{rg}}f^t\)</span></p></li>
+</ul>
+<h1 id="matriz-de-la-transpuesta" class="unnumbered">Matriz de la Transpuesta</h1>
+<p>Si tenemos <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}\)</span>, y <span class="math inline">\(v, w\)</span> bases de <span class="math inline">\(\mathbb{V}, \mathbb{W}\)</span>, entonces: <span class="math display">\[(f^t)_{w^*v^*} = (f_{vw})^t\]</span></p>
+<p>Demo: si tomamos <span class="math inline">\(A = f_{vw}\)</span>, luego tenemos: <span class="math display">\[fv_i = \sum\limits a_{ji}w_j\]</span></p>
+<p>Notemos además que <span class="math display">\[(f^tw^*_j)_{v^*i} = f^tw^*_jv_i = w^*_j(fv_i) = w^*_j \sum\limits a_{ji}w_j = a_{ji}\]</span> Entonces ya estamos.</p>
+<h1 id="determinantes" class="unnumbered">Determinantes</h1>
+<p>Se define como una función <span class="math inline">\(\det : \mathbb{K}^{n \times n} \to \mathbb{K}\)</span> que toma <span class="math inline">\(n\)</span> vectores en <span class="math inline">\(\mathbb{K}^n\)</span>, y devuelve el volumen signado del hiperparalepípedo formado por esos vectores. Por propuedades geométricas llegamos a que:</p>
+<ul>
+<li><p><span class="math inline">\(\det (A_1 \dots A_i + v \dots A_n) = \det (A_i\dots) + \det (A_1 \dots v \dots)\)</span> (se dice <span class="math inline">\(f\)</span> es multilineal alternado por columna)</p></li>
+<li><p><span class="math inline">\(\det (A_1 \dots \lambda A_i\dots) = \lambda \det A\)</span> ()</p></li>
+<li><p>itercambiar columnas cambia de signo</p></li>
+<li><p>Si son li, entonces <span class="math inline">\(\det A = 0\)</span></p></li>
+<li><p><span class="math inline">\(\det A \cdot B = \det A \cdot \det B\)</span></p></li>
+</ul>
+<h2 id="notación" class="unnumbered">Notación</h2>
+<p>Si tenemos una sucesión <span class="math inline">\(A_{i &lt; n}\)</span>, luego <span class="math inline">\(k^iA\)</span> es la sucesión <span class="math inline">\(A\)</span> pero con la <span class="math inline">\(i\)</span>-ésima posición cambiada por <span class="math inline">\(k\)</span></p>
+<p>Sea <span class="math inline">\(A(i|j)\)</span> la matriz que resulta de sacarle la fila <span class="math inline">\(i\)</span> y la columna <span class="math inline">\(j\)</span> a <span class="math inline">\(A\)</span>.</p>
+<h2 id="función-multilineal-alternada" class="unnumbered">Función multilineal alternada</h2>
+<p>Una función <span class="math inline">\(f : \mathbb{K}^{n \times n} \to \mathbb{K}\)</span> se dice <em>multilineal alternada</em> si:</p>
+<ul>
+<li><p>Si se finan todas las columnas de una matriz <span class="math inline">\(M\)</span> excepto la <span class="math inline">\(i\)</span>-ésima, entonces la función es lineal en la <span class="math inline">\(i\)</span>-ésima columna. Es decir, <span class="math inline">\(v \mapsto f (v^iA )\)</span> es lineal.</p></li>
+<li><p>Si hay columnas repetidas entonces <span class="math inline">\(f\)</span> vale <span class="math inline">\(0\)</span>. Es decir, <span class="math inline">\(f (v^iv^jA) = 0\)</span> para <span class="math inline">\(i \neq j\)</span></p></li>
+</ul>
+<h3 id="propiedades-de-las-multilineales-alternadas" class="unnumbered">Propiedades de las Multilineales Alternadas</h3>
+<ul>
+<li><p>Si una fila es <span class="math inline">\(0\)</span>, entonces vale <span class="math inline">\(fA = 0\)</span>. Demo trivial por linearidad.</p></li>
+<li><p>Intercambiar filas cambia el signo del determinante. Demo: si tomamos la igualdad <span class="math inline">\(f(A_1 \mid \dots \mid A_i + A_j \mid \dots \mid A_i + A_j \mid A_n)\)</span> y expandimos en los cuatro sumandos por linearidad, nos quedan dos cosas que son <span class="math inline">\(0\)</span> y las otras dos tienen que ser opuestas y estamos.</p>
+<p><span class="math display">\[f ((v+w)^i(v+w)^jA) = 0\]</span> <span class="math display">\[f (v^iv^jA) + f (v^iw^jA) + f (w^iv^jA) + f(w^iw^jA) = 0\]</span> <span class="math display">\[f (v^iw^jA) + f (w^iv^jA) = 0\]</span></p>
+<p>Entonces estamos.</p></li>
+<li><p><span class="math inline">\(fA = f(A_1 \mid \dots \mid A_i + \alpha A_j \mid \dots \mid A_n)\)</span></p></li>
+<li><p>Si alguna columna es combinación lineal de las otras, entonces <span class="math inline">\(fA = 0\)</span>.</p></li>
+</ul>
+<h2 id="la-única-multilineal-alternada-es-det" class="unnumbered">La única multilineal alternada es <span class="math inline">\(\det\)</span></h2>
+<p>Para cualquier <span class="math inline">\(\alpha \in \mathbb{K}\)</span>, y <span class="math inline">\(n \in \mathbb{N}\)</span>, existe una única multilineal alternada <span class="math inline">\(f : \mathbb{K}^{n \times n} \to K\)</span> tal que <span class="math inline">\(f I_n = \alpha\)</span>. Demo:</p>
+<h3 id="existencia" class="unnumbered">Existencia</h3>
+<p>Para <span class="math inline">\(n=1\)</span>, luego existe <span class="math inline">\(f[a] = \alpha a\)</span>.</p>
+<p>Ahora por inducción, asumimos que existe para <span class="math inline">\(g : \mathbb{K}^{n \times n} \to \mathbb{K}\)</span> multilineal.</p>
+<p>Definamos <span class="math inline">\(f A = \sum\limits_{i = 0}^n (-1)^i \cdot a_{0i}\cdot g \; A(0|i)\)</span>. Vamos a ver que cumple las condiciones de multilinearidad alternada.</p>
+<p>Para ver que es lineal en la <span class="math inline">\(k\)</span>-ésima fila, alcanza con ver que cada término de la suma es lineal. El <span class="math inline">\(k\)</span>-ésimo término es de la forma <span class="math inline">\(a_{0k} \cdot c\)</span>, con <span class="math inline">\(c\)</span> constante, por lo que claramente es lineal en la columna <span class="math inline">\(k\)</span>.</p>
+<p>En un térmono que no es el <span class="math inline">\(k\)</span>-ésimo, nos queda una constante por algo que depende de <span class="math inline">\(g \; A(0|i)\)</span>, que por inducción es lineal en la <span class="math inline">\(k\)</span>-ésima columna sin el primer elemento.</p>
+<p>Además <span class="math inline">\(f (v^iv^jA) = \sum\limits g \; (v^iv^jA)(0|k) + g (v^iv^jA)(0|i) + g(v^iv^jA)(0|j)\)</span>, y ya estamos.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

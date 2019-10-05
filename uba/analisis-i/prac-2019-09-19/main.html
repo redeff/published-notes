@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="mathcalc1" class="unnumbered"><span class="math inline">\(\mathcal{C}^1\)</span></h1>
+<p>Una función <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span> se dice que <span class="math inline">\(f : \in \mathcal{C}^1\)</span> si existen todas las derivadas parciales y son contínuas.</p>
+<p>Tenemos las siguientes implicaciones:</p>
+<ul>
+<li><p><span class="math inline">\(\mathcal{C}^1 \Rightarrow\)</span> diferenciable</p></li>
+<li><p>diferenciable <span class="math inline">\(\Rightarrow\)</span> contínua</p></li>
+<li><p>diferenciable <span class="math inline">\(\Rightarrow\)</span> existen las derivadas direccionales</p></li>
+<li><p>existen las derivadas direccionales <span class="math inline">\(\Rightarrow\)</span> existen las parciales</p></li>
+</ul>
+<h1 id="ejemplo" class="unnumbered">Ejemplo</h1>
+<p><span class="math display">\[f(x, y) = 
+\begin{cases}
+    \frac{x^4+x^2y}{x^2 + y^2} &amp; \text{Si $(x,y) \neq (0,0)$}\\
+    0 &amp; \text{Si $(x,y) = (0,0)$}
+\end{cases}\]</span></p>
+<p>Las derivadas parciales existen y dan <span class="math inline">\(0\)</span> (son fáciles)</p>
+<p>Para continuidad tenemos <span class="math display">\[\frac{x^4+x^2y}{x^2+y^2} \leq\]</span> <span class="math display">\[\frac{||-||^4+||-||^3}{||-||} \leq\]</span> <span class="math display">\[2||-||\]</span></p>
+<p>Para diferenciabilidad, queremos ver que: <span class="math display">\[\lim\limits\frac{x^4+x^2y}{(x^2+y^2)||x,y||} = 0\]</span> <span class="math display">\[\lim\limits\frac{x^4+x^2y}{||x,y||^3} =\]</span></p>
+<p>Si tomamos <span class="math inline">\(x = y\)</span>, entonces <span class="math display">\[\lim\limits\frac{x^4+x^3}{||x,x||^3} =\]</span> <span class="math display">\[\lim\limits\frac{x^4+x^3}{2^{3/2}x^3} =\]</span> <span class="math display">\[\lim\limits 2^\frac{2}{3}(1+x) \neq 0\]</span> Entonces no es diferenciable.</p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p><span class="math display">\[f = 
+    \begin{cases}
+        \frac{x^2(7y+3)+y^2(7x+3)}{7(x^2+y^2)} &amp; (x,y) \neq (0,0)\\
+        \frac{3}{7} &amp; (x,y) = (0,0)
+    \end{cases}\]</span> Ver que es contínua, que existen las direccionales y que no es difernciable <span class="math display">\[\frac{x^2(7y+3)+y^2(7x+3)}{7(x^2+y^2)} - \frac{3}{7}=\]</span> <span class="math display">\[\frac{x^2(7y+3)+y^2(7x+3) - 3x^2 - 3y^2}{7(x^2+y^2)}=\]</span> <span class="math display">\[\frac{7x^2y+7y^2x}{7(x^2+y^2)}=\]</span> <span class="math display">\[\frac{x^2y+y^2x}{x^2+y^2}\leq\]</span> <span class="math display">\[\frac{2||x,y||^3}{||x,y||^2}=\]</span> <span class="math display">\[2||x,y||\]</span></p>
+<p>Ahora la continuidad <span class="math display">\[\frac{f(ta, tb) - f0}{t}=\]</span> <span class="math display">\[\frac{(ta)^2(tb)+(tb)^2(ta)}{t((ta)^2+(tb)^2)}=\]</span> <span class="math display">\[\frac{t^3(a^2b+b^2a)}{t^3(a^2+b^2)}=\]</span> <span class="math display">\[\frac{a^2b+b^2a}{a^2+b^2}=\]</span> <span class="math display">\[a^2b+b^2a=\]</span> <span class="math display">\[ab(a+b)=\]</span></p>
+<p>Pero entonces <span class="math inline">\(\frac{\partial f}{\partial x} = \frac{\partial f}{\partial y} = 0\)</span>, pero entonces todas las direccionales son <span class="math inline">\(0\)</span>, pero si tomamos <span class="math inline">\(a = b= \frac{1}{\sqrt{2}}\)</span>, la cuanta da no nula, entonces <span class="math inline">\(f\)</span> no es diferenciable.</p>
+<h1 id="ejercicio-3" class="unnumbered">Ejercicio 3</h1>
+<p><span class="math display">\[f(x,y) =
+    \begin{cases}
+        xy\sin\left(\frac{1}{x^2+y^2} \right) &amp; (x,y) \neq 0 \\
+        0
+    \end{cases}\]</span></p>
+<p>Las parciales son trivialmente <span class="math inline">\(0\)</span>. Queremos ver si es diferenciable. <span class="math display">\[\lim\limits\frac{xy\sin\left(\frac{1}{x^2+y^2} \right)}{||x,y||}=\]</span> <span class="math display">\[\lim\limits\frac{xy}{||x,y||}=\]</span> <span class="math display">\[\lim\limits\frac{||x,y||^2}{||x,y||}=\]</span> <span class="math display">\[\lim\limits||x,y|| = 0\]</span> Entonces es diferenciable.</p>
+<p>Ahora calculemos <span class="math inline">\(\frac{\partial f}{\partial x}\)</span> como función <span class="math display">\[\frac{\partial f}{\partial x}(x,y) = y\sin \left(\frac{1}{x^2+y^2}\right) + xy\cos \left(\frac{1}{x^2+y^2}\right)\frac{-1}{(x^2+y^2)^2}2x\]</span></p>
+<p>Si tomamos <span class="math inline">\(x = y\)</span>, queda <span class="math display">\[\frac{\partial f}{\partial x}(x,y) = x\sin \left(\frac{1}{2x^2}\right) + x^2\cos \left(\frac{1}{2x^2}\right)\frac{-1}{4x^4}2x\]</span> <span class="math display">\[\frac{\partial f}{\partial x}(x,y) = x\sin \left(\frac{1}{2x^2}\right) - \frac{1}{2x}\cos \left(\frac{1}{2x^2}\right)\]</span> Tomemos una sucesión <span class="math inline">\(a_n\)</span> tal que <span class="math inline">\(\cos\frac{1}{2a_n^2} = 1\)</span> y <span class="math inline">\(a_n \to 0\)</span>, entonces tendremos que nuestra derivada parcial tiene una subsucesión que tiende a <span class="math inline">\(\infty\)</span>. Luego tomamos <span class="math inline">\(\frac{1}{2a_n^2} = 2n\pi\)</span>, entonces si tomamos <span class="math inline">\(a_n = \frac{1}{2\sqrt{n\pi}}\)</span> cumple lo que queremos, y está.</p>
+<h1 id="ejercicio-4" class="unnumbered">Ejercicio 4</h1>
+<p>Tenemos <span class="math inline">\(f\)</span> deferenciable en <span class="math inline">\((2,3)\)</span>, y <span class="math display">\[v_1 = \left(\frac{1}{\sqrt{2}} , \frac{1}{\sqrt{2}} \right)\]</span> <span class="math display">\[v_2 = \left(\frac{3}{5} , \frac{4}{5} \right)\]</span> Nos dicen <span class="math inline">\(\frac{\partial f}{\partial v_1}(2,3) = 2\)</span>, y <span class="math inline">\(\frac{\partial f}{\partial v_2} (2,3) = 1\)</span></p>
+<p>si las direccionales son <span class="math inline">\(a, b\)</span>, tenemos el sistema de ecuaciones: <span class="math display">\[\begin{cases}
+    \frac{a}{\sqrt{2}} + \frac{b}{\sqrt{2}} = 2 \\
+    \\
+    \frac{3a}{5} + \frac{4b}{5} = 1 \\
+\end{cases}\]</span> Si lo resolvemos tenemos que <span class="math inline">\((a,b) = (8\sqrt{2} - 5, 5-6\sqrt{2})\)</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
