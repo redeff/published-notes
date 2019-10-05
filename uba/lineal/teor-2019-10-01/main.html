@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="unicidad-y-existencia-de-la-determinante" class="unnumbered">Unicidad y Existencia de la Determinante</h1>
+<p>Vamos a demostrar que existe una única multilineal alternante <span class="math inline">\(f : \mathbb{K}^{n \times n} \to \mathbb{K}\)</span> con <span class="math inline">\(f \mathop{\mathrm{Id}}= 1\)</span>.</p>
+<h2 id="existencia" class="unnumbered">Existencia</h2>
+<p>Si <span class="math inline">\(g : \mathbb{K}^{n \times n} \to \mathbb{K}\)</span> es mult alt, <span class="math inline">\(g \mathop{\mathrm{Id}}= 1\)</span>, luego <span class="math display">\[f : \mathbb{K}^{(n+1) \times (n+1)} \to \mathbb{K}, fA = \sum\limits(-1)^{i+1} a_{1i}g(A(1|i))\]</span> es mult alt con <span class="math inline">\(f \mathop{\mathrm{Id}}= 1\)</span>.</p>
+<h2 id="unicidad" class="unnumbered">Unicidad</h2>
+<p>Supongamos que hay una única <span class="math inline">\(g : \mathbb{K}^{n \times n} \to \mathbb{K}\)</span> mult alt, con <span class="math inline">\(g \mathop{\mathrm{Id}}= 1\)</span>, y alguna mult alt <span class="math inline">\(f : \mathbb{K}^{(n+1) \times (n+1)} \to \mathbb{K}\)</span>. Luego:</p>
+<p><span class="math display">\[fA =
+    \sum\limits a_{i1} f 
+    \begin{bmatrix}
+        0 &amp; a_{12} &amp; \dots &amp; a_{1n+1} \\
+        0 &amp; a_{22} &amp; \dots &amp; a_{2n+1} \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        1 &amp; a_{i2} &amp; \dots &amp; a_{in+1} \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; a_{n+12} &amp; \dots &amp; a_{n+1n+1} \\
+    \end{bmatrix} =\]</span><span class="math display">\[\sum\limits a_{i1} f 
+    \begin{bmatrix}
+        0 &amp; a_{12} &amp; \dots &amp; a_{1n+1} \\
+        0 &amp; a_{22} &amp; \dots &amp; a_{2n+1} \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        1 &amp; 0 &amp; \dots &amp; 0 \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; a_{n+12} &amp; \dots &amp; a_{n+1n+1} \\
+    \end{bmatrix} =\]</span><span class="math display">\[\sum\limits(-1)^{i+1} a_{i1} f 
+    \begin{bmatrix}
+        a_{12} &amp; \dots &amp;0&amp; \dots &amp; a_{1n+1} \\
+        \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; \dots &amp; 1 &amp; \dots&amp; 0 \\
+        \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        a_{n+12} &amp; \dots &amp; 0 &amp; \dots &amp; a_{n+1n+1} \\
+    \end{bmatrix} =\]</span> Lo que nos queda es una multilineal alternada, que en la identidad da <span class="math inline">\(1\)</span>, entonces tiene que ser <span class="math inline">\(g\)</span>.</p>
+<h1 id="determinante" class="unnumbered">Determinante</h1>
+<p>La determinante <span class="math inline">\(\det: \mathbb{K}^{n \times n} \to \mathbb{K}\)</span> es la única multilineal que manda <span class="math inline">\(\mathop{\mathrm{Id}}\)</span> a <span class="math inline">\(1\)</span>. Tenemos entonces:</p>
+<p><span class="math display">\[\det A
+    = \sum\limits(-1)^{i+1} a_{1i} \cdot \det \;A(1|i)
+    = \sum\limits(-1)^{i+1} a_{i1} \cdot \det \;A(i|1)\]</span></p>
+<h2 id="props" class="unnumbered">Props</h2>
+<ul>
+<li><p>Dada <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>, luego <span class="math inline">\(\det A = \det A^t\)</span>. Notemos que esto implica que la definición de multilinealidad alternada es indistinto de si la hacemos en filas o columnas.</p></li>
+<li><p>Dada <span class="math inline">\(A\)</span> diagonal superior, luego <span class="math inline">\(\det A = \prod a_{ii}\)</span>. Trivial por inducción.</p></li>
+<li><p>Las determinantes de las operaciones son:</p>
+<ul>
+<li><p><span class="math inline">\(\det P^{ij} = -1\)</span>.</p></li>
+<li><p><span class="math inline">\(\det M^i \alpha = \alpha\)</span></p></li>
+<li><p><span class="math inline">\(\det T^{ij}\alpha = 1\)</span></p></li>
+</ul></li>
+<li><p><span class="math inline">\(\det AB = \det A \cdot \det B\)</span></p>
+<p>Demo: definamos <span class="math inline">\(f : \mathbb{K}^{n \times n} \to \mathbb{K}\)</span>, <span class="math inline">\(f X = \det AX\)</span>. Veamos que <span class="math inline">\(f\)</span> es multalt:</p>
+<p>Tenemos <span class="math inline">\(\det A(X_i | \dots) = \det (AX_i | \dots)\)</span>. Luego como <span class="math inline">\(x \mapsto Ax\)</span> es lineal y <span class="math inline">\(\det\)</span> es multilineal, tenemos <span class="math inline">\(f\)</span> multilineal.</p>
+<p>Luego necesariamente <span class="math inline">\(f B = f \mathop{\mathrm{Id}}\cdot \det B\)</span>, pero <span class="math inline">\(f\mathop{\mathrm{Id}}= \det A\)</span>, luego estamos.</p></li>
+</ul>
+<h1 id="matrices-inversibles" class="unnumbered">Matrices Inversibles</h1>
+<p>Notemos que <span class="math inline">\(A\)</span> es inversible sii <span class="math inline">\(\det A \neq 0\)</span>.</p>
+<p>Si <span class="math inline">\(\det A = 0\)</span>, luego <span class="math inline">\(\det AB = \det A \cdot \det B = 0 \neq 1 = \det I\)</span>, luego no es inversible</p>
+<p>Si <span class="math inline">\(\det A \neq 0\)</span>, entonces no hay columnas ld, porque osinó podemos hacernos una columna <span class="math inline">\(0\)</span> y estamos.</p>
+<h1 id="adjunta" class="unnumbered">Adjunta</h1>
+<p>Dada <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>, la adjunta de <span class="math inline">\(A\)</span> está dada por: <span class="math display">\[(\mathop{\mathrm{adj}}A)_{ij} = (-1)^{i+j} \cdot \det \; A(j|i)\]</span></p>
+<p>La adjunta cumple que <span class="math inline">\(A \cdot \mathop{\mathrm{adj}}A = I \cdot \det A\)</span></p>
+<p>Demo: Tenemos <span class="math display">\[(A \cdot \mathop{\mathrm{adj}}A)_{ij} = \sum\limits A_{ik} \cdot (\mathop{\mathrm{adj}}A)_{kj} =\]</span> <span class="math display">\[\sum\limits(-1)^{j+k} \cdot A_{ik} \cdot \det \; A(j|k)\]</span> Para <span class="math inline">\(i = j\)</span> tenemos: <span class="math display">\[\sum\limits(-1)^{i+k} \cdot A_{ik} \cdot \det \; A(i|k) = \det A\]</span> Para <span class="math inline">\(i \neq j\)</span> tenemos: <span class="math display">\[\sum\limits_k (-1)^{j+k} \cdot A_{ik} \cdot \det \; A(j|k) = \det B\]</span> Donde <span class="math inline">\(B\)</span> es la matriz que resulta de: <span class="math display">\[B_{ab} = 
+    \begin{cases}
+        A_{ab} &amp; \text{Si $a \neq j$} \\
+        A_{ib} &amp; \text{Si $a = j$} \\
+    \end{cases}\]</span> Que claramente tiene determinente <span class="math inline">\(0\)</span>, estonces estamos.</p>
+<h2 id="inversos-en-mathbbz" class="unnumbered">Inversos en <span class="math inline">\(\mathbb{Z}\)</span></h2>
+<p>Una matriz <span class="math inline">\(A \in \mathbb{Z}^{n \times n}\)</span> tiene inverso sii <span class="math inline">\(\det A = \pm 1\)</span>.</p>
+<p>Notemos que si <span class="math inline">\(AB = I\)</span>, luego <span class="math inline">\(\det A \cdot \det B = 1\)</span>, entonces ambos son o <span class="math inline">\(1\)</span> o <span class="math inline">\(-1\)</span> (ya que son enteros).</p>
+<p>Además, si <span class="math inline">\(\det A = \pm 1\)</span>, entonces existe <span class="math inline">\(\frac{1}{\det A}\)</span>, entonces podemos tomarnos <span class="math inline">\(B = \frac{1}{\det A} \cdot \mathop{\mathrm{adj}}A\)</span> y estamos.</p>
+<ul>
+<li><p>¿Dónde usamos que <span class="math inline">\(\mathbb{K}\)</span> es cuerpo?</p></li>
+<li><p>Si tomamos <span class="math inline">\(SL(n,\mathbb{Z}) = \{ A \in \mathbb{Z}^{n \times n} : \det A = 1 \}\)</span>, forma un grupo bajo producto</p></li>
+<li><p>Toda matriz <span class="math inline">\(A \in SL(n, \mathbb{Z})\)</span> se expresa como producto de elementales</p></li>
+<li><p>No existe un <span class="math inline">\(c\)</span> tal que toda matriz en <span class="math inline">\(SL(2, \mathbb{Z})\)</span> se pueda expresar como producto de a lo sumo <span class="math inline">\(c\)</span> elementales</p></li>
+<li><p>Existe un <span class="math inline">\(c\)</span> tal que toda matriz en <span class="math inline">\(SL(n \geq 3, \mathbb{Z})\)</span> se pueda expresar como producto de a lo sumo <span class="math inline">\(c\)</span> elementales</p></li>
+</ul>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

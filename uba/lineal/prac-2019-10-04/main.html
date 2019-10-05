@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="determinentes-de-la-adjunta" class="unnumbered">Determinentes de la Adjunta</h1>
+<p>Se tiene <span class="math inline">\(\det \mathop{\mathrm{adj}}A = (\det A)^{n-1}\)</span></p>
+<h1 id="rango-de-la-adjunta" class="unnumbered">Rango de la Adjunta</h1>
+<p>Si <span class="math inline">\(\mathop{\mathrm{rg}}A = n\)</span>, luego claramente <span class="math inline">\(\mathop{\mathrm{rg}}\mathop{\mathrm{adj}}A = n\)</span>.</p>
+<p>Si <span class="math inline">\(\mathop{\mathrm{rg}}A \leq n-2\)</span>, luego toda submatriz de tamaño <span class="math inline">\(n-1\)</span> tiene determinante <span class="math inline">\(0\)</span>, luego <span class="math inline">\(\mathop{\mathrm{adj}}A = 0\)</span>.</p>
+<p>Si <span class="math inline">\(\mathop{\mathrm{rg}}A = n-1\)</span>, tenemos que <span class="math inline">\(A \cdot \mathop{\mathrm{adj}}A = \det A \cdot I = 0\)</span>, luego tenemos que <span class="math inline">\(\mathop{\mathrm{rg}}\mathop{\mathrm{adj}}A \leq 1\)</span>, ya que pensamos el producto como composición. Pero <span class="math inline">\(\mathop{\mathrm{adj}}A \neq 0\)</span>, luego <span class="math inline">\(\mathop{\mathrm{rg}}A = 1\)</span>.</p>
+<h1 id="ejercicio" class="unnumbered">Ejercicio</h1>
+<p>Dadas: <span class="math display">\[A = 
+    \begin{bmatrix}
+        -6 &amp; -1 &amp; 11 \\
+        10 &amp; 0 &amp; -15 \\
+        1 &amp; 1 &amp; -1
+    \end{bmatrix}\]</span> <span class="math display">\[B = 
+    \begin{bmatrix}
+        2 &amp; 1 &amp; 2 \\
+        1 &amp; 4 &amp; 2 \\
+        1 &amp; 1 &amp; 1
+    \end{bmatrix}\]</span></p>
+<p>encontrar <span class="math inline">\(\mathop{\mathrm{adj}}^{-1} A\)</span>, y demostrar que no existe para <span class="math inline">\(B\)</span>. Notemos que: <span class="math display">\[C \cdot \mathop{\mathrm{adj}}C = \mathop{\mathrm{Id}}\cdot \det C\]</span> <span class="math display">\[C \cdot A = \mathop{\mathrm{Id}}\cdot \det C\]</span> <span class="math display">\[C = A^{-1} \cdot \det C\]</span> <span class="math display">\[C = A^{-1} \cdot (\det A)^{\frac{1}{n-1}}\]</span> <span class="math display">\[C = A^{-1} \cdot (\det A)^{\frac{1}{2}}\]</span> Para <span class="math inline">\(A\)</span> esto anda ya que <span class="math inline">\(\det A = 25\)</span>. Pero para <span class="math inline">\(\det B = -1\)</span> no podemos, ya que ningún número al cuadrado da <span class="math inline">\(-1\)</span>.</p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Probar que si <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span> es triengular inferior, luego <span class="math inline">\(\mathop{\mathrm{adj}}A\)</span> también los es.</p>
+<p>Tenemos que probar que si <span class="math inline">\(i &lt; j\)</span>, entonces <span class="math inline">\(\det A(j|i) = 0\)</span>. Vamos a hacer eso probando que es triangular superior y le faltan cosas en la diagonal (Es fácil, hay que hacer los casitos)</p>
+<h1 id="ejercicio-3" class="unnumbered">Ejercicio 3</h1>
+<p>Sea <span class="math inline">\(A \in GL(n, \mathbb{K})\)</span> tq <span class="math inline">\(\{A, \dots, A^n\}\)</span> son li. Demostrar que <span class="math inline">\(\{\mathop{\mathrm{adj}}A, \mathop{\mathrm{adj}}A^2, \dots, \mathop{\mathrm{adj}}A^n\}\)</span> son li.</p>
+<p>Si tomamos: <span class="math display">\[\sum\limits\lambda_i \mathop{\mathrm{adj}}A^i\]</span> <span class="math display">\[A^n \sum\limits\lambda_i \mathop{\mathrm{adj}}A^i\]</span> <span class="math display">\[\sum\limits A^n \lambda_i \mathop{\mathrm{adj}}A^i\]</span> <span class="math display">\[\sum\limits A^{n-i} A^i \lambda_i \mathop{\mathrm{adj}}A^i\]</span> <span class="math display">\[\sum\limits\lambda_i A^{n-i} \det A^i\]</span> Ya estamos</p>
+<h1 id="comentario" class="unnumbered">Comentario</h1>
+<p>Si tenemos : <span class="math display">\[M = 
+    \begin{bmatrix}
+        A &amp; B \\
+        C &amp; D
+    \end{bmatrix}
+    M^{-1} = 
+    \begin{bmatrix}
+        P &amp; Q \\
+        R &amp; S
+    \end{bmatrix}\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

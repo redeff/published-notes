@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="taylor-en-una-variable" class="unnumbered">Taylor en una variable</h1>
+<p>Si tomamos el polinomio <span class="math inline">\(Px = \sum\limits_{n \leq N} \frac{f^{(n)}a}{n!} \cdot (x - a)\)</span>, con <span class="math inline">\(f \in \mathcal{C}^N\)</span>, luego tenemos, por L’Hôpital repetido que: <span class="math display">\[\lim\limits\frac{fx - Px}{x-a} = 0\]</span></p>
+<p>Además, por Lagrange, tenemos que existe un <span class="math inline">\(c\)</span> entre <span class="math inline">\(a\)</span> y <span class="math inline">\(x\)</span> con: <span class="math display">\[fx - Px = \frac{f^{(n+1)}c}{(n+1)!} (x-a)^{n+1}\]</span></p>
+<h1 id="matriz-hessiana" class="unnumbered">Matriz Hessiana</h1>
+<p>Dada una <span class="math inline">\(g : (A \subseteq\mathbb{R}^2) \to \mathbb{R}\)</span>, y un <span class="math inline">\(p \subseteq A\)</span>, la matriz hessiana en <span class="math inline">\(p\)</span> de <span class="math inline">\(g\)</span> está dada pos: <span class="math display">\[\mathop{\mathrm{H}}g p = 
+    \begin{bmatrix}
+        g_{xx} \;p &amp; g_{yx} \;p \\
+        g_{xy} \;p &amp; g_{yy} \;p
+    \end{bmatrix} = 
+    \begin{bmatrix}
+        \nabla g_x \;p \\
+        \nabla g_y \; p
+    \end{bmatrix}\]</span></p>
+<p>En general, en <span class="math inline">\(\mathbb{R}^n\)</span>, la matriz está dada por: <span class="math display">\[\mathop{\mathrm{H}}gp = \mathop{\mathrm{D}}^2 gp = 
+    \begin{bmatrix}
+        \vdots \\
+        \nabla g_{x_i} \; p \\
+        \vdots
+    \end{bmatrix}\]</span> Alternativamente, tenemos <span class="math inline">\(\mathop{\mathrm{H}}g = \mathop{\mathrm{D}}^2 g\)</span></p>
+<p>Notemos que si <span class="math inline">\(g \in \mathcal{C}^2\)</span>, luego <span class="math inline">\(\mathop{\mathrm{D}}^2 g p\)</span> es simétrica.</p>
+<h1 id="taylor-multivariable" class="unnumbered">Taylor Multivariable</h1>
+<p>Dada <span class="math inline">\(f : (A \subseteq\mathbb{R}^n) \to \mathbb{R}\)</span>, con <span class="math inline">\(f \in \mathbb{C}^3\)</span>, con <span class="math inline">\(A\)</span> abierto convexo, luego tenemos el polinomio de taylor de orden dos: <span class="math display">\[fx = fp + \sum\limits f_{x_i}p (x_i-p_i) + \frac{1}{2}\sum\limits\sum\limits f_{x_ix_j} (x_i-p_i)(x_j-p_j) + R(x)\]</span></p>
+<p>Donde <span class="math inline">\(R(x) = \frac{1}{6} \sum\limits\sum\limits\sum\limits f_{x_ix_jx_z} (x_i-p_i) (x_j - p_j)(x_k-p_k)\)</span>, que implica que <span class="math inline">\(\frac{R(x)}{||x-p||^2} \to 0\)</span></p>
+<p>Alternativamente, el polinomio de taylor se puede escribir como <span class="math display">\[fx = fp + \nabla f \cdot (x-p) + \frac{1}{2} \mathop{\mathrm{H}}fp \cdot (x-p) \cdot (x-p) + R(x)\]</span></p>
+<p>Además, tenemos que el resto se escribe: <span class="math display">\[R(x) = \frac{1}{6} \sum\limits\sum\limits\sum\limits f_{x_ix_jx_z} (x_i-p_i) (x_j - p_j)(x_k-p_k)\]</span> Por Lagrange en la composición de <span class="math inline">\(f\)</span> con la curva que mappea <span class="math inline">\([0,1]\)</span> al segmento <span class="math inline">\(\overline{xp}\)</span></p>
+<p>Además, como <span class="math inline">\(f \in \mathcal{C}^3\)</span>, en cualquier entorno compacto convexo de <span class="math inline">\(P\)</span>, todas las derivadas terceras están acotadas, luego su suma con módulo está acotado por, digamos, <span class="math inline">\(M\)</span>. Pero luego <span class="math inline">\(R(x) \leq M \cdot ||x-p||^3\)</span>. Luego estamos.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

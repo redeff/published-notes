@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="determinantes" class="unnumbered">Determinantes</h1>
+<ul>
+<li><p><span class="math inline">\(\det AB = \det A \cdot \det B\)</span></p></li>
+<li><p><span class="math inline">\(\det A = \det A^t\)</span></p></li>
+<li><p><span class="math inline">\(\det A \neq 0 \iff \mathop{\mathrm{rg}}A = n \iff A\)</span> inversible</p></li>
+<li><p><span class="math inline">\(\forall i: \det A = \sum\limits_j (-1)^{i+j} A_{ij} \cdot \det \; A(i|j)\)</span></p></li>
+<li><p><span class="math inline">\(\forall j: \det A = \sum\limits_i (-1)^{i+j} A_{ij} \cdot \det \; A(i|j)\)</span></p></li>
+</ul>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Tenemos: <span class="math display">\[\det
+    \begin{bmatrix}
+        a &amp; b &amp; c \\
+        d &amp; e &amp; f \\
+        g &amp; h &amp; i
+    \end{bmatrix}
+    = -1\]</span> Calcular el determinante de: <span class="math display">\[X = 
+    \begin{bmatrix}
+        3b+3e+3h &amp; 3c+3f+3i &amp; 3a + 3d + 3g \\
+        e-2h &amp; f - 2i &amp; d - 2g \\
+        b + 2e -2h &amp; c+2f-2i &amp; a+2d-2g
+    \end{bmatrix}\]</span></p>
+<p><span class="math display">\[\det \begin{bmatrix}
+        3b+3e+3h &amp; 3c+3f+3i &amp; 3a + 3d + 3g \\
+        e-2h &amp; f - 2i &amp; d - 2g \\
+        b + 2e -2h &amp; c+2f-2i &amp; a+2d-2g
+    \end{bmatrix} =\]</span> <span class="math display">\[\det \begin{bmatrix}
+        3a + 3d + 3g &amp; 3b+3e+3h &amp; 3c+3f+3i\\
+        d-2g &amp; e-2h &amp; f - 2i \\
+        a + 2d - 2g &amp; b + 2e -2h &amp; c+2f-2i
+    \end{bmatrix} =\]</span> <span class="math display">\[\det \begin{bmatrix}
+        3 &amp; 3 &amp; 3 \\
+        0 &amp; 1 &amp; -2 \\
+        1 &amp; 2 &amp; -2
+    \end{bmatrix}
+    \begin{bmatrix}
+        a &amp; b &amp; c \\
+        d &amp; e &amp; f \\
+        g &amp; h &amp; i
+    \end{bmatrix}\]</span> <span class="math display">\[\det \begin{bmatrix}
+        3 &amp; 3 &amp; 3 \\
+        0 &amp; 1 &amp; -2 \\
+        1 &amp; 2 &amp; -2
+    \end{bmatrix} =\]</span> <span class="math display">\[\det \begin{bmatrix}
+        0 &amp; -3 &amp; 9 \\
+        0 &amp; 1 &amp; -2 \\
+        1 &amp; 2 &amp; -2
+    \end{bmatrix} =\]</span></p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Dada la matriz en bloques:</p>
+<p><span class="math display">\[X = 
+    \begin{bmatrix}
+        A &amp; C \\
+        0 &amp; B
+    \end{bmatrix}\]</span> Demostrar <span class="math inline">\(\det X = \det A \cdot \det B\)</span> por inducción, sea <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>:</p>
+<p><span class="math display">\[\det X = \sum\limits_{i \leq n} a_{i1} \det \; A(i|1) \cdot \det B = \det A \cdot \det B\]</span></p>
+<p>Alternativamente, demostramos que <span class="math inline">\(X \mapsto \det
+\begin{bmatrix}
+    X &amp; C\\
+    0 &amp; B
+\end{bmatrix}\)</span> es multilineal y estamos.</p>
+<h1 id="matriz-compañera" class="unnumbered">Matriz Compañera</h1>
+<p>Tenemos la matriz: <span class="math display">\[A_n = 
+    \begin{bmatrix}
+        x &amp; 0 &amp; 0 &amp; \dots &amp;0&amp; 0&amp; a_1 \\
+        -1 &amp; x &amp; 0 &amp; \dots &amp;0&amp; 0&amp; a_2 \\
+        0 &amp; -1 &amp; x &amp; \dots &amp;0&amp;0&amp; a_3 \\
+        \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp;\vdots&amp; \vdots&amp; \vdots \\
+        0 &amp; 0 &amp; 0 &amp; \dots &amp;-1&amp; x &amp; a_{n-1} \\
+        0 &amp; 0 &amp; 0 &amp; \dots &amp;0&amp; -1 &amp; x+a_n
+    \end{bmatrix}\]</span> Expandiendo por la primer fila, tenemos: <span class="math display">\[\det
+    \begin{bmatrix}
+        x &amp; 0 &amp; 0 &amp; \dots &amp;0&amp; 0&amp; a_1 \\
+        -1 &amp; x &amp; 0 &amp; \dots &amp;0&amp; 0&amp; a_2 \\
+        0 &amp; -1 &amp; x &amp; \dots &amp;0&amp;0&amp; a_3 \\
+        \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp;\vdots&amp; \vdots&amp; \vdots \\
+        0 &amp; 0 &amp; 0 &amp; \dots &amp;-1&amp; x &amp; a_{n-1} \\
+        0 &amp; 0 &amp; 0 &amp; \dots &amp;0&amp; -1 &amp; x+a_n
+    \end{bmatrix} =\]</span> <span class="math display">\[x\det
+    \begin{bmatrix}
+        0 &amp; 0 &amp; \dots &amp;0&amp; 0&amp; a_1 \\
+        x &amp; 0 &amp; \dots &amp;0&amp; 0&amp; a_2 \\
+        -1 &amp; x &amp; \dots &amp;0&amp;0&amp; a_3 \\
+        \vdots &amp; \vdots &amp; \ddots &amp;\vdots&amp; \vdots&amp; \vdots \\
+        0 &amp; 0 &amp; \dots &amp;-1&amp; x &amp; a_{n-1} \\
+        0 &amp; 0 &amp; \dots &amp;0&amp; -1 &amp; x+a_n
+    \end{bmatrix} + 
+    a_1 \det\begin{bmatrix}
+        x &amp; 0 &amp; 0 &amp; \dots &amp;0&amp; 0\\
+        -1 &amp; x &amp; 0 &amp; \dots &amp;0&amp; 0 \\
+        0 &amp; -1 &amp; x &amp; \dots &amp;0&amp;0 \\
+        \vdots &amp; \vdots &amp; \vdots &amp; \ddots &amp;\vdots&amp; \vdots \\
+        0 &amp; 0 &amp; 0 &amp; \dots &amp;-1&amp; x  \\
+        0 &amp; 0 &amp; 0 &amp; \dots &amp;0&amp; -1 
+    \end{bmatrix}\]</span> Que por inducción anda</p>
+<h1 id="regla-de-kramer" class="unnumbered">Regla de Kramer</h1>
+<p>Si tenemo un sistema <span class="math inline">\(Ax = b\)</span>, entonces <span class="math inline">\(x_i = \frac{\det \; B_i}{\det A}\)</span>, donde <span class="math inline">\(B_i\)</span> es <span class="math inline">\(A\)</span> pero con la <span class="math inline">\(i\)</span>-ésima columba reemplazada por <span class="math inline">\(b\)</span>.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

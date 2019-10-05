@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="definición" class="unnumbered">Definición</h1>
+<p><span class="math inline">\(\det\)</span> es la única <span class="math inline">\(\det : \mathbb{K}^{n \times n} \to \mathbb{K}\)</span> que es multilineal y alternada y con <span class="math inline">\(\det \mathop{\mathrm{Id}}= 1\)</span></p>
+<h1 id="permutaciones" class="unnumbered">Permutaciones</h1>
+<p>Decimos que , dado <span class="math inline">\(n \in \mathbb{N}\)</span>, <span class="math inline">\([[n]] = \{x \in \mathbb{N}: x &lt; n\}\)</span>.</p>
+<p>Decimos que <span class="math inline">\(\sigma : [[n]] \to [[n]]\)</span> biyectiva se dice <em>permutación</em>, y decimos <span class="math inline">\(\sigma \in S_n\)</span>.</p>
+<p>Notemos que:</p>
+<ul>
+<li><p><span class="math inline">\(\mathop{\mathrm{id}}\in S_n\)</span></p></li>
+<li><p><span class="math inline">\(|S_n| = n!\)</span></p></li>
+<li><p>Si <span class="math inline">\(\sigma, \tau \in S_n\)</span>, luego <span class="math inline">\(\sigma \circ \tau \in S_n\)</span></p></li>
+<li><p>Si <span class="math inline">\(\sigma \in S_n\)</span>, luego <span class="math inline">\(\sigma^{-1} \in S_n\)</span></p></li>
+</ul>
+<h2 id="transposición" class="unnumbered">Transposición</h2>
+<p>una transposición <span class="math inline">\((rs) \in S_n\)</span> es una permutación que deja todo igual, excepto <span class="math inline">\(r\)</span> y <span class="math inline">\(s\)</span>, que los swappea.</p>
+<h2 id="matriz-de-permutación" class="unnumbered">Matriz de Permutación</h2>
+<p>Dada <span class="math inline">\(\sigma \in S_n\)</span> Decimos <span class="math inline">\(A(\sigma) \in \mathbb{K}^{n \times n}\)</span> es: <span class="math display">\[A(\sigma)_{ij} = \delta_{\sigma_ij}\]</span> Notemos que producto de matrices corresponde con composición de permutaciones, y que además el inverso coincide con la transpuesta para matrices de permutación.</p>
+<h2 id="signo-de-una-permutación" class="unnumbered">Signo de una Permutación</h2>
+<p>Dada <span class="math inline">\(\sigma \in S_n\)</span>, decimos que <span class="math inline">\(\mathop{\mathrm{sg}}\sigma = \det A_\sigma\)</span>.</p>
+<h1 id="fórmula-de-leibniz" class="unnumbered">Fórmula de Leibniz</h1>
+<p>Tenemos <span class="math display">\[\det A = \sum\limits_{\sigma \in S_n} \left(\mathop{\mathrm{sg}}\sigma \cdot \prod_i a_{\sigma_ii}\right)\]</span></p>
+<p>Demo: La <span class="math inline">\(i\)</span>-ésima columna de la matriz <span class="math inline">\(A\)</span> está dada por: <span class="math display">\[A_i = \sum\limits_j a_{ji} e_j\]</span> Luego por multilinearidad: <span class="math display">\[\det A = \sum\limits_{i \in [[n]]^n} \det (\dots | e_{i_j} | \dots)_j \prod a_{i_jj}\]</span> Pero cuando agarro <span class="math inline">\(i_{a} = i_{b}\)</span>, se me anula, luego me restrinjo a <span class="math inline">\(S_n \subseteq[[n]]^n\)</span>, y queda <span class="math display">\[\det A = \sum\limits_{\sigma \in S_n} \det (\dots | e_{\sigma_j} | \dots)_j \prod a_{\sigma_jj} =\]</span> <span class="math display">\[\det A = \sum\limits_{\sigma \in S_n} \mathop{\mathrm{sg}}\sigma \cdot \prod a_{\sigma_jj} =\]</span></p>
+<h1 id="determinantes-en-mathbbz" class="unnumbered">Determinantes en <span class="math inline">\(\mathbb{Z}\)</span></h1>
+<p>Si tenemos <span class="math inline">\(A \in \mathbb{Q}^{n \times n}\)</span>, con <span class="math inline">\(a_{ij} \in \mathbb{Z}\)</span>, tenemos <span class="math inline">\(\det A \in \mathbb{Z}\)</span>.</p>
+<h1 id="adjunta" class="unnumbered">Adjunta</h1>
+<p>La adjunta está dada por: <span class="math display">\[(\mathop{\mathrm{adj}}A)_{ij} = (-1)^{i+j} \det A(j|i)\]</span> Que cumple <span class="math inline">\(A \cdot \mathop{\mathrm{adj}}A = \mathop{\mathrm{Id}}\cdot \det A\)</span></p>
+<h1 id="regla-de-cramer" class="unnumbered">Regla de Cramer</h1>
+<p>Si tenemos una ecuación de la forma <span class="math inline">\(Ax = b\)</span> con <span class="math inline">\(A\)</span> inversible, luego: <span class="math display">\[x_i = \frac{\det (a_1 | \dots | a_{i-1} | b | a_{i+1} | \dots )}{\det A}\]</span> Esto sale tomando <span class="math inline">\(x = \frac{\mathop{\mathrm{adj}}A}{\det A} \cdot b\)</span> y expandiendo el producto.</p>
+<h1 id="rango-de-matrices-no-cuadradas" class="unnumbered">Rango de matrices no cuadradas</h1>
+<p>Si tenemos <span class="math inline">\(A \in \mathbb{K}^{n \times m}\)</span>, decimos que una submatriz <span class="math inline">\(B \in \mathbb{K}^{r \times s}\)</span> de <span class="math inline">\(A\)</span> es el resultado de eliminar algunas filas y columnas de <span class="math inline">\(A\)</span>. Son equivalentes:</p>
+<ul>
+<li><p><span class="math inline">\(\mathop{\mathrm{rg}}A \geq r\)</span></p></li>
+<li><p><span class="math inline">\(\exists B \in \mathbb{K}^{r \times r}\)</span> una submatriz de <span class="math inline">\(A\)</span> con <span class="math inline">\(\det B \neq 0\)</span></p></li>
+</ul>
+<p>Si tengo <span class="math inline">\(\mathop{\mathrm{rg}}A \geq r\)</span>, me tomo <span class="math inline">\(r\)</span> filas li, y luego en la submatriz inducida por esas filas (que se que tiene rango <span class="math inline">\(r\)</span>), me tomo <span class="math inline">\(r\)</span> columnas li, y ya estoy.</p>
+<p>La vuelta es trivial.</p>
+<h1 id="determinante-de-una-tl" class="unnumbered">Determinante de una TL</h1>
+<p>Dado un <span class="math inline">\(\mathbb{K}\)</span>-ev <span class="math inline">\(\mathbb{V}\)</span> y un endo <span class="math inline">\(f : \mathbb{V}\to_{\mathop{\mathrm{tl}}} \mathbb{V}\)</span>, con <span class="math inline">\(\mathcal{B}\)</span> una base, decimos que <span class="math display">\[\det f = \det [f]_\mathcal{B}\]</span></p>
+<p>Demostrar que anda bien para la composición, a identidad, y que cambios de base no cambian el determinante.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

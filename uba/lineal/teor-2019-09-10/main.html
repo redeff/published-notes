@@ -32,7 +32,55 @@
 			</nav>
 			<main>
 				<div class="center">
-					
+					<h1 id="expresar-en-base" class="unnumbered">Expresar en Base</h1>
+<p>Dado <span class="math inline">\(v \in \mathbb{V}\)</span>, y una base <span class="math inline">\(\mathcal{B}_\mathbb{V}\)</span>, tenemos que <span class="math inline">\((v)_{\mathcal{B}_\mathbb{V}} = (\lambda_i)
+\iff \sum\limits\mathcal{B}_{\mathbb{V}_i} \cdot \lambda_i = v\)</span></p>
+<h1 id="igualdad" class="unnumbered">Igualdad</h1>
+<p>Si tenemos <span class="math inline">\(f, g \in \mathop{\mathrm{Hom}}\mathbb{V}\; \mathbb{W}\)</span>, luego <span class="math inline">\(f = g \iff [f]_{\mathcal{B}_\mathbb{V}\mathcal{B}_\mathbb{W}} =
+[g]_{\mathcal{B}_\mathbb{V}\mathcal{B}_\mathbb{W}}\)</span></p>
+<h1 id="composición" class="unnumbered">Composición</h1>
+<p>Si <span class="math inline">\(f : \mathbb{U}\to \mathbb{V}\)</span> y <span class="math inline">\(g : \mathbb{V}\to \mathbb{W}\)</span>, luego <span class="math inline">\([g \circ f] = [g] \times [f]\)</span></p>
+<h1 id="corolario" class="unnumbered">Corolario</h1>
+<p>Tenemos <span class="math inline">\(\mathbb{V}\)</span>, <span class="math inline">\(\mathbb{W}\)</span> de dimensiones finitas respectivamente; y <span class="math inline">\(f \in \mathop{\mathrm{Hom}}\mathbb{V}
+\; \mathbb{W}\)</span>. Luego <span class="math inline">\(f \mathop{\mathrm{iso}}\iff [f]_{\mathcal{B}_\mathbb{V}\mathcal{B}_\mathbb{W}}\)</span> es inversible.</p>
+<h1 id="cambio-de-base" class="unnumbered">Cambio de Base</h1>
+<p>Tomemos dos bases <span class="math inline">\(\mathcal{B}_\mathbb{V}\)</span> y <span class="math inline">\(\mathcal{B}_\mathbb{V}&#39;\)</span> de <span class="math inline">\(\mathbb{V}\)</span>, con <span class="math inline">\(\dim \mathbb{V}= n\)</span>, y lo mismo para <span class="math inline">\(\mathbb{W}\)</span> de dimensión <span class="math inline">\(m\)</span>. Tenemos que: <span class="math display">\[[f]_{\mathcal{B}&#39;_\mathbb{V}\mathcal{B}&#39;_\mathbb{W}} = C(\mathcal{B}_\mathbb{W}, \mathcal{B}&#39;_\mathbb{W}) \times [f]_{\mathcal{B}_\mathbb{V}\mathcal{B}_\mathbb{W}}
+\times C(\mathcal{B}_\mathbb{V}, \mathcal{B}&#39;_\mathbb{V})^{-1}\]</span></p>
+<p>Donde <span class="math inline">\(C(\mathcal{A}, \mathcal{B}) = [\mathop{\mathrm{id}}]_{\mathcal{A}\mathcal{B}}\)</span>.</p>
+<h1 id="definición" class="unnumbered">Definición</h1>
+<p>Dados <span class="math inline">\(A, B \in \mathbb{K}^{n \times n}\)</span>, decimos que <span class="math inline">\(A, B\)</span> son semejantes sii: <span class="math display">\[A \sim B \iff \exists C \in \mathop{\mathrm{GL}}\mathbb{K}^n : A = C \times B \times C^{-1}\]</span></p>
+<h1 id="interpretación-de-semejanza" class="unnumbered">Interpretación de Semejanza</h1>
+<p>Decimos que <span class="math inline">\(A \sim B \iff \exists f \in \mathop{\mathrm{Hom}}\mathbb{K}^n \; \mathbb{K}^n :\exists \mathcal{B}, \mathcal{B}&#39;
+: [f]_\mathcal{B}= A, [f]_{\mathcal{B}&#39;} = B\)</span>.</p>
+<p>Demo: Trivial por cambio de base con <span class="math inline">\(\mathbb{V}= \mathbb{W}\)</span>.</p>
+<h1 id="rango-de-una-matriz" class="unnumbered">Rango de una Matriz</h1>
+<p>Si tenemos una matriz <span class="math inline">\(A \in \mathbb{K}^{n \times m}\)</span>, y una <span class="math inline">\(f\)</span> tal que <span class="math inline">\([f] = A\)</span>, luego decimos que: <span class="math inline">\(\mathop{\mathrm{rg}}A = \mathop{\mathrm{rg}}[f] = \dim \mathop{\mathrm{Im}}f\)</span></p>
+<h2 id="dimensión-de-soluciones-de-un-homogéneo" class="unnumbered">Dimensión de Soluciones de un Homogéneo</h2>
+<p>Si tenemos <span class="math inline">\(A \in \mathbb{K}^{m \times n}\)</span>, luego tenemos <span class="math inline">\(\dim \{x : Ax = 0\} = n -
+\mathop{\mathrm{rg}}A\)</span>.</p>
+<h1 id="sistemas-no-homogéneos" class="unnumbered">Sistemas no Homogéneos</h1>
+<p>Si tenemos el sistema lineal <span class="math inline">\(Ax = b\)</span>, entonces tiene solución sii <span class="math inline">\(\mathop{\mathrm{rg}}A = \mathop{\mathrm{rg}}
+(A \mid b)\)</span>.</p>
+<p>Notemos que <span class="math inline">\(\mathop{\mathrm{rg}}A = \mathop{\mathrm{rg}}(A \mid b) \iff \dim \mathop{\mathrm{Im}}A = \dim \mathop{\mathrm{Im}}
+(A | b) \iff \dim \langle A_{*i} \rangle = \dim (\langle A_{*i}
+\rangle + \langle b \rangle) \iff\)</span> b es combinación lineal de las columnas de <span class="math inline">\(A \iff Ax = b\)</span> tiene solución.</p>
+<h1 id="matrices-inversibles" class="unnumbered">Matrices Inversibles</h1>
+<p>Demostremos que dada <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>, luego <span class="math inline">\(A \times B = I \Rightarrow B
+\times A = I\)</span>.</p>
+<p>Tomemos <span class="math inline">\(f : \mathbb{K}^{n \times n} \to \mathbb{K}^{n \times n}, fX = AX\)</span>. Luego notemos que <span class="math inline">\(\mathop{\mathrm{epi}}f\)</span>, ya que <span class="math inline">\(f(B \times C) = A \times (B \times C) = (A \times B) \times C
+= C\)</span>.</p>
+<p>Luego por dimensión, tenemos <span class="math inline">\(\mathop{\mathrm{iso}}f\)</span>. Pero además <span class="math inline">\(f(B \times A - I) = A \times (B
+\times A - I) = A \times B \times A - A = I \times A - A = 0\)</span>, luego <span class="math inline">\(B \times
+A = I\)</span></p>
+<h1 id="sistemas-de-ecuaciones" class="unnumbered">Sistemas de Ecuaciones</h1>
+<ol>
+<li><p><span class="math inline">\(A\)</span> inversible</p></li>
+<li><p><span class="math inline">\(Ax = 0\)</span> tiene solución única</p></li>
+<li><p><span class="math inline">\(Ax = b\)</span> tiene única solución</p></li>
+<li><p><span class="math inline">\(Ax = b\)</span> tiene al menos una solución</p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{rg}}A = n\)</span></p></li>
+</ol>
+
 				</div>
 			</main>
 		</div>

@@ -32,7 +32,36 @@
 			</nav>
 			<main>
 				<div class="center">
-					
+					<h1 id="notación" class="unnumbered">Notación</h1>
+<p><span class="math inline">\(f^{(n)}\)</span> es derivar <span class="math inline">\(f\)</span> <span class="math inline">\(n\)</span> veces.</p>
+<h1 id="lagrange-multivariable" class="unnumbered">Lagrange Multivariable</h1>
+<p>Sea <span class="math inline">\(A \in \mathbb{R}^n\)</span> un abierto convexo con <span class="math inline">\(f : A \to \mathbb{R}\)</span> diferenciable.</p>
+<p>Sean <span class="math inline">\(X, Y \in A\)</span>, luego existe <span class="math inline">\(Z\)</span> en el segmento <span class="math inline">\(\overline{XY} \subseteq A\)</span> tal que: <span class="math display">\[fX - fY = \langle\nabla f Z, Y-Z \rangle\]</span></p>
+<p>Demo: Sea <span class="math inline">\(\alpha : [0,1] \to \mathbb{R}^n, \alpha = t \mapsto (Y-X)t + X\)</span> la función que parametriza el intervalo <span class="math inline">\(\overline{XY}\)</span>.</p>
+<p>Como <span class="math inline">\(\mathop{\mathrm{Im}}\alpha \subseteq A\)</span>, luego está bien definida la composición <span class="math inline">\(f \circ \alpha : [0,1] \to \mathbb{R}\)</span>, que es diferenciable por regla de la cadena.</p>
+<p>Tenemos <span class="math inline">\(\alpha&#39; t = Y-X\)</span>, luego <span class="math inline">\((f \circ \alpha)&#39;t = \nabla f(\alpha t) \cdot \alpha&#39; t\)</span>. Notemos que <span class="math inline">\(f \circ \alpha\)</span> cumple las hipótesis de lagrange, entonces tenemos que existe un <span class="math inline">\(t \in (0, 1)\)</span> tal que: <span class="math display">\[(f \circ \alpha)1 - (f \circ \alpha)0 = (f \circ \alpha)&#39; t\]</span> <span class="math display">\[fY - fX = (f \circ \alpha)&#39; t\]</span> <span class="math display">\[fY - fX = \nabla f(\alpha t) \times \alpha&#39; t\]</span> <span class="math display">\[fY - fX = \nabla fZ \times (Y-Z)\]</span> Entonces está.</p>
+<h2 id="corolario" class="unnumbered">Corolario</h2>
+<p>Entonces si tenemos <span class="math inline">\(P, X \in \mathbb{R}^n\)</span>, luego <span class="math inline">\(fX = fP + \nabla fZ \cdot (X-P)\)</span> para algún <span class="math inline">\(Z \in \overline{XY}\)</span>. Notemos que esto se parece al poly de taylor, ya que <span class="math inline">\(\nabla fZ\)</span> es el error de la aproximación trivial por un plano paralelo al dominio.</p>
+<h1 id="opraciones-en-funciones-mathcalck" class="unnumbered">Opraciones en Funciones <span class="math inline">\(\mathcal{C}^k\)</span></h1>
+<p>Si tengo <span class="math inline">\(f, g \in \mathcal{C}^k\)</span>, luego:</p>
+<ul>
+<li><p><span class="math inline">\(f + g\)</span></p></li>
+<li><p><span class="math inline">\(f \cdot g\)</span></p></li>
+<li><p><span class="math inline">\(\frac{f}{g}\)</span>, con <span class="math inline">\(gx \neq 0\)</span></p></li>
+<li><p><span class="math inline">\(g \circ f\)</span></p></li>
+</ul>
+<p>son <span class="math inline">\(\mathcal{C}^k\)</span></p>
+<h1 id="derivadas-de-orden-superior" class="unnumbered">Derivadas de Orden Superior</h1>
+<p>Tomemos una función <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span>, en principio <span class="math inline">\(f \in \mathcal{C}^\infty\)</span> Notemos que una derivada parcial en el canónico <span class="math inline">\(x\)</span> es <span class="math inline">\(\frac{\partial f}{\partial x }  = f_x: \mathbb{R}^n \to \mathbb{R}\)</span>, entonces la puedo derivar de nuevo.</p>
+<p>Las derivadas parciales dobles se notan <span class="math display">\[\frac{\partial}{\partial y} \left(\frac{\partial f}{\partial x} \right) = \frac{\partial^2f}{\partial y \partial x}  = f_{yx}\]</span></p>
+<h2 id="derivadas-cruzadas-claraut-schwarz" class="unnumbered">Derivadas Cruzadas (Claraut-Schwarz)</h2>
+<p>Sea <span class="math inline">\(f : (A \subseteq\mathbb{R}^n) \to \mathbb{R}, f \in \mathcal{C}^2\)</span>.</p>
+<p>Luego <span class="math inline">\(f_{xy} = f_{yx}\)</span>, para cualesquiera canónicos <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span>.</p>
+<p>Como corolario, si tenemos una función en <span class="math inline">\(\mathcal{C}^n\)</span>, luego las derivadas <span class="math inline">\(n\)</span>-ésimas son todas permutables.</p>
+<h1 id="taylor-monovariable" class="unnumbered">Taylor Monovariable</h1>
+<p>Si teníamos <span class="math inline">\(g : (a, b) \to \mathbb{R}, g \in \mathcal{C}^3\)</span>. Sea <span class="math inline">\(p \in (a, b)\)</span>, luego para cualquier otro punto <span class="math inline">\(x\)</span>, existe un punto <span class="math inline">\(c\)</span> entre <span class="math inline">\(p\)</span> y <span class="math inline">\(x\)</span> tal que: <span class="math display">\[gx = \sum\limits_{n=0}^{d-1} \frac{g^{(n)}p}{n!} \cdot (x-p)^n + \frac{g^{(d)}c}{d!} \cdot (x-p)^d\]</span></p>
+<h1 id="taylor-multivariable" class="unnumbered">Taylor Multivariable</h1>
+<p>Dado <span class="math inline">\(P = (a,b)\)</span>, <span class="math inline">\(X = (x,y) \in \mathbb{R}^2\)</span>, si <span class="math inline">\(f \in \mathcal{C}^3\)</span>, luego existen <span class="math inline">\(C=(c,d)\in\overline{PX}\)</span> tal que: <span class="math display">\[f (x,y) = P(x,y) + R(x,y)\]</span> Con el polinomio dado por: <span class="math display">\[P(x,y) = fP\]</span> <span class="math display">\[+ (x-a)f_xP + (y-b)f_yP\]</span> <span class="math display">\[+ \frac{1}{2}(x-a)^2f_{xx} + (x-a)(y-b)f_{xy} + \frac{1}{2}(y-b)^2f_{yy}\]</span> Y el resto dado por: <span class="math display">\[R(x,y) = \frac{1}{6}(x-a)^3f_{xxx} C\]</span> <span class="math display">\[+ \frac{1}{2}(x-a)^2(y-b)f_{xxy}\]</span> <span class="math display">\[+ \frac{1}{2}(x-a)(y-b)^2f_{xyy}\]</span> <span class="math display">\[+ \frac{1}{6}(y-b)^3f_{yyy}\]</span></p>
 
 				</div>
 			</main>

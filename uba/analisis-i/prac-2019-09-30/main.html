@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Calular el poly de Taylor de orden 1 de <span class="math inline">\(fxy = (xe^y)^2\)</span> en <span class="math inline">\((3;0)\)</span>, y estimar el error cometido entre lo que dice el polinomio y <span class="math inline">\(2.99e^{0.01}\)</span></p>
+<p>Tenemos: <span class="math display">\[f_x xy = 2xe^{2y}\]</span> <span class="math display">\[f_y xy = 2x^2e^{2y}\]</span> Y las segundas <span class="math display">\[f_{xx} xy = 2e^{2y}\]</span> <span class="math display">\[f_{xy} xy = 4xe^{2y}\]</span> <span class="math display">\[f_{yy} xy = 4x^2e^{2y}\]</span> Entonces el Hessiano está dado por: <span class="math display">\[\mathop{\mathrm{H}}f \; xy = 
+    \begin{bmatrix}
+        2e^{2y} &amp; 4xe^{2y} \\
+        4xe^{2y} &amp; 4x^2e^{2y}
+    \end{bmatrix}\]</span></p>
+<p>Entonces el resto está dado por: <span class="math display">\[R_1 xy = \frac{1}{2} \cdot (x-p) \cdot \mathop{\mathrm{H}}f \; c \cdot (X - p)^t\]</span> <span class="math display">\[R_1 xy = \frac{1}{2} \cdot
+    [-0.01 \quad 0.01] \cdot
+    \begin{bmatrix}
+        2e^{2c_y} &amp; 4c_xe^{2c_y} \\
+        4c_xe^{2c_y} &amp; 4c_x^2e^{2c_y}
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+        -0.01 \\
+        0.01
+    \end{bmatrix}\]</span> <span class="math display">\[R_1 xy = 100^{-2}\frac{1}{2} \cdot
+    [-1 \quad 1] \cdot
+    \begin{bmatrix}
+        2e^{2c_y} &amp; 4c_xe^{2c_y} \\
+        4c_xe^{2c_y} &amp; 4c_x^2e^{2c_y}
+    \end{bmatrix} \cdot
+    \begin{bmatrix}
+        -1 \\
+        1
+    \end{bmatrix}\]</span> Que si hacemos la cuanta da: <span class="math display">\[R_1 xy = \frac{1}{2 \cdot 10^4} \cdot (2e^{2c_y} - 8c_xe^{2c_y} + 4c_x^2e^{2c_y})\]</span> <span class="math display">\[R_1 xy = \frac{1}{10^4} \cdot (e^{2c_y} - 4c_xe^{2c_y} + 2c_x^2e^{2c_y})\]</span> <span class="math display">\[R_1 xy = \frac{1}{10^4} \cdot e^{2c_y}\cdot (1 - 4c_x + 2c_x^2)\]</span> <span class="math display">\[|R_1 xy| = \frac{1}{10^4} \cdot e^{2c_y}\cdot |1 - 4c_x + 2c_x^2|\]</span> <span class="math display">\[|R_1 xy| \leq \frac{1}{10^4} \cdot e^{2c_y}\cdot (1 + 4|c_x| + 2c_x^2)\]</span> Como <span class="math inline">\(2.99 \leq c_x \leq 3\)</span>, y <span class="math inline">\(0 \leq c_y \leq 0.01\)</span>, tenemos <span class="math display">\[|R_1 xy| \leq \frac{1}{10^4} \cdot e^{2 \cdot 0.01}\cdot (1 + 12 + 18)\]</span> <span class="math display">\[|R_1 xy| \leq \frac{31}{10^4} \cdot e^{0.02}\]</span> Como <span class="math inline">\(e^{0.02} &lt; 2\)</span>, queda <span class="math display">\[|R_1 xy| \leq \frac{62}{10^4}\]</span></p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Sea <span class="math inline">\(f : \mathbb{R}^2 \to \mathbb{R}\)</span> de clase <span class="math inline">\(\mathcal{C}^3\)</span> tal que su taylor grado 3 en <span class="math inline">\((1, 1)\)</span> es <span class="math inline">\(P_3 xy = 1-3x+x^2 + xy + y^2 - y^3\)</span>.</p>
+<p>Calcular <span class="math inline">\(\lim\limits_{x \to (1,1)} \frac{fx}{||x - (1,1)||}\)</span>.</p>
+<p>Calcular <span class="math inline">\(\lim\limits_{x \to (1,1)} \frac{fx}{||x - (1,1)||^2}\)</span>.</p>
+<p>Sabemos que <span class="math inline">\(\lim\limits\frac{fx - P_1x}{||x||} = 0\)</span>. Luego podemos escribir como:</p>
+<p><span class="math display">\[\lim\limits_{x \to (1,1)} \frac{fx - Px}{||x - (1,1)||} + 
+    \lim\limits_{x \to (1,1)} \frac{Px}{||x - (1,1)||} =\]</span></p>
+<p><span class="math display">\[0 + \lim\limits_{x \to (1,1)} \frac{Px}{||x - (1,1)||}\]</span></p>
+<p>Entonces queremos <span class="math inline">\(P_1\)</span>. Vamos a derivar el <span class="math inline">\(P_3\)</span>: <span class="math display">\[\nabla f = \nabla P_3 = (-3 +2x+y, x+2y-3y^2)\]</span> <span class="math display">\[\nabla P_3 (1,1) = (0, 0)\]</span> Luego el primer límite da <span class="math inline">\(0\)</span>.</p>
+<p>El hessiano da: <span class="math display">\[\mathop{\mathrm{D}}\nabla f = \mathop{\mathrm{D}}\nabla P_3 =
+    \begin{bmatrix}
+        2 &amp; 1 \\
+        1 &amp; 2 - 6y
+    \end{bmatrix}\]</span> Luego <span class="math inline">\(P_2 (x,y) = P_1(x,y) + \frac{1}{2} \cdot
+\begin{bmatrix}
+    x-1 &amp; y-1
+\end{bmatrix} \cdot
+\begin{bmatrix}
+        2 &amp; 1 \\
+        1 &amp; -4 
+\end{bmatrix} \cdot 
+\begin{bmatrix}
+    x-1 \\ y-1
+\end{bmatrix} = (x-1)^2 + (x-1)(y-1) -2(y -1)\)</span></p>
+<p>En el segundo límite, cuando ponemos esto y nos acercamos por la recta vertical y horizontal, tenemos que tiende a <span class="math inline">\(1\)</span> y a <span class="math inline">\(-2\)</span></p>
+<h1 id="parcial-ejemplo" class="unnumbered">Parcial Ejemplo</h1>
+<h2 id="ejercicio-1-1" class="unnumbered">Ejercicio 1</h2>
+<p>Calcular, si existe, sup, inf, max, min de: <span class="math display">\[A = \{ a^2_n - 3a_n - 10 \}\]</span> donde <span class="math inline">\(a_n = 4 - \frac{9}{n}\)</span></p>
+<h2 id="ejercicio-2-1" class="unnumbered">Ejercicio 2</h2>
+<p>Sea <span class="math inline">\(f : \mathbb{R}^2 \to \mathbb{R}\)</span>, dado por: <span class="math display">\[f xy= 
+    \begin{cases}
+        \frac{xy^3}{x^2 + y^6 + (x-2y^3)^2} \\
+        \\
+        0 &amp; (0, 0)
+    \end{cases}\]</span></p>
+<p>Probar que <span class="math inline">\(f\)</span> tiende a <span class="math inline">\(0\)</span> en el origen si nos acercamos por rectas. Analizar existencia de límite.</p>
+<h2 id="ejercicio-3" class="unnumbered">Ejercicio 3</h2>
+<p>Sea <span class="math inline">\(f : \mathbb{R}^2 \to \mathbb{R}\)</span> <span class="math display">\[f xy = 
+    \begin{cases}
+        \frac{2x^3 + 2x(x-4)^2y^2 + x^3y}{x^2 + (x-4)^2y^2}  \\
+        \\
+        0
+    \end{cases}\]</span> Analizar diferenciabilidad en <span class="math inline">\((0,0)\)</span>.</p>
+<h2 id="ejercicio-4" class="unnumbered">Ejercicio 4</h2>
+<p>Sea <span class="math inline">\(f(x,y) = 2\cos x - e^y + x^3y\)</span>.</p>
+<p>Hallar el poly de taylor de orden 2 en <span class="math inline">\((0,0)\)</span>.</p>
+<p>Sea <span class="math inline">\(f : \mathbb{R}^2 \to \mathbb{R}\)</span> diff tal que <span class="math inline">\(\nabla(g \circ \nabla f)(0,0) = (3,-1)\)</span>. Calcular <span class="math inline">\(\nablag (0,-1)\)</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

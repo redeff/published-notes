@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="regla-de-la-cadena-multivariable" class="unnumbered">Regla de la Cadena Multivariable</h1>
+<p>Si tenemos <span class="math inline">\(g : \mathbb{R}^p \to \mathbb{R}^n\)</span> y <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}^m\)</span>, luego tenemos:</p>
+<p>Se tiene <span class="math display">\[\mathop{\mathrm{D}}(f \circ g) x = \mathop{\mathrm{D}}f (gx) \times \mathop{\mathrm{D}}gx\]</span> Donde <span class="math display">\[\mathop{\mathrm{D}}f : \mathbb{R}^n \to \mathbb{R}^{m \times n}\]</span> <span class="math display">\[\mathop{\mathrm{D}}g : \mathbb{R}^p \to \mathbb{R}^{n \times p}\]</span> <span class="math display">\[\mathop{\mathrm{D}}(f \circ g) : \mathbb{R}^p \to \mathbb{R}^{m \times p}\]</span></p>
+<h1 id="mathopmathrmd-bajo-operaciones-entre-funciones" class="unnumbered"><span class="math inline">\(\mathop{\mathrm{D}}\)</span> bajo operaciones entre funciones</h1>
+<p>Tenemos:</p>
+<ul>
+<li><p><span class="math inline">\(\mathop{\mathrm{D}}(f+g) = \mathop{\mathrm{D}}f + \mathop{\mathrm{D}}g\)</span></p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{D}}(f \times g) = \mathop{\mathrm{D}}f \times g + f \times \mathop{\mathrm{D}}g\)</span></p></li>
+</ul>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Tenemos:</p>
+<ul>
+<li><p><span class="math inline">\(f(x,y,z) = (x^2+e^z, xy^2+z)\)</span></p></li>
+<li><p><span class="math inline">\(gt = (\cos t, t^3, t^2+1)\)</span></p></li>
+</ul>
+<p>Calcular <span class="math inline">\(\mathop{\mathrm{D}}(f \circ g)\)</span>.</p>
+<p>Tenemos <span class="math inline">\((f \circ g)t = (\cos^2t + e^{t^2+1}, t^6\cos t + t^2 + 1)\)</span>, luego <span class="math display">\[\mathop{\mathrm{D}}(f \circ g) = 
+\begin{bmatrix}
+    -2 \cos t \sin t + 2te^{t^2+1} \\
+    -t^6 \sin t +6t^5 \cos t + 2t \\
+\end{bmatrix}\]</span></p>
+<p>Alternativamente, tenemos:</p>
+<p><span class="math display">\[\mathop{\mathrm{D}}f (x,y,z) = 
+\begin{bmatrix}
+    2x &amp; 0 &amp; e^z \\
+    y^2 &amp; 2xy &amp; 1
+\end{bmatrix}\]</span> <span class="math display">\[\mathop{\mathrm{D}}f(gt) = 
+    \begin{bmatrix}
+        2\cos t &amp; 0 &amp; e^{t^2+1} \\
+        t^6 &amp; 2t^3 \cos t &amp; 1
+    \end{bmatrix}\]</span> <span class="math display">\[\mathop{\mathrm{D}}gt = 
+\begin{bmatrix}
+    -\sin t \\
+    3t^2 \\
+    2t
+\end{bmatrix}\]</span></p>
+<p>Luego: <span class="math display">\[\mathop{\mathrm{D}}(f\circ g) t = 
+    \begin{bmatrix}
+        2\cos t &amp; 0 &amp; e^{t^2+1} \\
+        t^6 &amp; 2t^3 \cos t &amp; 1
+    \end{bmatrix} \times
+\begin{bmatrix}
+    -\sin t \\
+    3t^2 \\
+    2t
+\end{bmatrix} =\]</span> <span class="math display">\[\begin{bmatrix}
+        -2 \sin t \cos t + 2te^{t^2+1} \\
+        -t^6\sin t+ 6t^5 \cos t + 2t
+        
+    \end{bmatrix}\]</span> Que da el mismo resultado.</p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Sean <span class="math inline">\(f, g : \mathbb{R}^2 \to \mathbb{R}\)</span>, con <span class="math inline">\(g(x,y) = e^{2x+y}f(6x^2+5xy+y^2, x+y+\sin(2x+y))\)</span>. Sabemos que <span class="math inline">\(5x + 2y + z = 11\)</span> es el plano tangente a <span class="math inline">\(g\)</span> en <span class="math inline">\((1, -2)\)</span>. Hallar el plano tangente a <span class="math inline">\(f\)</span> en <span class="math inline">\((0, -1)\)</span>.</p>
+<p>Tenemos, por el plano tangente, que: <span class="math display">\[g(1, -2) = 11 - 5 \cdot 1 - 2 \cdot (-2) + 11 = -5 + 4 + 11 = 10\]</span> Además, el gradiente será: <span class="math display">\[\mathop{\mathrm{D}}g(1, -2) = (-5, -2)\]</span> Sea <span class="math inline">\(h (x,y) = (6x^2+5xy+y^2, x+y+\sin(2x+y))\)</span>, y sea <span class="math inline">\(l = e^{2x+y}\)</span>.Luego tenemos <span class="math display">\[g = l \cdot (f \circ h)\]</span> <span class="math display">\[\mathop{\mathrm{D}}g = l \cdot \mathop{\mathrm{D}}(f \circ h) + \mathop{\mathrm{D}}l \cdot (f \circ h)\]</span> <span class="math display">\[\mathop{\mathrm{D}}g = l \cdot (\mathop{\mathrm{D}}f \circ h) \cdot \mathop{\mathrm{D}}h + \mathop{\mathrm{D}}l \cdot (f \circ h)\]</span> Si evalúo en <span class="math inline">\(P = (1, -2)\)</span>, tenemos: <span class="math display">\[\mathop{\mathrm{D}}g P = lP \cdot \mathop{\mathrm{D}}f (hP) \cdot \mathop{\mathrm{D}}h P + \mathop{\mathrm{D}}l P \cdot f (h P)\]</span> <span class="math display">\[\mathop{\mathrm{D}}g P = lP \cdot \mathop{\mathrm{D}}f (0, -1) \cdot \mathop{\mathrm{D}}h P + \mathop{\mathrm{D}}l P \cdot f (0, -1)\]</span> <span class="math display">\[(-5, -2) = 1 \cdot \mathop{\mathrm{D}}f (0, -1) \cdot \mathop{\mathrm{D}}h P + \mathop{\mathrm{D}}l P \cdot 10\]</span> <span class="math display">\[(-5, -2) = \mathop{\mathrm{D}}f (0, -1) \cdot \mathop{\mathrm{D}}h P + (2, 1) \cdot 10\]</span> Tenemos <span class="math display">\[\mathop{\mathrm{D}}h =
+    \begin{bmatrix}
+        12x + 5y &amp; 5x + 2y \\
+        1 + 2\cos(2x+y) &amp; 1 + \cos(2x+y)
+    \end{bmatrix}\]</span> Evaluado en <span class="math inline">\(P\)</span>, tenemos <span class="math display">\[\mathop{\mathrm{D}}h P =
+    \begin{bmatrix}
+        2 &amp; 1 \\
+        3 &amp; 2
+    \end{bmatrix}\]</span> Entonces tenemos: <span class="math display">\[(-5, -2) = \mathop{\mathrm{D}}f (0, -1) \cdot 
+    \begin{bmatrix}
+        2 &amp; 1 \\
+        3 &amp; 2
+    \end{bmatrix}
++ (2, 1) \cdot 10\]</span> <span class="math display">\[(-25, -12) = \mathop{\mathrm{D}}f (0, -1) \cdot 
+    \begin{bmatrix}
+        2 &amp; 1 \\
+        3 &amp; 2
+    \end{bmatrix}\]</span> Que es un sistema de ecuaciones.</p>
+<h1 id="clase-mathcalck" class="unnumbered">Clase <span class="math inline">\(\mathcal{C}^k\)</span></h1>
+<p>Decimos que una función <span class="math inline">\(f : (A \subseteq\mathbb{R}^n) \to \mathbb{R}\)</span> es de clase <span class="math inline">\(\mathcal{C}^k\)</span> si sus derivadas <span class="math inline">\(k\)</span>-ésimas existen y son contínuas.</p>
+<p>Todos los polinomios, senos y cosenos, exponenciales y sus sumas, restas, productos y divisiones (con denominador no nulo) son <span class="math inline">\(\mathcal{C}^\infty\)</span></p>
+<h1 id="demostrar-que-no-es-mathcalc2" class="unnumbered">Demostrar que no es <span class="math inline">\(\mathcal{C}^2\)</span></h1>
+<p>tomemos <span class="math inline">\(f(x,y) =
+\begin{cases}
+    \frac{x^3y}{x^2+y^2} &amp; \text{Si $(x,y) \neq (0. 0)$} \\
+    0 &amp; \text{Si no}
+\end{cases}\)</span></p>
+<p>Primero tenemos que calcular <span class="math inline">\(f_x\)</span> y <span class="math inline">\(f_y\)</span> en un entorno a <span class="math inline">\((0, 0)\)</span>, y nos queda: <span class="math display">\[f_x (x,y) =
+    \begin{cases}
+        \frac{x^4y+3x^2y^3}{(x^2+y^2)^2} &amp; \text{Fuera del origen}\\
+        0 &amp; \text{En el origen}
+    \end{cases}\]</span> <span class="math display">\[f_y (x,y) =
+    \begin{cases}
+        \frac{x^5-x^3y^2}{(x^2+y^2)^2} &amp; \text{Fuera del origen}\\
+        0 &amp; \text{En el origen}
+    \end{cases}\]</span></p>
+<p>Tenemos <span class="math inline">\(f_{yx}(0, 0) = \lim\limits_{t \to 0} \frac{f_y(t, 0) - f_y(0, 0)}{t} = \frac{t}{t} = 1\)</span>.</p>
+<p>Y tenemos <span class="math inline">\(f_{xy}(0, 0) = \lim\limits_{t \to 0} \frac{f_x(0, t) - f_x(0, 0)}{t}\)</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

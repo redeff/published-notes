@@ -32,7 +32,53 @@
 			</nav>
 			<main>
 				<div class="center">
-					
+					<h1 id="cauchy" class="unnumbered">Cauchy</h1>
+<p>Dadas <span class="math inline">\(f, g\)</span> continuas y derivables en <span class="math inline">\([a, b]\)</span>, existe un <span class="math inline">\(c \in (a, b)\)</span> tal que: <span class="math display">\[f&#39;c \cdot (gb - ga) = g&#39;c \cdot (fb - fa)\]</span></p>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Calcular <span class="math inline">\(\sup_{(x,y) \in [0,3]^2} fxy\)</span>, donde:</p>
+<p><span class="math display">\[fxy =
+    \begin{cases}
+        \frac{(x^5 + 5x^3) - (y^5 + 5y^3)}{x^3 - y^3} &amp; \text{Si $x \neq y$} \\
+        \\
+        0 &amp; \text{cc}
+    \end{cases}\]</span></p>
+<p>Si <span class="math inline">\(x = y\)</span>, el supremo es <span class="math inline">\(0\)</span>. Si no, tomemos <span class="math inline">\(\phi t = t^5+5t^3\)</span>, y <span class="math inline">\(\psi t =
+t^3\)</span>. WLOG, <span class="math inline">\(x &lt; y\)</span>, y podemos hacer Cauchy en el intervalo <span class="math inline">\((x, y)\)</span> con las funciones <span class="math inline">\(\phi, \psi\)</span>. Luego tenemos:</p>
+<p><span class="math display">\[\frac{(x^5 + 5x^3) - (y^5 + 5y^3)}{x^3 - y^3} =\]</span> <span class="math display">\[\frac{\phi x - \phi y}{\psi x - \psi y} =\]</span> <span class="math display">\[\frac{\phi&#39; c}{\psi&#39; c} =\]</span> <span class="math display">\[\frac{5c^4+15c^2}{3c^2}\]</span> Para algún <span class="math inline">\(c \in (x, y) \subseteq(0, 3)\)</span>. Entonces ahora queremos el supremo: <span class="math display">\[\sup_{c \in (0,3)}\frac{5c^4+15c^2}{3c^2} =\]</span> <span class="math display">\[\sup_{c \in (0,3)}\frac{5c^2+15}{3} =\]</span> <span class="math display">\[\sup_{c \in (0,3)}\frac{5}{3} \cdot c^2 + 5 =\]</span> <span class="math display">\[5 + \frac{5}{3} \cdot \sup_{c \in (0,3)} c^2 =\]</span> <span class="math display">\[5 + \frac{5}{3} \cdot 9 = 5 + 15 = 20\]</span> Como la función es contínua, entonces el supremo es 20.</p>
+<h1 id="derivadas-multivariables" class="unnumbered">Derivadas Multivariables</h1>
+<p>Dada una <span class="math inline">\(f : \mathbb{R}^2 \to \mathbb{R}\)</span>, queremos las condiciones necesarias para la existencia de un plano tangente al gráfico de <span class="math inline">\(f\)</span> en un punto <span class="math inline">\(p \in \mathbb{R}^2\)</span>.</p>
+<p>Es decir, queremos un plano definido por <span class="math inline">\(\pi q = p + (p-q) \cdot m\)</span>, con <span class="math inline">\(m, q
+\in \mathbb{R}^2\)</span>.</p>
+<p>Si queremos calcular la derivada en la recta <span class="math inline">\(\phi_v = \lambda \mapsto p +
+\lambda v\)</span>, para alguna dirección <span class="math inline">\(v\)</span>, es lo mismo que calcular <span class="math inline">\(\phi_v&#39; \; 0\)</span>, con <span class="math inline">\(\phi : \mathbb{R}\to \mathbb{R}\)</span>.</p>
+<p>Entonces, dado un vector <span class="math inline">\(v \in \mathbb{R}^n\)</span> con <span class="math inline">\(||v|| = 1\)</span>, se dice que:</p>
+<p><span class="math display">\[\frac{\partial f}{\partial v} \; p = (\lambda \mapsto f\;(p + \lambda v))&#39; \; 0
+    = \lim\limits_{\lambda \to 0} \frac{f \; (p + \lambda v) - f \; p}{\lambda}\]</span></p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Calcular todas las derivadas direccionales en <span class="math inline">\((0, 0)\)</span> de:</p>
+<p><span class="math display">\[f \; x \; y =
+    \begin{cases}
+        \frac{x^4 + x^2y}{2y^2} &amp; y \neq 0 \\
+        \\
+        0 &amp; y = 0
+    \end{cases}\]</span></p>
+<p>Si <span class="math inline">\(v_y = 0\)</span>, luego claramente <span class="math inline">\(\frac{\partial f}{\partial v} \; 0 = 0\)</span>, luego tomemos <span class="math inline">\(v_y \neq 0\)</span>, entonces la función siempre toma la primer forma, y tenemos:</p>
+<p><span class="math inline">\(\frac{\partial f}{\partial v} \; (0, 0) = (\lambda \mapsto f \; ((0, 0) +
+\lambda v))&#39; = 
+(\lambda \to f \; \lambda v)&#39; \; 0 =\)</span> <span class="math display">\[\left(\lambda \mapsto
+\frac{\lambda^4v_x^4 + \lambda^3v_x^2v_y}{2\lambda^2v_y^2} \right)&#39; \; 0=\]</span> <span class="math display">\[\left(\lambda \mapsto
+\lambda \cdot \frac{\lambda v_x^4 + v_x^2v_y}{2v_y^2} \right)&#39; \; 0=\]</span> <span class="math display">\[\text{Como en la derivada del producto, la parte con $\lambda$ se va,}
+    \left(\lambda \mapsto
+\frac{\lambda v_x^4 + v_x^2v_y}{2v_y^2} \right) \; 0=\]</span> <span class="math display">\[\left(\lambda \mapsto
+\frac{v_x^2v_y}{2v_y^2} \right) \; 0= \frac{v_x^2}{2v_y}\]</span></p>
+<h1 id="derivadas-parciales" class="unnumbered">Derivadas Parciales</h1>
+<p>Es una derivada direccional donde <span class="math inline">\(v\)</span> es un canónico. Esta se puede calcular fácilmente tomando, por ejemplo, <span class="math display">\[\frac{\partial f}{\partial x} \; (x, y) = (\lambda \mapsto f \; (\lambda, y))&#39; \; x\]</span> Es decir, derivamos en una variable como si la otra fuese constante.</p>
+<p>Por ejemplo, si tenemos: <span class="math display">\[f \; (x, y, z) = e^{zy} \cdot \ln (x^2 + y^2)\]</span> Entonces las derivadas son <span class="math display">\[f_x \; (x, y, z) = e^{zy} \cdot \frac{2x}{x^2+y^2}\]</span> <span class="math display">\[f_y \; (x, y, z) = z e^{zy} \ln (x^2 + y^2) +
+\frac{e^{zy}}{x^2+y^2}\]</span> <span class="math display">\[f_z \; (x, y, z) = ye^{zy} \cdot \ln (x^2 + y^2)\]</span></p>
+<h1 id="diferenciabilidad" class="unnumbered">Diferenciabilidad</h1>
+<p>Dada <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span> es diferenciable en <span class="math inline">\(p\)</span> si existen las derivadas parciales <span class="math inline">\(f_{x_i} \; p\)</span> y <span class="math display">\[\lim\limits_{q \to p} \frac{f \; p - \sum\limits\; (q_i - p_i) \cdot f_{x_i} \;
+p}{||q - p||}\]</span></p>
+
 				</div>
 			</main>
 		</div>

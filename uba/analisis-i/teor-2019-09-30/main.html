@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../..//stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<a href="../../..//index.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F3E0
+					</div>
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<a href="../../..//notes.html">
+					<div class="button">
+					<div class="icon">
+						&#x1F914
+					</div>
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="extremos" class="unnumbered">Extremos</h1>
+<p>Dada <span class="math inline">\(f : (A \subseteq\mathbb{R}^n) \to \mathbb{R}\)</span>, decimos que <span class="math inline">\(f\)</span> tiene mínimo local en <span class="math inline">\(p \in \mathbb{R}\)</span> sii existe un entorno <span class="math inline">\(p \in B^\circ\)</span> tal que <span class="math inline">\(\forall x \in B \cap A : fp \leq fx\)</span>.</p>
+<p>Un extremo local es algo que es máximo local o mínimo local.</p>
+<h1 id="fermat" class="unnumbered">Fermat</h1>
+<p>Si tenemos un mínimo local en <span class="math inline">\(p \in A^\circ\)</span>, de <span class="math inline">\(f : (A \subseteq\mathbb{R}^n) \to \mathbb{R}\)</span>, entonces si <span class="math inline">\(f\)</span> es differenciable en <span class="math inline">\(p\)</span>, tenemos: <span class="math display">\[\nabla f \; p = 0\]</span></p>
+<p>Notemos que no alcanza con que el gradiente sea cero. Por ejemplo en la función <span class="math inline">\(fxy = x^2 - y^2\)</span>, el gradiente en <span class="math inline">\((0,0)\)</span> es <span class="math inline">\((0,0)\)</span> pero es una silla de montar.</p>
+<h2 id="ejemplos-con-el-mismo-hessiano" class="unnumbered">Ejemplos con el mismo Hessiano</h2>
+<p>Si tenemos <span class="math inline">\(f_\pm x \; y = x^2 \pm y^4\)</span>, entonces en <span class="math inline">\((0, 0)\)</span> la diferencial de ambos es <span class="math inline">\((0,0)\)</span>, y los hessianos son en ambos casos: <span class="math display">\[\begin{bmatrix}
+        2 &amp; 0 \\
+        0 &amp; 0
+    \end{bmatrix}\]</span> Pero uno tiene un mínimo local en <span class="math inline">\((0, 0)\)</span> y otro no.</p>
+<h1 id="criterio-con-hessiano" class="unnumbered">Criterio con Hessiano</h1>
+<h2 id="en-una-variable" class="unnumbered">En una variable</h2>
+<p>Si tenemos <span class="math inline">\(f : \mathbb{R}\to \mathbb{R}\)</span>, , <span class="math inline">\(f \in \mathcal{C}^2\)</span> tenemos que si <span class="math inline">\(f&#39; p = 0\)</span>:</p>
+<ul>
+<li><p>Si <span class="math inline">\(f&#39;&#39;p &gt; 0\)</span>, luego hay un mínimo local en <span class="math inline">\(p\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(f&#39;&#39;p &lt; 0\)</span>, luego hay un máximo local en <span class="math inline">\(p\)</span>.</p></li>
+<li><p>Si <span class="math inline">\(f&#39;&#39;p = 0\)</span> es punto de inflexión y no sabemos nada.</p></li>
+</ul>
+<p>Demo: por continuidad, <span class="math inline">\(f&#39;&#39;p &gt; 0\)</span> implica que sea positiva en un entorno, luego la derivada crece, luego en un entorno es positiva dps de <span class="math inline">\(p\)</span> y es negativa antes de <span class="math inline">\(p\)</span>, luego decrece y deps crece. Ya estamos.</p>
+<h2 id="en-varias-variables" class="unnumbered">En Varias Variables</h2>
+<p>Sea <span class="math inline">\(f : (A \subseteq\mathbb{R}^n) \to \mathbb{R}\)</span>, <span class="math inline">\(\nabla f \; p = 0\)</span>, <span class="math inline">\(f \subseteq\mathcal{C}^3\)</span>. Vamos a estudiar si <span class="math inline">\(p\)</span> es máximo o mínimo local.</p>
+<p>El desarrollo de taylor en p es <span class="math inline">\(P_2 = fp + \langle \nabla f \; p, x-p \rangle + \frac{1}{2} (x-p) \cdot \mathop{\mathrm{H}}f p \cdot (x-p)^t\)</span>.</p>
+<p>Queremos que la forma cuadrática asociada domine al resto de taylor en un intervalo (lo que en particular implica que tiene un signo constante).</p>
+<h1 id="forma-cuadrática" class="unnumbered">Forma cuadrática</h1>
+<p>una función <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span> es una <em>forma cuadrática</em>, si tenemos <span class="math inline">\(fv = vAv^t\)</span>, con <span class="math inline">\(A \in \mathbb{R}^{n \times n}\)</span> simétrica.</p>
+<p>Notemos que <span class="math inline">\(f \;\lambda x = \lambda^2 \cdot fx\)</span></p>
+<p>Todas las formas cuadráticas se pueden escribir como suma de <span class="math inline">\(n\)</span> cuadrados. Si todos los coeficientes de los cuadrados tienen todos el mismo signo, entonces es un paraboloide elíptico, y cuando hagamos taylor nos va a demostrar que hay máximo o mínimo.</p>
+<p>Si tienen signo distinto, luego es un punto silla.</p>
+<p>Si no tienen distinto signo, pero hay un cero, ya no sé.</p>
+<h2 id="acotar-formas-cuadráticas" class="unnumbered">Acotar formas cuadráticas</h2>
+<p>Si tenemos una forma cuadrática <span class="math inline">\(q : \mathbb{R}^n \to \mathbb{R}\)</span>, luego existen cotas <span class="math inline">\(m, M \in \mathbb{R}\)</span> tales que <span class="math display">\[m||v||^2 \leq qv \leq M||v||^2\]</span> Y queremos que las cotas se alcancen.</p>
+<p>Tomemos la esfera unitaria <span class="math inline">\(S \subseteq\mathbb{R}^n\)</span>. Como es compacta y <span class="math inline">\(q\)</span> es contínua, tenemos que alcanza su máximo y mínimo.</p>
+<p>Además como escalares salen elevados al cuadrado, estamos, ya que aplicamos la cota que obtuvimos para <span class="math inline">\(\frac{v}{||v||}\)</span>, que está en <span class="math inline">\(S\)</span>.</p>
+<h1 id="ejercicio" class="unnumbered">Ejercicio</h1>
+<p>para <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}^n\)</span>, son equivalentes <span class="math inline">\(f\)</span> contínua y la preimagen de todo abierto es abierto.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
