@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="descomposición-primaria" class="unnumbered">Descomposición Primaria</h1>
+<p>Si tenemos <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>, y <span class="math inline">\(m_f = \prod p_i\)</span>, con <span class="math inline">\(\deg p_i &gt; 0\)</span> coprimos dos a dos, luego:</p>
+<ol>
+<li><p><span class="math inline">\(\mathbb{V}= \mathbb{V}_1 + \mathbb{V}_2 + \dots + \mathbb{V}_n\)</span> si <span class="math inline">\(\mathbb{V}_i = \ker p_i(f)\)</span>.</p></li>
+<li><p><span class="math inline">\(\mathbb{V}_i\)</span> es <span class="math inline">\(f\)</span> invariante.</p></li>
+<li><p><span class="math inline">\(m_{f_{\mathbb{V}_i}} = p_i\)</span></p></li>
+<li><p>Sea <span class="math inline">\(\pi_i\)</span> una proyección sobre <span class="math inline">\(\mathbb{V}_i\)</span>, luego <span class="math inline">\(\pi_i = g_i(f)\)</span> para algún polinomio <span class="math inline">\(g\)</span>.</p></li>
+</ol>
+<p>Es claro que <span class="math inline">\(m_{f_{\mathbb{V}_i}} \mid p_i\)</span>, ya que por definición <span class="math inline">\(p_i(f)|_{\mathbb{V}_i} = 0\)</span>. Además, como son todos coprimos, y sabemos que <span class="math inline">\(\mathbb{V}= \sum\limits\mathbb{V}_i\)</span>, entonces: <span class="math display">\[m_f = \prod m_{f_{\mathbb{V}_i}}\]</span> Pero entonces <span class="math inline">\(m_{f_{\mathbb{V}_i}} = p_i\)</span></p>
+<h1 id="notación" class="unnumbered">Notación</h1>
+<p>Una factorización <span class="math inline">\(m_f = \prod p_i\)</span> con <span class="math inline">\(p_i\)</span> coprimo, se llama descomposición primaria, y el subespacio <span class="math inline">\(\mathbb{V}_i = \ker p_i(f)\)</span> se llama componente <span class="math inline">\(p_i\)</span>-primaria.</p>
+<h1 id="condición-de-diagonalizabilidad" class="unnumbered">Condición de Diagonalizabilidad</h1>
+<p>Una transformación lineal <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> es diagonalizable <span class="math inline">\(\iff\)</span> <span class="math inline">\(m_f = \prod (x-a_i)\)</span> con todos coprimos.</p>
+<h2 id="rightarrow" class="unnumbered">(<span class="math inline">\(\Rightarrow\)</span>)</h2>
+<p>Sean <span class="math inline">\(\{\lambda_{i \leq r}\}\)</span> los autovalores sin repetición de <span class="math inline">\(f\)</span>. Además <span class="math inline">\(\mathbb{V}= \bigoplus_i \mathbb{V}_{\lambda_i}\)</span></p>
+<p>Sabemos además que <span class="math inline">\(p_i = m_{f_{\mathbb{V}_{\lambda_i}}} = x - \lambda_i\)</span>. Luego <span class="math display">\[m_f = \mathop{\mathrm{lcm}}p_i = \prod p_i = \prod (x - \lambda_i)\]</span>. Ya estamos.</p>
+<h2 id="leftarrow" class="unnumbered">(<span class="math inline">\(\Leftarrow\)</span>)</h2>
+<p>Supongamos que <span class="math inline">\(m_f = \prod (x - \lambda_i)\)</span>, con <span class="math inline">\(\lambda_i \neq \lambda_j\)</span>. Con lo anterior, sabmos que <span class="math display">\[\mathbb{V}= \bigoplus \mathbb{V}_i\]</span> con <span class="math display">\[\mathbb{V}_i = \ker p_i(f) = \ker (f - \lambda_if) = \mathbb{V}_{\lambda_i}\]</span> Luego <span class="math inline">\(\mathbb{V}\)</span> se escribe como suma de sus autoespacios. Ya estamos.</p>
+<h1 id="nilpotentes" class="unnumbered">Nilpotentes</h1>
+<p>Índice de nilpotencia. Dada <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>, el índice de nilpotencia es el menor <span class="math inline">\(n\)</span> tal que <span class="math inline">\(f^n = 0\)</span>.</p>
+<p>Notemos que si <span class="math inline">\(f\)</span> es nilpotente, entonces <span class="math inline">\(m_f = x^i\)</span> donde <span class="math inline">\(i\)</span> es el índice de nilpotencia de <span class="math inline">\(f\)</span>. Además <span class="math inline">\(\chi_f = x^n\)</span>.</p>
+<p>Esto implica que la única nilpotente diagonalizable es la nula.</p>
+<h1 id="caracterización-de-nilpotentes" class="unnumbered">Caracterización de Nilpotentes</h1>
+<p>Si tenemos <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>, luego es equivalente:</p>
+<ol>
+<li><p><span class="math inline">\(f\)</span> nilpotente</p></li>
+<li><p><span class="math inline">\(f^n = 0\)</span></p></li>
+<li><p><span class="math inline">\(m_f = x^k\)</span></p></li>
+<li><p><span class="math inline">\(\chi_f = x^n\)</span></p></li>
+</ol>
+<p>Son todas triviales.</p>
+<h1 id="propiedad" class="unnumbered">Propiedad</h1>
+<p>Sea <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> con índice de nilpotencia <span class="math inline">\(n = \dim V\)</span>. Luego tenemos:</p>
+<ul>
+<li><p><span class="math inline">\(\exists v : \langle v \rangle_f = \mathbb{V}\)</span></p></li>
+<li><p><span class="math inline">\(\exists \mathcal{B}: f_\mathcal{B}= 
+        \begin{bmatrix}
+            0 &amp; 0 &amp; 0 &amp; 0 \\
+            1 &amp; 0 &amp; 0 &amp; 0 \\
+            0 &amp; 1 &amp; 0 &amp; 0 \\
+            0 &amp; 0 &amp; 1 &amp; 0 \\
+        \end{bmatrix}\)</span>, que se llama bloque de Jordan nilpotente de tamaño <span class="math inline">\(n\)</span>.</p></li>
+</ul>
+<p>Tomemos <span class="math inline">\(v \notin \ker f^{n-1}\)</span>. Luego si tomamos <span class="math inline">\(\mathcal{B}= \{v, fv, f^2v, \dots, f^{n-1}v\}\)</span>. Luego esto es base y estamos.</p>
+<h1 id="descomposición-jordan-de-nilpotentes" class="unnumbered">Descomposición Jordan de Nilpotentes</h1>
+<p>Dada <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> nilpotente, luego va a existir una base <span class="math inline">\(\mathcal{B}\)</span> tal que: <span class="math display">\[[f]_\mathcal{B}= 
+    \begin{bmatrix}
+        J_1 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; J_2 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; J_3 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; J_4 \\
+    \end{bmatrix}\]</span> Dónde <span class="math inline">\(J_i\)</span> va a ser un bloque de Jordan nilpotente.</p>
+<h2 id="lema" class="unnumbered">Lema</h2>
+<p>Si tenemos <span class="math inline">\(\{v_i\}\)</span> li, con <span class="math inline">\(f\)</span> nilpotente. y <span class="math inline">\(\langle v_i \rangle \cap \ker f^i = \{0\}\)</span>, luego <span class="math inline">\(\{fv_i\}\)</span> li y <span class="math inline">\(\langle fv_i \rangle \cap \ker f^{i-1} = \{0\}\)</span>.</p>
+<p>Sea <span class="math inline">\(v \in \langle fv_i \rangle \cap \ker f^{i-1}\)</span>. Luego <span class="math display">\[f^{i-1} v = 0 =\]</span> <span class="math display">\[f^{i-1} \left(\sum\limits\alpha_i fv_i\right) =\]</span> <span class="math display">\[f^i \left(\sum\limits\alpha_i v_i\right)\]</span> Luego <span class="math inline">\(\alpha_i = 0\)</span> , luego <span class="math inline">\(v = 0\)</span>.</p>
+<p>Supongamos <span class="math inline">\(\sum\limits\beta_i fv_i = 0\)</span>. Notemos que: <span class="math display">\[\sum\limits\beta_i fv_i = 0\]</span> <span class="math display">\[f \left(\sum\limits\beta_i v_i \right) = 0\]</span> <span class="math display">\[\sum\limits\beta_i v_i \in \ker f^i\]</span> <span class="math display">\[\sum\limits\beta_i v_i = 0\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

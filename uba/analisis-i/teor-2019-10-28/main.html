@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="multiplicadores-de-lagrange" class="unnumbered">Multiplicadores de Lagrange</h1>
+<p>Si tenemos <span class="math inline">\(f,g : (A \subseteq\mathbb{R}^n) \to_{\mathcal{C}^1} \mathbb{R}\)</span>, luego tomemos el conjunto de nuvel <span class="math inline">\(S = S_r(g)\)</span>. Luego tomemos un <span class="math inline">\(p \in S\)</span> que sea mínimo local restringido a <span class="math inline">\(S\)</span>.</p>
+<p>Luego el teorema nos dice que <span class="math inline">\(\nabla f(p) \parallel \nabla g(p)\)</span>. Es decir, que <span class="math inline">\(p\)</span> es de la forma: <span class="math display">\[\nabla f(p) = \lambda\nabla g(p)\]</span> o <span class="math display">\[\nabla g(p) = 0\]</span></p>
+<h1 id="ejemplo-1" class="unnumbered">Ejemplo 1</h1>
+<p>Tengo <span class="math inline">\(S = \{y^2 = 8 - x^3\}\)</span>. Queremos el máximo de <span class="math inline">\(f(x,y) = xy\)</span> en <span class="math inline">\(S \cap \{x,y \geq 0\}\)</span>.</p>
+<p>Tomemos <span class="math inline">\(g(x,y) = x^3 + y^2\)</span>, luego queremos el mínimo de <span class="math inline">\(f\)</span> en una curva de nivel de <span class="math inline">\(g\)</span>, luego calculemos: <span class="math display">\[\nabla g(x,y) = (3x^2, 2y)\]</span> <span class="math display">\[\nabla f(x,y) = (y,x)\]</span> Notemos que <span class="math inline">\(\nabla g(x,y) = 0\)</span> sólo para <span class="math inline">\((x,y) = (0,0)\)</span>, en cuyo caso <span class="math inline">\(g(x,y) \neq 8\)</span>.</p>
+<p>Busquemos entonces <span class="math display">\[\nabla f(x,y) = \lambda\nabla g(x,y)\]</span> <span class="math display">\[(y, x) = \lambda(3x^2, 2y)\]</span> Con <span class="math inline">\(g(x,y) = 8\)</span>. Queda el sistema de ecuaciones: <span class="math display">\[\begin{cases}
+        y = 3\lambda x^2 \\
+        x = 2\lambda y \\
+        x^3 + y^2 = 8 \\
+    \end{cases}\]</span> Luego <span class="math inline">\(x = 2\lambda y\)</span>, luego <span class="math inline">\(y = 3\lambda(2\lambda y)^2 = 12\lambda^3 y^2\)</span>, y ahí resolvemos.</p>
+<p>Alternativamente, tomemos el determinante: <span class="math display">\[\det \begin{bmatrix}
+        \nabla f(x) \\
+        \nabla g(x)
+    \end{bmatrix} =\]</span> <span class="math display">\[2y^2 - 3x^3 = 0\]</span> <span class="math display">\[y^2 + x^8 = 0\]</span> Que es un sistema lineal, y estamos.</p>
+<h1 id="demo-de-lagrange" class="unnumbered">Demo de Lagrange</h1>
+<p>Tomemos <span class="math inline">\(f, g : \mathbb{R}^2 \to_{\mathcal{C}^1} \mathbb{R}\)</span>, con un mínimo local restringido a <span class="math inline">\(g\)</span> en <span class="math inline">\(p\)</span>.</p>
+<p>Si <span class="math inline">\(\nabla gp = 0\)</span>, ya estamos.</p>
+<p>Si no, entonces wlog <span class="math inline">\(\frac{\partial g}{\partial y} \neq 0\)</span>. Como <span class="math inline">\(g\)</span> es <span class="math inline">\(\mathcal{C}^1\)</span>, por el teorema de función implícita, existe un <span class="math inline">\(\phi : \mathbb{R}\to \mathbb{R}\)</span> tal que <span class="math inline">\(g(x, \phi (x)) = g(p_x,p_y)\)</span> en un entorno.</p>
+<p>Tomemos entonces la composición <span class="math inline">\(h(x) = f(x, \phi x)\)</span>. Queremos que <span class="math inline">\(p_x\)</span> sea un mínimo local en <span class="math inline">\(h\)</span>, luego <span class="math inline">\(h&#39;(p_x) = f_x(p_x, \phi p_x) + \phi&#39;(p_x) f_y(p_x, \phi p_x) = 0\)</span></p>
+<p>Además, sabemos que <span class="math inline">\(\phi&#39;(p_x) = -\frac{g_x(p)}{g_y(p)}\)</span>. Reemplazando: <span class="math display">\[f_x(p_x, \phi p_x) - \frac{g_x(p)}{g_y(p)}  f_y(p_x, \phi p_x) = 0\]</span> <span class="math display">\[f_x(p) - \frac{g_x(p)}{g_y(p)}  f_y(p) = 0\]</span> <span class="math display">\[f_x(p)g_y(p) - g_x(p) f_y(p) = 0\]</span> Que es la determinante</p>
+<h1 id="observación" class="unnumbered">Observación</h1>
+<p>Si tenemos que <span class="math inline">\(\{ \nabla f(p), \nabla g(p) \}\)</span> son li, luego forman una base. Luego la función <span class="math inline">\(F(x,y) = (f(x,y), g(x,y))\)</span> tiene un diferencial <span class="math inline">\(DF(p)\)</span> inversible, luego por función inversa es inversible en un entorno.</p>
+<p>Luego puedo encontrar un <span class="math inline">\(p&#39;\)</span> tal que <span class="math inline">\(F(p&#39;) = (f(p) - \varepsilon, g(p))\)</span>, luego <span class="math inline">\(p\)</span> no es mínimo.</p>
+<p>Esto nos dá otra demsotración.</p>
+<h1 id="lagrange-multidimensional" class="unnumbered">Lagrange Multidimensional</h1>
+<p>Si tenemos varias restricciones, entonces vale que el conjunto de todos los gradientes en el punto (tanto de las restricciones como de la función a minimizar) forman un conjunto linealmente dependiente.</p>
+<h1 id="ejemplo-2" class="unnumbered">Ejemplo 2</h1>
+<p>Hallar los puntos más cercanos y lejanos del origen en el conjunto <span class="math display">\[S = \{(x,y,z) : z^2 = x^2 + y^2, x-2z = 3\}\]</span> Que es la intersección entre un cono y un plano. Tomemos <span class="math display">\[f(x,y,z) = x^2 + y^2 + z^2\]</span> <span class="math display">\[g(x,y,z) = -z^2 + x^2 + y^2\]</span> <span class="math display">\[h(x,y,z) = x - 2z\]</span> Si las derivamos tenemos: <span class="math display">\[\nabla f(x,y,z) = (2x, 2y, 2z)\]</span> <span class="math display">\[\nabla g(x,y,z) = (2x, 2y, -2z)\]</span> <span class="math display">\[\nabla h(x,y,z) = (1, 0, -2)\]</span> Queremos entonces la determinante <span class="math display">\[\det \begin{bmatrix}
+        2x &amp; 2y &amp; 2z \\
+        2x &amp; 2y &amp; -2z \\
+        1 &amp; 0 &amp; -2 \\
+    \end{bmatrix} = -8yz - 2 \cdot 0 = -8yz = 0\]</span> Luego o bien <span class="math inline">\(y = 0\)</span> o bien <span class="math inline">\(z = 0\)</span>.</p>
+<p>Pero notemos que si <span class="math inline">\(z = 0\)</span>, luego ese plano solo interseca al cono en el orígen, que no pasa por el otro plano. Luego necesariamente <span class="math inline">\(y = 0\)</span>.</p>
+<p>Luego tenemos el sistema de ecuaciones: <span class="math display">\[\begin{cases}
+        y = 0 \\
+        z^2 = x^2 \\
+        x - 2z = 3
+    \end{cases}\]</span> Despejo y listo. Nos dá los casos: <span class="math display">\[(x,y,z) = \begin{cases}
+    (-3, 0, -3) \\
+    (1, 0, -1)
+    \end{cases}\]</span> Que son el máximo y el mínimo respectivamente.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

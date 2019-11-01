@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="polinomio-característico" class="unnumbered">Polinomio Característico</h1>
+<p>Dada <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>, decimos que el polinomio caracerístico está dado por: <span class="math display">\[\chi_A(\lambda) = \det (\lambda I - A)\]</span> Y sus raices son los autovalores de <span class="math inline">\(A\)</span>.</p>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>decidir si <span class="math display">\[A = 
+    \begin{bmatrix}
+        0 &amp; -2 &amp; -3 \\
+        -1 &amp; 1 &amp; -1 \\
+        2 &amp; 2 &amp; 5
+    \end{bmatrix}\]</span> Es diagonalizable. el polinomio característico queda: <span class="math display">\[\det \lambda I - A = 
+    \det \begin{bmatrix}
+        \lambda &amp; 2 &amp; 3 \\
+        1 &amp; \lambda - 1 &amp; 1 \\
+        -2 &amp; - 2 &amp; \lambda -5
+    \end{bmatrix} =\]</span><span class="math display">\[x((x-1)(x-5) + 2) - 2(x - 5+ 2) + 3(-2 + 2x - 2) =\]</span><span class="math display">\[(x-1)(x-2)(x+3)\]</span> Luego la matriz es diagonalizable.</p>
+<h1 id="dimensión-del-autoespacio" class="unnumbered">Dimensión del Autoespacio</h1>
+<p>Se tiene <span class="math inline">\(\dim \mathbb{V}_\lambda \leq \mathop{\mathrm{mult}}_\lambda(\chi_A)\)</span>, es decir.</p>
+<h1 id="chi-de-semejantes" class="unnumbered"><span class="math inline">\(\chi\)</span> de semejantes</h1>
+<p>Tenemos <span class="math display">\[\det (\lambda I - B) =\]</span> <span class="math display">\[\det (\lambda I - CAC^{-1}) =\]</span> <span class="math display">\[\det (\lambda CIC^{-1} - CAC^{-1}) =\]</span> <span class="math display">\[\det C \cdot \det (\lambda I - A) \cdot \det C^{-1} =\]</span> <span class="math display">\[\det (\lambda I - A)\]</span> Luego <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> tienen el mismo característico.</p>
+<h1 id="autovalores-bajo-aplicación-de-polinomios" class="unnumbered">Autovalores bajo aplicación de polinomios</h1>
+<p>Dado cualquier poly <span class="math inline">\(P \in \mathbb{K}[x]\)</span>, con <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>, y <span class="math inline">\(\lambda\)</span> autovalor de <span class="math inline">\(A\)</span> con autovector <span class="math inline">\(v\)</span>, luego tenemos <span class="math inline">\(P \lambda\)</span> es autovalor de <span class="math inline">\(PA\)</span> con autovector <span class="math inline">\(v\)</span>. esto es ya que: <span class="math display">\[(PA)v = \left(\sum\limits a_iA^i\right) v =\]</span> <span class="math display">\[\sum\limits a_iA^iv =\]</span> <span class="math display">\[\sum\limits a_i\lambda^iv =\]</span> <span class="math display">\[\left(\sum\limits a_i\lambda^i\right)v = (P\lambda)v\]</span></p>
+<h2 id="vuelta" class="unnumbered">Vuelta</h2>
+<p>Si estoy en <span class="math inline">\(\mathbb{K}= \mathbb{C}\)</span>, con <span class="math inline">\(P \in \mathbb{C}[x]\)</span> con <span class="math inline">\(\mu \in \mathbb{C}\)</span> autovalor de <span class="math inline">\(PA\)</span>, luego existe algún <span class="math inline">\(\lambda\)</span> autovalor de <span class="math inline">\(A\)</span>, tal que <span class="math inline">\(P\lambda = \mu\)</span></p>
+<p>Tomemos el polinomio <span class="math inline">\(Q(x) = P(x) - \mu = a\prod x - \lambda_i\)</span>, y aplicandolo a la matrix <span class="math inline">\(A\)</span> tenemos: <span class="math display">\[QA = PA - I\mu = a \prod A - \lambda_i I\]</span> Sabemos que <span class="math inline">\(QA = PA - I \mu\)</span> no es inversible, ya que osinó <span class="math inline">\(\mu\)</span> no es autovalor. Entonces no pueden ser todas las <span class="math inline">\(A - \lambda_i I\)</span> inversibles, ya que producto de inversibles es inversible. Luego ya está.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

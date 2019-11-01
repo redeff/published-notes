@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="autovalores-y-autovectores" class="unnumbered">Autovalores y Autovectores</h1>
+<p>Dada <span class="math inline">\(f : \mathbb{V}\to_{\mathop{\mathrm{tl}}} \mathbb{V}\)</span> Decimos que <span class="math inline">\(v \neq 0 \in \mathbb{V}\)</span> es autovector sii existe un <span class="math inline">\(\lambda \in \mathbb{V}\)</span> tal que <span class="math inline">\(fv = \lambda v\)</span>, y decimos que <span class="math inline">\(\lambda\)</span> es un autovalor de <span class="math inline">\(f\)</span>.</p>
+<p>El conjunto de autovalores se denomina <span class="math inline">\(\mathop{\mathrm{spec}}f\)</span>.</p>
+<p>Dado cualquier <span class="math inline">\(\lambda \in \mathbb{K}\)</span>, decimos <span class="math inline">\(\mathbb{V}_\lambda = \{v : fv = \lambda v\}\)</span>. Notemos que <span class="math inline">\(\mathbb{V}_\lambda\)</span> es subespacio ya que es <span class="math inline">\(\mathbb{V}_\lambda = \ker (f - \lambda \mathop{\mathrm{id}})\)</span>.</p>
+<p>Notemos que <span class="math inline">\(\mathbb{V}_\lambda\)</span> contiene al <span class="math inline">\(0\)</span>, y a todos los autovectores de autovalor <span class="math inline">\(\lambda\)</span>. Por lo tanto, <span class="math inline">\(\lambda\)</span> es autovalor sii <span class="math inline">\(\dim \mathbb{V}_\lambda \neq \{0\}\)</span>.</p>
+<h2 id="los-autoespacios-son-li" class="unnumbered">Los autoespacios son li</h2>
+<p>Sean <span class="math inline">\(\lambda_{i &lt; n}\)</span> autovalores de <span class="math inline">\(f\)</span> distintos, y <span class="math inline">\(v_i \in \mathbb{V}_{\lambda_i}\)</span> autovectores. Luego <span class="math inline">\(\{v_i\}_i\)</span> son li.</p>
+<p>Supongamos <span class="math inline">\(\sum\limits a_iv_i = 0\)</span>. Si aplicamos <span class="math inline">\(f^k\)</span> de ambos lados, obtenemos: <span class="math display">\[\sum\limits_i a_i\lambda_i^kv_i = 0\]</span> Sea <span class="math inline">\(B\)</span> la inversa de la matriz de vandermonde <span class="math inline">\(V(\lambda_i)_i\)</span>, luego tenemos, para cada <span class="math inline">\(i\)</span>, <span class="math display">\[0 = \sum\limits_j B_{ij} \sum\limits_k a_k\lambda_{k}^j v_k = \sum\limits_k a_k v_k \sum\limits_j B_{ij} \lambda_k^j = \sum\limits_k a_k v_k \delta_{ik} = a_i v_i\]</span> Como <span class="math inline">\(v_i\)</span> no es <span class="math inline">\(0\)</span>, tenemos <span class="math inline">\(a_i\)</span> es cero.</p>
+<h2 id="corolario" class="unnumbered">Corolario</h2>
+<ul>
+<li><p>Si <span class="math inline">\(\dim V &lt; \infty\)</span>, luego <span class="math inline">\(\# \mathop{\mathrm{spec}}f \leq \dim V\)</span></p></li>
+<li><p>Los subespacios de autovalores <span class="math inline">\(\mathbb{V}_\lambda\)</span> son todos li.</p></li>
+</ul>
+<h1 id="autocosas-de-una-matriz" class="unnumbered">Autocosas de Una Matriz</h1>
+<p>Dada <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>, sus autocosas son las autocosas de <span class="math inline">\(x \mapsto Ax\)</span>.</p>
+<h1 id="autovalores-bajo-conjugación" class="unnumbered">Autovalores bajo conjugación</h1>
+<p>Si tenemos <span class="math inline">\(A, C \in \mathbb{K}^{n \times n}\)</span>, con <span class="math inline">\(C\)</span> inversible.</p>
+<p>Tomemos <span class="math inline">\(v \in \mathbb{V}\)</span> autovector de autovalor <span class="math inline">\(\lambda\)</span> de <span class="math inline">\(A\)</span>. Luego queremos ver que <span class="math inline">\(\lambda\)</span> es autovalor de <span class="math inline">\(CAC^{-1}\)</span>. Notemos que: <span class="math display">\[(CAC^{-1})(Cv) = CAv = \lambda Cv\]</span> Luego <span class="math inline">\(Cv\)</span> es autovector de <span class="math inline">\(CAC^{-1}\)</span>, con autovalor <span class="math inline">\(\lambda\)</span>.</p>
+<h1 id="cambios-de-base" class="unnumbered">Cambios de Base</h1>
+<p>Si tenemos <span class="math inline">\(\mathbb{V}\)</span> de dimensión finita, una <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>, y <span class="math inline">\(\mathcal{B}, \mathcal{B}&#39;\)</span> bases de <span class="math inline">\(\mathbb{V}\)</span>. Luego: <span class="math display">\[[f]_{\mathcal{B}&#39;} = C_{\mathcal{B}\mathcal{B}&#39;} \cdot [f]_\mathcal{B}\cdot C_{\mathcal{B}&#39;\mathcal{B}}\]</span> Luego los autovalores de <span class="math inline">\([f]_\mathcal{B}\)</span> y de <span class="math inline">\([f]_{\mathcal{B}&#39;}\)</span> son los mismos.</p>
+<h1 id="diagonalizabilidad" class="unnumbered">Diagonalizabilidad</h1>
+<p>Decimos que <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span> es <em>diagonalizable</em> sii hay una <span class="math inline">\(C\)</span> tal que <span class="math inline">\(CAC^{-1}\)</span> es diagonal. Similarmente, <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> es diagonal sii <span class="math inline">\([f]\)</span> es diagonal. En alguna base.</p>
+<p>Notemos que si <span class="math inline">\([f]_\mathcal{B}\)</span> es diagonal, luego <span class="math inline">\(f \mathcal{B}_i = [f] e_i = [f]_{ii}e_i = [f]_{ii} \cdot \mathcal{B}_i\)</span>. Luego <span class="math inline">\(\mathcal{B}_i\)</span> es autovector. Entonces:</p>
+<p><span class="math inline">\(f\)</span> es diagonalizable sii estiste una base <span class="math inline">\(\mathcal{B}\)</span> de <span class="math inline">\(\mathbb{V}\)</span> formada por autovectores.</p>
+<h1 id="encontrando-autovalores" class="unnumbered">Encontrando Autovalores</h1>
+<p>Dijimos que los autovalores <span class="math inline">\(\lambda\)</span> de <span class="math inline">\(A\)</span> son los que tienen <span class="math inline">\(\ker (\lambda I - A)\)</span> no nulo, es decir los <span class="math inline">\(\lambda\)</span> que: <span class="math display">\[\det (\lambda I - A) = 0\]</span> Por lo que queremos las raíces del polinomio <span class="math inline">\(\det (\lambda I - A)\)</span>.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

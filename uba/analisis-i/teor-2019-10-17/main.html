@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="mímimos-en-bordes" class="unnumbered">Mímimos en bordes</h1>
+<p>Si tenemos el conjunto <span class="math inline">\(C = \{(x,y) : x^2 + y^2 \leq 1\}\)</span> y una función <span class="math inline">\(f : \mathbb{R}^2 \to \mathbb{R}\)</span> con <span class="math inline">\((1, 0)\)</span> mínimo local de <span class="math inline">\(f | _C\)</span>, luego:</p>
+<p>Tomemos la curva <span class="math inline">\(\gamma (t) = (\cos t, \sin t)\)</span>. Tenemos que: <span class="math display">\[\mathop{\mathrm{D}}(f \circ \gamma) (p) = (\mathop{\mathrm{D}}f) (\gamma p) \cdot (\mathop{\mathrm{D}}\gamma) p\]</span> Sabemos que <span class="math inline">\(\mathop{\mathrm{D}}(f \circ \gamma) 0 = 0\)</span>, ya que <span class="math inline">\(\gamma 0 = p\)</span>, que es mínimo local. Luego: <span class="math display">\[0 = (\mathop{\mathrm{D}}f)(\gamma 0) \cdot (\mathop{\mathrm{D}}\gamma) 0\]</span> <span class="math display">\[0 = (\mathop{\mathrm{D}}f)p \cdot (1 \; 0)^t\]</span></p>
+<h1 id="funciones-inversibles-en-mathbbrto-mathbbr" class="unnumbered">Funciones inversibles en <span class="math inline">\(\mathbb{R}\to \mathbb{R}\)</span></h1>
+<p>Si tenemos una función contínua y estrictamente creciente <span class="math inline">\(f : [a,b] \to [c,d]\)</span>con <span class="math inline">\(fa = c\)</span>, <span class="math inline">\(fb = d\)</span>, luego existe una función inversa <span class="math inline">\(f ^ {-1} : \mathbb{R}\to \mathbb{R}\)</span> contínua y estrictamente creciente.</p>
+<p>La demostración de que es inyectiva sale por crecimiento, y la sobreyectividad sale por bolzano.</p>
+<p>El crecimiento de la inversa sale trivial por el crecimiento de <span class="math inline">\(f\)</span>.</p>
+<p>Para la contonuidad, notemos que para todo <span class="math inline">\(\varepsilon&gt; 0\)</span>, si tomamos el intervalo <span class="math inline">\(K = (f(x-\varepsilon), f(x+\varepsilon))\)</span>, luego notemos que <span class="math inline">\(\forall y \in K: |f^{-1}(y) - f^{-1}(fx)| \leq \varepsilon\)</span>, luego <span class="math inline">\(f^{-1}\)</span> es contínua en <span class="math inline">\(fx\)</span>.</p>
+<h1 id="derivada-de-la-inversa" class="unnumbered">Derivada de la Inversa</h1>
+<p>Si tenemos <span class="math inline">\(f\)</span> derivable en <span class="math inline">\(x_0\)</span>, luego: <span class="math display">\[(f^{-1})&#39;(fx) = \frac{1}{f&#39;x}\]</span> Es decir: <span class="math display">\[(f^{-1})&#39; \; y = \frac{1}{f&#39;(f^{-1}y)}\]</span></p>
+<h1 id="funciones-específicas" class="unnumbered">Funciones específicas</h1>
+<p>Si tenemos <span class="math inline">\(f = \sin\)</span>, luego: <span class="math display">\[(\sin^{-1})&#39; \; y = \frac{1}{\sin&#39; (\sin^{-1} y)}\]</span> <span class="math display">\[(\sin^{-1})&#39; \; y = \frac{1}{\cos (\sin^{-1} y)}\]</span> <span class="math display">\[(\sin^{-1})&#39; \; y = \frac{1}{\sqrt{\cos^2 (\sin^{-1} y)}}\]</span> <span class="math display">\[(\sin^{-1})&#39; \; y = \frac{1}{\sqrt{1 - y^2}}\]</span> <span class="math display">\[\arcsin&#39;  = t \mapsto \frac{1}{\sqrt{1-t^2}}\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

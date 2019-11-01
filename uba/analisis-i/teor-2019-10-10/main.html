@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="formas-cuadráticas" class="unnumbered">Formas cuadráticas</h1>
+<p>Dada una matriz <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span> simétrica, existe una base <span class="math inline">\(\{v_i\}\)</span> ortonormal con autovalores reales. Luego: <span class="math display">\[A = P \cdot
+    \begin{bmatrix}
+        \lambda_1 &amp; 0 &amp; \dots &amp; 0 \\
+        0 &amp; \lambda_2 &amp; \dots &amp; 0 \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; 0 &amp; \dots &amp; \lambda_n \\
+    \end{bmatrix} \cdot
+    P^{-1}\]</span> Y como <span class="math inline">\(P\)</span> era ortonormal, tenemos <span class="math inline">\(P^{-1} = P^t\)</span>, luego: <span class="math display">\[A = P \cdot
+    \begin{bmatrix}
+        \lambda_1 &amp; 0 &amp; \dots &amp; 0 \\
+        0 &amp; \lambda_2 &amp; \dots &amp; 0 \\
+        \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+        0 &amp; 0 &amp; \dots &amp; \lambda_n \\
+    \end{bmatrix} \cdot
+    P^t\]</span></p>
+<h1 id="formas-cuadráticas-1" class="unnumbered">Formas cuadráticas</h1>
+<p>Si tenemos <span class="math inline">\(qv = vAv^t\)</span>, lo escribimos como <span class="math inline">\(qv = vPDP^tv^t = (vP)D(vP)^t\)</span>, y como <span class="math inline">\(D\)</span> es diagonal, solo aparecen los térmonos al cuadrado, con los coeficientes correspondientes a los autovalores de <span class="math inline">\(A\)</span>.</p>
+<p>Luego si todos los autovalores tienen signo positivo o todos negativos, sabemos que es mínimo o máximo respectivamente.</p>
+<p>Por el contrario, si hay un positivo y un negativo, luego necesariamente es un punto de silla.</p>
+<p>Si no pasa ninguna de esas dos cosas, entonces se dice semidefinico (son todos o no negativos o no positivos, pero hay algún autovalor que es <span class="math inline">\(0\)</span>), y no sabemos nada de la función.</p>
+<h1 id="determinante" class="unnumbered">Determinante</h1>
+<p>Notemos que <span class="math inline">\(\det A = \prod \lambda_i\)</span> con <span class="math inline">\(\lambda_i\)</span> los autovalores, entonces calcular el determinante nos puede dar información acerca de la definitud de una forma cuadrática.</p>
+<p>En particular, para que sea mínimo o máximo, debe ser invertible (pero no es sí y sólo si)</p>
+<h1 id="derivadas-direccionales" class="unnumbered">Derivadas Direccionales</h1>
+<p>Tenemos <span class="math inline">\((t \mapsto f (v \cdot t))&#39;&#39;o = v (\mathop{\mathrm{H}}f) v^t\)</span></p>
+<h1 id="sylvester" class="unnumbered">Sylvester</h1>
+<p>Teníamos que existían <span class="math inline">\(m, M \in \mathbb{R}\)</span> tal que <span class="math inline">\(m||v||^2 \leq qv \leq M||v||^2\)</span>, con <span class="math inline">\(q\)</span> una forma cuadrática.</p>
+<p>Notemos que si <span class="math inline">\(\{\lambda_i\}\)</span> son los autovalores, entonces tenemos que <span class="math inline">\(m = \min \{\lambda_i\}, M = \max \{\lambda_i\}\)</span> son esos mínimos y máximos, ya que los cambios de base ortonormales rpeservan la normal.</p>
+<h1 id="ejemplo-1" class="unnumbered">Ejemplo 1</h1>
+<p>Si tenemos <span class="math inline">\(f \; xy = (y - 3x^3)(y-x^2)\)</span>, ver que:</p>
+<ol>
+<li><p>minimos locales en el origen por cada dirección.</p></li>
+<li><p>punto silla en <span class="math inline">\((0,0)\)</span></p></li>
+</ol>
+<p>Es claro que <span class="math inline">\(\det \mathop{\mathrm{H}}f = 0\)</span>, ya que si fuese <span class="math inline">\(\det \mathop{\mathrm{H}}f &gt; 0\)</span> tenemos un mínimo o un máximo, y si <span class="math inline">\(\det \mathop{\mathrm{H}}f &gt; 0\)</span>, luego en alguna dirección tendríamos un máximo local, que no pasa.</p>
+<p>Luego la forma cuadrática es semidefinida (positiva).</p>
+<h1 id="ejemplo-2" class="unnumbered">Ejemplo 2</h1>
+<p>Tenemos <span class="math inline">\(f \; xy = (x-y)^2 + x^2(x-1)^2\)</span>. Hallar y estudiar sus extremos locales.</p>
+<p>Tenemos <span class="math inline">\(\nabla f (x,y) = (2(x-y) + 2x(x-2)^2 + 2x^2(x-1), -2(x-y))\)</span>, luego igualamos esto a <span class="math inline">\(0\)</span>. Tenemos <span class="math inline">\(x = y\)</span>, y los casos posibles son <span class="math inline">\(x = 0,1,\frac{1}{2}\)</span>.</p>
+<p>El hessiano estádado por: <span class="math display">\[\mathop{\mathrm{H}}f =
+    \begin{bmatrix}
+        2 + 2(x-1)^2 + 8x(x-1) + 2x^2 &amp; -2\\
+        -2 &amp; 2
+    \end{bmatrix}\]</span></p>
+<p>con <span class="math inline">\(x=y=0\)</span>, tenemos <span class="math inline">\(\mathop{\mathrm{H}}f = 
+\begin{bmatrix}
+    4 &amp; -2 \\
+    -2 &amp; 2
+\end{bmatrix}\)</span> como es positivo el determinante, tenemos que es necesariamente un extremo local.</p>
+<p>Pero notemos que la forma cuadrática dada por esta matriz en <span class="math inline">\(v = (1,0)\)</span> vale <span class="math inline">\(4\)</span>, luego necesariamente estoy en un mínimo local.</p>
+<h1 id="criterio-de-hessiano" class="unnumbered">Criterio de Hessiano</h1>
+<p>Si tenemos <span class="math inline">\(H =
+\begin{bmatrix}
+    a &amp; b \\
+    b &amp; d
+\end{bmatrix}\)</span> Luego la forma cuadrática dada por <span class="math inline">\(qv = vHv^t\)</span> cumple:</p>
+<ul>
+<li><p><span class="math inline">\(q\)</span> definida positiva <span class="math inline">\(\iff\)</span> <span class="math inline">\(ac-b^2 &gt; 0\)</span> y <span class="math inline">\(a &gt; 0\)</span>.</p></li>
+<li><p><span class="math inline">\(q\)</span> definida negativa <span class="math inline">\(\iff\)</span> <span class="math inline">\(ac-b^2 &gt; 0\)</span> y <span class="math inline">\(a &lt; 0\)</span>.</p></li>
+<li><p><span class="math inline">\(q\)</span> indefinida <span class="math inline">\(\iff\)</span> <span class="math inline">\(ac-b^2 &lt; 0\)</span>.</p></li>
+</ul>
+<p>Si tenemos <span class="math inline">\(H =
+\begin{bmatrix}
+    A &amp; b^t \\
+    b &amp; c
+\end{bmatrix}\)</span>, con <span class="math inline">\(A \in \mathbb{R}{^2 \times 2}\)</span></p>
+<h1 id="criterio-de-sylvester" class="unnumbered">Criterio de Sylvester</h1>
+<p>Si tenemos <span class="math inline">\(H = 
+\begin{bmatrix}
+    A &amp; b^t \\
+    b &amp; c
+\end{bmatrix}\)</span> con <span class="math inline">\(H \in \mathbb{R}^{n \times n}\)</span>, <span class="math inline">\(A \in \mathbb{R}^{n-1 \times n-1}\)</span>, luego son equivalentes:</p>
+<ul>
+<li><p><span class="math inline">\(x \mapsto xHx^t\)</span> es definida positiva</p></li>
+<li><p><span class="math inline">\(A\)</span> es definida positiva y <span class="math inline">\(\det H &gt; 0\)</span></p></li>
+</ul>
+<p>Esto se ve ya que si <span class="math inline">\(H\)</span> no es def+, luego como <span class="math inline">\(\det H &gt; 0\)</span>, tiene almenos dos autovalores negativos, entonces el subespacio generado por esos dos itersecta al generado por los primeros <span class="math inline">\(n-1\)</span> canónicos, luego <span class="math inline">\(A\)</span> no es def+.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="teorema-de-la-función-inversa" class="unnumbered">Teorema de la Función Inversa</h1>
+<p>Si tenemos <span class="math inline">\(f : (A \subseteq\mathbb{R}^n) \to \mathbb{R}^n\)</span>, con <span class="math inline">\(A\)</span> abierto y <span class="math inline">\(f \in \mathcal{C}^1(A)\)</span>, luego si <span class="math inline">\(\mathop{\mathrm{D}}f(x_0)\)</span> es inversible para algún <span class="math inline">\(x_0 \in A\)</span>, entonces existen entornos <span class="math inline">\(V\)</span> y <span class="math inline">\(W\)</span> de <span class="math inline">\(x_0\)</span> y de <span class="math inline">\(fx_0\)</span> tal que <span class="math inline">\(f : V \to W\)</span> es inversible y su inversa es <span class="math inline">\(\mathcal{C}^1\)</span>. Además: <span class="math display">\[\forall x \in V : \mathop{\mathrm{D}}f^{-1} (fx) = [\mathop{\mathrm{D}}f(x)]^{-1}\]</span></p>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Sea <span class="math inline">\(f : \mathbb{R}^2 \to \mathbb{R}^2\)</span> una <span class="math inline">\(\mathcal{C}^1\)</span> tal que: <span class="math display">\[f(2,3) = (1,3)\]</span> <span class="math display">\[\mathop{\mathrm{D}}f(2,3) =
+        \begin{bmatrix}
+            1 &amp; -1 \\ 0 &amp; 1
+        \end{bmatrix}\]</span> Sean <span class="math inline">\(g, h : \mathbb{R}^2 \to \mathbb{R}^2\)</span> dadas por: <span class="math display">\[g(x,y) = (x^2-xy, x+y)\]</span> <span class="math display">\[h = f \circ g\]</span></p>
+<ol>
+<li><p>Decidir si <span class="math inline">\(h\)</span> es inversible en algún entorno de <span class="math inline">\((2,1)\)</span></p></li>
+<li><p>Sean <span class="math inline">\(\gamma : \mathbb{R}^2 \to \mathbb{R}\)</span>, <span class="math inline">\(\gamma (x,y) = 3x^2+y\)</span>. Hallar el poly de Taylor orden 1 de <span class="math inline">\(k = \gamma \circ h^{-1}\)</span> en <span class="math inline">\((1,3)\)</span></p></li>
+</ol>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

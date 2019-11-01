@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="integral-de-riemann" class="unnumbered">Integral de Riemann</h1>
+<p>Dada una <span class="math inline">\(f : [a,b] \to \mathbb{R}\)</span>, <span class="math inline">\(f\)</span> acotada.</p>
+<p>dada una partición <span class="math inline">\(\pi = \{x_i\}_{i \leq n}\)</span>, con <span class="math inline">\(x_0 = a, x_n = b\)</span>, definimos la suma inferior de riemann como: <span class="math display">\[s(f, \pi) = \sum\limits_{i = 1}^n |x_i - x_{i-1}| \cdot \inf \{f(x) : x_{i-1} \leq x \leq x_i \}\]</span> Y la suma superior de riemann como: <span class="math display">\[S(f, \pi) = \sum\limits_{i = 1}^n |x_i - x_{i-1}| \cdot \sup \{f(x) : x_{i-1} \leq x \leq x_i \}\]</span> Decimos que <span class="math display">\[I = \sup_{\pi \text{ particion}} s(f, \pi)\]</span> Que existe, ya que <span class="math inline">\(s(f, \pi) \leq (b-a) \cdot \inf f [a,b]\)</span>. Similarmente: <span class="math display">\[S = \inf_{\pi \text{ particion}} S(f, \pi)\]</span></p>
+<p>Se dice que <span class="math inline">\(f\)</span> es <em>Riemann integrable</em> si <span class="math inline">\(I = S\)</span>, y decimos que <span class="math display">\[\int_a^b f(x) dx = I = S\]</span></p>
+<h1 id="sumas-de-potencias" class="unnumbered">Sumas de Potencias</h1>
+<p>Ponele que queremos calcular <span class="math display">\[S_n(T) \sum\limits_i^T i^n\]</span> Notemos que: <span class="math display">\[\sum\limits(i+1)^{n+1} - i^{n+1} = (i+1)^{n+1} - 1\]</span> Por telescópica. Pero por otro lado: <span class="math display">\[\sum\limits(i+1)^{n+1} - i^{n+1} =
+        \sum\limits_i \left( \sum\limits_j {n+1 \choose j} i^j \right) - i ^{n+1} =\]</span> <span class="math display">\[\sum\limits_i^T \left( \sum\limits_j^n {n+1 \choose j} i^j \right) =\]</span> <span class="math display">\[\sum\limits_j^n {n+1 \choose j} \left( \sum\limits_i^T i^j \right) =\]</span> <span class="math display">\[\sum\limits_j^n {n+1 \choose j} S_j(T) = (i+1)^{n+1} - i^{n+1}\]</span> <span class="math display">\[S_n(T) = \frac{(i+1)^{n+1} - i^{n+1} - \sum\limits_j^{n-1} {n+1 \choose j} S_j(T)}{n+1}\]</span></p>
+<h1 id="calculando-integrales" class="unnumbered">Calculando Integrales</h1>
+<p>Si Tenemos una sucesión de particiones <span class="math inline">\((\pi_n)_n\)</span>, y tenemos que <span class="math display">\[\lim\limits_{n \to \infty} S(f, \pi) - s(f,\pi) = 0 \iff\]</span> <span class="math display">\[\lim\limits_{n \to \infty} S(f, \pi) = \lim\limits_{n \to \infty}s(f,\pi) = k\]</span> Luego <span class="math inline">\(\int (x) dx = e\)</span></p>
+<p>Por ejemplo, si <span class="math inline">\(f(x) = x\)</span>, y tomamos <span class="math inline">\((\pi_n)_i = \frac{i}{n}\)</span>, luego tenemos: <span class="math display">\[S(f, \pi_n) = \sum\limits_{i = 1}^n \frac{1}{n} \cdot \frac{i}{n} = \frac{1}{n^2} \cdot \frac{i(i+1)}{2}\]</span> <span class="math display">\[S(f, \pi_n) = \sum\limits_{i = 1}^n \frac{1}{n} \cdot \frac{i-1}{n} = \frac{1}{n^2} \cdot \frac{i(i-1)}{2}\]</span> Que ambas tienden a <span class="math inline">\(\frac{1}{2}\)</span> con <span class="math inline">\(n \to \infty\)</span>.</p>
+<h1 id="función-de-dirichlet" class="unnumbered">Función de Dirichlet</h1>
+<p>Definimos <span class="math inline">\(f(x) = 
+    \begin{cases}
+        1 &amp; \text{Si $x \in \mathbb{Q}$} \\
+        0 &amp; \text{Si $x \notin \mathbb{Q}$}
+    \end{cases}\)</span>.</p>
+<p>Notemos que <span class="math inline">\(S(f, \pi) = 1\)</span> para todo <span class="math inline">\(\pi\)</span>, y similarmente <span class="math inline">\(s(f, \pi) = 0\)</span>, ya que <span class="math inline">\(\mathbb{Q}\)</span> y <span class="math inline">\(\mathbb{R}- \mathbb{Q}\)</span> son densos en <span class="math inline">\(\mathbb{R}\)</span>.</p>
+<h1 id="integrabilidad-de-las-contínuas" class="unnumbered">Integrabilidad de las Contínuas</h1>
+<p>Cualquier función contínua <span class="math inline">\(f : [a,b] \to \mathbb{R}\)</span> contínua es Riemann integrable.</p>
+<h1 id="teorema-fundamental-del-cálculo" class="unnumbered">Teorema Fundamental del Cálculo</h1>
+<p>Dada <span class="math inline">\(f : [a,b] \to \mathbb{R}\)</span> contínua, si definimos <span class="math inline">\(F(x) = \int_a^x f(t) dt\)</span>, luego tenemos <span class="math inline">\(F\)</span> continua en <span class="math inline">\([a,b]\)</span> y derivable en <span class="math inline">\((a,b)\)</span>, y <span class="math display">\[\forall x \in (a,b) : F&#39;(x) = f(x)\]</span></p>
+<p>Asimismo, si tenemos <span class="math inline">\(f : [a,b] \to_{\mathcal{C}^1} \mathbb{R}\)</span>, luego <span class="math display">\[\int_a^b f&#39;(x) = f(b) - f(a)\]</span></p>
+<h1 id="integral-como-masa-dada-densidad" class="unnumbered">Integral como Masa dada Densidad</h1>
+<p>Si <span class="math inline">\(\rho : [a,b] \to \mathbb{R}\)</span> es la densidad de un alambre, luego <span class="math inline">\(\int_a^b \rho(x) dx\)</span> es la masa del alambre.</p>
+<h1 id="integral-como-probabilidad" class="unnumbered">Integral como Probabilidad</h1>
+<p>Si tengo <span class="math inline">\(\rho(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}\)</span> la campana de Gauss, luego para cualquier intervalo <span class="math inline">\([a,b]\)</span>, la probabilidad de que una variable aleatoria distribuida como <span class="math inline">\(\rho\)</span> caiga en <span class="math inline">\([a,b]\)</span> es <span class="math display">\[\int_a^b \rho(x) dx\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

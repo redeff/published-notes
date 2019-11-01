@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="forma-implícita-y-paramétrica" class="unnumbered">Forma Implícita y Paramétrica</h1>
+<p>Forma implícita de un plano: <span class="math display">\[P = \{(x,y,z) : ax + by + cz = d\}\]</span></p>
+<p>Forma paramétrica: <span class="math display">\[P = \{(x, y, f(x,y)) : x,y \in \mathbb{R}\}\]</span> La forma paramétrica se rompe cuando el coeficiente de <span class="math inline">\(z\)</span> es <span class="math inline">\(0\)</span>, pero en esos casos siempre podemos despejar otra variable.</p>
+<p>La forma implícita también se puede escribir como: <span class="math display">\[\Pi = \{x : \langle v, x \rangle = \langle v, p \rangle = 0\}\]</span> donde <span class="math inline">\(p\)</span> es un punto en el plano y <span class="math inline">\(v\)</span> es el fector normal. Notemos que si <span class="math inline">\(fx = \langle v, x \rangle\)</span>, luego <span class="math inline">\(\nabla f = v^t\)</span>.</p>
+<p>Las rectas de la forma <span class="math inline">\(y = ax + b\)</span> son también la curva de nivel dada por <span class="math inline">\(F(x, y) = -b\)</span>, con <span class="math inline">\(F(x) = ax - y\)</span>, es decir, <span class="math inline">\(\nabla F = (a, -1)\)</span></p>
+<h1 id="conjuntos-de-nivel" class="unnumbered">Conjuntos de Nivel</h1>
+<p>si tenemos una función <span class="math inline">\(f(x,y)\)</span> y tomamos una curva de nivel <span class="math inline">\(f(x,y) = k\)</span>, luego por ejemplo si <span class="math inline">\(x^2+y^2 = 1\)</span>, luego en todo punto hay un entorno donde podemos despejar <span class="math inline">\(y\)</span> en función de <span class="math inline">\(x\)</span> o viceversa.</p>
+<p>Entonces supongamos que queremos <span class="math inline">\(\max \{g(x,y) : f(x,y) = k\}\)</span> para una función <span class="math inline">\(g : \mathbb{R}^2 \to \mathbb{R}\)</span>. Si podemos partir el gráfico de la curva de nivel <span class="math inline">\(f(x,y) = k\)</span> en gráficos de a pedazos, luego podemos aplicar regla de la cadena e igualar a <span class="math inline">\(0\)</span>.</p>
+<h1 id="función-implícita" class="unnumbered">Función Implícita</h1>
+<p>Si tenemos <span class="math inline">\(p \in \{(x,y) : f(x,y) = r\} = S_r(f), f \in \mathcal{C}_1\)</span> una curva de nivel y una parametrización local <span class="math inline">\(\sigma : (0,1) \to B, \sigma \in \mathcal{C}_1\)</span> tal que <span class="math inline">\(\mathop{\mathrm{Im}}\sigma = S_r(f) \cap B\)</span>, con <span class="math inline">\(B\)</span> un entorno de <span class="math inline">\(p\)</span>.</p>
+<p>Lugo notemos que por definición <span class="math inline">\(f \circ \sigma\)</span> es constantemente <span class="math inline">\(r\)</span>. Luego por regla de la cadena: <span class="math display">\[\nabla f (\sigma t) \cdot \nabla \sigma t = (f \circ \sigma)&#39; = 0\]</span> <span class="math display">\[\nabla f p \cdot \nabla \sigma t_0 = 0\]</span> Luego el gradiente de <span class="math inline">\(\sigma\)</span> es ortogonal al gradiente de <span class="math inline">\(f\)</span>.</p>
+<h1 id="recta-tangente" class="unnumbered">Recta tangente</h1>
+<p>Si tenemos una función <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}, f \in \mathcal{C}^1\)</span>, luego la recta tangente a <span class="math inline">\(S_{fp}(f)\)</span> por <span class="math inline">\(p\)</span> está dada por <span class="math inline">\(\ell = \{v \in \mathbb{R}^n : \langle\nabla fp, v-p \rangle = 0\}\)</span></p>
+<p>El razonamiento es el mismo que para <span class="math inline">\(f : \mathbb{R}^2 \to \mathbb{R}\)</span></p>
+<h1 id="ejercicio" class="unnumbered">Ejercicio</h1>
+<p>Hallar la ecuación de la recta tangente en <span class="math inline">\((1,2)\)</span> a la curva <span class="math inline">\(\{e^{2x-y} -xy + 1 = 0\}\)</span>.</p>
+<p>Sea <span class="math inline">\(F(x,y) = e^{2x-y} -xy + 1\)</span>. Luego queremos calcular: <span class="math display">\[\nabla F(x,y) = (2e^{2x-y}-y, -e^{2x-y}-x)\]</span> <span class="math display">\[\nabla F(1,2) = (0, -2)\]</span> Luego la tangente está dada por <span class="math display">\[\ell = \{v : \langle (0,-2), v \rangle = \langle (0,-2), (1,2) \rangle \}\]</span> <span class="math display">\[\ell = \{v : -2v_y = -4 \}\]</span> <span class="math display">\[\ell = \{v : v_y = 2 \}\]</span></p>
+<h1 id="teorema-de-la-función-implícita" class="unnumbered">Teorema de la Función Implícita</h1>
+<p>Si tenemos <span class="math inline">\(f : \mathbb{R}^2 \to \mathbb{R}, F \in \mathcal{C}^1\)</span>, con <span class="math inline">\(p \in F\)</span>, y sea <span class="math inline">\(r = Fp\)</span>, con <span class="math inline">\(\frac{\partial F}{\partial y}p \neq 0\)</span>, luego existe <span class="math inline">\(f (B \subseteq\mathbb{R}) \to \mathbb{R}, f\in \mathcal{C}^1\)</span>, tal que <span class="math inline">\(p_x \in B^o\)</span> y <span class="math inline">\(F(x, fx) = r, \forall x \in B\)</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

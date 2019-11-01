@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="subespacios-f-invariantes" class="unnumbered">Subespacios <span class="math inline">\(f\)</span>-invariantes</h1>
+<p>Son los <span class="math inline">\(S \in \mathbb{V}: f(S) \subseteq S\)</span>.</p>
+<h1 id="imagen-de-un-polinomio" class="unnumbered">Imagen de un polinomio</h1>
+<p>Sea <span class="math inline">\(p \in k[x]\)</span>, luego la imagen y el núcleo de <span class="math inline">\(p(f)\)</span> son <span class="math inline">\(f\)</span>-invariantes, ya que tenemos <span class="math inline">\(f(p(f)v) = p(f)(fv) \in \mathop{\mathrm{Im}}p(f)\)</span></p>
+<h1 id="diagonalizabilidad-de-las-restringidas" class="unnumbered">Diagonalizabilidad de las Restringidas</h1>
+<p>Sea <span class="math inline">\(S\)</span> <span class="math inline">\(f\)</span>-invariante, luego tenemos que <span class="math inline">\(f_S\)</span> es diagonalizable.</p>
+<p>Por diagonalizabilidad, tenemos que <span class="math inline">\(\mathbb{V}= \bigoplus \mathbb{V}_{\lambda_i}\)</span> Tomemos entonces <span class="math inline">\(\{v_i\}_{i \leq n}\)</span> una base de autovectores. Sea <span class="math inline">\(w = \sum\limits\alpha_iv_i \in S\)</span>, luego: <span class="math display">\[f(w) \in S\]</span> <span class="math display">\[\sum\limits\alpha_i f(v_i) \in S\]</span> <span class="math display">\[\sum\limits\alpha_i \lambda_i v_i \in S\]</span></p>
+<h1 id="ejercicio" class="unnumbered">Ejercicio</h1>
+<p>Son equivalentes:</p>
+<ol>
+<li><p>Los únicos <span class="math inline">\(f\)</span>-invariantes son <span class="math inline">\(\{0\}\)</span> y <span class="math inline">\(\mathbb{V}\)</span>.</p></li>
+<li><p>Todo vector <span class="math inline">\(v \neq 0\)</span> es cíclico.</p></li>
+<li><p><span class="math inline">\(\chi_f\)</span> es irreducible.</p></li>
+</ol>
+<p>Para 3 <span class="math inline">\(\Rightarrow\)</span> 1, tenemos <span class="math inline">\(S \in \mathbb{V}\)</span> <span class="math inline">\(f\)</span>-invariante, luego <span class="math inline">\(\chi_{f_S} \mid \chi_f\)</span>, pero entonces no es irreducible, estamos.</p>
+<p>Para 2 <span class="math inline">\(\Rightarrow\)</span> 3, tenemos que ara <span class="math inline">\(v \neq 0\)</span>, <span class="math inline">\(\deg m_{f_v} = n\)</span>, ya que <span class="math inline">\(v\)</span> es cíclico, luego <span class="math inline">\(m_{f_v} \mid m_f \mid \chi_f\)</span>, y tienen todos el mismo grado. Luego son iguales.</p>
+<p>Entonces como <span class="math inline">\(m_f = \chi_f\)</span>, si asumimos <span class="math inline">\(m_f = \chi_f = p \cdot q\)</span>, con <span class="math inline">\(p\)</span> y <span class="math inline">\(q\)</span> no triviales, luego ninguno de <span class="math inline">\(\ker p(f)\)</span> y <span class="math inline">\(\ker q(f)\)</span> son triviales, y ambos son <span class="math inline">\(f\)</span>-invariantes. Luego estamos.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

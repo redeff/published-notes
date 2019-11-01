@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="polinomio-característico" class="unnumbered">Polinomio Característico</h1>
+<p>Propuedades:</p>
+<ul>
+<li><p><span class="math inline">\(S_\lambda= \{v : fv = \lambda v\}\)</span></p></li>
+<li><p><span class="math inline">\(S_0 = \ker f\)</span></p></li>
+<li><p><span class="math inline">\(A\)</span> inversible sii <span class="math inline">\(S_0 = \{0\}\)</span></p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{spec}}A = \mathop{\mathrm{spec}}A^t\)</span></p></li>
+<li><p><span class="math inline">\(\chi_A = \chi_{A^t}\)</span></p></li>
+<li><p><span class="math inline">\(\lambda\in \mathop{\mathrm{spec}}A \Rightarrow\lambda^k \in \mathop{\mathrm{spec}}A^k\)</span></p></li>
+<li><p><span class="math inline">\(p (\mathop{\mathrm{spec}}A) = \mathop{\mathrm{spec}}(pA)\)</span> para todo polinomio <span class="math inline">\(p \in \mathbb{K}[x]\)</span></p></li>
+<li><p><span class="math inline">\(S_\lambda\)</span> y <span class="math inline">\(S_\mu\)</span> están en suma directa si <span class="math inline">\(\lambda\neq \mu\)</span>.</p></li>
+</ul>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Si <span class="math inline">\(\{Ac, x\}\)</span> es ld para todo <span class="math inline">\(x\)</span>, luego demostrar que <span class="math inline">\(A = cI\)</span>.</p>
+<p>Notemos que implica que todo <span class="math inline">\(x\)</span> es autovector. Supongamos que hay <span class="math inline">\(v_1\)</span> y <span class="math inline">\(v_2\)</span> con autovalores <span class="math inline">\(\lambda_1\)</span>, <span class="math inline">\(\lambda_2\)</span>. Luego <span class="math display">\[\lambda_1 v_1 + \lambda_2 v_2 = A(v_1 + v_2) = \lambda(v_1 + v_2) = \lambda v_1 + \lambda v_2\]</span> Luego si <span class="math inline">\(\lambda_1 \neq \lambda_2\)</span> son li, luego <span class="math inline">\(\lambda_1 = \lambda= \lambda_2\)</span>. Contradicción.</p>
+<p>Luego todos los vectores tienen el mismo autovalor y estamos.</p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Una matriz <span class="math inline">\(A \in \mathbb{C}^{n \times n}\)</span> es nilpotente sii su único autovalor es <span class="math inline">\(0\)</span>.La ida es fácil, ya que si <span class="math inline">\(\lambda\)</span> es autovalor de <span class="math inline">\(A\)</span> luego <span class="math inline">\(\lambda^k\)</span> es de <span class="math inline">\(A^k\)</span>.</p>
+<p>Para la vuelta hacemos <span class="math inline">\(A \sim T\)</span> con <span class="math inline">\(T\)</span> triangular, y con los autovelores en la diagonal. Luego tenemos una triangular estricta, que sabemos que es nulpotente.</p>
+<h1 id="ejercicio-3" class="unnumbered">Ejercicio 3</h1>
+<p>Dada <span class="math inline">\(A \in \mathbb{C}^{n \times n}\)</span>, existe <span class="math inline">\(T \sim A\)</span>, <span class="math inline">\(T\)</span> triangular superior. Usemos inducción.</p>
+<p>Si tenemos la matriz <span class="math inline">\(A\)</span>, expresémosla en una base <span class="math inline">\(\mathcal{B}\)</span> donde el primer vector es un autovector de <span class="math inline">\(A\)</span>. Luego la primer columna será todo <span class="math inline">\(0\)</span> menos en su primer entrada:</p>
+<p><span class="math display">\[C_{E\mathcal{B}}AC_{\mathcal{B}E} = 
+\begin{bmatrix}
+    \lambda&amp; u \\
+    0 &amp; A&#39;
+\end{bmatrix}\]</span></p>
+<p>Por inducción, <span class="math inline">\(A&#39; = CT&#39;C^{-1}\)</span>. Luego tomemos <span class="math inline">\(D =
+\begin{bmatrix}
+    1 &amp; 0 \\
+    0 &amp; C
+\end{bmatrix}\)</span> Es claro que <span class="math inline">\(DC_{E\mathcal{B}}AC_{\mathcal{B}E}D^{-1}\)</span> es triangular superior.</p>
+<p>Notemos que en la matriz final <span class="math inline">\(T\)</span> tendremos que en la diagonal están los autovalores con multiplicidad algebraica.</p>
+<p>Además, tendremos <span class="math inline">\(\mathop{\mathrm{tr}}A = \sum\limits\lambda_i\)</span> y <span class="math inline">\(\det A = \prod \lambda_i\)</span></p>
+<h1 id="ejercicio-4" class="unnumbered">Ejercicio 4</h1>
+<p><span class="math inline">\(M\)</span> nilpotente sii <span class="math inline">\(\mathop{\mathrm{tr}}M^i = 0\)</span> para todo <span class="math inline">\(i\)</span>.</p>
+<h1 id="ejercicio-5" class="unnumbered">Ejercicio 5</h1>
+<p>Sean <span class="math inline">\(f, g: \mathbb{V}\to \mathbb{V}\)</span>, con <span class="math inline">\(f\)</span> diagonalizable. <span class="math inline">\(\mathbb{V}\)</span> es <span class="math inline">\(\mathbb{C}\)</span>-ev. finitamente generado. Luego <span class="math inline">\(f \circ g = g \circ f \iff g(S_\lambda) \subseteq S_\lambda\)</span> para todo <span class="math inline">\(\lambda\)</span>.</p>
+<p>Notemos que para la ida, tenemos que <span class="math display">\[v \in S_\lambda\Rightarrow\]</span> <span class="math display">\[fv = \lambda v\]</span> <span class="math display">\[g(fv) = g(\lambda v)\]</span> <span class="math display">\[f(gv) = \lambda gv\]</span> Luego <span class="math inline">\(gv \in S_\lambda\)</span></p>
+<p>Para la vuelta, tomemos sobre una base de autovectores: <span class="math display">\[g(fv) = g(\lambda v) = \lambda(gv) = f(gv)\]</span> Luego estamos.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

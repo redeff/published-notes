@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="minimal-en-autovalores" class="unnumbered">Minimal en autovalores</h1>
+<p>Sea <span class="math inline">\(p \in k[x]\)</span>, <span class="math inline">\(p(A) = 0\)</span>. Luego <span class="math inline">\(p(\lambda) = 0\)</span> para todo autovalor.</p>
+<p>Sea <span class="math inline">\(v \in \mathbb{V}\)</span> tal que <span class="math inline">\(Av = \lambda v\)</span>, luego <span class="math display">\[0 = p(A) \cdot v = \sum\limits a_iA^iv = \sum\limits a_i\lambda^iv = v \cdot p(\lambda)\]</span> <span class="math display">\[0 = v \cdot p(\lambda)\]</span> <span class="math display">\[0 = p(\lambda)\]</span></p>
+<h1 id="minimal-de-un-vector" class="unnumbered">Minimal de un vector</h1>
+<p>Dado una función <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>, y un <span class="math inline">\(v \in \mathbb{V}\)</span>, se dice que <span class="math inline">\(m_v\)</span> es el menor polinomio mónico tal que <span class="math inline">\(m_v(f)(v) = 0\)</span></p>
+<p>Tenemos que <span class="math inline">\(m_f = \mathop{\mathrm{lcm}}\{m_{\mathcal{B}_i}(x)\}\)</span>, con <span class="math inline">\(\mathcal{B}\)</span> una base.</p>
+<h1 id="ejemplo-1" class="unnumbered">Ejemplo 1</h1>
+<p>Si tenemos <span class="math display">\[A =
+    \begin{bmatrix}
+        1 &amp; 0 &amp; 0 \\
+        1 &amp; 1 &amp; 0 \\
+        0 &amp; 0 &amp; 2 \\
+    \end{bmatrix}\]</span> Calcular el minimal.</p>
+<p>Calcularmos el caraterísticos de cada canónico. <span class="math display">\[\{e_1, Ae_1, A^2e_1\}=\]</span> <span class="math display">\[\left\{
+        \begin{bmatrix}
+            1 \\ 0 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+            1 \\ 1 \\ 0
+        \end{bmatrix},
+        \begin{bmatrix}
+            1 \\ 2 \\ 0
+        \end{bmatrix}
+\right\}\]</span></p>
+<h1 id="criterio-de-diagonalización" class="unnumbered">Criterio de Diagonalización</h1>
+<p>Una función <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> es diagonalizable sii <span class="math inline">\(m_f(x)\)</span> se factoriza linealmente como producto de factores distintos.</p>
+<p>En particular, si <span class="math inline">\(f\)</span> tiene <span class="math inline">\(n\)</span> autovalores distintos, es diagonalizable.</p>
+<h1 id="hamilton-cayley" class="unnumbered">Hamilton Cayley</h1>
+<p>Si tenemos una matriz cuadrada <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>, entonces <span class="math inline">\(\chi_A(A) = 0\)</span>.</p>
+<p>Demo: Para diagonalizables es trivial. Para cualquier otra por continuidad.</p>
+<h1 id="potencias-de-una-matriz" class="unnumbered">Potencias de una matriz</h1>
+<p>Si tenemos una matriz inversible <span class="math inline">\(A\)</span>, luego notemos que si sabemos <span class="math inline">\(\chi_A\)</span>, entonces podemos despejar <span class="math inline">\(A^{-1}\)</span></p>
+<p>Además, si escrivimos <span class="math inline">\(x^n = q_n(x) \cdot \chi_A(x) + r_n(x)\)</span>. Luego, por cada autovalor <span class="math inline">\(\lambda\)</span> de <span class="math inline">\(A\)</span>, evaluamos este polinomio en <span class="math inline">\(\lambda\)</span>, y si es raíz múltiple, evaluamos <span class="math inline">\(\lambda\)</span> es la derivada primera, segunda, etc de <span class="math inline">\(r(x)\)</span>, y así despejamos los coeficientes de <span class="math inline">\(r_n(x)\)</span>.</p>
+<p>Así obtenemos <span class="math inline">\(r_n\)</span>, entonces tenemos que <span class="math inline">\(A^n = r_n(A)\)</span>.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

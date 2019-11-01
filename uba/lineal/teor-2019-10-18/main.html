@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="polinomio-característico" class="unnumbered">Polinomio Característico</h1>
+<p>Dada una matriz <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>, se define <span class="math inline">\(\chi_A(x) = \det (xI - A)\)</span> el polinomio característico de la matriz <span class="math inline">\(A\)</span>.</p>
+<p>Se tiene que <span class="math inline">\(\chi_A\)</span> es un polinomio mónico de grado <span class="math inline">\(n\)</span>, y con <span class="math inline">\(\chi_A(0) = (-1)^n \det A\)</span></p>
+<h1 id="característico-de-semejantes" class="unnumbered">Característico de Semejantes</h1>
+<p>Si <span class="math inline">\(A \sim B\)</span>, luego <span class="math inline">\(\chi_A = \chi_B\)</span> Esto es ya que: <span class="math display">\[\det (xI - B) =\]</span> <span class="math display">\[\det (xI - CAC^{-1}) =\]</span> <span class="math display">\[\det (C(xI)C^{-1} - CAC^{-1}) =\]</span> <span class="math display">\[\det C \cdot \det (xI - A) \cdot \det C^{-1}=\]</span> <span class="math display">\[\det (xI - A)\]</span> Luego está.</p>
+<h1 id="característico-en-mathbbvto-mathbbv" class="unnumbered">Característico en <span class="math inline">\(\mathbb{V}\to \mathbb{V}\)</span></h1>
+<p>Por el teorema anterior, está bien definido <span class="math inline">\(\chi_f\)</span> donde <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>, ya que es independiente de la base.</p>
+<h1 id="autovalores" class="unnumbered">Autovalores</h1>
+<p>Podemos ahora decir que <span class="math inline">\(\lambda \in \mathbb{K}\)</span> es un autovalor de <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> sii <span class="math inline">\(\chi_f(\lambda) = 0\)</span>, y se dice que <span class="math inline">\(\mathop{\mathrm{spec}}f = \{\lambda : \chi_f \lambda = 0 \}\)</span></p>
+<p>Esto implica que toda <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> tiene <span class="math inline">\(\dim \mathbb{V}\)</span> autovalores contados con multiplicidad, con <span class="math inline">\(\mathbb{V}\)</span> un <span class="math inline">\(\mathbb{C}\)</span>-ev.</p>
+<h1 id="multiplicidad-de-autovalores" class="unnumbered">Multiplicidad de Autovalores</h1>
+<p>La dimensión de <span class="math inline">\(S\lambda= \{v : fv = \lambda v\}\)</span> es la <em>multiplicidad geométrica</em> de <span class="math inline">\(\lambda\)</span>, pero el máximo <span class="math inline">\(k\)</span> que <span class="math inline">\((x - \lambda)^k | \chi_f\)</span> es la <em>multiplicidad algebraica</em> de <span class="math inline">\(\lambda\)</span>.</p>
+<h2 id="lema-dim-s_lambdaleqmathopmathrmmult_lambda" class="unnumbered">Lema <span class="math inline">\(\dim S_\lambda\leq\mathop{\mathrm{mult}}_\lambda\)</span></h2>
+<p>Tenemos <span class="math inline">\(m = \mathop{\mathrm{mult}}_\lambda\chi_f\)</span>. Luego <span class="math inline">\(\chi_f = (x - \lambda)^mq(x)\)</span>, con <span class="math inline">\(q(\lambda) \neq 0\)</span>.</p>
+<p>Supongamos que <span class="math inline">\(r = \dim S_\lambda\geq m+1\)</span>. Tomamos <span class="math inline">\(\{v_i\}_{i \leq r}\)</span> base de <span class="math inline">\(S_\lambda\)</span>, y extendámosla a una base <span class="math inline">\(\mathcal{B}\)</span> de <span class="math inline">\(\mathbb{V}\)</span>.</p>
+<p>Tenemos que: <span class="math display">\[[f]_\mathcal{B}= 
+    \begin{bmatrix}
+        \lambda I_r &amp; * \\
+        0 &amp; B
+    \end{bmatrix}\]</span></p>
+<p>Tenemos que <span class="math display">\[\chi_f =
+\det \left(
+    xI - \begin{bmatrix}
+        \lambda I_r &amp; * \\
+        0 &amp; B
+\end{bmatrix} \right) =\]</span> <span class="math display">\[\det (xI - \lambda I) \cdot \det(xI - B)\]</span> <span class="math display">\[\det ((x - \lambda) I) \cdot \det(xI - B)\]</span> <span class="math display">\[(x - \lambda)^r \cdot \det(xI - B)\]</span> Pero luego la multiplicidad algebraica es al menos <span class="math inline">\(r\)</span>. Contradicción.</p>
+<h1 id="diagonalizabilidad" class="unnumbered">Diagonalizabilidad</h1>
+<p>Tenemos que <span class="math inline">\(f\)</span> es <em>diagonalizable</em> si <span class="math inline">\([f]_\mathcal{B}\)</span> es diagonal en alguna base</p>
+<p>Alternativamente, <span class="math inline">\(f\)</span> es diagonalizable sii la multiplicidad geométrica y la algebraica coinciden para todo autovalor, ya que podemos elegirnos <span class="math inline">\(\mathop{\mathrm{mult}}_l\)</span> vectores an cada autoespacio que formarán una base.</p>
+<p>La vuelta es contriuirse la matriz diagonal y hacer la determinante por Leibniz, que da la productoria.</p>
+<h1 id="ideales-en-mathbbkx" class="unnumbered">Ideales en <span class="math inline">\(\mathbb{K}[x]\)</span></h1>
+<p>Un <em>ideal</em> de <span class="math inline">\(\mathbb{K}[x]\)</span> es un subespacio <span class="math inline">\(I \subseteq\mathbb{K}[x]\)</span> tal que <span class="math inline">\(fg \in I\)</span> para todo <span class="math inline">\(f \in I\)</span> y <span class="math inline">\(g \in \mathbb{K}[x]\)</span>.</p>
+<p>Notemos que <span class="math inline">\(\{0\}\)</span> es un ideal, y que además <span class="math inline">\(\{f \cdot g : f \in \mathbb{K}[x]\}\)</span> es un ideal para cualquier polinomio <span class="math inline">\(g\)</span>. Este es el ideal generado por <span class="math inline">\(g\)</span>, es decir <span class="math inline">\((g)\)</span>.</p>
+<p>Se dice también que <span class="math inline">\((g_1, \dots, g_n) = \left\{\sum\limits f_i \cdot g_i : f_i \in \mathbb{K}[x]\right\}\)</span></p>
+<h2 id="caracterización-de-los-ideales" class="unnumbered">Caracterización de los Ideales</h2>
+<p>Tomemos un ideal no nulo <span class="math inline">\(I \in \mathbb{K}[x]\)</span>, luego <span class="math inline">\(I = (g)\)</span> para algún <span class="math inline">\(g\)</span>.</p>
+<p>Demo: tomemos algún <span class="math inline">\(g \in I\)</span> mónico y de grado mínimo. Notemos que <span class="math inline">\((g) = I\)</span>, ya que para todo <span class="math inline">\(f \in I\)</span>, tenemos que <span class="math inline">\(f - gq = r\)</span>, con <span class="math inline">\(r = 0\)</span> o <span class="math inline">\(\deg r &lt; \deg g\)</span>. Como es ideal, sabemos que <span class="math inline">\(r \in I\)</span>, luego <span class="math inline">\(\deg r \geq \deg g\)</span>, entonces necesariamente <span class="math inline">\(r = 0\)</span>. Pero entonces <span class="math inline">\(f\)</span> es múltiplo de <span class="math inline">\(g\)</span>. Estamos.</p>
+<h1 id="polinomios-de-matrices" class="unnumbered">Polinomios de matrices</h1>
+<p>Dado un poly en <span class="math inline">\(p \in \mathbb{K}[x]\)</span>, y una <span class="math inline">\(A\in \mathbb{K}^{n \times n}\)</span>, luego podemos hacer <span class="math inline">\(p(A) = \sum\limits a_iA^i\)</span>, y cumple las propiedades:</p>
+<ul>
+<li><p><span class="math inline">\((p+q)A = pq + qA\)</span></p></li>
+<li><p><span class="math inline">\((pq)A = (pA)(qA)\)</span></p></li>
+</ul>
+<h2 id="polinomio-que-anula-a-la-matriz" class="unnumbered">Polinomio que anula a la matriz</h2>
+<p>Vamos a ver que existe un polinomio <span class="math inline">\(p \in \mathbb{K}[x]\)</span> tal que <span class="math inline">\(pA = 0\)</span>. Esto es verdad ya que <span class="math inline">\(I, A, A^2, \dots\)</span> viven todos en <span class="math inline">\(\mathbb{K}^{n \times n}\)</span>, luego existen algún subconjunto de las potencias de <span class="math inline">\(A\)</span> que sean ld, luego hay una combionación lineal no nula que da <span class="math inline">\(0\)</span>, luego ya estamos.</p>
+<h1 id="polinomio-minimal" class="unnumbered">Polinomio Minimal</h1>
+<p>Dada una <span class="math inline">\(A \in \mathbb{K}^{n \times n}\)</span>, tomemos <span class="math inline">\(I = \{p \in \mathbb{K}[x] : p(A) = 0\}\)</span>. Es claramente un ideal, y es no nulo por el lema anterior. Luego <span class="math inline">\(I = (m_A)\)</span> para un único polinomio mónico <span class="math inline">\(m_A\)</span>. <span class="math inline">\(m_A\)</span> se llama el <em>polinomio munimal</em> de <span class="math inline">\(A\)</span>.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

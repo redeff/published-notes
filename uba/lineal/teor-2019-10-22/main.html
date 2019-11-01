@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="plinomio-minimal" class="unnumbered">Plinomio minimal</h1>
+<p>Dada <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>, el <em>polinomio minimal</em> <span class="math inline">\(m_f\)</span> es el polinomio mónico de menor grado, tal que <span class="math inline">\(m_f(f) = 0\)</span> (la tl nula).</p>
+<p>Por ejemplo, si <span class="math inline">\(\dim V &gt; 0\)</span>, para <span class="math inline">\(f = \mathop{\mathrm{id}}\)</span>, tenemos que <span class="math inline">\(m_f(x) = x-1\)</span> y para <span class="math inline">\(f = 0\)</span> tenemos <span class="math inline">\(m_f(x) = 0\)</span></p>
+<h2 id="caso-mathbbv-0" class="unnumbered">Caso <span class="math inline">\(\mathbb{V}= \{0\}\)</span></h2>
+<p>Es ese caso, la única función <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> es la tl nula, que también es la identidad, luego <span class="math inline">\(m_f(x) = 1\)</span>, ya que <span class="math inline">\(\mathop{\mathrm{id}}= 0\)</span></p>
+<h1 id="se-rompe-para-mathbbv-infinito" class="unnumbered">Se rompe para <span class="math inline">\(\mathbb{V}\)</span> infinito</h1>
+<p>Si tenemos <span class="math inline">\(f : k[x] \to k[x]\)</span>, <span class="math inline">\(f(p(x)) = xp(x)\)</span>, luego tenmos que: <span class="math display">\[Q(f)(p(x)) = \sum\limits a_i x^i p(x) = Q(x)p(x)\]</span> Luego ningún no nulo <span class="math inline">\(Q\)</span> multiplicado por <span class="math inline">\(f\)</span> da la tl nula.</p>
+<h1 id="subespacios-invariantes" class="unnumbered">Subespacios invariantes</h1>
+<p>Dado <span class="math inline">\(\dim \mathbb{V}&lt; \infty\)</span> y <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>, luego <span class="math inline">\(S\)</span> sub de <span class="math inline">\(\mathbb{V}\)</span> es <em><span class="math inline">\(f\)</span>-invariante</em> sii <span class="math inline">\(f(S) \subseteq S\)</span>.</p>
+<p>Se dice que <span class="math inline">\(f_S\)</span> es la restricción de <span class="math inline">\(f\)</span> al subespacio <span class="math inline">\(S\)</span>, con <span class="math inline">\(f_S:S\to S\)</span></p>
+<h2 id="subespacio-f-cíclico-de-v" class="unnumbered">Subespacio <span class="math inline">\(f\)</span>-cíclico de <span class="math inline">\(v\)</span></h2>
+<p>Dado un <span class="math inline">\(v\)</span> no nulo en <span class="math inline">\(\mathbb{V}\)</span>, tomemos <span class="math inline">\(S = \langle f^iv \rangle_{i \geq 0}\)</span>, luego <span class="math inline">\(S\)</span> es claramente <span class="math inline">\(f\)</span>-invariante. Es te subsespacio se nota <span class="math inline">\(\langle v\rangle_f\)</span></p>
+<p>Decimos que <span class="math inline">\(f_v = f_{\langle v \rangle_f}\)</span></p>
+<h1 id="polinomio-minimales-sobre-restringidos" class="unnumbered">Polinomio minimales sobre restringidos</h1>
+<p>Para cada polinomio <span class="math inline">\(p(x) \in k[x]\)</span>, luego <span class="math display">\[p(f_v) = 0 \iff p(f_v)(v) = 0\]</span> Y además, si <span class="math inline">\(\dim V &lt; \infty\)</span>, luego existe un único polinomio mónico <span class="math inline">\(m_{f_v}(x) \in k[x]\)</span> tal que:</p>
+<ol>
+<li><p><span class="math inline">\(m_{f_v}(f)(v) = 0\)</span></p></li>
+<li><p><span class="math inline">\(\forall p \in k[x] : p(f)(v) = 0 \Rightarrow m_{f_v}(x) \mid p(x)\)</span></p></li>
+<li><p><span class="math inline">\(\deg m_{f_v}(x) = \dim \langle v \rangle_f\)</span>.</p></li>
+</ol>
+<p>Demo: Supongamos que <span class="math inline">\(p(f_v)(v) = 0\)</span>, luego veamos que todo <span class="math inline">\(w \in \langle v \rangle_f\)</span> cumple <span class="math inline">\(p(f_v)(w) = 0\)</span>.</p>
+<p>Tenemos <span class="math display">\[w = \sum\limits a_i f^iv\]</span> Tomemos <span class="math display">\[q(x) = \sum\limits a_i x^i\]</span> Luego <span class="math display">\[w = q(f)(v) = q(f_v)(v)\]</span> Luego <span class="math display">\[p(f_v)(w) = p(f_v)(q(f_v)(w))\]</span> <span class="math display">\[p(f_v)(w) = (p(f_v) \cdot q(f_v))(w)\]</span> <span class="math display">\[p(f_v)(w) = q(f_v)(p(f_v)(w))\]</span> <span class="math display">\[p(f_v)(w) = q(f_v)(0) = 0\]</span> Y cualquier tl en <span class="math inline">\(0\)</span> da <span class="math inline">\(0\)</span>.</p>
+<p>Demo: Tomemos <span class="math inline">\(m_{f_v}\)</span> el polinomio minimal de <span class="math inline">\(f_v\)</span>. Veamos que <span class="math inline">\(m_{f_v}(f)(v) = 0\)</span>. Notemos que <span class="math inline">\(m_{f_v}(f)(v) = m_{f_v}(f_v)(v)\)</span>, ya que solo lo evalúo en <span class="math inline">\(v\)</span>, luego es trivial.</p>
+<p>Para la segunda parte, tenemos que <span class="math inline">\(0 = p(f)(v) = p(f_v)(v)\)</span>, pero como esto es <span class="math inline">\(0\)</span>, tenemos por los que demostramos <span class="math inline">\(p(f_v) = 0\)</span>, luego <span class="math inline">\(p\)</span> está en el ideal del minimal, luego <span class="math inline">\(m_{f_v}(x) \mid p(x)\)</span>.</p>
+<p>Para la tercera parte, tomemos <span class="math inline">\(d = \deg m_{f_v}\)</span>: <span class="math display">\[m_{f_v}(f_v)(v) = 0 = \sum\limits a_if^i(v)\]</span> Luego <span class="math display">\[f^d(v) = -\sum\limits_{i &lt; d} a_if^i(v)\]</span> Luego <span class="math inline">\(\langle v \rangle_f = \langle v, fv, \dots, f^{d-1}v \rangle\)</span>, luego tenemos que <span class="math inline">\(\dim \langle v \rangle_f \leq d\)</span></p>
+<p>Pero además estos son li, ya que si fueran ld podríamos usar la combinación lineal que da <span class="math inline">\(0\)</span> para construirnos un polinomio más chico que el minimal.</p>
+<p>Luego <span class="math inline">\(\dim \langle v \rangle_f = d\)</span>.</p>
+<p>Tomemos entonces <span class="math inline">\(\mathcal{B}= \{v, fv, \dots, f^{d-1}v \}\)</span> base del subespacio cíclico. Veamos cómo es <span class="math inline">\([f]_\mathcal{B}\)</span>: <span class="math display">\[[f]_\mathcal{B}= \begin{bmatrix}
+        0 &amp; 0 &amp; 0&amp;\dots &amp; 0&amp;-a_0 \\
+        1 &amp; 0 &amp; 0&amp;\dots &amp; 0&amp;-a_1 \\
+        0 &amp; 1 &amp; 0&amp;\dots &amp; 0&amp;-a_2 \\
+        0 &amp; 0 &amp; 1&amp;\dots &amp; 0&amp;-a_3 \\
+        \vdots &amp;
+        \vdots &amp;
+        \vdots &amp;
+        \ddots &amp;
+        \vdots &amp;
+        \vdots \\
+        0 &amp; 0 &amp; 0&amp;\dots &amp; 1&amp;-a_{d-1} \\
+    \end{bmatrix}\]</span> Que es la matriz compañera del polinomio característico.</p>
+<h1 id="mínimo-común-múltiplo" class="unnumbered">Mínimo común múltiplo</h1>
+<p>Sea <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>, con <span class="math inline">\(\mathbb{W}\subseteq\mathbb{V}\)</span> <span class="math inline">\(f\)</span>-invariante. Luego <span class="math inline">\(m_{f_\mathbb{W}} \mid m_f\)</span>.</p>
+<p>También tenemos</p>
+<ol>
+<li><p><span class="math inline">\(m_f = \mathop{\mathrm{lcm}}\{m_{f_v} : v \in \mathbb{V}\}\)</span></p></li>
+<li><p>Si <span class="math inline">\(\mathbb{V}= \mathbb{V}_1 + \dots + \mathbb{V}_2\)</span>, luego <span class="math inline">\(m_f = \mathop{\mathrm{lcm}}\{m_{f_{\mathbb{V}_i}}\}_i\)</span></p></li>
+<li><p>Si <span class="math inline">\(\mathbb{V}= \sum\limits\langle v_i \rangle_f\)</span>, luego <span class="math inline">\(m_f = \mathop{\mathrm{lcm}}\{m_{f_{v_i}}\}_i\)</span></p></li>
+</ol>
+<p>Notemos que <span class="math inline">\(0 = m_f(f)(v) = m_f(f_v)(v)\)</span>, luego <span class="math inline">\(m_f(f_v) = 0\)</span>, entonces <span class="math inline">\(m_{f_v} \mid m_f\)</span>. Escribamos entonces <span class="math inline">\(m_f(x) = m_{f_v}(x) \cdot q_v(x)\)</span>.</p>
+<p>Vamos a ver que si existe <span class="math inline">\(p(x) : \forall w : m_{f_w} \mid p(x)\)</span>, luego demostremos que <span class="math inline">\(m_f \mid p\)</span>.</p>
+<p>Tenemos <span class="math inline">\(p(f)(v) = (p&#39;_v(f) \cdot m_{f_v}(f)) (v) = p&#39;_v(f) (m_{f_v}(f)(v)) = p&#39;_v(f)(0) = 0\)</span>, luego <span class="math inline">\(p(f)(v) = 0\)</span> para todo <span class="math inline">\(v\)</span>, luego <span class="math inline">\(m_f \mid p\)</span>.</p>
+<p>Entonces <span class="math inline">\(m_f = \mathop{\mathrm{lcm}}\{m_{f_v} : v \in \mathbb{V}\}\)</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
