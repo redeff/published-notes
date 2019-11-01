@@ -1,0 +1,129 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Multiplicadores de Lagrange}
+Si tenemos $f,g : (A \inn \R^n) \to_{\CC^1} \R$, luego tomemos el conjunto de nuvel $S = S_r(g)$. Luego tomemos un $p \in S$ que sea mínimo local restringido a $S$.
+
+Luego el teorema nos dice que $\nabla f(p) \parallel \nabla g(p)$. Es decir, que $p$ es de la forma:
+\[
+	\nabla f(p) = \l \nabla g(p)
+\]
+o
+\[
+	\nabla g(p) = 0
+\]
+\section*{Ejemplo 1}
+Tengo $S = \{y^2 = 8 - x^3\}$. Queremos el máximo de $f(x,y) = xy$ en $S \cap \{x,y \geq 0\}$.
+
+Tomemos $g(x,y) = x^3 + y^2$, luego queremos el mínimo de $f$ en una curva de nivel de $g$, luego calculemos:
+\[
+	\nabla g(x,y) = (3x^2, 2y)
+\]
+\[
+	\nabla f(x,y) = (y,x)
+\]
+Notemos que $\nabla g(x,y) = 0$ sólo para $(x,y) = (0,0)$, en cuyo caso $g(x,y) \neq 8$.
+
+Busquemos entonces
+\[
+	\nabla f(x,y) = \l \nabla g(x,y)
+\]
+\[
+	(y, x) = \l (3x^2, 2y)
+\]
+Con $g(x,y) = 8$. Queda el sistema de ecuaciones:
+\[
+	\begin{cases}
+		y = 3\l x^2 \\
+		x = 2\l y \\
+		x^3 + y^2 = 8 \\
+	\end{cases}
+\]
+Luego $x = 2\l y$, luego $y = 3\l (2\l y)^2 = 12\l^3 y^2$, y ahí resolvemos.
+
+Alternativamente, tomemos el determinante:
+\[
+	\det \begin{bmatrix}
+		\nabla f(x) \\
+		\nabla g(x)
+	\end{bmatrix} =
+\]
+\[
+	2y^2 - 3x^3 = 0
+\]
+\[
+	y^2 + x^8 = 0
+\]
+Que es un sistema lineal, y estamos.
+\section*{Demo de Lagrange}
+Tomemos $f, g : \R^2 \to_{\CC^1} \R$, con un mínimo local restringido a $g$ en $p$.
+
+Si $\nabla gp = 0$, ya estamos.
+
+Si no, entonces wlog $\frac{\partial g}{\partial y} \neq 0$. Como $g$ es $\CC^1$, por el teorema de función implícita, existe un $\phi : \R \to \R$ tal que $g(x, \phi (x)) = g(p_x,p_y)$ en un entorno.
+
+Tomemos entonces la composición $h(x) = f(x, \phi x)$. Queremos que $p_x$ sea un mínimo local en $h$, luego $h'(p_x) = f_x(p_x, \phi p_x) + \phi'(p_x) f_y(p_x, \phi p_x) = 0$
+
+Además, sabemos que $\phi'(p_x) = -\frac{g_x(p)}{g_y(p)} $. Reemplazando:
+\[
+	f_x(p_x, \phi p_x) - \frac{g_x(p)}{g_y(p)}  f_y(p_x, \phi p_x) = 0
+\]
+\[
+	f_x(p) - \frac{g_x(p)}{g_y(p)}  f_y(p) = 0
+\]
+\[
+	f_x(p)g_y(p) - g_x(p) f_y(p) = 0
+\]
+Que es la determinante
+
+\section*{Observación}
+Si tenemos que $\{ \nabla f(p), \nabla g(p) \}$ son li, luego forman una base. Luego la función $F(x,y) = (f(x,y), g(x,y))$ tiene un diferencial $DF(p)$ inversible, luego por función inversa es inversible en un entorno.
+
+Luego puedo encontrar un $p'$ tal que $F(p') = (f(p) - \e, g(p))$, luego $p$ no es mínimo.
+
+Esto nos dá otra demsotración.
+
+\section*{Lagrange Multidimensional}
+Si tenemos varias restricciones, entonces vale que el conjunto de todos los gradientes en el punto (tanto de las restricciones como de la función a minimizar) forman un conjunto linealmente dependiente.
+
+\section*{Ejemplo 2}
+Hallar los puntos más cercanos y lejanos del origen en el conjunto
+\[S = \{(x,y,z) : z^2 = x^2 + y^2, x-2z = 3\}\]
+Que es la intersección entre un cono y un plano.
+Tomemos
+\[f(x,y,z) = x^2 + y^2 + z^2\]
+\[g(x,y,z) = -z^2 + x^2 + y^2\]
+\[h(x,y,z) = x - 2z\]
+Si las derivamos tenemos:
+\[\nabla f(x,y,z) = (2x, 2y, 2z)\]
+\[\nabla g(x,y,z) = (2x, 2y, -2z)\]
+\[\nabla h(x,y,z) = (1, 0, -2)\]
+Queremos entonces la determinante
+\[
+	\det \begin{bmatrix}
+		2x & 2y & 2z \\
+		2x & 2y & -2z \\
+		1 & 0 & -2 \\
+	\end{bmatrix} = -8yz - 2 \cdot 0 = -8yz = 0
+\]
+Luego o bien $y = 0$ o bien $z = 0$.
+
+Pero notemos que si $z = 0$, luego ese plano solo interseca al cono en el orígen, que no pasa por el otro plano. Luego necesariamente $y = 0$.
+
+Luego tenemos el sistema de ecuaciones:
+\[
+	\begin{cases}
+		y = 0 \\
+		z^2 = x^2 \\
+		x - 2z = 3
+	\end{cases}
+\]
+Despejo y listo. Nos dá los casos:
+\[
+	(x,y,z) = \begin{cases}
+	(-3, 0, -3) \\
+	(1, 0, -1)
+	\end{cases}
+\]
+Que son el máximo y el mínimo respectivamente.
+\end{document}

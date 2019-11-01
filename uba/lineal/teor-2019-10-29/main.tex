@@ -1,0 +1,109 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Descomposición Primaria}
+Si tenemos $f : \V \to \V$, y $m_f = \prod p_i$, con $\deg p_i > 0$ coprimos dos a dos, luego:
+\begin{enumerate}
+	\item $\V = \V_1 + \V_2 + \dots + \V_n$ si $\V_i = \ker p_i(f)$.
+	\item $\V_i$ es $f$ invariante.
+	\item $m_{f_{\V_i}} = p_i$
+	\item Sea $\pi_i$ una proyección sobre $\V_i$, luego $\pi_i = g_i(f)$ para algún polinomio $g$.
+\end{enumerate}
+
+Es claro que $m_{f_{\V_i}} \mid p_i$, ya que por definición $p_i(f)|_{\V_i} = 0$. Además, como son todos coprimos, y sabemos que $\V = \sum \V_i$, entonces:
+\[
+	m_f = \prod m_{f_{\V_i}}
+\]
+Pero entonces $m_{f_{\V_i}} = p_i$
+
+\section*{Notación}
+Una factorización $m_f = \prod p_i$ con $p_i$ coprimo, se llama descomposición primaria, y el subespacio $\V_i = \ker p_i(f)$ se llama componente $p_i$-primaria.
+
+\section*{Condición de Diagonalizabilidad}
+Una transformación lineal $f : \V \to \V$ es diagonalizable $\iff$ $m_f = \prod (x-a_i)$ con todos coprimos.
+
+\subsection*{($\To$)}
+Sean $\{\l_{i \leq r}\}$ los autovalores sin repetición de $f$. Además $\V = \bigoplus_i \V_{\l_i}$
+
+Sabemos además que $p_i = m_{f_{\V_{\l_i}}} = x - \l_i$. Luego
+\[m_f = \lcm p_i = \prod p_i = \prod (x - \l_i)\].
+Ya estamos.
+
+\subsection*{($\From$)}
+Supongamos que $m_f = \prod (x - \l_i)$, con $\l_i \neq \l_j$. Con lo anterior, sabmos que \[\V = \bigoplus \V_i\] con
+\[\V_i = \ker p_i(f) = \ker (f - \l_if) = \V_{\l_i}\]
+Luego $\V$ se escribe como suma de sus autoespacios. Ya estamos.
+
+\section*{Nilpotentes}
+Índice de nilpotencia. Dada $f : \V \to \V$, el índice de nilpotencia es el menor $n$ tal que $f^n = 0$.
+
+Notemos que si $f$ es nilpotente, entonces $m_f = x^i$ donde $i$ es el índice de nilpotencia de $f$. Además $\chi_f = x^n$.
+
+Esto implica que la única nilpotente diagonalizable es la nula.
+
+\section*{Caracterización de Nilpotentes}
+Si tenemos $f : \V \to \V$, luego es equivalente:
+\begin{enumerate}
+	\item $f$ nilpotente
+	\item $f^n = 0$
+	\item $m_f = x^k$
+	\item $\chi_f = x^n$
+\end{enumerate}
+Son todas triviales.
+
+\section*{Propiedad}
+Sea $f : \V \to \V$ con índice de nilpotencia $n = \dim V$. Luego tenemos:
+\begin{itemize}
+	\item $\exists v : \langle v \rangle_f = \V$
+	\item $\exists \BB : f_\BB = 
+		\begin{bmatrix}
+			0 & 0 & 0 & 0 \\
+			1 & 0 & 0 & 0 \\
+			0 & 1 & 0 & 0 \\
+			0 & 0 & 1 & 0 \\
+		\end{bmatrix}$, que se llama bloque de Jordan nilpotente de tamaño $n$.
+\end{itemize}
+Tomemos $v \notin \ker f^{n-1}$. Luego si tomamos $\BB = \{v, fv, f^2v, \dots, f^{n-1}v\}$. Luego esto es base y estamos.
+
+\section*{Descomposición Jordan de Nilpotentes}
+Dada $f : \V \to \V$ nilpotente, luego va a existir una base $\BB$ tal que:
+\[
+	[f]_\BB = 
+	\begin{bmatrix}
+		J_1 & 0 & 0 & 0 \\
+		0 & J_2 & 0 & 0 \\
+		0 & 0 & J_3 & 0 \\
+		0 & 0 & 0 & J_4 \\
+	\end{bmatrix}
+\]
+Dónde $J_i$ va a ser un bloque de Jordan nilpotente.
+
+\subsection*{Lema}
+Si tenemos $\{v_i\}$ li, con $f$ nilpotente. y $\langle v_i \rangle \cap \ker f^i = \{0\}$, luego $\{fv_i\}$ li y $\langle fv_i \rangle \cap \ker f^{i-1} = \{0\}$.
+
+Sea $v \in \langle fv_i \rangle \cap \ker f^{i-1}$. Luego
+\[
+	f^{i-1} v = 0 =
+\]
+\[
+	f^{i-1} \left(\sum \alpha_i fv_i\right) =
+\]
+\[
+	f^i \left(\sum \alpha_i v_i\right)
+\]
+Luego $\alpha_i = 0$ , luego $v = 0$.
+
+Supongamos $\sum \beta_i fv_i = 0$. Notemos que:
+\[
+	\sum \beta_i fv_i = 0
+\]
+\[
+	f \left(\sum \beta_i v_i \right) = 0
+\]
+\[
+	\sum \beta_i v_i \in \ker f^i
+\]
+\[
+	\sum \beta_i v_i = 0
+\]
+\end{document}

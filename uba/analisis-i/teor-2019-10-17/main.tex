@@ -1,0 +1,55 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Mímimos en bordes}
+Si tenemos el conjunto $C = \{(x,y) : x^2 + y^2 \leq 1\}$ y una función $f : \R^2 \to \R$ con $(1, 0)$ mínimo local de $f | _C$, luego:
+
+Tomemos la curva $\gamma (t) = (\cos t, \sin t)$. Tenemos que:
+\[
+	\D (f \circ \gamma) (p) = (\D f) (\gamma p) \cdot (\D \gamma) p
+\]
+Sabemos que $\D (f \circ \gamma) 0 = 0$, ya que $\gamma 0 = p$, que es mínimo local. Luego:
+\[
+	0 = (\D f)(\gamma 0) \cdot (\D \gamma) 0
+\]
+\[
+	0 = (\D f)p \cdot (1 \; 0)^t
+\]
+
+\section*{Funciones inversibles en $\R \to \R$}
+Si tenemos una función contínua y estrictamente creciente $f : [a,b] \to [c,d]$con $fa = c$, $fb = d$, luego existe una función inversa $f ^ {-1} : \R \to \R$ contínua y estrictamente creciente.
+
+La demostración de que es inyectiva sale por crecimiento, y la sobreyectividad sale por bolzano.
+
+El crecimiento de la inversa sale trivial por el crecimiento de $f$.
+
+Para la contonuidad, notemos que para todo $\e > 0$, si tomamos el intervalo $K = (f(x-\e), f(x+\e))$, luego notemos que $\forall y \in K: |f^{-1}(y) - f^{-1}(fx)| \leq \e$, luego $f^{-1}$ es contínua en $fx$.
+
+\section*{Derivada de la Inversa}
+Si tenemos $f$ derivable en $x_0$, luego:
+\[
+	(f^{-1})'(fx) = \frac{1}{f'x}
+\]
+Es decir:
+\[
+	(f^{-1})' \; y = \frac{1}{f'(f^{-1}y)}
+\]
+
+\section*{Funciones específicas}
+Si tenemos $f = \sin$, luego:
+\[
+	(\sin^{-1})' \; y = \frac{1}{\sin' (\sin^{-1} y)}
+\]
+\[
+	(\sin^{-1})' \; y = \frac{1}{\cos (\sin^{-1} y)}
+\]
+\[
+	(\sin^{-1})' \; y = \frac{1}{\sqrt{\cos^2 (\sin^{-1} y)}}
+\]
+\[
+	(\sin^{-1})' \; y = \frac{1}{\sqrt{1 - y^2}}
+\]
+\[
+	\arcsin'  = t \mapsto \frac{1}{\sqrt{1-t^2}}
+\]
+\end{document}

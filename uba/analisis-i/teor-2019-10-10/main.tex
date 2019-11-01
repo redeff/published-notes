@@ -1,0 +1,118 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Formas cuadráticas}
+Dada una matriz $A \in \K^{n \times n}$ simétrica, existe una base $\{v_i\}$ ortonormal con autovalores reales. Luego:
+\[
+	A = P \cdot
+	\begin{bmatrix}
+		\lambda_1 & 0 & \dots & 0 \\
+		0 & \lambda_2 & \dots & 0 \\
+		\vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & \dots & \lambda_n \\
+	\end{bmatrix} \cdot
+	P^{-1}
+\]
+Y como $P$ era ortonormal, tenemos $P^{-1} = P^t$, luego:
+\[
+	A = P \cdot
+	\begin{bmatrix}
+		\lambda_1 & 0 & \dots & 0 \\
+		0 & \lambda_2 & \dots & 0 \\
+		\vdots & \vdots & \ddots & \vdots \\
+		0 & 0 & \dots & \lambda_n \\
+	\end{bmatrix} \cdot
+	P^t
+\]
+\section*{Formas cuadráticas}
+Si tenemos $qv = vAv^t$, lo escribimos como $qv = vPDP^tv^t = (vP)D(vP)^t$, y como $D$ es diagonal, solo aparecen los térmonos al cuadrado, con los coeficientes correspondientes a los autovalores de $A$.
+
+Luego si todos los autovalores tienen signo positivo o todos negativos, sabemos que es mínimo o máximo respectivamente.
+
+Por el contrario, si hay un positivo y un negativo, luego necesariamente es un punto de silla.
+
+Si no pasa ninguna de esas dos cosas, entonces se dice semidefinico (son todos o no negativos o no positivos, pero hay algún autovalor que es $0$), y no sabemos nada de la función.
+
+\section*{Determinante}
+Notemos que $\det A = \prod \lambda_i$ con $\lambda_i$ los autovalores, entonces calcular el determinante nos puede dar información acerca de la definitud de una forma cuadrática.
+
+En particular, para que sea mínimo o máximo, debe ser invertible (pero no es sí y sólo si)
+
+\section*{Derivadas Direccionales}
+Tenemos $(t \mapsto f (v \cdot t))''o = v (\Hs f) v^t$
+
+\section*{Sylvester}
+Teníamos que existían $m, M \in \R$ tal que $m||v||^2 \leq qv \leq M||v||^2$, con $q$ una forma cuadrática.
+
+Notemos que si $\{\lambda_i\}$ son los autovalores, entonces tenemos que $m = \min \{\lambda_i\}, M = \max \{\lambda_i\}$ son esos mínimos y máximos, ya que los cambios de base ortonormales rpeservan la normal.
+
+\section*{Ejemplo 1}
+Si tenemos $f \; xy = (y - 3x^3)(y-x^2)$, ver que:
+\begin{enumerate}
+	\item minimos locales en el origen por cada dirección.
+	\item punto silla en $(0,0)$
+\end{enumerate}
+
+Es claro que $\det \Hs f = 0$, ya que si fuese $\det \Hs f > 0$ tenemos un mínimo o un máximo, y si $\det \Hs f > 0$, luego en alguna dirección tendríamos un máximo local, que no pasa.
+
+Luego la forma cuadrática es semidefinida (positiva).
+\section*{Ejemplo 2}
+Tenemos $f \; xy = (x-y)^2 + x^2(x-1)^2$. Hallar y estudiar sus extremos locales.
+
+Tenemos $\nabla f (x,y) = (2(x-y) + 2x(x-2)^2 + 2x^2(x-1), -2(x-y))$, luego igualamos esto a $0$.
+Tenemos $x = y$, y los casos posibles son $x = 0,1,\frac{1}{2}$.
+
+El hessiano estádado por:
+\[
+	\Hs f =
+	\begin{bmatrix}
+		2 + 2(x-1)^2 + 8x(x-1) + 2x^2 & -2\\
+		-2 & 2
+	\end{bmatrix}
+\]
+
+con $x=y=0$, tenemos $\Hs f = 
+\begin{bmatrix}
+	4 & -2 \\
+	-2 & 2
+\end{bmatrix}$ como es positivo el determinante, tenemos que es necesariamente un extremo local.
+
+Pero notemos que la forma cuadrática dada por esta matriz en $v = (1,0)$ vale $4$, luego necesariamente estoy en un mínimo local.
+
+\section*{Criterio de Hessiano}
+Si tenemos $
+H =
+\begin{bmatrix}
+	a & b \\
+	b & d
+\end{bmatrix}
+$
+Luego la forma cuadrática dada por $qv = vHv^t$ cumple:
+\begin{itemize}
+	\item $q$ definida positiva $\iff$ $ac-b^2 > 0$ y $a > 0$.
+	\item $q$ definida negativa $\iff$ $ac-b^2 > 0$ y $a < 0$.
+	\item $q$ indefinida $\iff$ $ac-b^2 < 0$.
+\end{itemize}
+
+Si tenemos $
+H =
+\begin{bmatrix}
+	A & b^t \\
+	b & c
+\end{bmatrix}
+$, con $A \in \R{^2 \times 2}$
+
+\section*{Criterio de Sylvester}
+Si tenemos $H = 
+\begin{bmatrix}
+	A & b^t \\
+	b & c
+\end{bmatrix}$
+con $H \in \R^{n \times n}$, $A \in \R^{n-1 \times n-1}$, luego son equivalentes:
+\begin{itemize}
+	\item $x \mapsto xHx^t$ es definida positiva
+	\item $A$ es definida positiva y $\det H > 0$
+\end{itemize}
+
+Esto se ve ya que si $H$ no es def+, luego como $\det H > 0$, tiene almenos dos autovalores negativos, entonces el subespacio generado por esos dos itersecta al generado por los primeros $n-1$ canónicos, luego $A$ no es def+.
+\end{document}

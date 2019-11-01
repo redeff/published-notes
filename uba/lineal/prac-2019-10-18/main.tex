@@ -1,0 +1,71 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Polinomio Característico}
+Propuedades:
+\begin{itemize}
+	\item $S_\l = \{v : fv = \l v\}$
+	\item $S_0 = \ker f$
+	\item $A$ inversible sii $S_0 = \{0\}$
+	\item $\spec A = \spec A^t$
+	\item $\chi_A = \chi_{A^t}$
+	\item $\l \in \spec A \To \l^k \in \spec A^k$
+	\item $p (\spec A) = \spec (pA)$ para todo polinomio $p \in \K[x]$
+	\item $S_\l$ y $S_\mu$ están en suma directa si $\l \neq \mu$.
+\end{itemize}
+
+\section*{Ejercicio 1}
+Si $\{Ac, x\}$ es ld para todo $x$, luego demostrar que $A = cI$.
+
+Notemos que implica que todo $x$ es autovector. Supongamos que hay $v_1$ y $v_2$ con autovalores $\l_1$, $\l_2$. Luego
+\[
+	\l_1 v_1 + \l_2 v_2 = A(v_1 + v_2) = \l(v_1 + v_2) = \l v_1 + \l v_2
+\]
+Luego si $\l_1 \neq \l_2$ son li, luego $\l_1 = \l = \l_2$. Contradicción.
+
+Luego todos los vectores tienen el mismo autovalor y estamos.
+
+\section*{Ejercicio 2}
+Una matriz $A \in \C^{n \times n}$ es nilpotente sii su único autovalor es $0$.La ida es fácil, ya que si $\l$ es autovalor de $A$ luego $\l^k$ es de $A^k$.
+
+Para la vuelta hacemos $A \sim T$ con $T$ triangular, y con los autovelores en la diagonal. Luego tenemos una triangular estricta, que sabemos que es nulpotente.
+
+\section*{Ejercicio 3}
+Dada $A \in \C^{n \times n}$, existe $T \sim A$, $T$ triangular superior. Usemos inducción.
+
+Si tenemos la matriz $A$, expresémosla en una base $\BB$ donde el primer vector es un autovector de $A$. Luego la primer columna será todo $0$ menos en su primer entrada:
+
+\[C_{E\BB}AC_{\BB E} = 
+\begin{bmatrix}
+	\l & u \\
+	0 & A'
+\end{bmatrix}\]
+
+Por inducción, $A' = CT'C^{-1}$. Luego tomemos $D =
+\begin{bmatrix}
+	1 & 0 \\
+	0 & C
+\end{bmatrix}$
+Es claro que $DC_{E\BB}AC_{\BB E}D^{-1}$ es triangular superior.
+
+Notemos que en la matriz final $T$ tendremos que en la diagonal están los autovalores con multiplicidad algebraica.
+
+Además, tendremos $\tr A = \sum \l_i$ y $\det A = \prod \l_i$
+
+\section*{Ejercicio 4}
+$M$ nilpotente sii $\tr M^i = 0$ para todo $i$.
+
+\section*{Ejercicio 5}
+Sean $f, g: \V \to \V$, con $f$ diagonalizable. $\V$ es $\C$-ev. finitamente generado. Luego $f \circ g = g \circ f \iff g(S_\l) \inn S_\l$ para todo $\l$.
+
+Notemos que para la ida, tenemos que
+\[v \in S_\l \To\]
+\[fv = \l v\]
+\[g(fv) = g(\l v)\]
+\[f(gv) = \l gv\]
+Luego $gv \in S_\l$
+
+Para la vuelta, tomemos sobre una base de autovectores:
+\[g(fv) = g(\l v) = \l (gv) = f(gv)\]
+Luego estamos.
+\end{document}

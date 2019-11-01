@@ -1,0 +1,59 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Forma Implícita y Paramétrica}
+Forma implícita de un plano:
+\[
+	P = \{(x,y,z) : ax + by + cz = d\}
+\]
+
+Forma paramétrica:
+\[
+	P = \{(x, y, f(x,y)) : x,y \in \R\}
+\]
+La forma paramétrica se rompe cuando el coeficiente de $z$ es $0$, pero en esos casos siempre podemos despejar otra variable.
+
+La forma implícita también se puede escribir como:
+\[\Pi = \{x : \langle v, x \rangle = \langle v, p \rangle = 0\}\]
+donde $p$ es un punto en el plano y $v$ es el fector normal.
+Notemos que si $fx = \langle v, x \rangle$, luego $\nabla f = v^t$.
+
+Las rectas de la forma $y = ax + b$ son también la curva de nivel dada por $F(x, y) = -b$, con $F(x) = ax - y$, es decir, $\nabla F = (a, -1)$
+
+\section*{Conjuntos de Nivel}
+si tenemos una función $f(x,y)$ y tomamos una curva de nivel $f(x,y) = k$, luego por ejemplo si $x^2+y^2 = 1$, luego en todo punto hay un entorno donde podemos despejar $y$ en función de $x$ o viceversa.
+
+Entonces supongamos que queremos $\max \{g(x,y) : f(x,y) = k\}$ para una función $g : \R^2 \to \R$. Si podemos partir el gráfico de la curva de nivel $f(x,y) = k$ en gráficos de a pedazos, luego podemos aplicar regla de la cadena e igualar a $0$.
+
+\section*{Función Implícita}
+Si tenemos $p \in \{(x,y) : f(x,y) = r\} = S_r(f), f \in \CC_1$ una curva de nivel y una parametrización local $\sigma : (0,1) \to B, \sigma \in \CC_1$ tal que $\Ima \sigma = S_r(f) \cap B$, con $B$ un entorno de $p$.
+
+Lugo notemos que por definición $f \circ \sigma$ es constantemente $r$.
+Luego por regla de la cadena:
+\[
+	\nabla f (\sigma t) \cdot \nabla \sigma t = (f \circ \sigma)' = 0
+\]
+\[
+	\nabla f p \cdot \nabla \sigma t_0 = 0
+\]
+Luego el gradiente de $\sigma$ es ortogonal al gradiente de $f$.
+
+\section*{Recta tangente}
+Si tenemos una función $f : \R^n \to \R, f \in \CC^1$, luego la recta tangente a $S_{fp}(f)$ por $p$ está dada por $\ell = \{v \in \R^n : \langle\nabla fp, v-p \rangle = 0\}$
+
+El razonamiento es el mismo que para $f : \R^2 \to \R$
+
+\section*{Ejercicio}
+Hallar la ecuación de la recta tangente en $(1,2)$ a la curva $\{e^{2x-y} -xy + 1 = 0\}$.
+
+Sea $F(x,y) = e^{2x-y} -xy + 1$. Luego queremos calcular:
+\[\nabla F(x,y) = (2e^{2x-y}-y, -e^{2x-y}-x)\]
+\[\nabla F(1,2) = (0, -2)\]
+Luego la tangente está dada por
+\[\ell = \{v : \langle (0,-2), v \rangle = \langle (0,-2), (1,2) \rangle \}\]
+\[\ell = \{v : -2v_y = -4 \}\]
+\[\ell = \{v : v_y = 2 \}\]
+
+\section*{Teorema de la Función Implícita}
+Si tenemos $f : \R^2 \to \R, F \in \CC^1$, con $p \in F$, y sea $r = Fp$, con $\frac{\partial F}{\partial y}p \neq 0$, luego existe $f (B \inn \R) \to \R, f\in \CC^1$, tal que $p_x \in B^o$ y $F(x, fx) = r, \forall x \in B$
+\end{document}

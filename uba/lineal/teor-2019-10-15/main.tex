@@ -1,0 +1,64 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Autovalores y Autovectores}
+Dada $f : \V \to_{\tl} \V$ Decimos que $v \neq 0 \in \V$ es autovector sii existe un $\lambda \in \V$ tal que $fv = \lambda v$, y decimos que $\lambda$ es un autovalor de $f$.
+
+El conjunto de autovalores se denomina $\spec f$.
+
+Dado cualquier $\lambda \in \K$, decimos $\V_\lambda = \{v : fv = \lambda v\}$. Notemos que $\V_\lambda$ es subespacio ya que es $\V_\lambda = \ker (f - \lambda \id)$.
+
+Notemos que $\V_\lambda$ contiene al $0$, y a todos los autovectores de autovalor $\lambda$. Por lo tanto, $\lambda$ es autovalor sii $\dim \V_\lambda \neq \{0\}$.
+
+\subsection*{Los autoespacios son li}
+Sean $\lambda_{i < n}$ autovalores de $f$ distintos, y $v_i \in \V_{\lambda_i}$ autovectores. Luego $\{v_i\}_i$ son li.
+
+Supongamos $\sum a_iv_i = 0$. Si aplicamos $f^k$ de ambos lados, obtenemos:
+\[
+    \sum_i a_i\lambda_i^kv_i = 0
+\]
+Sea $B$ la inversa de la matriz de vandermonde $V(\lambda_i)_i$, luego tenemos, para cada $i$,
+\[
+    0 = \sum_j B_{ij} \sum_k a_k\lambda_{k}^j v_k = \sum_k a_k v_k \sum_j B_{ij} \lambda_k^j = \sum_k a_k v_k \delta_{ik} = a_i v_i
+\]
+Como $v_i$ no es $0$, tenemos $a_i$ es cero.
+\subsection*{Corolario}
+\begin{itemize}
+    \item
+        Si $\dim V < \infty$, luego $\# \spec f \leq \dim V$
+    \item Los subespacios de autovalores $\V_\lambda$ son todos li.
+\end{itemize}
+
+\section*{Autocosas de Una Matriz}
+Dada $A \in \K^{n \times n}$, sus autocosas son las autocosas de $x \mapsto Ax$.
+
+\section*{Autovalores bajo conjugación}
+Si tenemos $A, C \in \K^{n \times n}$, con $C$ inversible.
+
+Tomemos $v \in \V$ autovector de autovalor $\lambda$ de $A$. Luego queremos ver que $\lambda$ es autovalor de $CAC^{-1}$. Notemos que:
+\[
+    (CAC^{-1})(Cv) = CAv = \lambda Cv
+\]
+Luego $Cv$ es autovector de $CAC^{-1}$, con autovalor $\lambda$.
+
+\section*{Cambios de Base}
+Si tenemos $\V$ de dimensión finita, una $f : \V \to \V$, y $\BB, \BB'$ bases de $\V$. Luego:
+\[
+    [f]_{\BB'} = C_{\BB\BB'} \cdot [f]_\BB \cdot C_{\BB'\BB}
+\]
+Luego los autovalores de $[f]_\BB$ y de $[f]_{\BB'}$ son los mismos.
+
+\section*{Diagonalizabilidad}
+Decimos que $A \in \K^{n \times n}$ es \emph{diagonalizable} sii hay una $C$ tal que $CAC^{-1}$ es diagonal. Similarmente, $f : \V \to \V$ es diagonal sii $[f]$ es diagonal. En alguna base.
+
+Notemos que si $[f]_\BB$ es diagonal, luego $f \BB_i = [f] e_i = [f]_{ii}e_i = [f]_{ii} \cdot \BB_i$. Luego $\BB_i$ es autovector. Entonces:
+
+$f$ es diagonalizable sii estiste una base $\BB$ de $\V$ formada por autovectores.
+
+\section*{Encontrando Autovalores}
+Dijimos que los autovalores $\lambda$ de $A$ son los que tienen $\ker (\lambda I - A)$ no nulo, es decir los $\lambda$ que:
+\[
+    \det (\lambda I - A) = 0
+\]
+Por lo que queremos las raíces del polinomio $\det (\lambda I - A)$.
+\end{document}

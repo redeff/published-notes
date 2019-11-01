@@ -1,0 +1,86 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+	\section*{Integral de Riemann}
+	Dada una $f : [a,b] \to \R$, $f$ acotada.
+
+	dada una partición $\pi = \{x_i\}_{i \leq n}$, con $x_0 = a, x_n = b$, definimos la suma inferior de riemann como:
+	\[
+		s(f, \pi) = \sum_{i = 1}^n |x_i - x_{i-1}| \cdot \inf \{f(x) : x_{i-1} \leq x \leq x_i \}
+	\]
+	Y la suma superior de riemann como:
+	\[
+		S(f, \pi) = \sum_{i = 1}^n |x_i - x_{i-1}| \cdot \sup \{f(x) : x_{i-1} \leq x \leq x_i \}
+	\]
+	Decimos que
+	\[I = \sup_{\pi \text{ particion}} s(f, \pi)\]
+	Que existe, ya que $s(f, \pi) \leq (b-a) \cdot \inf f [a,b]$. Similarmente:
+	\[S = \inf_{\pi \text{ particion}} S(f, \pi)\]
+
+	Se dice que $f$ es \emph{Riemann integrable} si $I = S$, y decimos que
+	\[\int_a^b f(x) dx = I = S\]
+
+	\section*{Sumas de Potencias}
+	Ponele que queremos calcular
+	\[S_n(T) \sum_i^T i^n\]
+	Notemos que:
+	\[
+		\sum (i+1)^{n+1} - i^{n+1} = (i+1)^{n+1} - 1
+	\]
+	Por telescópica. Pero por otro lado:
+	\[
+		\sum (i+1)^{n+1} - i^{n+1} =
+		\sum_i \left( \sum_j {n+1 \choose j} i^j \right) - i ^{n+1} =
+	\]
+	\[
+		\sum_i^T \left( \sum_j^n {n+1 \choose j} i^j \right) =
+	\]
+	\[
+		\sum_j^n {n+1 \choose j} \left( \sum_i^T i^j \right) =
+	\]
+	\[
+		\sum_j^n {n+1 \choose j} S_j(T) = (i+1)^{n+1} - i^{n+1}
+	\]
+	\[
+		S_n(T) = \frac{(i+1)^{n+1} - i^{n+1} - \sum_j^{n-1} {n+1 \choose j} S_j(T)}{n+1}
+	\]
+
+	\section*{Calculando Integrales}
+	Si Tenemos una sucesión de particiones $(\pi_n)_n$, y tenemos que
+	\[\lim_{n \to \infty} S(f, \pi) - s(f,\pi) = 0 \iff\]
+	\[\lim_{n \to \infty} S(f, \pi) = \lim_{n \to \infty}s(f,\pi) = k\]
+	Luego $\int (x) dx = e$
+
+	Por ejemplo, si $f(x) = x$, y tomamos $(\pi_n)_i = \frac{i}{n}$, luego tenemos:
+	\[
+		S(f, \pi_n) = \sum_{i = 1}^n \frac{1}{n} \cdot \frac{i}{n} = \frac{1}{n^2} \cdot \frac{i(i+1)}{2}
+	\]
+	\[
+		S(f, \pi_n) = \sum_{i = 1}^n \frac{1}{n} \cdot \frac{i-1}{n} = \frac{1}{n^2} \cdot \frac{i(i-1)}{2}
+	\]
+	Que ambas tienden a $\frac{1}{2}$ con $n \to \infty$.
+
+	\section*{Función de Dirichlet}
+	Definimos $f(x) = 
+	\begin{cases}
+		1 & \text{Si $x \in \Q$} \\
+		0 & \text{Si $x \notin \Q$}
+	\end{cases}$.
+
+	Notemos que $S(f, \pi) = 1$ para todo $\pi$, y similarmente $s(f, \pi) = 0$, ya que $\Q$ y $\R - \Q$ son densos en $\R$.
+
+	\section*{Integrabilidad de las Contínuas}
+	Cualquier función contínua $f : [a,b] \to \R$ contínua es Riemann integrable.
+	\section*{Teorema Fundamental del Cálculo}
+	Dada $f : [a,b] \to \R$ contínua, si definimos $F(x) = \int_a^x f(t) dt$, luego tenemos $F$ continua en $[a,b]$ y derivable en $(a,b)$, y
+	\[\forall x \in (a,b) : F'(x) = f(x)\]
+
+	Asimismo, si tenemos $f : [a,b] \to_{\CC^1} \R$, luego
+	\[\int_a^b f'(x) = f(b) - f(a)\]
+	\section*{Integral como Masa dada Densidad}
+	Si $\rho : [a,b] \to \R$ es la densidad de un alambre, luego $\int_a^b \rho(x) dx$ es la masa del alambre.
+
+	\section*{Integral como Probabilidad}
+	Si tengo $\rho(x) = \frac{1}{\sqrt{2\pi}}e^{-\frac{x^2}{2}}$ la campana de Gauss, luego para cualquier intervalo $[a,b]$, la probabilidad de que una variable aleatoria distribuida como $\rho$ caiga en $[a,b]$ es
+	\[\int_a^b \rho(x) dx\]
+\end{document}

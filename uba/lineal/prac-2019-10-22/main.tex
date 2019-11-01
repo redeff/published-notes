@@ -1,0 +1,61 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Minimal en autovalores}
+Sea $p \in k[x]$, $p(A) = 0$. Luego $p(\l) = 0$ para todo autovalor.
+
+Sea $v \in \V$ tal que $Av = \l v$, luego
+\[0 = p(A) \cdot v = \sum a_iA^iv = \sum a_i\l^iv = v \cdot p(\l)\]
+\[0 = v \cdot p(\l)\]
+\[0 = p(\l)\]
+
+\section*{Minimal de un vector}
+Dado una función $f : \V \to \V$, y un $v \in \V$, se dice que $m_v$ es el menor polinomio mónico tal que $m_v(f)(v) = 0$
+
+Tenemos que $m_f = \lcm \{m_{\BB_i}(x)\}$, con $\BB$ una base.
+
+\section*{Ejemplo 1}
+Si tenemos
+\[
+	A =
+	\begin{bmatrix}
+		1 & 0 & 0 \\
+		1 & 1 & 0 \\
+		0 & 0 & 2 \\
+	\end{bmatrix}
+\]
+Calcular el minimal.
+
+Calcularmos el caraterísticos de cada canónico.
+\[\{e_1, Ae_1, A^2e_1\}=\]
+\[\left\{
+		\begin{bmatrix}
+			1 \\ 0 \\ 0
+		\end{bmatrix},
+		\begin{bmatrix}
+			1 \\ 1 \\ 0
+		\end{bmatrix},
+		\begin{bmatrix}
+			1 \\ 2 \\ 0
+		\end{bmatrix}
+\right\}\]
+
+\section*{Criterio de Diagonalización}
+Una función $f : \V \to \V$ es diagonalizable sii $m_f(x)$ se factoriza linealmente como producto de factores distintos.
+
+En particular, si $f$ tiene $n$ autovalores distintos, es diagonalizable.
+
+\section*{Hamilton Cayley}
+Si tenemos una matriz cuadrada $A \in \K^{n \times n}$, entonces $\chi_A(A) = 0$.
+
+Demo:
+Para diagonalizables es trivial.
+Para cualquier otra por continuidad.
+
+\section*{Potencias de una matriz}
+Si tenemos una matriz inversible $A$, luego notemos que si sabemos $\chi_A$, entonces podemos despejar $A^{-1}$
+
+Además, si escrivimos $x^n = q_n(x) \cdot \chi_A(x) + r_n(x)$. Luego, por cada autovalor $\l$ de $A$, evaluamos este polinomio en $\l$, y si es raíz múltiple, evaluamos $\l$ es la derivada primera, segunda, etc de $r(x)$, y así despejamos los coeficientes de $r_n(x)$.
+
+Así obtenemos $r_n$, entonces tenemos que $A^n = r_n(A)$.
+\end{document}

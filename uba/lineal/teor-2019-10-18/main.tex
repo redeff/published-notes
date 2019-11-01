@@ -1,0 +1,102 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Polinomio Característico}
+Dada una matriz $A \in \K^{n \times n}$, se define $\chi_A(x) = \det (xI - A)$ el polinomio característico de la matriz $A$.
+
+Se tiene que $\chi_A$ es un polinomio mónico de grado $n$, y con $\chi_A(0) = (-1)^n \det A$
+
+\section*{Característico de Semejantes}
+Si $A \sim B$, luego $\chi_A = \chi_B$
+Esto es ya que:
+\[
+	\det (xI - B) =
+\]
+\[
+	\det (xI - CAC^{-1}) =
+\]
+\[
+	\det (C(xI)C^{-1} - CAC^{-1}) =
+\]
+\[
+	\det C \cdot \det (xI - A) \cdot \det C^{-1}=
+\]
+\[
+	\det (xI - A)
+\]
+Luego está.
+
+\section*{Característico en $\V \to \V$}
+Por el teorema anterior, está bien definido $\chi_f$ donde $f : \V \to \V$, ya que es independiente de la base.
+
+\section*{Autovalores}
+Podemos ahora decir que $\lambda \in \K$ es un autovalor de $f : \V \to \V$ sii $\chi_f(\lambda) = 0$, y se dice que $\spec f = \{\lambda : \chi_f \lambda = 0 \}$
+
+Esto implica que toda $f : \V \to \V$ tiene $\dim \V$ autovalores contados con multiplicidad, con $\V$ un $\C$-ev.
+
+\section*{Multiplicidad de Autovalores}
+La dimensión de $S\l = \{v : fv = \l v\}$ es la \emph{multiplicidad geométrica} de $\l$, pero el máximo $k$ que $(x - \l)^k | \chi_f$ es la \emph{multiplicidad algebraica} de $\l$.
+
+\subsection*{Lema $\dim S_\l \leq\mult_\l$}
+Tenemos $m = \mult_\l \chi_f$. Luego $\chi_f = (x - \l)^mq(x)$, con $q(\l) \neq 0$.
+
+Supongamos que $r = \dim S_\l \geq m+1$. Tomamos $\{v_i\}_{i \leq r}$ base de $S_\l$, y extendámosla a una base $\BB$ de $\V$.
+
+Tenemos que:
+\[
+	[f]_\BB = 
+	\begin{bmatrix}
+		\l I_r & * \\
+		0 & B
+	\end{bmatrix}
+\]
+
+Tenemos que \[\chi_f =
+\det \left(
+	xI - \begin{bmatrix}
+		\l I_r & * \\
+		0 & B
+\end{bmatrix} \right) = \]
+\[
+\det (xI - \l I) \cdot \det(xI - B)
+\]
+\[
+	\det ((x - \l) I) \cdot \det(xI - B)
+\]
+\[
+	(x - \l)^r \cdot \det(xI - B)
+\]
+Pero luego la multiplicidad algebraica es al menos $r$. Contradicción.
+
+\section*{Diagonalizabilidad}
+Tenemos que $f$ es \emph{diagonalizable} si $[f]_\BB$ es diagonal en alguna base
+
+Alternativamente, $f$ es diagonalizable sii la multiplicidad geométrica y la algebraica coinciden para todo autovalor, ya que podemos elegirnos $\mult_l$ vectores an cada autoespacio que formarán una base.
+
+La vuelta es contriuirse la matriz diagonal y hacer la determinante por Leibniz, que da la productoria.
+
+\section*{Ideales en $\K[x]$}
+Un \emph{ideal} de $\K[x]$ es un subespacio $I \inn \K[x]$ tal que $fg \in I$ para todo $f \in I$ y $g \in \K[x]$.
+
+Notemos que $\{0\}$ es un ideal, y que además $\{f \cdot g : f \in \K[x]\}$ es un ideal para cualquier polinomio $g$. Este es el ideal generado por $g$, es decir $(g)$.
+
+Se dice también que $(g_1, \dots, g_n) = \left\{\sum f_i \cdot g_i : f_i \in \K[x]\right\}$
+
+\subsection*{Caracterización de los Ideales}
+Tomemos un ideal no nulo $I \in \K[x]$, luego $I = (g)$ para algún $g$.
+
+Demo: tomemos algún $g \in I$ mónico y de grado mínimo. Notemos que $(g) = I$, ya que para todo $f \in I$, tenemos que $f - gq = r$, con $r = 0$ o $\deg r < \deg g$. Como es ideal, sabemos que $r \in I$, luego $\deg r \geq \deg g$, entonces necesariamente $r = 0$. Pero entonces $f$ es múltiplo de $g$. Estamos.
+
+\section*{Polinomios de matrices}
+Dado un poly en $p \in \K[x]$, y una $A\in \K^{n \times n}$, luego podemos hacer $p(A) = \sum a_iA^i$, y cumple las propiedades:
+\begin{itemize}
+	\item $(p+q)A = pq + qA$
+	\item $(pq)A = (pA)(qA)$
+\end{itemize}
+
+\subsection*{Polinomio que anula a la matriz}
+Vamos a ver que existe un polinomio $p \in \K[x]$ tal que $pA = 0$. Esto es verdad ya que $I, A, A^2, \dots$ viven todos en $\K^{n \times n}$, luego existen algún subconjunto de las potencias de $A$ que sean ld, luego hay una combionación lineal no nula que da $0$, luego ya estamos.
+
+\section*{Polinomio Minimal}
+Dada una $A \in \K^{n \times n}$, tomemos $I = \{p \in \K[x] : p(A) = 0\}$. Es claramente un ideal, y es no nulo por el lema anterior. Luego $I = (m_A)$ para un único polinomio mónico $m_A$. $m_A$ se llama el \emph{polinomio munimal} de $A$.
+\end{document}

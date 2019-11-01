@@ -1,0 +1,32 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+	\section*{Teorema de la Función Inversa}
+	Si tenemos $f : (A \inn \R^n) \to \R^n$, con $A$ abierto y $f \in \CC^1(A)$, luego si $\D f(x_0)$ es inversible para algún $x_0 \in A$, entonces existen entornos $V$ y $W$ de $x_0$ y de $fx_0$ tal que $f : V \to W$ es inversible y su inversa es $\CC^1$. Además:
+	\[
+		\forall x \in V : \D f^{-1} (fx) = [\D f(x)]^{-1}
+	\]
+
+	\section*{Ejercicio 1}
+	Sea $f : \R^2 \to \R^2$ una $\CC^1$ tal que:
+	\[
+		f(2,3) = (1,3)
+	\]
+	\[
+		\D f(2,3) =
+		\begin{bmatrix}
+			1 & -1 \\ 0 & 1
+		\end{bmatrix}
+	\]
+	Sean $g, h : \R^2 \to \R^2$ dadas por:
+	\[
+		g(x,y) = (x^2-xy, x+y)
+	\]
+	\[
+		h = f \circ g
+	\]
+	\begin{enumerate}
+		\item Decidir si $h$ es inversible en algún entorno de $(2,1)$
+		\item Sean $\gamma : \R^2 \to \R$, $\gamma (x,y) = 3x^2+y$. Hallar el poly de Taylor orden 1 de $k = \gamma \circ h^{-1}$ en $(1,3)$
+	\end{enumerate}
+\end{document}

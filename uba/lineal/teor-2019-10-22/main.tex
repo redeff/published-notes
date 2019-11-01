@@ -1,0 +1,119 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Plinomio minimal}
+Dada $f : \V \to \V$, el \emph{polinomio minimal} $m_f$ es el polinomio mónico de menor grado, tal que $m_f(f) = 0$ (la tl nula).
+
+Por ejemplo, si $\dim V > 0$, para $f = \id$, tenemos que $m_f(x) = x-1$
+y para $f = 0$ tenemos $m_f(x) = 0$
+
+\subsection*{Caso $\V = \{0\}$}
+Es ese caso, la única función $f : \V \to \V$ es la tl nula, que también es la identidad, luego $m_f(x) = 1$, ya que $\id = 0$
+
+\section*{Se rompe para $\V$ infinito}
+Si tenemos $f : k[x] \to k[x]$, $f(p(x)) = xp(x)$, luego tenmos que:
+\[
+	Q(f)(p(x)) = \sum a_i x^i p(x) = Q(x)p(x)
+\]
+Luego ningún no nulo $Q$ multiplicado por $f$ da la tl nula.
+
+\section*{Subespacios invariantes}
+Dado $\dim \V < \infty$ y $f : \V \to \V$, luego $S$ sub de $\V$ es \emph{$f$-invariante} sii $f(S) \inn S$.
+
+Se dice que $f_S$ es la restricción de $f$ al subespacio $S$, con $f_S:S\to S$
+
+\subsection*{Subespacio $f$-cíclico de $v$}
+Dado un $v$ no nulo en $\V$, tomemos $S = \langle f^iv \rangle_{i \geq 0}$, luego $S$ es claramente $f$-invariante. Es te subsespacio se nota $\langle v\rangle_f$
+
+Decimos que $f_v = f_{\langle v \rangle_f}$
+
+\section*{Polinomio minimales sobre restringidos}
+Para cada polinomio $p(x) \in k[x]$, luego
+\[p(f_v) = 0 \iff p(f_v)(v) = 0\]
+Y además, si $\dim V < \infty$, luego existe un único polinomio mónico $m_{f_v}(x) \in k[x]$ tal que:
+\begin{enumerate}
+	\item $m_{f_v}(f)(v) = 0$
+	\item $\forall p \in k[x] : p(f)(v) = 0 \To m_{f_v}(x) \mid p(x)$
+	\item $\deg m_{f_v}(x) = \dim \langle v \rangle_f$.
+\end{enumerate}
+
+Demo:
+Supongamos que $p(f_v)(v) = 0$, luego veamos que todo $w \in \langle v \rangle_f$ cumple $p(f_v)(w) = 0$.
+
+Tenemos
+\[w = \sum a_i f^iv\]
+Tomemos \[q(x) = \sum a_i x^i\]
+Luego
+\[
+	w = q(f)(v) = q(f_v)(v)
+\]
+Luego
+\[
+	p(f_v)(w) = p(f_v)(q(f_v)(w))
+\]
+\[
+	p(f_v)(w) = (p(f_v) \cdot q(f_v))(w)
+\]
+\[
+	p(f_v)(w) = q(f_v)(p(f_v)(w))
+\]
+\[
+	p(f_v)(w) = q(f_v)(0) = 0
+\]
+Y cualquier tl en $0$ da $0$.
+
+Demo:
+Tomemos $m_{f_v}$ el polinomio minimal de $f_v$. Veamos que $m_{f_v}(f)(v) = 0$. Notemos que $m_{f_v}(f)(v) = m_{f_v}(f_v)(v)$, ya que solo lo evalúo en $v$, luego es trivial.
+
+Para la segunda parte, tenemos que $0 = p(f)(v) = p(f_v)(v)$, pero como esto es $0$, tenemos por los que demostramos $p(f_v) = 0$, luego $p$ está en el ideal del minimal, luego $m_{f_v}(x) \mid p(x)$.
+
+Para la tercera parte, tomemos $d = \deg m_{f_v}$:
+\[
+	m_{f_v}(f_v)(v) = 0 = \sum a_if^i(v)
+\]
+Luego
+\[
+	f^d(v) = -\sum_{i < d} a_if^i(v)
+\]
+Luego $\langle v \rangle_f = \langle v, fv, \dots, f^{d-1}v \rangle$, luego tenemos que $\dim \langle v \rangle_f \leq d$
+
+Pero además estos son li, ya que si fueran ld podríamos usar la combinación lineal que da $0$ para construirnos un polinomio más chico que el minimal.
+
+Luego $\dim \langle v \rangle_f = d$.
+
+Tomemos entonces $\BB = \{v, fv, \dots, f^{d-1}v \}$ base del subespacio cíclico. Veamos cómo es $[f]_\BB$:
+\[
+	[f]_\BB = \begin{bmatrix}
+		0 & 0 & 0&\dots & 0&-a_0 \\
+		1 & 0 & 0&\dots & 0&-a_1 \\
+		0 & 1 & 0&\dots & 0&-a_2 \\
+		0 & 0 & 1&\dots & 0&-a_3 \\
+		\vdots &
+		\vdots &
+		\vdots &
+		\ddots &
+		\vdots &
+		\vdots \\
+		0 & 0 & 0&\dots & 1&-a_{d-1} \\
+	\end{bmatrix}
+\]
+Que es la matriz compañera del polinomio característico.
+
+\section*{Mínimo común múltiplo}
+Sea $f : \V \to \V$, con $\W\inn\V$ $f$-invariante. Luego $m_{f_\W} \mid m_f$.
+
+También tenemos
+\begin{enumerate}
+	\item $m_f = \lcm \{m_{f_v} : v \in \V\}$
+	\item Si $\V = \V_1 + \dots + \V_2$, luego $m_f = \lcm \{m_{f_{\V_i}}\}_i$
+	\item Si $\V = \sum \langle v_i \rangle_f$, luego $m_f = \lcm \{m_{f_{v_i}}\}_i$
+\end{enumerate}
+
+Notemos que $0 = m_f(f)(v) = m_f(f_v)(v)$, luego $m_f(f_v) = 0$, entonces $m_{f_v} \mid m_f$. Escribamos entonces $m_f(x) = m_{f_v}(x) \cdot q_v(x)$.
+
+Vamos a ver que si existe $p(x) : \forall w : m_{f_w} \mid p(x)$, luego demostremos que $m_f \mid p$.
+
+Tenemos $p(f)(v) = (p'_v(f) \cdot m_{f_v}(f)) (v) = p'_v(f) (m_{f_v}(f)(v)) = p'_v(f)(0) = 0$, luego $p(f)(v) = 0$ para todo $v$, luego $m_f \mid p$.
+
+Entonces $m_f = \lcm \{m_{f_v} : v \in \V\}$
+\end{document}

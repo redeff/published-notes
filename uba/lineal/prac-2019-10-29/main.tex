@@ -1,0 +1,38 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Subespacios $f$-invariantes}
+Son los $S \in \V : f(S) \inn S$.
+
+\section*{Imagen de un polinomio}
+Sea $p \in k[x]$, luego la imagen y el núcleo de $p(f)$ son $f$-invariantes, ya que tenemos $f(p(f)v) = p(f)(fv) \in \Ima p(f)$
+
+\section*{Diagonalizabilidad de las Restringidas}
+Sea $S$ $f$-invariante, luego tenemos que $f_S$ es diagonalizable.
+
+Por diagonalizabilidad, tenemos que $\V = \bigoplus \V_{\l_i}$
+Tomemos entonces $\{v_i\}_{i \leq n}$ una base de autovectores.
+Sea $w = \sum \alpha_iv_i \in S$, luego:
+\[
+	f(w) \in S
+\]
+\[
+	\sum \alpha_i f(v_i) \in S
+\]
+\[
+	\sum \alpha_i \lambda_i v_i \in S
+\]
+
+\section*{Ejercicio}
+Son equivalentes:
+\begin{enumerate}
+	\item Los únicos $f$-invariantes son $\{0\}$ y $\V$.
+	\item Todo vector $v \neq 0$ es cíclico.
+	\item $\chi_f$ es irreducible.
+\end{enumerate}
+Para 3 $\To$ 1, tenemos $S \in \V$ $f$-invariante, luego $\chi_{f_S} \mid \chi_f$, pero entonces no es irreducible, estamos.
+
+Para 2 $\To$ 3, tenemos que ara $v \neq 0$, $\deg m_{f_v} = n$, ya que $v$ es cíclico, luego $m_{f_v} \mid m_f \mid \chi_f$, y tienen todos el mismo grado. Luego son iguales.
+
+Entonces como $m_f = \chi_f$, si asumimos $m_f = \chi_f = p \cdot q$, con $p$ y $q$ no triviales, luego ninguno de $\ker p(f)$ y $\ker q(f)$ son triviales, y ambos son $f$-invariantes. Luego estamos.
+\end{document}
