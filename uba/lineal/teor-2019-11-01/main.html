@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="jordan-de-nilpotentes" class="unnumbered">Jordan de Nilpotentes</h1>
+<p>Dada una <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> nilpotente. de índice <span class="math inline">\(k\)</span>, existe base <span class="math inline">\(\mathcal{B}\)</span> de <span class="math inline">\(\mathbb{V}\)</span> tal que: <span class="math display">\[[f]_\mathcal{B}=
+    \begin{bmatrix}
+        J_1 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; J_2 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; J_3 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; J_4 \\
+    \end{bmatrix}\]</span></p>
+<p>Demo: Sabemos que <span class="math display">\[\{0\} = \ker f^0 \subsetneq \ker f^1 \subsetneq \dots \subsetneq \ker f^k = \mathbb{V}\]</span></p>
+<p>Luego construyamos los <span class="math inline">\(\mathcal{C}_i\)</span> en orden reverso. Tenemos que: <span class="math inline">\(\mathcal{C}_{i}\)</span> es una extensión <span class="math inline">\(\mathcal{C}_i\)</span> de la base <span class="math inline">\(f(\mathcal{C}_{i+1})\)</span> tal que <span class="math inline">\(\ker f^{i-1} \oplus \bigoplus_{j \geq i} \langle \mathcal{C}_j\rangle = \mathbb{V}\)</span>.</p>
+<p>Después tomemos <span class="math inline">\(\mathcal{B}= \bigcup \mathcal{C}_i\)</span>, que (reordenada) es la base que queremos.</p>
+<h1 id="ejemplo-1" class="unnumbered">Ejemplo 1</h1>
+<p>Sea <span class="math display">\[A =
+    \begin{bmatrix}
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        -1 &amp; -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+        -1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        1 &amp; 0 &amp; 0 &amp; 0 &amp; -1 &amp; 0 \\
+    \end{bmatrix}\]</span> Tenemos <span class="math display">\[\ker A = \langle e_3, e_4, e_6 \rangle\]</span> <span class="math display">\[\ker A^2 = \langle e_3, e_4, e_6, e_2, e_5 \rangle\]</span> Para construir la base de Jordan, tomemos: Luego tomemos <span class="math inline">\(C_3 = \{e_1\}\)</span> alguna extensión de la base de <span class="math inline">\(\ker A^2\)</span> a una de <span class="math inline">\(\ker A^3 = \mathbb{V}\)</span>.</p>
+<p>Ahora queremos extender <span class="math inline">\(\{f(e_1)\}\)</span> a una base de <span class="math inline">\(\ker A^2\)</span>, vemos que con <span class="math inline">\(\{fe_1, e_5\}\)</span> alcanza.</p>
+<p>Ahora queremos extender <span class="math inline">\(\{f^2e_1, fe_5\}\)</span> a una base de <span class="math inline">\(\ker A\)</span>, y con <span class="math inline">\(\{f^2 e_1, fe_5, e_3\}\)</span> alcanza.</p>
+<p>Luego <span class="math inline">\(\mathcal{B}= \{e_1, fe_1, f^2e_1, e_5, fe_5, e_3\}\)</span>, y en esa base: <span class="math display">\[[A]_\mathcal{B}=
+    \begin{bmatrix}
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+    \end{bmatrix}\]</span> Que tiene <span class="math inline">\(3\)</span> bloques de Jordan, de tamaños decrecientes.</p>
+<h1 id="lemita" class="unnumbered">Lemita</h1>
+<p>Si <span class="math inline">\(J \in \mathbb{K}^{n \times n}\)</span> es un bloque de Jordan, luego <span class="math inline">\(\mathop{\mathrm{rg}}J^i = n-i\)</span>.</p>
+<h1 id="unicidad-de-la-forma-de-jordan" class="unnumbered">Unicidad de la forma de Jordan</h1>
+<p>Tenemos que:</p>
+<ol>
+<li><p>El tamaño del bloque de Jordan más grande es el índice de nilpotencia.</p></li>
+<li><p>La cantidad de bloques de tamaño mayor que <span class="math inline">\(i\)</span> que aparece en la forma de jordan es <span class="math inline">\(\mathop{\mathrm{rg}}A^i - \mathop{\mathrm{rg}}A^{i+1}\)</span></p></li>
+</ol>
+<p>Demo: sabemos que <span class="math inline">\(m_A = x^k\)</span>, con indice de nilpotencia <span class="math inline">\(k\)</span>. Además sabemos que <span class="math inline">\(m_A = \mathop{\mathrm{lcm}}x^{b_i} = x^{\max b_i}\)</span>, donde <span class="math inline">\(b_i\)</span> son los tamaños de los bloques, luego <span class="math inline">\(x^k = x^{\max b_i}\)</span>, luego está <span class="math inline">\(1)\)</span>.</p>
+<p>Lo segundo es trivial viendo como actúan las potencias de la forma de jordan de <span class="math inline">\(A\)</span>.</p>
+<p>Usando estas dos cosas, la forma de jordan de <span class="math inline">\(A\)</span> está unívocamente determinada por los números <span class="math inline">\(\mathop{\mathrm{rg}}A^0, \mathop{\mathrm{rg}}A^1, \dots\)</span>, luego ya está.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

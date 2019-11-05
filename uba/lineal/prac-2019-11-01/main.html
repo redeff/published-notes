@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="forma-de-jordan" class="unnumbered">Forma de Jordan</h1>
+<p>Tomo <span class="math display">\[A =
+    \begin{bmatrix}
+        4 &amp; -3 &amp; -2 \\
+        8 &amp; -6 &amp; -4 \\
+        -4 &amp; 3 &amp; 2
+    \end{bmatrix}\]</span> Tenemos trivialmente <span class="math inline">\(A^2 = 0\)</span>, luego: <span class="math display">\[\{0\} \subsetneq \ker A \subsetneq A^2 = \mathbb{C}^3\]</span></p>
+<h1 id="caso-no-nilpotente" class="unnumbered">Caso no Nilpotente</h1>
+<p>Supongamos: <span class="math display">\[A =
+    \begin{bmatrix}
+        3 &amp; 1 &amp; -1 \\
+        -1 &amp; 0 &amp; 5 \\
+        -1 &amp; -1 &amp; 4
+    \end{bmatrix}\]</span> Sabemos que <span class="math inline">\(m_A = (x-2)^2(x-3)\)</span>. Luego si tomamos, por descomposición primaria:</p>
+<p><span class="math inline">\(\mathbb{C}^3 = \ker (A - 2I)^2 \oplus \ker (A-3I)\)</span></p>
+<p>Sabemos que <span class="math inline">\(x \mapsto (A - 2I)x\)</span> restringida a <span class="math inline">\(\ker (A - 2I)^2\)</span> es nilpotente, luego podemos sacar la forma de jordan de esta restricción, y luego sumarle <span class="math inline">\(2I\)</span>.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

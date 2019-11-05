@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="cantidad-de-bloques-de-cierto-tamaño" class="unnumbered">Cantidad de Bloques de Cierto Tamaño</h1>
+<p>Sea <span class="math inline">\(b_i\)</span> la cantidad de bloques de tamaño mayor a <span class="math inline">\(i\)</span>. Teníamos que: <span class="math display">\[b_i = \mathop{\mathrm{rg}}A^i - \mathop{\mathrm{rg}}A^{i+1}\]</span> Luego, si decimos <span class="math inline">\(c_i\)</span> es la cantidad de bloques de tamaño <span class="math inline">\(i\)</span>, tenemos: <span class="math display">\[c_i = b_{i-1} - b_i = \mathop{\mathrm{rg}}A^{i-1} - 2\mathop{\mathrm{rg}}A^i + \mathop{\mathrm{rg}}A^{i+1}\]</span></p>
+<h1 id="unicidad-de-la-forma-de-jordan" class="unnumbered">Unicidad de la forma de Jordan</h1>
+<p>Sale trivial por los tamaños de la cantidad de bloques del título anterior.</p>
+<h1 id="jordanes-con-minimal-x---lambdar" class="unnumbered">Jordanes con minimal <span class="math inline">\((x - \lambda)^r\)</span></h1>
+<p>Si tenemos <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> con <span class="math inline">\(m_f = (x-\lambda)^r\)</span>, luego tenemos que <span class="math inline">\(f - \lambda\mathop{\mathrm{id}}\)</span> es una <span class="math inline">\(\mathop{\mathrm{tl}}\)</span> de índice de nilpotencia <span class="math inline">\(r\)</span></p>
+<p>Luego por Jordan en Nilpotentes, tenemos que: <span class="math display">\[[f-\lambda\mathop{\mathrm{id}}]_\mathcal{B}= J\]</span> Para una matriz de Jordan nilpotente <span class="math inline">\(J\)</span>. <span class="math display">\[[f-\lambda\mathop{\mathrm{id}}]_\mathcal{B}= J\]</span> <span class="math display">\[[f]_\mathcal{B}- \lambda[\mathop{\mathrm{id}}]_\mathcal{B}= J\]</span> <span class="math display">\[[f]_\mathcal{B}- \lambda I = J\]</span> <span class="math display">\[[f]_\mathcal{B}= J + \lambda I = J(\lambda)\]</span></p>
+<h1 id="caso-general" class="unnumbered">Caso General</h1>
+<p>Si tenemos <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> con <span class="math inline">\(m_f = \prod (x - \lambda_i)^{r_i}\)</span>, con <span class="math inline">\((\lambda_i)\)</span> autovalores distintos.</p>
+<p>Por descomposición primaria, <span class="math inline">\(\mathbb{V}= \bigoplus \mathbb{V}_i\)</span>, con <span class="math inline">\(\mathbb{V}_i = \ker (f - \lambda_i)^{r_i}\)</span>.</p>
+<p>Luego tomemos <span class="math inline">\(\mathcal{B}_i\)</span> una base de jordán de <span class="math inline">\(f|_{\mathbb{V}_i}\)</span>, ya que sabemos que <span class="math inline">\(\mathbb{V}_i\)</span> es <span class="math inline">\(f\)</span>-invariante, y <span class="math inline">\(m_{f|_{\mathbb{V}_i}} = (f - \lambda_i \mathop{\mathrm{id}})^{r_i}\)</span>.</p>
+<p>Luego sabemos <span class="math inline">\([f|_{\mathbb{V}_i}]_{\mathcal{B}_i} = J(\lambda_i)\)</span></p>
+<p>Si tomamos entonces <span class="math inline">\(\mathcal{B}= \bigcup \mathcal{B}_i\)</span>, queda: <span class="math display">\[[f]_\mathcal{B}=
+    \begin{bmatrix}
+        J(\lambda_1) &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; J(\lambda_2) &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; J(\lambda_3) &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; J(\lambda_4) &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; 0 &amp; J(\lambda_5) \\
+    \end{bmatrix}\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
