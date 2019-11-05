@@ -1,0 +1,76 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Jordan de Nilpotentes}
+Dada una $f : \V \to \V$ nilpotente. de índice $k$, existe base $\BB$ de $\V$ tal que:
+\[
+	[f]_\BB =
+	\begin{bmatrix}
+		J_1 & 0 & 0 & 0 \\
+		0 & J_2 & 0 & 0 \\
+		0 & 0 & J_3 & 0 \\
+		0 & 0 & 0 & J_4 \\
+	\end{bmatrix}
+\]
+
+Demo:
+Sabemos que
+\[\{0\} = \ker f^0 \subsetneq \ker f^1 \subsetneq \dots \subsetneq \ker f^k = \V\]
+
+Luego construyamos los $\CC_i$ en orden reverso. Tenemos que:
+$\CC_{i}$ es una extensión $\CC_i$ de la base $f(\CC_{i+1})$ tal que $\ker f^{i-1} \oplus \bigoplus_{j \geq i} \langle \CC_j\rangle = \V$.
+
+Después tomemos $\BB = \bigcup \CC_i$, que (reordenada) es la base que queremos.
+\section*{Ejemplo 1}
+Sea
+\[
+	A =
+	\begin{bmatrix}
+		0 & 0 & 0 & 0 & 0 & 0 \\
+		1 & 0 & 0 & 0 & 0 & 0 \\
+		-1 & -1 & 0 & 0 & 0 & 0 \\
+		0 & 1 & 0 & 0 & 1 & 0 \\
+		-1 & 0 & 0 & 0 & 0 & 0 \\
+		1 & 0 & 0 & 0 & -1 & 0 \\
+	\end{bmatrix}
+\]
+Tenemos
+\[\ker A = \langle e_3, e_4, e_6 \rangle\]
+\[\ker A^2 = \langle e_3, e_4, e_6, e_2, e_5 \rangle\]
+Para construir la base de Jordan, tomemos:
+Luego tomemos $C_3 = \{e_1\}$ alguna extensión de la base de $\ker A^2$ a una de $\ker A^3 = \V$.
+
+Ahora queremos extender $\{f(e_1)\}$ a una base de $\ker A^2$, vemos que con $\{fe_1, e_5\}$ alcanza.
+
+Ahora queremos extender $\{f^2e_1, fe_5\}$ a una base de $\ker A$, y con $\{f^2 e_1, fe_5, e_3\}$ alcanza.
+
+Luego $\BB = \{e_1, fe_1, f^2e_1, e_5, fe_5, e_3\}$, y en esa base:
+\[
+	[A]_\BB =
+	\begin{bmatrix}
+		0 & 0 & 0 & 0 & 0 & 0 \\
+		1 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 1 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 0 \\
+		0 & 0 & 0 & 1 & 0 & 0 \\
+		0 & 0 & 0 & 0 & 0 & 0 \\
+	\end{bmatrix}
+\]
+Que tiene $3$ bloques de Jordan, de tamaños decrecientes.
+
+\section*{Lemita}
+Si $J \in \K^{n \times n}$ es un bloque de Jordan, luego $\rg J^i = n-i$.
+
+\section*{Unicidad de la forma de Jordan}
+Tenemos que:
+\begin{enumerate}
+	\item El tamaño del bloque de Jordan más grande es el índice de nilpotencia.
+	\item La cantidad de bloques de tamaño mayor que $i$ que aparece en la forma de jordan es $\rg A^i - \rg A^{i+1}$
+\end{enumerate}
+
+Demo: sabemos que $m_A = x^k$, con indice de nilpotencia $k$. Además sabemos que $m_A = \lcm x^{b_i} = x^{\max b_i}$, donde $b_i$ son los tamaños de los bloques, luego $x^k = x^{\max b_i}$, luego está $1)$.
+
+Lo segundo es trivial viendo como actúan las potencias de la forma de jordan de $A$.
+
+Usando estas dos cosas, la forma de jordan de $A$ está unívocamente determinada por los números $\rg A^0, \rg A^1, \dots$, luego ya está.
+\end{document}

@@ -1,0 +1,33 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Forma de Jordan}
+Tomo
+\[
+	A =
+	\begin{bmatrix}
+		4 & -3 & -2 \\
+		8 & -6 & -4 \\
+		-4 & 3 & 2
+	\end{bmatrix}
+\]
+Tenemos trivialmente $A^2 = 0$, luego:
+\[
+	\{0\} \subsetneq \ker A \subsetneq A^2 = \C^3
+\]
+\section*{Caso no Nilpotente}
+Supongamos:
+\[
+	A =
+	\begin{bmatrix}
+		3 & 1 & -1 \\
+		-1 & 0 & 5 \\
+		-1 & -1 & 4
+	\end{bmatrix}
+\]
+Sabemos que $m_A = (x-2)^2(x-3)$. Luego si tomamos, por descomposición primaria:
+
+$\C^3 = \ker (A - 2I)^2 \oplus \ker (A-3I)$
+
+Sabemos que $x \mapsto (A - 2I)x$ restringida a $\ker (A - 2I)^2$ es nilpotente, luego podemos sacar la forma de jordan de esta restricción, y luego sumarle $2I$.
+\end{document}

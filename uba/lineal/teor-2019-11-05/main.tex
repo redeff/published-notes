@@ -1,0 +1,57 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Cantidad de Bloques de Cierto Tamaño}
+Sea $b_i$ la cantidad de bloques de tamaño mayor a $i$. Teníamos que:
+\[
+	b_i = \rg A^i - \rg A^{i+1}
+\]
+Luego, si decimos $c_i$ es la cantidad de bloques de tamaño $i$, tenemos:
+\[
+	c_i = b_{i-1} - b_i = \rg A^{i-1} - 2\rg A^i + \rg A^{i+1}
+\]
+\section*{Unicidad de la forma de Jordan}
+Sale trivial por los tamaños de la cantidad de bloques del título anterior.
+
+\section*{Jordanes con minimal $(x - \l)^r$}
+Si tenemos $f : \V \to \V$ con $m_f = (x-\l)^r$, luego tenemos que $f - \l \id$ es una $\tl$ de índice de nilpotencia $r$
+
+Luego por Jordan en Nilpotentes, tenemos que:
+\[
+	[f-\l \id]_\BB = J
+\]
+Para una matriz de Jordan nilpotente $J$.
+\[
+	[f-\l \id]_\BB = J
+\]
+\[
+	[f]_\BB - \l [\id]_\BB = J
+\]
+\[
+	[f]_\BB - \l I = J
+\]
+\[
+	[f]_\BB = J + \l I = J(\l)
+\]
+
+\section*{Caso General}
+Si tenemos $f : \V \to \V$ con $m_f = \prod (x - \l_i)^{r_i}$, con $(\l_i)$ autovalores distintos.
+
+Por descomposición primaria, $\V = \bigoplus \V_i$, con $\V_i = \ker (f - \l_i)^{r_i}$.
+
+Luego tomemos $\BB_i$ una base de jordán de $f|_{\V_i}$, ya que sabemos que $\V_i$ es $f$-invariante, y $m_{f|_{\V_i}} = (f - \l_i \id)^{r_i}$.
+
+Luego sabemos $[f|_{\V_i}]_{\BB_i} = J(\l_i)$
+
+Si tomamos entonces $\BB = \bigcup \BB_i$, queda:
+\[
+	[f]_\BB =
+	\begin{bmatrix}
+		J(\l_1) & 0 & 0 & 0 & 0 \\
+		0 & J(\l_2) & 0 & 0 & 0 \\
+		0 & 0 & J(\l_3) & 0 & 0 \\
+		0 & 0 & 0 & J(\l_4) & 0 \\
+		0 & 0 & 0 & 0 & J(\l_5) \\
+	\end{bmatrix}
+\]
+\end{document}
