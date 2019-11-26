@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="transformaciones-ortogonales" class="unnumbered">Transformaciones ortogonales</h1>
+<p>Decimos que <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> es ortogonal sii <span class="math inline">\(f^{-1} = f^* \iff f\circ f^* = \mathop{\mathrm{id}}\)</span>. Esto es equivalente a:</p>
+<ol>
+<li><p>Existe una <span class="math inline">\(B\)</span> bon tal que <span class="math inline">\(f(B)\)</span> es bon.</p></li>
+<li><p><span class="math inline">\(\langle fv, fw \rangle = \langle v, w \rangle\)</span>.</p></li>
+<li><p><span class="math inline">\(||fv|| = ||v||\)</span>.</p></li>
+<li><p>Para todo <span class="math inline">\(B\)</span> bon cumple que <span class="math inline">\(f(B)\)</span> es bon.</p></li>
+</ol>
+<p>Notemos que <span class="math inline">\(f\)</span> ortogonal implica <span class="math inline">\(f \circ f^* \iff f^* \circ f\)</span>, luego <span class="math inline">\(f\)</span> normal. Es decir que <span class="math inline">\(f\)</span> tiene una base bon de autovectores.</p>
+<h1 id="ortogonales-en-mathbbr2" class="unnumbered">Ortogonales en <span class="math inline">\(\mathbb{R}^2\)</span></h1>
+<p>Todas las ortogonales en <span class="math inline">\(\mathbb{R}^2\)</span> son de la forma: <span class="math display">\[f_\mathcal{B}=
+\begin{bmatrix}
+    1 &amp; 0 \\
+    0 &amp; -1 \\
+\end{bmatrix}\]</span> ó <span class="math display">\[f_\mathcal{B}=
+\begin{bmatrix}
+    \cos \theta &amp; -\sin \theta \\
+    \sin \theta &amp; \cos \theta \\
+\end{bmatrix}\]</span> La que tiene determinante <span class="math inline">\(1\)</span> es rotación.</p>
+<h1 id="ortogonales-en-mathbbr3" class="unnumbered">Ortogonales en <span class="math inline">\(\mathbb{R}^3\)</span></h1>
+<p>Si o sí debe tener autovalores reales. Supongamos <span class="math inline">\(\lambda= 1\)</span> es autovalor. Sea <span class="math inline">\(v\)</span> autovector de autovalor <span class="math inline">\(1\)</span>. Luego es claro que <span class="math inline">\(S = \langle v \rangle^\perp\)</span> es <span class="math inline">\(f\)</span> invariante, luego <span class="math inline">\(f|_S : S \to S\)</span> es una ortonormal de un espacio de dimensión <span class="math inline">\(2\)</span>. Luego es o una reflexión o una rotación. Luego, existe alguna <span class="math inline">\(\mathcal{B}\)</span> bon tal que: <span class="math display">\[f_\mathcal{B}=
+    \begin{bmatrix}
+        1 &amp; 0 &amp; 0 \\
+        0 &amp; 1 &amp; 0 \\
+        0 &amp; 0 &amp; -1 \\
+    \end{bmatrix} \text{ ó }
+    f_\mathcal{B}=
+\begin{bmatrix}
+    1 &amp; 0 &amp; 0 \\
+    0 &amp; \cos \theta &amp; -\sin \theta \\
+    0 &amp; \sin \theta &amp; \cos \theta \\
+\end{bmatrix}\]</span> En el caso en el que <span class="math inline">\(\lambda= 1\)</span> no es autovalor, tendremos que la matriz tiene que ser de la pinta: <span class="math display">\[f_\mathcal{B}=
+\begin{bmatrix}
+    -1 &amp; 0 &amp; 0 \\
+    0 &amp; \cos \theta &amp; -\sin \theta \\
+    0 &amp; \sin \theta &amp; \cos \theta \\
+\end{bmatrix}\]</span> Que es una composición entre una rotación y una simetría.</p>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Definir <span class="math inline">\(f : \mathbb{R}^3 \to \mathbb{R}^3\)</span> tal que <span class="math inline">\(f(1,1,0) = (0,1,1)\)</span> y el eje de rotación sea perpendicular a <span class="math inline">\((1,1,0)\)</span> y a <span class="math inline">\((0,1,1)\)</span>.</p>
+<p>El eje de rotación lo podemos calcular como el producto vectorial entre <span class="math inline">\((1,1,0)\)</span> y <span class="math inline">\((0,1,1)\)</span>, que queda <span class="math inline">\(v = (1,-1,1)\)</span>.</p>
+<p>Además, tenemos que calcular el ángulo de rotación que es: <span class="math display">\[\cos^{-1} \frac{\langle (1,1,0), (0,1,1) \rangle}{||(1,1,0)|| \cdot ||(0,1,1)||} = \frac{1}{3}\pi\]</span></p>
+<p>armemos una base bon. El primer vector será <span class="math inline">\(\frac{v}{||v||}\)</span>, el eje de rotación.</p>
+<p>El otro será <span class="math inline">\(\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0\right)\)</span> y el otro será uno ortogonal a los dos.</p>
+<p>Sabemos que <span class="math inline">\(f\)</span> manda bon a bon, luego queremos ver a qué bon es.</p>
+<p>Sabemos que <span class="math inline">\(f\left(\frac{v}{||v||}\right) = \frac{v}{||v||}\)</span>, y ya sabemos para el segundo de la base, luego el tercero está casi determinado (hay dos opciones), y tomamos la que hace que la matriz sea de determinante 1.</p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Sea <span class="math inline">\(f : \mathbb{R}^3 \to \mathbb{R}^3\)</span> ortogonal. Demostrar que <span class="math inline">\(f(v \times w) \cdot \det f = fv \times fw\)</span></p>
+<p>Notemos que <span class="math display">\[\langle f(v \times w), z\rangle =\]</span> <span class="math display">\[\langle v \times w, f^*z\rangle\]</span> Además, <span class="math display">\[\langle fv \times fw, z\rangle =\]</span> <span class="math display">\[\langle fv \times fw, ff^*z\rangle =\]</span> <span class="math display">\[\det f \cdot \langle v \times w, f^*z\rangle =\]</span> Entonces ya estamos</p>
+<h1 id="ejercicio-3" class="unnumbered">Ejercicio 3</h1>
+<p>Encontrar una rotación compuesta con una simetría tal que: <span class="math display">\[f(4,0,0) = (2\sqrt{3}, 2, 0)\]</span> <span class="math display">\[f(0,4,0) = (-\sqrt{3}, 3, 2)\]</span></p>
+<p>Tenemos que, por ele ejercicio anterior: <span class="math display">\[f((4,0,0) \times (0,4,0)) = \det f \cdot ((2\sqrt{3}, 2, 0) \times (-\sqrt{3}, 3, 2))\]</span> Y el determinante es <span class="math inline">\(-1\)</span>, ya que es una composición de rotación y reflexión. Luego ya estamos.</p>
+<h1 id="ejercicio-4" class="unnumbered">Ejercicio 4</h1>
+<p>Determinar en alguna base <span class="math inline">\(\mathcal{B}\)</span> de <span class="math inline">\(\mathbb{R}^3\)</span>:</p>
+<ul>
+<li><p>Suna simetría <span class="math inline">\(f : \mathbb{R}^3 \to \mathbb{R}^3\)</span> tq <span class="math inline">\(f(1,1,0) = (0,-1,-1)\)</span> Probar que si <span class="math inline">\(g\)</span> es una rotación, luego <span class="math inline">\(f \circ g\)</span> es una simetría.</p></li>
+</ul>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

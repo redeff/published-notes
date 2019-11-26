@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="complemento-ortogonal" class="unnumbered">Complemento Ortogonal</h1>
+<p>Dado <span class="math inline">\(S \subseteq\mathbb{V}\)</span>, decimos <span class="math inline">\(S^\perp = \{ v \in \mathbb{V}: v \perp s \forall s \in \mathbb{S}\}\)</span>.</p>
+<p>Cuando es finito <span class="math inline">\(\mathbb{V}\)</span>, tenemos que <span class="math inline">\(S \oplus S^\perp = \mathbb{V}\)</span></p>
+<p>Para calcular <span class="math inline">\(\mathbb{S}^\perp\)</span>, tomamos una base de <span class="math inline">\(S\)</span> extendida a una de <span class="math inline">\(\mathbb{V}\)</span>, y aplicamos el algoritmo para hacerla ortogonal.</p>
+<h1 id="proyectores" class="unnumbered">Proyectores</h1>
+<p>Se define <span class="math inline">\(p_S : \mathbb{V}\to \mathbb{V}\)</span> al proyector que cumple:</p>
+<ul>
+<li><p><span class="math inline">\(\mathop{\mathrm{Im}}p = S\)</span></p></li>
+<li><p><span class="math inline">\(\ker p = S^\perp\)</span></p></li>
+</ul>
+<h1 id="descomposición-en-base-ortonormal" class="unnumbered">Descomposición en base Ortonormal</h1>
+<p>Si tenemos una base ortonormal <span class="math inline">\(\mathcal{B}\)</span> de <span class="math inline">\(\mathbb{V}\)</span>, tenemos que: <span class="math display">\[v = \sum\limits\langle v, \mathcal{B}_i \rangle \cdot \mathcal{B}_i\]</span></p>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Dado <span class="math inline">\(\mathbb{V}= \mathbb{R}^{3 \times 3}\)</span>, <span class="math inline">\(\langle A, B\rangle = \mathop{\mathrm{tr}}(AB^t)\)</span>:</p>
+<ol>
+<li><p>Calcular <span class="math inline">\(S^\perp\)</span>, donde <span class="math inline">\(S = \{A \in \mathbb{R}^{3 \times 3} : A_{ij} = 0 \forall i \neq 1\}\)</span></p></li>
+<li><p>Dada <span class="math inline">\(A = 
+        \begin{bmatrix}
+            1 &amp; 2 &amp; 3 \\
+            3 &amp; 1 &amp; 2 \\
+            2 &amp; 3 &amp; 1 \\
+        \end{bmatrix}\)</span>, calcular el <span class="math inline">\(B \in S^\perp\)</span> más cercano a <span class="math inline">\(A\)</span>.</p></li>
+</ol>
+<p>Notemos que, si <span class="math inline">\(A \in S\)</span>, luego <span class="math display">\[\mathop{\mathrm{tr}}(AB^t) = 0\]</span> <span class="math display">\[\sum\limits_i (AB^t)_{ii} = 0\]</span> <span class="math display">\[\sum\limits_i \sum\limits_j A_{ij} B^t_{ji} = 0\]</span> <span class="math display">\[\sum\limits_i \sum\limits_j A_{ij} B_{ij} = 0\]</span> <span class="math display">\[\sum\limits_j A_{1j} B_{1j} = 0\]</span> Luego <span class="math inline">\(S^\perp = \{B : \forall j : B_{1j} = 0\}\)</span></p>
+<p>Notemos que demás la canónica <span class="math inline">\(E_{ij}\)</span> es BON, entonces: <span class="math display">\[p_S(A) = \sum\limits\langle A, E_{1j} \rangle E_{1j} =\]</span> <span class="math display">\[p_S(A) = \sum\limits A_{1j} E_{1j} =\]</span> <span class="math display">\[\begin{bmatrix}
+        1 &amp; 2 &amp; 3 \\
+        0 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; 0 \\
+    \end{bmatrix}\]</span></p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Probar que existe pi en <span class="math inline">\(\mathbb{R}^{3 \times 3}\)</span> tq:</p>
+<ul>
+<li><p><span class="math inline">\(S^\perp\)</span> = <span class="math inline">\(\{(x \; y \; z) : x+y-z = 0\}^\perp = \langle(0 \; 0 \; 1)\rangle\)</span></p></li>
+<li><p><span class="math inline">\(\langle (2 \; 2 \; 17), (1 \; 0 \; 1) \rangle = 0\)</span></p></li>
+</ul>
+<p>Calcular <span class="math inline">\(\langle (1 \; 1 \; 2) \rangle ^ \perp\)</span></p>
+<h1 id="caracterización-de-los-productos-internos" class="unnumbered">Caracterización de los Productos Internos</h1>
+<p>Si <span class="math inline">\(\mathcal{B}\)</span> es una base, y <span class="math inline">\(A\)</span> una matriz simétrica y definida positiva, luego: <span class="math display">\[\Phi(x,y) = (x)_\mathcal{B}A((y)_\mathcal{B})^t\]</span></p>
+<p>Vamos a querer construirnos una base ortonormal para trabajar, que queremos que tenga subbases de <span class="math inline">\(S\)</span> y de <span class="math inline">\(S^\perp\)</span>. Pongamos entonces a <span class="math inline">\((0 \; 0 \; 1) \in S^\perp\)</span> en la base, y además pongamos a <span class="math inline">\((1 \; 0 \; 1)\)</span> en la base, y queremos unomás, ortogonal a los otros dos. Podemos elejirnos <span class="math inline">\((2 \; 2 \; 17) - 13 \cdot (0 \; 0 \; 1)\)</span></p>
+<p>Luego dada esta base ortogonal, el producto interno queda definido sólo por la matriz de producto interno (que no nos importa), y además, como <span class="math inline">\((1 \; 1 \; 2)\)</span> estaba ya en la base, tenemos que el ortogonal al generado por él es <span class="math inline">\(\langle (1 \; 0 \; 1) \quad (0 \; 0 \; 1) \rangle\)</span></p>
+<h1 id="ejercicio-3" class="unnumbered">Ejercicio 3</h1>
+<p>Si <span class="math inline">\(f : \mathbb{C}^2 \to \mathbb{C}^2\)</span>, <span class="math inline">\(f(x,y) = (x - iy, 3x - 4iy)\)</span>, con <span class="math display">\[\langle (x,y), (z,w) \rangle = x\overline z + y \overline w\]</span> Tenemos: <span class="math display">\[\langle(x-iy, 3x-4iy, (z,w)\rangle =\]</span> <span class="math display">\[(x-iy)\overline z + (3x-4iy) \overline w =\]</span> <span class="math display">\[x\overline z-iy\overline z + 3x\overline w -4iy \overline w =\]</span> <span class="math display">\[x\overline {(z + 3w)} + y\overline {(-iz -4i w)} =\]</span> <span class="math display">\[\langle (x, y), (z + 3w, -iz -4i w \rangle =\]</span></p>
+<h1 id="ejercicio-4" class="unnumbered">Ejercicio 4</h1>
+<p>Dado <span class="math inline">\(\mathbb{V}= \mathbb{R}[x]\)</span>, <span class="math inline">\(\langle p, q \rangle = \int_0^1 p(x)q(x) dx\)</span>, y <span class="math inline">\(m_f(p) = f \cdot p\)</span>, calcular <span class="math inline">\(m_f^*\)</span> <span class="math display">\[\langle m_f p, q\rangle = \langle p, m_f^* q \rangle\]</span> <span class="math display">\[\int_0^1 f(x)p(x)q(x) dx = \int_0^1 p(x) m_f^*(q)(x) dx\]</span> Si tomamos <span class="math inline">\(m_f^* = m_f\)</span>, es claro que esto anda, luego ya estamos.</p>
+<h1 id="ejercicio-5" class="unnumbered">Ejercicio 5</h1>
+<p>Dado <span class="math inline">\(\mathbb{V}= \mathbb{C}^{n \times n}\)</span>, con <span class="math inline">\(f(A) = P^{-1}AP\)</span>, hallar la adjunta y ver que es autoadjunta cuando <span class="math inline">\(P\)</span> es hermitiana <span class="math display">\[\langle f(A), B \rangle =\]</span> <span class="math display">\[\mathop{\mathrm{tr}}P^{-1}APB^* =\]</span> <span class="math display">\[\mathop{\mathrm{tr}}AP^{-1}B^*P =\]</span> <span class="math display">\[\mathop{\mathrm{tr}}A(P^{-*}BP^*)^* =\]</span> <span class="math display">\[\langle A, P^{-*}BP^* \rangle =\]</span> Luego <span class="math inline">\(f^*(B) = P^{-*}BP^*\)</span>, que cumple <span class="math inline">\(f = f^*\)</span> cuando <span class="math inline">\(P\)</span> es hermitiana</p>
+<h1 id="identidades" class="unnumbered">Identidades</h1>
+<ul>
+<li><p><span class="math inline">\((f \circ g)^* = g^* \circ f^*\)</span></p></li>
+<li><p><span class="math inline">\((f^*)^* = f\)</span></p></li>
+<li><p><span class="math inline">\(\ker (f^*) = (\mathop{\mathrm{Im}}f)^\perp\)</span></p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{Im}}(f^*) = (\ker f)^\perp\)</span> (Para finitos)</p></li>
+<li><p><span class="math inline">\(\ker f = \ker (f^* \circ f)\)</span></p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{Im}}f = \mathop{\mathrm{Im}}(f \circ f^*)\)</span></p></li>
+</ul>
+<p>Notemos que <span class="math display">\[w \in \ker (f^*) \iff\]</span> <span class="math display">\[f^*(w) = 0 \iff\]</span> <span class="math display">\[\forall v : \langle v, f^*(w) \rangle = 0 \iff\]</span> <span class="math display">\[\forall v : \langle f(v), w \rangle = 0 \iff\]</span> <span class="math display">\[w \perp \mathop{\mathrm{Im}}f\]</span></p>
+<p>Además, si <span class="math inline">\(w \in \ker f\)</span>, queremos ver que <span class="math inline">\(w \perp f^*(v)\)</span>, luego <span class="math display">\[\langle w, f^*(v) \rangle =\]</span> <span class="math display">\[\langle fw, v \rangle =\]</span> <span class="math display">\[0\]</span> Por lo que <span class="math inline">\(\mathop{\mathrm{Im}}f^* \subseteq(\ker f) ^ \perp\)</span></p>
+<p>Tomemos <span class="math inline">\(v \in \ker (f^* \circ f)\)</span>, luego: <span class="math display">\[0 = \langle v, f^*(f(v)) \rangle =\]</span> <span class="math display">\[\langle f(v), f(v) \rangle\]</span> Luego <span class="math inline">\(f(v) = 0\)</span></p>
+<p>Notemos además que: <span class="math display">\[\mathop{\mathrm{Im}}(f \circ f^*) =\]</span> <span class="math display">\[\ker (f \circ f^*)^\perp =\]</span> <span class="math display">\[\ker (f^{**} \circ f^*)^\perp =\]</span> <span class="math display">\[(\ker f^*)^\perp =\]</span> <span class="math display">\[(\mathop{\mathrm{Im}}f)^{\perp\perp} =\]</span> <span class="math display">\[(\mathop{\mathrm{Im}}f) =\]</span></p>
+<h1 id="transformaciones-normales" class="unnumbered">Transformaciones Normales</h1>
+<p>Una transformación <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> es normal sii <span class="math inline">\(f \circ f^* = f^* \circ f\)</span> Notemos que:</p>
+<ul>
+<li><p><span class="math inline">\(||f(v)||^2 = ||f^*(v)||^2\)</span></p></li>
+<li><p><span class="math inline">\(f\)</span> normal, entonces <span class="math inline">\(v\)</span> autovector de autovalor <span class="math inline">\(\lambda\)</span> sii <span class="math inline">\(v\)</span> autovector de <span class="math inline">\(f^*\)</span> con autovalor <span class="math inline">\(\overline \lambda\)</span></p></li>
+</ul>
+<h1 id="caracterización-de-las-normales" class="unnumbered">Caracterización de las Normales</h1>
+<p><span class="math inline">\(f\)</span> normal sii <span class="math inline">\(f\)</span> admine una BON de autovectores.</p>
+<p>Sea <span class="math inline">\(\lambda\in \mathbb{C}\)</span> un autovalor, de autovector <span class="math inline">\(v\)</span>, luego tomamos <span class="math inline">\(S = \langle v \rangle^\perp\)</span>. Tenemos que: <span class="math display">\[\langle fs, v \rangle =\]</span> <span class="math display">\[\langle \lambda s, v \rangle =\]</span> <span class="math display">\[\lambda\langle s, v \rangle = 0\]</span> Y así hacemos inducción.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

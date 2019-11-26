@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="integración-en-varias-variables" class="unnumbered">Integración en Varias variables</h1>
+<p>Dado un rectángulo <span class="math inline">\(D = [a,b] \times [c,d]\)</span>, y una función <span class="math inline">\(f : D \to \mathbb{R}\)</span>, vamos a definir: <span class="math display">\[I = \iint\limits_D f(x,y) \; dx \; dy\]</span> Geométricamente, <span class="math inline">\(I\)</span> representa el volumen de los puntos en <span class="math inline">\(\mathbb{R}^3\)</span> debajo del gráfico de la función.</p>
+<p>Formalmente, se define parecido a la integral de riemann. Dada dos funciones crecientes <span class="math inline">\(\pi : \{n\} \to [a,b]\)</span>, <span class="math inline">\(\tau : \{m\} \to [c,d]\)</span> particiones, decimos que: <span class="math display">\[s(f,\pi,\tau) = \sum\limits_i \sum\limits_j |\pi_{i+1} - \pi_i| \cdot |\tau_{i+1} - \tau_i| \cdot k_{ij}\]</span> Con <span class="math display">\[k_{ij} = \inf \{f(x,y) : \pi_i \leq x \leq \pi_{i+1}, \tau_j \leq y \leq \tau_{j+1}\}\]</span> Y además, <span class="math display">\[S(f,\pi,\tau) = \sum\limits_i \sum\limits_j |\pi_{i+1} - \pi_i| \cdot |\tau_{i+1} - \tau_i| \cdot K_{ij}\]</span> Con <span class="math display">\[K_{ij} = \sup \{f(x,y) : \pi_i \leq x \leq \pi_{i+1}, \tau_j \leq y \leq \tau_{j+1}\}\]</span></p>
+<p>Luego tomamos <span class="math display">\[\iint\limits_D f(x,y) \; dx \; dy = \sup_{\pi, \tau} s(f, \pi, \tau) = \inf_{\pi, \tau} S(f, \pi, \tau)\]</span> Cuando estos valores coinciden.</p>
+<h2 id="integrabilidad-de-contínuas" class="unnumbered">Integrabilidad de Contínuas</h2>
+<p>Toda función contínua es integrable.</p>
+<h1 id="teorema-de-fubini" class="unnumbered">Teorema de Fubini</h1>
+<p>Para toda función contínua <span class="math inline">\(f : [a,b] \times [c, d] \to \mathbb{R}\)</span>, se cumple que: <span class="math display">\[\iint\limits_{[a,b] \times [c,d]} f(x,y) \; dx \; dy = \int_c^d \left[\int_a^b f(x,y) \; dx\right] \; dy\]</span> Y <span class="math display">\[\iint\limits_{[a,b] \times [c,d]} f(x,y) \; dx \; dy = \int_a^b \left[\int_c^d f(x,y) \; dy\right] \; dx\]</span></p>
+<h1 id="integral-de-variables-separadas" class="unnumbered">Integral de Variables Separadas</h1>
+<p>Por fubini, trivialmente: <span class="math display">\[\iint\limits_D f(x) \cdot g(y) \; dx \; dy = \left(\int f(x) \; dx\right) \left(\int g(y) \; dy\right)\]</span></p>
+<h1 id="integral-sobre-regiones-no-rectangulares" class="unnumbered">Integral sobre Regiones no Rectangulares</h1>
+<p>Supongamos que tenemos una función <span class="math inline">\(f : C \to \mathbb{R}\)</span>, con <span class="math inline">\(C \subseteq\mathbb{R}^2\)</span> acotada, luego va a existir un rectángulo <span class="math inline">\(D : C \subseteq D\)</span>. Luego extendemos la función de tal forma que:</p>
+<p><span class="math display">\[f&#39;(x) =
+    \begin{cases}
+        f(x) &amp; \text{Si $x \in C$} \\
+        0 &amp; \text{Si $x \notin C$} \\
+    \end{cases}\]</span></p>
+<p>Y definimos: <span class="math display">\[\iint\limits_C f(x,y) \; dxdy = \iint\limits_D f&#39;(x,y) \; dxdy\]</span></p>
+<h1 id="dominios-simples" class="unnumbered">Dominios Simples</h1>
+<p>Un dominio simple es un subconjunto de <span class="math inline">\(\mathbb{R}^2\)</span> de la forma: <span class="math display">\[D = \{(x,y) : a \leq x \leq b, \phi_1(x) \leq y \leq \phi_2(x)\}\]</span></p>
+<p>Por fubini, tenemos que que: <span class="math display">\[\iint\limits_D f(x,y) \; dxdy = \int_a^b \left[\int_{\phi_1(x)}^{\phi_2(x)} f(x,y) \; dy\right] dx\]</span></p>
+<h1 id="ejemplo" class="unnumbered">Ejemplo</h1>
+<p>Ponele que queremos calcular el volumen de un cono de altura <span class="math inline">\(h\)</span>, y base de radio <span class="math inline">\(r\)</span>, luego tenemos que su base es: <span class="math display">\[D = \{(x,y) : x^2 + y^2 \leq r^2\}\]</span> Y la integral que queremos es: <span class="math display">\[\iint\limits_D h \left(1 - \frac{\sqrt{x^2 + y^2}}{r}\right) =\]</span> <span class="math display">\[h \pi r^2 - h\iint\limits_D \frac{\sqrt{x^2 + y^2}}{r} =\]</span> <span class="math display">\[h \pi r^2 - \frac{h}{r}\iint\limits_D \sqrt{x^2 + y^2}\]</span> <span class="math display">\[\iint\limits_D \sqrt{x^2 + y^2} =\]</span> <span class="math display">\[\int_{-r}^r \int_{-\sqrt{r^2-x^2}}^{\sqrt{r^2-x^2}} \sqrt{x^2 + y^2} \; dydx\]</span></p>
+<h1 id="regiones-de-área-0" class="unnumbered">Regiones de Área <span class="math inline">\(0\)</span></h1>
+<p>Un subconjunto <span class="math inline">\(A \in \mathbb{R}^2\)</span> se dice de <em>Contenido, o área <span class="math inline">\(0\)</span></em>, si para todo <span class="math inline">\(\varepsilon&gt; 0\)</span>, existe un conjunto <em>finito</em> <span class="math inline">\(\mathcal{D}\)</span> de rectángulos, tal que <span class="math inline">\(A \subseteq\bigcup \mathcal{D}\)</span>, y <span class="math inline">\(\sum\limits_{d \in \mathop{\mathrm{D}}} \text{area}(d) \leq \varepsilon\)</span>.</p>
+<p>Alternativamente, decimos que tiene área 0 sii: <span class="math display">\[0 = \inf_{\pi, \tau} \sum\limits_{(i,j) \in K} |\pi_{i+1} - \pi_i| \cdot |\tau_{i+1} - \tau_i|\]</span> Dónde: <span class="math display">\[K = \{(i,j) : [\pi_i, \pi_{i+1}] \times [\tau_i, \tau_{i+1}] \cap A \neq \emptyset\}\]</span></p>
+<h1 id="funciones-que-difieren-en-conjuntos-de-área-0" class="unnumbered">Funciones que difieren en Conjuntos de Área 0</h1>
+<p>Si tenemos un conjunto <span class="math inline">\(A\)</span> de área <span class="math inline">\(0\)</span>, luego si: <span class="math display">\[\forall (x,y) \notin A : f(x,y) = g(x,y)\]</span> Entonces: <span class="math display">\[\iint\limits_D f = \iint\limits_D g\]</span> Para todo <span class="math inline">\(D\)</span>.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

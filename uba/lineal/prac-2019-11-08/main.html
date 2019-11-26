@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="exponencial-de-matriz" class="unnumbered">Exponencial de Matriz</h1>
+<p>Dada <span class="math inline">\(A \in \mathbb{C}^{k \times k}\)</span>, decimos: <span class="math display">\[e^A = \sum\limits^\infty \frac{A^n}{n!}\]</span></p>
+<p>Alternativamente, si tenemos <span class="math inline">\(f : \mathbb{C}\to \mathbb{C}^k\)</span>, luego la ecuación diferencial: <span class="math display">\[f&#39;(t) = Ax(t)\]</span> Tiene como únicas soluciónes <span class="math inline">\(f(t) = e^{At} \cdot v\)</span>. Para cualquier condición inicial <span class="math inline">\(v\)</span>.</p>
+<h1 id="exponencial-con-jordan" class="unnumbered">Exponencial con Jordan</h1>
+<p>Tomemos una matriz, por ejemplo <span class="math display">\[A =
+    \begin{bmatrix}
+        3 &amp; 1 \\
+        -1 &amp; 1
+    \end{bmatrix}\]</span> Luego tenemos: <span class="math display">\[A = C^{-1} J_A C\]</span> Con <span class="math display">\[J_A =
+    \begin{bmatrix}
+        2 &amp; 0 \\
+        1 &amp; 2
+    \end{bmatrix}\]</span></p>
+<p>Además: <span class="math display">\[J_A^n = \sum\limits_{i = 0}^n {n \choose i} D^{n-i} N^i\]</span> Pero la nilpotente se anula para <span class="math inline">\(i \geq 2\)</span>, luego: <span class="math display">\[J_A^n = D^n + nD^{n-1}N =
+    \begin{bmatrix}
+        2^n &amp; 0 \\
+        n2^{n-1} &amp; 2^n
+    \end{bmatrix}\]</span> Luego <span class="math inline">\(A^n = C^{-1} J_a^n C\)</span>, luego: <span class="math display">\[e^{At} = C^{-1} \left(\sum\limits\frac{1}{n!}
+        \begin{bmatrix}
+            t^n2^n &amp; 0 \\
+            t^nn2^{n-1} &amp; t^n2^n
+        \end{bmatrix}
+    \right) C\]</span> <span class="math display">\[e^{At} = C^{-1} \left(\sum\limits
+        \begin{bmatrix}
+            \frac{t^n2^n}{n!} &amp; 0 \\
+            \frac{nt^n2^{n-1}}{(n-1)!} &amp; \frac{t^n2^n}{n!}
+        \end{bmatrix}
+    \right) C\]</span> Sabemos que <span class="math inline">\(\sum\limits\frac{t^n2^n}{n!} = e^{2t}\)</span>, además: <span class="math display">\[\sum\limits\frac{nt^n2^{n-1}}{(n-1)!} = te^{2t}\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

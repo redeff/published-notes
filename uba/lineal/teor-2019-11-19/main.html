@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="proyectores-ortogonales" class="unnumbered">Proyectores ortogonales</h1>
+<p>Un <span class="math inline">\(p : \mathbb{V}\to \mathbb{V}\)</span> es un proyector <span class="math inline">\(\perp\)</span> cuando <span class="math inline">\((\mathop{\mathrm{Im}}p)^\perp = \ker p\)</span>, y <span class="math inline">\((\ker p)^\perp = \mathop{\mathrm{Im}}p\)</span></p>
+<h1 id="doble-ortogonal" class="unnumbered">Doble ortogonal</h1>
+<p>Si tengo <span class="math inline">\(S \subseteq\mathbb{V}\)</span>, y un proyector <span class="math inline">\(\perp\)</span> con <span class="math inline">\(\mathop{\mathrm{Im}}p = S\)</span>, luego <span class="math inline">\(S^{\perp\perp} = S\)</span></p>
+<h1 id="condición-de-doble-ortogonalidad" class="unnumbered">Condición de Doble ortogonalidad</h1>
+<p>Sea <span class="math inline">\(S \subseteq\mathbb{V}\)</span> de dimensión finita, luego tenemos que <span class="math inline">\(\mathbb{V}= S + S^\perp\)</span> y <span class="math inline">\(\exists p\perp : \mathop{\mathrm{Im}}p = S, \ker p = S^\perp\)</span></p>
+<h2 id="demo" class="unnumbered">Demo</h2>
+<p>Sea <span class="math inline">\(\mathcal{B}\)</span> una base ortonormal de de <span class="math inline">\(S\)</span>. Tomemos un <span class="math inline">\(p : \mathbb{V}\to \mathbb{V}\)</span> definido por: <span class="math display">\[pv = \sum\limits_{v_i \in \mathcal{B}} \langle v_i, v \rangle \cdot v_i\]</span> Es claro que <span class="math inline">\(\mathop{\mathrm{Im}}p \subseteq S\)</span>, y que <span class="math inline">\(v - pv \in S^\perp\)</span>. También, para todo <span class="math inline">\(w \in S^\perp\)</span>, tenemos <span class="math inline">\(pw = 0\)</span>, luego <span class="math inline">\(\ker p = S^\perp\)</span></p>
+<p>Además, <span class="math inline">\(pv_i = v_i\)</span>, para todo <span class="math inline">\(v_i \in \mathcal{B}\)</span>, luego <span class="math inline">\(\mathop{\mathrm{Im}}p = S\)</span></p>
+<h1 id="caraterización-de-los-productos-internos-riesz" class="unnumbered">Caraterización de los Productos Internos (Riesz)</h1>
+<p>Sea <span class="math inline">\(\mathbb{V}\)</span> un <span class="math inline">\(\mathbb{K}\)</span>-evpi finitamente generado, y sea <span class="math inline">\(f \in \mathbb{V}^*\)</span>, luego existe un único <span class="math inline">\(v_f \in \mathbb{V}\)</span> tal que <span class="math inline">\(\forall w : fw = \langle w, v_f \rangle\)</span>.</p>
+<h2 id="demo-1" class="unnumbered">Demo</h2>
+<p>Sea <span class="math inline">\(\mathcal{B}\)</span> una base ortonormal de <span class="math inline">\(\mathbb{V}\)</span>. Sea <span class="math inline">\(v_f = \sum\limits_{v \in \mathcal{B}} v \cdot \overline{fv}\)</span></p>
+<p>Notemos que: <span class="math display">\[fw = f \left(\sum\limits\langle w, v \rangle \cdot v\right) =\]</span> <span class="math display">\[fw = \sum\limits\langle w, v \rangle \cdot fv=\]</span> <span class="math display">\[fw = \sum\limits\langle w, v\overline{fv} \rangle =\]</span> <span class="math display">\[fw = \left\langle w, \sum\limits v\overline{fv} \right\rangle =\]</span> <span class="math display">\[fw = \left\langle w, v_f\right\rangle\]</span></p>
+<p>Ahora veamos la unicidad: si tenemos <span class="math inline">\(v_f\)</span>, <span class="math inline">\(v&#39;_f\)</span> que cumplen, luego: <span class="math display">\[\langle w, v_f \rangle = fw = \langle v, v&#39;f \rangle\]</span> Para todo <span class="math inline">\(w\)</span>, luego <span class="math inline">\(v_f = v&#39;_f\)</span>.</p>
+<p>Notemos además que podemos definir entonces <span class="math inline">\(\phi : \mathbb{V}\to \mathbb{V}^*\)</span>, tal que <span class="math inline">\(\phi v = x \mapsto \langle x, v \rangle\)</span>. Por lo que demostramos, <span class="math inline">\(\phi\)</span> es una biyección.</p>
+<h1 id="función-adjunta" class="unnumbered">Función Adjunta</h1>
+<p>Sea <span class="math inline">\(\mathbb{V}\)</span>, <span class="math inline">\(\mathbb{W}\)</span> <span class="math inline">\(\mathbb{K}\)</span>-epvis, y sea <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}\)</span>. Luego dados <span class="math inline">\(v \in \mathbb{V}, w \in \mathbb{W}\)</span>, podemos calcular <span class="math inline">\(\langle fv, w \rangle\)</span></p>
+<p>Tomemos además otra <span class="math inline">\(g : \mathbb{W}\to \mathbb{V}\)</span>, luego podemos calcular <span class="math inline">\(\langle v, gw \rangle\)</span>.</p>
+<p>Decimos que <span class="math inline">\(g\)</span> es la adjunta de <span class="math inline">\(f\)</span> sii: <span class="math display">\[\forall v \in \mathbb{V}, w \in \mathbb{W}, \langle fv, w \rangle = \langle v, gw \rangle\]</span></p>
+<p>Es trivial que la adjunta, si existe, es única. A la única adjunta de <span class="math inline">\(f\)</span> la notamos <span class="math inline">\(f^*\)</span>.</p>
+<h2 id="ejemplo" class="unnumbered">Ejemplo</h2>
+<p>Si tenemos <span class="math inline">\(\mathbb{V}= \mathbb{W}\)</span>, y <span class="math inline">\(f = \lambda\cdot \mathop{\mathrm{id}}\)</span>, luego es fácil ver que <span class="math inline">\(f^* = \overline{\lambda} \cdot \mathop{\mathrm{id}}\)</span></p>
+<h1 id="autoadjuntas" class="unnumbered">Autoadjuntas</h1>
+<p>Si <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> cumple <span class="math inline">\(f = f^*\)</span>, decimos que <span class="math inline">\(f\)</span> es <em>autoadjunta</em>.</p>
+<h2 id="corolario" class="unnumbered">Corolario</h2>
+<ol>
+<li><p>Si <span class="math inline">\(f, g : \mathbb{V}\to \mathbb{W}\)</span>, luego <span class="math inline">\((af+bg)^* = \overline af + \overline b g\)</span>.</p></li>
+<li><p>Además, si <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}, g : \mathbb{W}\to \mathbb{U}\)</span>, luego <span class="math inline">\((g \circ f)^* = f^* \circ g^*\)</span></p></li>
+<li><p>Si <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}\)</span>, y existe <span class="math inline">\(f^*\)</span>, entonces <span class="math inline">\(f^{**} = f\)</span>.</p></li>
+</ol>
+<h1 id="condiciones-de-adjuntabilidad" class="unnumbered">Condiciones de Adjuntabilidad</h1>
+<p>Sea <span class="math inline">\(\mathbb{V}, \mathbb{W}\)</span> <span class="math inline">\(\mathbb{K}\)</span>-evpis, con <span class="math inline">\(\dim \mathbb{V}&lt; \infty\)</span>, luego toda <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}\)</span> tiene adjunta.</p>
+<h2 id="demo-2" class="unnumbered">Demo</h2>
+<p>Dado <span class="math inline">\(y \in \mathbb{V}\)</span>, sea <span class="math inline">\(\psi_y : \mathbb{V}^*\)</span>, definida por <span class="math inline">\(\psi_y(v) = \langle fv, y\rangle\)</span>. Por Riesz, existe <span class="math inline">\(w\)</span> tal que <span class="math inline">\(\phi_y(x) = \langle x, w \rangle\)</span> Luego: <span class="math display">\[\forall x, \langle x, w\rangle = \langle fx, y \rangle\]</span> Luego definimos la adjunta por <span class="math inline">\(f^*w = y\)</span>.</p>
+<h1 id="calculando-la-adjunta" class="unnumbered">Calculando la Adjunta</h1>
+<p>Sean <span class="math inline">\(\mathbb{V}\)</span>, <span class="math inline">\(\mathbb{W}\)</span> con <span class="math inline">\(n = \dim \mathbb{V}\)</span>, <span class="math inline">\(m = \dim \mathbb{W}\)</span>, y sean <span class="math inline">\(\mathcal{B}\)</span> y <span class="math inline">\(\mathcal{B}&#39;\)</span> las bases ortonormales de <span class="math inline">\(\mathbb{V}\)</span> y <span class="math inline">\(\mathbb{W}\)</span> resp, y tomemos <span class="math inline">\(f : \mathbb{V}\to \mathbb{W}\)</span>, luego tenemos que:</p>
+<p><span class="math display">\[[f^*]_{\mathcal{B}&#39;\mathcal{B}} = \overline{[f]_{\mathcal{B}\mathcal{B}&#39;}}^t\]</span></p>
+<p>Sea <span class="math inline">\(A = [f^*]_{\mathcal{B}&#39;\mathcal{B}}, B = [f]_{\mathcal{B}\mathcal{B}&#39;}\)</span>. Notemos que <span class="math display">\[A_{ij} = \langle f^*\mathcal{B}&#39;_j , \mathcal{B}_i \rangle\]</span> <span class="math display">\[\overline {A_{ij}} = \langle \mathcal{B}_i, f^*\mathcal{B}&#39;_j\rangle\]</span> <span class="math display">\[\overline {A_{ij}} = \langle f\mathcal{B}_i, \mathcal{B}&#39;_j\rangle\]</span> <span class="math display">\[B_{ji} = \langle f\mathcal{B}_i, \mathcal{B}&#39;_j\rangle\]</span> Luego <span class="math display">\[\overline{A_{ij}} = B_{ji}\]</span> <span class="math display">\[A = \overline B ^ t\]</span></p>
+<h2 id="para-autoadjuntas" class="unnumbered">Para Autoadjuntas</h2>
+<p>Si tenemos <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> autoadjunta, tomo una BON <span class="math inline">\(\mathcal{B}\)</span> y tengo que si <span class="math inline">\(A = [f]_\mathcal{B}\)</span>, luego: <span class="math display">\[A = \overline A^t\]</span> Que se dice que <span class="math inline">\(A\)</span> es <em>hermitiana</em>.</p>
+<h1 id="autoadjuntas-1" class="unnumbered">Autoadjuntas</h1>
+<p>Si <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span> es autoadjunta, luego todos sus autovalores son reales, y además, para cualquier <span class="math inline">\(\lambda, \mu\)</span> autovalores distintos, se cumple que <span class="math inline">\(\mathbb{V}_\lambda\perp \mathbb{V}_\mu\)</span>.</p>
+<p>Supongamos que <span class="math inline">\(v\)</span> es autovector de autovalor <span class="math inline">\(\lambda\)</span>, luego: <span class="math display">\[\overline \lambda\langle v, v \rangle = \langle v, fv\rangle = \langle fv, v\rangle = \lambda\langle v, v \rangle\]</span> Luego <span class="math inline">\(\lambda= \overline \lambda\)</span>.</p>
+<p>Sean <span class="math inline">\(\lambda, \mu\)</span>, y <span class="math inline">\(v \in \mathbb{V}_\lambda, w \in \mathbb{V}_\mu\)</span>, tenemos: <span class="math display">\[\mu \langle v, w \rangle = \langle v, fw \rangle = \langle fv, w \rangle = \lambda\langle v, w \rangle\]</span> Luego <span class="math inline">\(\langle v, w \rangle = 0\)</span>.</p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="derivadas-unidimensionales" class="unnumbered">Derivadas Unidimensionales</h1>
+<p>Dada <span class="math inline">\(f : (I \subseteq\mathbb{R}) \to \mathbb{R}\)</span>, se define: <span class="math display">\[f&#39;(x) = \lim\limits_{h \to 0} \frac{f(x) + f(x+h)}{h}\]</span> Como la derivada de <span class="math inline">\(f\)</span> en <span class="math inline">\(x\)</span>, para cualquier <span class="math inline">\(x \in I^\circ\)</span>. En general, cuando hablamos de derivada, siempre tomamos el punto en el interior del dominio</p>
+<h1 id="derivadas-con-imagen-multidimensional" class="unnumbered">Derivadas con Imagen Multidimensional</h1>
+<p>Si tenemos una función <span class="math inline">\(f : \mathbb{R}\to \mathbb{R}^n\)</span>, definida por <span class="math inline">\(f(x_i)_i = (f_i(x_i))_i\)</span>, definimos <span class="math inline">\(f&#39;(x_i)_i = (f_i&#39;(x_i))_i\)</span>; es decir, derivando cada componente.</p>
+<h1 id="derivadas-con-dominio-multidimensional" class="unnumbered">Derivadas con Dominio Multidimensional</h1>
+<p>Tomemos una <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span></p>
+<h2 id="derivadas-direccionales" class="unnumbered">Derivadas Direccionales</h2>
+<p>Si <span class="math inline">\(v \in \mathbb{R}^n\)</span>, <span class="math inline">\(||v|| = 1\)</span>, decimos que: <span class="math display">\[\frac{\partial f}{\partial v}(p) = f_v(p) = \lim\limits_{t \to 0} \frac{f(p + vt) - f(p)}{t}\]</span> Notemos que la recta que pasa por <span class="math inline">\(p\)</span> y tiene director <span class="math inline">\((v, f_v(p))\)</span> derá la recta “tangente” en esa dirección que pasa por <span class="math inline">\(p\)</span>.</p>
+<h3 id="derivadas-parciales" class="unnumbered">Derivadas Parciales</h3>
+<p>No son más que las derivadas direccionales pero con vector director un canónico, y se notan:</p>
+<p><span class="math display">\[\frac{\partial f}{\partial x_i}(p) = f_{x_i}(p) = f_{e_i}(p)\]</span></p>
+<h2 id="diferenciabilidad" class="unnumbered">Diferenciabilidad</h2>
+<p>Queremos aproximar a la función <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span> alrededor de un punto <span class="math inline">\(p \in \mathbb{R}^n\)</span> con un plano tangente. La normal al plano debe ser perpendiular a los <span class="math inline">\((e_i, f_{x_i}(p))\)</span>, y la que cumple es <span class="math inline">\((f_{x_i}(p), \dots_i, -1)\)</span> Luego tenemos que la ecuación del plano está dada por: <span class="math display">\[\Pi : \mathbb{R}^n \to \mathbb{R}, \Pi(v_i)_i = fp + \sum\limits(v_i - p_i)f_{x_i}(p)\]</span> Para que este plano sea tangente, y la dunción sea diferenciable, necesitamos que: <span class="math display">\[\lim\limits_{v \to p} \frac{|f(v) - \Pi(v)|}{||v-p||} = 0\]</span> Entonces:</p>
+<p>Una función se llama diferenciable sii: <span class="math display">\[\lim\limits_{v \to p} \frac{|f(v) - \Pi(v)|}{||v-p||} = 0\]</span></p>
+<p>Al vector <span class="math inline">\((f_{x_i})_i\)</span> se lo llama: <span class="math display">\[(f_{x_i})_i = \nabla f(p)\]</span> Y tenemos <span class="math display">\[\Pi(v) = f(p) + \langle v - p, \nabla f(p) \rangle\]</span></p>
+<p>Se define además <span class="math inline">\(\mathop{\mathrm{D}}f(p) : \mathbb{R}^n \to \mathbb{R}\)</span> como la transformación lineal dada por: <span class="math display">\[\mathop{\mathrm{D}}f(p)(v) = \langle v, \nabla f(p) \rangle\]</span></p>
+<h3 id="propiedades" class="unnumbered">Propiedades</h3>
+<p>Si <span class="math inline">\(f\)</span> es diferenciable, luego <span class="math display">\[f_v(p) = \mathop{\mathrm{D}}f(p)(v)\]</span></p>
+<h2 id="criterio-de-diferenciabilidad" class="unnumbered">Criterio de Diferenciabilidad</h2>
+<p>Supongamos que <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span>, y tenemos las <span class="math inline">\(n\)</span> derivadas parciales <span class="math inline">\((f_i)_i\)</span> definidas en el origen <span class="math inline">\(p\)</span>, y además las primeras <span class="math inline">\(n-1\)</span> están definidas en un entorno y con contínuas en <span class="math inline">\(p\)</span>. Luego <span class="math inline">\(f\)</span> es diferenciable en <span class="math inline">\(p\)</span>.</p>
+<p>WLOG <span class="math inline">\(f_i(p) = f_i(p) = 0\)</span> y <span class="math inline">\(p\)</span> es el origen. Tomamos: <span class="math display">\[f(0, 0, \dots, x_i, x_{i+1}, \dots, x_n) =\]</span> <span class="math display">\[f(0, 0, \dots, 0, x_{i+1}, \dots, x_n) +
+        f_i(0, 0, \dots, c_i, x_{i+1}, \dots, x_n)x_i =\]</span> Por Lagrange, para algún <span class="math inline">\(c_i \in (0, x_i)\)</span>, luego: <span class="math display">\[f(x_i) = f(0, \dots, 0, x_n) + \sum\limits_{i=1}^{n-1} f_i(0, 0, \dots, c_i, x_{i+1}, \dots, x_n) x_i\]</span></p>
+<p>Tenemos que probar que: <span class="math display">\[\frac{f(p)}{||p||} \to 0\]</span> Cada uno de los sumandos es: <span class="math display">\[\frac{f_i(0, 0, \dots, c_i, x_{i+1}, \dots, x_n) x_i}{||(x_j)_j||} \leq\]</span> <span class="math display">\[\frac{f_i(0, 0, \dots, c_i, x_{i+1}, \dots, x_n) x_i}{|x_i|} \leq\]</span> <span class="math display">\[f_i(0, 0, \dots, c_i, x_{i+1}, \dots, x_n)\]</span> Que por continuidad (la hipótesis), tiende a <span class="math inline">\(0\)</span>. Además el término suelto es de la pinta: <span class="math display">\[\lim\limits_{x_n \to 0} \frac{f(0, 0, \dots, 0, x_n)}{|x_n|}\]</span> Que es justamente <span class="math inline">\(f_n(0)_i\)</span>, que asusmimos que es <span class="math inline">\(0\)</span>. Luego por álgebra de límites ya estamos.</p>
+<h2 id="diferenciabilidad-multivariable" class="unnumbered">Diferenciabilidad Multivariable</h2>
+<p>Dada una función <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}^m\)</span>, se dice que <span class="math inline">\(Df(p) : \mathbb{R}^n \to \mathbb{R}^m\)</span> es la única transformación lineal que cumple <span class="math display">\[\lim\limits_{x \to p} \frac{f(x) - f(p) - Df(p)(x-p)}{||x-p||} = 0\]</span></p>
+<h1 id="regla-de-la-cadena" class="unnumbered">Regla de La Cadena</h1>
+<p>Dadas <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}^m\)</span>, y <span class="math inline">\(g : \mathbb{R}^m \to \mathbb{R}^k\)</span>, con <span class="math inline">\(f\)</span> diferenciable en <span class="math inline">\(p\)</span> y <span class="math inline">\(g\)</span> diferenciable en <span class="math inline">\(f(p)\)</span>, luego <span class="math display">\[\mathop{\mathrm{D}}(f \circ g)(p) = (\mathop{\mathrm{D}}g)(f(p)) \cdot \mathop{\mathrm{D}}f(p)\]</span></p>
+<h1 id="fermat" class="unnumbered">Fermat</h1>
+<p>Si <span class="math inline">\(p\)</span> es un mínimo local de <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span>, luego tenemos que <span class="math inline">\(Df(p) = 0\)</span>.</p>
+<h1 id="función-inversa" class="unnumbered">Función Inversa</h1>
+<p>Dada una función <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}^n\)</span>, y <span class="math inline">\(p \in \mathbb{R}^n\)</span> con <span class="math inline">\(f\)</span> de clase <span class="math inline">\(\mathcal{C}^1\)</span> en un entorno de <span class="math inline">\(p\)</span> y <span class="math inline">\(\mathop{\mathrm{D}}f(p)\)</span> inversible, luego existen <span class="math inline">\(V, W\)</span> entornos de <span class="math inline">\(p\)</span> y <span class="math inline">\(f(p)\)</span> resp. tal que <span class="math inline">\(f : V \to W\)</span> biyectiva y: <span class="math display">\[\forall q \in V : (\mathop{\mathrm{D}}f^{-1})(f(q)) = (\mathop{\mathrm{D}}f(q))^{-1}\]</span></p>
+<p>WLOG <span class="math inline">\(\mathop{\mathrm{D}}f(p) = I\)</span>. Por continuidad tomamos entorno <span class="math inline">\(V\)</span> tal que <span class="math display">\[\forall q \in V : ||\mathop{\mathrm{D}}f(q) - I|| \leq \frac{1}{2}\]</span> Luego por teorema de valor medio en <span class="math inline">\(f - \mathop{\mathrm{id}}\)</span> queda que: <span class="math display">\[\forall x, y \in V : ||(f - \mathop{\mathrm{id}})(x) - (f - \mathop{\mathrm{id}})(y)|| \leq \frac{1}{2}||x-y||\iff\]</span> <span class="math display">\[\forall x, y \in V : ||(x - y) - (f(x) - f(y))|| \leq \frac{1}{2}||x-y||\iff\]</span> <span class="math display">\[\forall x, y \in V : ||x - y|| - ||f(x) - f(y)|| \leq \frac{1}{2}||x-y||\iff\]</span> <span class="math display">\[\forall x, y \in V : ||x - y|| \leq 2||f(x) - f(y)||\]</span> Luego es inyectiva y la inversa es contínua. Ahora queremos ver que hay un entorno de <span class="math inline">\(f(p)\)</span> que está en al imagen de <span class="math inline">\(f(V)\)</span>.</p>
+<p>Para esto tomemos una bola <span class="math inline">\(B\)</span> en <span class="math inline">\(V\)</span> y tomemos <span class="math inline">\(C\)</span> su borde (una circunferencia). Tenemos que <span class="math inline">\(||\cdot|| \circ f : C \to \mathbb{R}\)</span> tiene dominio compacto, luego alcanza su mínimo y éste no es <span class="math inline">\(0\)</span> por inyectividad</p>
+<p>Sea <span class="math inline">\(2d &gt; 0\)</span> este mínimo. Vamos a trabajar sobre la bola <span class="math inline">\(K = B_d(f(p))\)</span>. Vamos a pobar que todo <span class="math inline">\(y \in K\)</span>, hay una preimagen <span class="math inline">\(f^{-1}(y) \in B\)</span>.</p>
+<p>Tomemos la función <span class="math inline">\(h : B \to \mathbb{R}\)</span>, definida por <span class="math inline">\(h(x) = ||f(x) - y||^2\)</span>. Por compactidad alcanza su mínimo, además por como definimos <span class="math inline">\(K\)</span> tenemos que para <span class="math inline">\(x \in C\)</span>, <span class="math inline">\(h(x) &gt; d^2\)</span>, y además para <span class="math inline">\(x = p\)</span> se tiene <span class="math inline">\(f(x) &lt; d^2\)</span>, luego el mínimo se alcanza en el interior.</p>
+<p>Sea <span class="math inline">\(x\)</span> su mínimo. Por Fermat, tenemos entonces: <span class="math display">\[\mathop{\mathrm{D}}h(x) = 0\]</span> <span class="math display">\[\mathop{\mathrm{D}}(x \mapsto \langle f(x) - y, f(x) - y \rangle)(x) = 0\]</span> <span class="math display">\[(x \mapsto 2 \cdot \langle \mathop{\mathrm{D}}f(x), f(x) - y \rangle)(x) = 0\]</span> <span class="math display">\[\langle \mathop{\mathrm{D}}f(x), f(x) - y \rangle = 0\]</span> <span class="math display">\[\mathop{\mathrm{D}}f(x) \times (f(x) - y)^t = 0\]</span> Y como <span class="math inline">\(\mathop{\mathrm{D}}f(x)\)</span> es inversible por estar en <span class="math inline">\(B\)</span>, tenemos que esto implica que <span class="math inline">\(f(x) - y = 0\)</span>, luego ya estamos.</p>
+<h1 id="función-implícita" class="unnumbered">Función Implícita</h1>
+<p>Dada una función <span class="math inline">\(f : \mathbb{R}^{n+1} \to \mathbb{R}\)</span>, <span class="math inline">\(f \in \mathcal{C}^1\)</span> con <span class="math inline">\(p \in \mathbb{R}^{n+1}\)</span> si <span class="math inline">\(f_1(p) \neq 0\)</span>, entonces existe <span class="math inline">\(\phi : (B \subseteq\mathbb{R}^n) \to \mathbb{R}\)</span> y un abierto <span class="math inline">\(p \in A\)</span> tal que: <span class="math display">\[\{x : f(x) = 0\} \cap A = \{(\phi(x), x) : x \in B\}\]</span> Donde <span class="math inline">\(\{x : f(x) = 0\}\)</span> es una superficie de nivel y <span class="math inline">\(\{(\phi(x), x) : x \in B\}\)</span> es el gráfico de una función.</p>
+<p>Se tiene además: <span class="math display">\[\forall y \in B : \phi_i(y) = -\frac{f_i(y)}{f_1(y)}\]</span> Y que el plano tangente a todo punto <span class="math inline">\(q \in A\)</span> es: <span class="math display">\[x \mapsto (\langle \nabla f(q), x - q \rangle = 0)\]</span></p>
+<p>Sale fácil con inversa. Tomemos la auxiliar <span class="math display">\[t : \mathbb{R}^{n+1} \to \mathbb{R}^{n+1}, \; t(x_i)_i = (f(x_i)_i, x_2, x_3, \dots)\]</span> Si <span class="math inline">\(f_1(p) \neq 0\)</span>, claramente <span class="math inline">\(\mathop{\mathrm{D}}t(p)\)</span> es inversible, luego existe su unversa <span class="math inline">\(h\)</span>. Tendremos que si nos movemos por el hiperplano <span class="math inline">\((0, x_2, x_3, \dots)\)</span> en el dominio de <span class="math inline">\(h\)</span>, se cumplirá que las imágenes (en el dominio de <span class="math inline">\(t\)</span>), estarán en la superficie de nivel. Nos tomamos entonces <span class="math display">\[\phi(x_2,x_3,\dots) = h(0,x_2,x_3,\dots)\]</span> Además, por inyectividad, son los únicos en un entorno y ya estamos.</p>
+<p>Además, aplicando regla de la cadena a <span class="math inline">\(f(\phi(x), x)\)</span>, tenemos: <span class="math display">\[\nabla (x \mapsto f(\phi(x), x))(x) = 0\]</span> <span class="math display">\[\nabla f(\phi(x), x) \cdot (\nabla \phi(x), 1) = 0\]</span> Pero <span class="math inline">\(\phi(x)\)</span> era la primer coordenada si estábamos en la superficie de nivel, osea que tenemos: <span class="math display">\[\nabla f(x_1,x_2,\dots) \cdot (\nabla \phi(x_2,x_3,\dots), I) = 0\]</span> <span class="math display">\[\nabla f(x_1,x_2,\dots) \cdot (\nabla \phi(x_2,x_3,\dots), I) = 0\]</span> Dónde <span class="math inline">\((\nabla \phi(x_2,x_3,\dots), I)\)</span> es una matriz. Tomando la <span class="math inline">\(i\)</span>-ésima coordenada del vector resultante tenemos: <span class="math display">\[f_i(x) + f_1(x)\phi_i(x_{\geq 2}) = 0\]</span> <span class="math display">\[\phi_i(x_{\geq 2}) = -\frac{f_i(x)}{f_1(x)}\]</span> Entonces ya estamos.</p>
+<h1 id="taylor-una-variable" class="unnumbered">Taylor Una Variable</h1>
+<p>Dada una función <span class="math inline">\(f : \mathbb{R}\to \mathbb{R}\)</span>, con <span class="math inline">\(f \in \mathcal{C}^n\)</span> y un <span class="math inline">\(p \in \mathbb{R}\)</span>, el polinomio de taylor <span class="math inline">\(P(x)\)</span> es el único polinomio de grado menor o igual a <span class="math inline">\(n\)</span> que verifica: <span class="math display">\[\forall k \leq n : P^{(k)}(p) = f^{(k)}(p)\]</span> Y su expresión es: <span class="math display">\[P(x) = \sum\limits_{i=0}^n \frac{1}{i!} \cdot f^{(i)}(p) \cdot (x-p)^i\]</span> Y se dice que <span class="math inline">\(R(x) = f(x) - P(x)\)</span> es el resto de Taylor</p>
+<p>Aproximación del resto de taylor. Dada <span class="math inline">\(f : \mathbb{R}\to \mathbb{R}\)</span> <span class="math inline">\(n+1\)</span> veces derivable, se tiene que: <span class="math display">\[R(x) = (x-p)^{n+1} \cdot \frac{f^{(n+1)}(\xi)}{(n+1)!}\]</span></p>
+<p>Tomemos la función auxiliar <span class="math display">\[g(t) = f(x) - \frac{\omega}{(n+1)!}(x-t)^{n+1} -\sum\limits\frac{1}{i!} \cdot f^{(i)}(t) \cdot (x-t)^i\]</span> Con <span class="math inline">\(\omega\)</span> tal que <span class="math inline">\(g(p) = 0\)</span>. Como <span class="math inline">\(g(p) = g(x) = 0\)</span>, tenemos que: <span class="math display">\[g&#39;(\xi) = 0\]</span> Para algún <span class="math inline">\(\xi\)</span> entre <span class="math inline">\(p\)</span> y <span class="math inline">\(x\)</span>. Luego, por regla del producto: <span class="math display">\[g&#39;(\xi) = 0 \iff\]</span> <span class="math display">\[0 = - \frac{\omega}{n!}(\xi-t)^{n} - \sum\limits\frac{1}{i!} \cdot f^{(i+1)}(t) \cdot (\xi-t)^i - \frac{1}{(i-1)!}f^{(i)}(t) \cdot (\xi - t)^{i-1} \iff\]</span> Por telescópica <span class="math display">\[0 = - \frac{\omega}{n!}(\xi-t)^{n} - \frac{1}{n!} \cdot f^{(n+1)}(t) \cdot (\xi-t)^n\iff\]</span> Luego <span class="math inline">\(\omega = f^{(n+1)}(t)\)</span>, por lo que, reemplazando <span class="math inline">\(\omega\)</span> en <span class="math inline">\(g(p)\)</span> tenemos: <span class="math display">\[0 = g(p) = f(x) - \frac{f^{(n+1)}(t)}{(n+1)!}(x-p)^{n+1} -\sum\limits\frac{1}{i!} \cdot f^{(i)}(t) \cdot (x-p)^i\]</span> <span class="math display">\[\frac{f^{(n+1)}(t)}{(n+1)!}(x-p)^{n+1} =
+            f(x) - P(x)\]</span> Entonces estamos.</p>
+<h1 id="formas-cuadráticas" class="unnumbered">Formas Cuadráticas</h1>
+<p>Dada una matriz <span class="math inline">\(T \in \mathbb{R}^{n \times n}\)</span>, decimo que su forma cuadrática asociada esa dada por: <span class="math display">\[Q_T : \mathbb{R}^n \to \mathbb{R}^n, \quad Q_T(x) = x^t \cdot T \cdot x\]</span></p>
+<p>El compotamiento de las formas cuadráticas está dada por sus autovalores.</p>
+<p>Si tenemos <span class="math inline">\(T\)</span> simétrica, luego tomemos una base <span class="math inline">\(\{v_i\}\)</span> ortonormal de autovectores, con autovalores <span class="math inline">\(\lambda_i\)</span>, tenemos: <span class="math display">\[x = \sum\limits\alpha_i v_i\]</span> Luego: <span class="math display">\[Q_T(x) = \sum\limits_{i,j} (\alpha_i v_i)^t \cdot T \cdot \alpha_j v_j\]</span> <span class="math display">\[Q_T(x) = \sum\limits_{i,j} \alpha_i \alpha_j (v_i^t \cdot T \cdot v_j)\]</span> <span class="math display">\[Q_T(x) = \sum\limits_{i,j} \alpha_i \alpha_j (v_i^t \cdot \lambda_j v_j)\]</span> <span class="math display">\[Q_T(x) = \sum\limits_{i,j} \alpha_i \alpha_j \lambda_j (v_i^t \cdot v_j)\]</span> Pero <span class="math inline">\(v_i^t \cdot v_j = 0\)</span> para <span class="math inline">\(i \neq j\)</span>, y es <span class="math inline">\(1\)</span> cuando son iguales, luego: <span class="math display">\[Q_T(x) = \sum\limits_i \alpha_i^2 \lambda_i\]</span></p>
+<p>Se dice que</p>
+<ul>
+<li><p><span class="math inline">\(Q_T\)</span> es <em>degenerada</em> cuando hay autovalores nulos.</p></li>
+<li><p><span class="math inline">\(Q_T\)</span> es <em>indefinida</em> cuando hay autovalores positivos y negativos.</p></li>
+<li><p><span class="math inline">\(Q_T\)</span> es <em>definida positiva</em> cuando <span class="math inline">\(\lambda_i &gt; 0\)</span>.</p></li>
+<li><p><span class="math inline">\(Q_T\)</span> es <em>definida negativa</em> cuando <span class="math inline">\(\lambda_i &lt; 0\)</span>.</p></li>
+<li><p><span class="math inline">\(Q_T\)</span> es <em>semidefinida positiva</em> cuando <span class="math inline">\(\lambda_i \geq 0\)</span>.</p></li>
+<li><p><span class="math inline">\(Q_T\)</span> es <em>semidefinida negativa</em> cuando <span class="math inline">\(\lambda_i \leq 0\)</span>.</p></li>
+</ul>
+<h1 id="extremos" class="unnumbered">Extremos</h1>
+<p>Dada una función <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span>, decimos que <span class="math inline">\(p \in \mathbb{R}^n\)</span> es un <em>extremo local</em> sii <span class="math inline">\(f(p) \leq f(a)\)</span> para todo <span class="math inline">\(a\)</span> en un abierto que contenga a <span class="math inline">\(p\)</span>.</p>
+<p>Decimos que es un <em>extremo local estricto</em> sii pasa lo mismo pero estricto (con <span class="math inline">\(p \neq a\)</span>).</p>
+<p>Ya vimos que para que <span class="math inline">\(p\)</span> sea extremo local su diferencial tiene que ser <span class="math inline">\(0\)</span>. Pero eso no alcanza. Si <span class="math inline">\(\mathop{\mathrm{D}}f(p) = 0\)</span>, Tenemos que:</p>
+<ul>
+<li><p>Si <span class="math inline">\(\mathop{\mathrm{H}}f(p)\)</span> es <em>definido positivo</em>, entonces <span class="math inline">\(p\)</span> es mínimo local estricto.</p></li>
+<li><p>Si <span class="math inline">\(\mathop{\mathrm{H}}f(p)\)</span> es <em>definido negativo</em>, entonces <span class="math inline">\(p\)</span> es máximo local estricto.</p></li>
+<li><p>Si <span class="math inline">\(\mathop{\mathrm{H}}f(p)\)</span> es <em>indefinido</em>, entonces <span class="math inline">\(p\)</span> es un punto silla.</p></li>
+<li><p>Si no se cumple nada de esto, no sabemos nada.</p></li>
+</ul>
+<p>Una matriz <span class="math inline">\(T \in \mathbb{R}^{n \times n}\)</span> es definida prositiva sii todos los determinantes menores principales (los de las matrices cuadradas que están en la parte suerior izquierda de la matriz) son estrictamente positivos.</p>
+<p>Asimismo, una matriz es definida negativa si todos esos determinantes son de signos alternados (el de la esquina superior iquierda tiene que comenzar siendo negativo).</p>
+<h1 id="mínimos-en-conjuntos-arbitrarios" class="unnumbered">Mínimos en Conjuntos Arbitrarios</h1>
+<p>Los multiplicadores de lagrange sirven para hallar mínimos locales y absolutos de funciones <span class="math inline">\(f : (A \in \mathbb{R}^n) \to \mathbb{R}\)</span>. Para esto, se separa en dos casos:</p>
+<ul>
+<li><p>El interior <span class="math inline">\(A^\circ\)</span>, en el cual se pueden hallar puntos críticos uzando fermat (donde el diferencial se anula)</p></li>
+<li><p>El borde <span class="math inline">\(\partial A\)</span>, el cual se puede estudiar parmetrizándolo por una (o varias) funciones <span class="math inline">\(\phi : \mathbb{R}^{n-1} \to \mathbb{R}^n\)</span>, y luego estudiando la composición <span class="math inline">\(f \circ \phi\)</span> recursivamente. Si no es posible parmetrizarlo, hay que usar multiplicadores de lagrange.</p></li>
+</ul>
+<h1 id="multiplicadores-de-lagrange" class="unnumbered">Multiplicadores de Lagrange</h1>
+<p>Dada una función <span class="math inline">\(f : \mathbb{R}^n \to \mathbb{R}\)</span> que queremos minimizar sobre una superficie de nivel <span class="math inline">\(S = \{x \in \mathbb{R}^n : g(x) = 0\}\)</span> de una función <span class="math inline">\(g : \mathbb{R}^n \to \mathbb{R}\)</span>, los candidatos a extremos serán los <span class="math inline">\(p \in \mathbb{R}^n\)</span> donde: <span class="math display">\[\nabla f(p) = \lambda\cdot \nabla g(p) \quad \text{Para algún $\lambda\in \mathbb{R}$}\]</span> O los <span class="math inline">\(p\)</span> que anulan <span class="math inline">\(\nabla g(p)\)</span>.</p>
+<p>En general, si tenemos <span class="math inline">\(k\)</span> restricciones <span class="math inline">\(g_{1, \dots, k}\)</span>, luego los puntos críticos son los <span class="math inline">\(p \in \mathbb{R}^n\)</span> tal que: <span class="math display">\[\{\nabla f(p), \nabla g_1(p), \dots, \nabla g_k(p) \} \; \text{Son li.}\]</span></p>
+<h1 id="integrales-de-riemann" class="unnumbered">Integrales de Riemann</h1>
+<p>Se definen de manera usual.</p>
+<h1 id="teorema-fundamental-de-cálculo" class="unnumbered">Teorema Fundamental de Cálculo</h1>
+<p>Si <span class="math inline">\(f : [a, b] \to \mathbb{R}\)</span> es contínua, sea <span class="math inline">\(F : [a, b] \to \mathbb{R}\)</span> dada por: <span class="math display">\[F(x) = \int_a^x f\]</span> Luego <span class="math inline">\(F\)</span> es contínua en <span class="math inline">\([a,b]\)</span>, derivable en <span class="math inline">\((a,b)\)</span>, y además: <span class="math display">\[\forall x \in (a,b) : F&#39;(x) = f(x)\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

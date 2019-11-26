@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="convergencia-de-integrales" class="unnumbered">Convergencia de integrales</h1>
+<p>Dada <span class="math inline">\(f : [1, \infty) \to \mathbb{R}\)</span> contínua y positiva, tenemos que la integral <span class="math inline">\(\int f\)</span> converge sii la seria <span class="math inline">\(\sum\limits_{n \in \mathbb{N}} f(n)\)</span> converge.</p>
+<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Sea <span class="math inline">\(B = \{(x,y) \in \mathbb{R}^2 : 0 \leq x \leq 1, 0 \leq y \leq x^2\}\)</span>. Calcular <span class="math inline">\(\iint\limits_D
+x^2 + y^3x  \; dA\)</span></p>
+<p>Esto es lo mismo que: <span class="math display">\[\int_0^1 \int_0^{x^2} x^2 + y^3x \; dy \; dx\]</span> <span class="math display">\[\int_0^1 \left(\int_0^{x^2} x^2 + y^3x \; dy \right)\; dx\]</span> <span class="math display">\[\int_0^1 \left. x^2y + \frac{1}{4}y^4x\right|_0^{x^2}\; dx\]</span> <span class="math display">\[\int_0^1 x^4 + \frac{1}{4}x^9\; dx\]</span> <span class="math display">\[\left. \frac{1}{4}x^5 + \frac{1}{40}x^{10} \right|_0^1\]</span> <span class="math display">\[\frac{1}{4} + \frac{1}{40} = \frac{9}{40}\]</span></p>
+<h1 id="integrales-dobles" class="unnumbered">Integrales Dobles</h1>
+<p>Dada <span class="math inline">\(C = \{(x,y) \in \mathbb{R}^2 : a \leq x \leq b, \phi_1 x &lt; y &lt; \phi_2 x\}\)</span>, luego: <span class="math display">\[\iint\limits_D f(x,y) \; dA = \int_a^b \left(\int_{\phi_1 x}^{\phi_2 x} f(x, y) \; dy\right) \; dx\]</span> Si <span class="math inline">\(f\)</span> contínua.</p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Calcular el área de la región encerrada por las curvas <span class="math inline">\(y = 2|x|\)</span>, y <span class="math inline">\(y = -|x|\)</span>.</p>
+<p>La cuenta queda: <span class="math display">\[\int_0^2 3x \; dx + \int_{-1}^2 -3x \; dx = \frac{15}{2}\]</span></p>
+<p>Alternativamente, podemos hacer: <span class="math display">\[D = \{(x,y) : -1 \leq x \leq 2, -|x| \leq y \leq 2|x|\}\]</span> Luego el área es: <span class="math display">\[\iint\limits_D 1\]</span></p>
+<h1 id="ejercicio-3" class="unnumbered">Ejercicio 3</h1>
+<p>Tengo: <span class="math display">\[D = \left\{(x,y) : y \geq 0. \frac{4}{3} y \leq x \leq \sqrt{25 - y^2}\right\}\]</span></p>
+<p>A esto lo escribimos como: <span class="math display">\[D = D_1 \cup D_2\]</span> Con <span class="math display">\[D_1 = \left\{(x,y) : 0 \leq x \leq 4, 0 \leq y \leq \frac{3}{4}x\right\}\]</span> <span class="math display">\[D_2 = \left\{(x,y) : 4 \leq x \leq 5, 0 \leq y \leq \sqrt{25 - x^2}\right\}\]</span></p>
+<h1 id="ejercicio-4" class="unnumbered">Ejercicio 4</h1>
+<p>Calcular: <span class="math display">\[\iint\limits_D 4e^{x^2} - 5 \sin y \; dA\]</span> Con <span class="math display">\[D = \{(x,y) : 0 \leq x \leq 4, 0 \leq y \leq x\}\]</span> <span class="math display">\[D = \{(x,y) : 0 \leq y \leq 4, y \leq x \leq 4\}\]</span> Tenemos: <span class="math display">\[\iint_D 4e^{x^2} - 5\sin y \; dA =\]</span> <span class="math display">\[\int_0^4 \left(\int_0^x 4e^{x^2} - 5 \sin y \; dy\right) \; dx =\]</span> <span class="math display">\[\int_0^4 \left(4ye^{x^2} + 5 \cos y \;\right|_0^x \; dx =\]</span> <span class="math display">\[\int_0^4 4xe^{x^2} + 5 \cos x - 5 \cos 0  \; dx =\]</span> <span class="math display">\[\int_0^4 4xe^{x^2} + 5 \cos x - 5 \; dx =\]</span> <span class="math display">\[\left( 2e^{x^2} + 5 \sin x - 5x \; \right|_0^4 \; =\]</span> <span class="math display">\[2e^{4^2} + 5 \sin 4 - 5 \cdot 4 - 2e^0 - 5 \sin 0 - 5 \cdot 0 =\]</span> <span class="math display">\[2e^{16} + 5 \sin 4 - 22 =\]</span></p>
+<h1 id="ejercicio-4-1" class="unnumbered">Ejercicio 4</h1>
+<p>Calcular <span class="math inline">\(\iint\limits_D x + x^2y \; dx \; dy\)</span> con <span class="math inline">\(D = \{(x,y) : x^2 + y^2 \leq 1, x \geq 0\}\)</span></p>
+<p>Por tipo II, queda: <span class="math display">\[A = \int\limits_{-1}^1\left(\int\limits_0^{\sqrt{1 - y^2}} x + x^2y \; dx \right) \; dy =\]</span> <span class="math display">\[\int_{-1}^1 \frac{1-y^2}{2} + \frac{(1 - y^2)^{\frac{3}{2}} y}{3} \; dy\]</span></p>
+<p>Tenemos que: <span class="math display">\[\int (1-y^2)^\frac{3}{2} y\]</span> Si tomamos <span class="math inline">\(f(y) = 1 - y^2\)</span>, queda: <span class="math display">\[\int f(y)^\frac{3}{2} f&#39;(y) =\]</span> <span class="math display">\[f(y)^\frac{5}{2} = (1 - y^2)^\frac{5}{2}\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="ejercicio-1" class="unnumbered">Ejercicio 1</h1>
+<p>Dado el elipsoide <span class="math display">\[E = \left\{(x,y,z) : \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} \leq 1\right\}\]</span> Calcular su volumen. Tomemeos la esfera unitaria <span class="math inline">\(B\)</span>, y la función inyectiva <span class="math inline">\(\mathcal{C}^1\)</span> <span class="math inline">\(T(x,y,z) = (ax, by, cz)\)</span>, luego: <span class="math display">\[\iiint\limits_{T(B)} 1 \; dB= \iiint\limits_B JT \; dB\]</span> Pero <span class="math inline">\(T(B) = E\)</span>, luego: <span class="math display">\[\iiint\limits_{E} 1 \; dE = \iiint\limits_{T(B)} 1 \; dB= \iiint\limits_B JT \; dB = JT \cdot \iiint\limits_B 1 \; dB\]</span> Y el volumen de la esfera <span class="math inline">\(B\)</span> lo sé (es <span class="math inline">\(\frac{4}{3}\pi\)</span>), y el Jacobiano de mi transformación es claramente <span class="math inline">\(abc\)</span>, luego ya estamos. El resultado final es: <span class="math display">\[\frac{4}{3} \pi \cdot abc\]</span></p>
+<h1 id="ejercicio-2" class="unnumbered">Ejercicio 2</h1>
+<p>Calcular: <span class="math display">\[V = \iiint\limits_W z \; dV\]</span> Donde: <span class="math display">\[W = \left\{x^2 + y^2 + z^2 \leq 1, z \geq \frac{1}{2}\right\}\]</span> Con coordenadas esféricas queda:</p>
+<ul>
+<li><p><span class="math inline">\(0 \leq \theta \leq 2\pi\)</span></p></li>
+<li><p><span class="math inline">\(\frac{1}{2 \cos \phi} \leq r \leq 1\)</span></p></li>
+<li><p><span class="math inline">\(0 \leq \phi \leq \cos^{-1} \frac{1}{2} = \frac{\pi}{3}\)</span></p></li>
+</ul>
+<p>Luego tenemos: <span class="math display">\[V = \int_0^{2\pi} \int_0^{\frac{\pi}{3}} \int_0^{\frac{1}{2\cos\phi}} z \cdot r^2 \cdot \sin \phi \; drd\phi d\theta\]</span> Pero <span class="math inline">\(z = r \cos \phi\)</span>, luego: <span class="math display">\[V = \int_0^{2\pi} \int_0^{\frac{\pi}{3}} \int_{\frac{1}{2\cos\phi}}^1 r^3 \cdot \sin \phi \cdot \cos \phi \; drd\phi d\theta\]</span> <span class="math display">\[\frac{V}{2\pi} = \int_0^{\frac{\pi}{3}} \int_{\frac{1}{2\cos\phi}}^1 r^3 \cdot \sin \phi \cdot \cos \phi \; drd\phi\]</span> <span class="math display">\[\frac{V}{2\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot \int_{\frac{1}{2\cos\phi}}^1 r^3\; drd\phi\]</span> <span class="math display">\[\frac{V}{2\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot \left(\frac{r^4}{4}\right|_{\frac{1}{2\cos\phi}}^1\; d\phi\]</span> <span class="math display">\[\frac{2V}{\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot \left(r^4\right|_{\frac{1}{2\cos\phi}}^1\; d\phi\]</span> <span class="math display">\[\frac{2V}{\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot \left(1 - \frac{1}{16\cos^4 \phi}\right)\; d\phi\]</span> <span class="math display">\[\frac{2V}{\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot d\phi
+    -\int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot \frac{1}{16\cos^4 \phi}\; d\phi\]</span> <span class="math display">\[\frac{2V}{\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot d\phi
+    -\int_0^{\frac{\pi}{3}} \sin \phi \cdot \frac{1}{16\cos^3 \phi}\; d\phi\]</span> Que sale haciendo sustitución <span class="math inline">\(u = \cos \phi\)</span>, y <span class="math inline">\(du = -\sin \phi\)</span>, queda: <span class="math display">\[\frac{2V}{\pi} = \int_0^{\frac{1}{2}} - u \cdot du
+    -\int_0^{\frac{1}{2}} - \frac{1}{16u^3}\; du\]</span> <span class="math display">\[\frac{2V}{\pi} = -\int_0^{\frac{1}{2}} u \cdot du
+    +\frac{1}{16}\int_0^{\frac{1}{2}} u^{-3}\; du\]</span> Que sale.</p>
+<h1 id="ejercicio-3" class="unnumbered">Ejercicio 3</h1>
+<p>Dado: <span class="math display">\[W = \left\{
+        1 \leq x^2 + y^2 + z^2 \leq 4,
+        \frac{1}{3}(x^2 + y^2) \leq z^2 \leq 3(x^2 + y^2),
+        z \geq 0
+\right\}\]</span> Calcular: <span class="math display">\[V = \iiint\limits_W \frac{1}{(x^2 + y^2 + z^2)^2}\]</span> Notemos que esto es una corona esférica intersecada con el espacio entre dos conos. Los ángulos de los conos son, <span class="math inline">\(\phi_2 = \tan^{-1}\sqrt 3 = \frac{\pi}{3}\)</span>, y <span class="math inline">\(\phi_1 = \tan^{-1}\frac{1}{\sqrt 3} = \frac{\pi}{6}\)</span> Luego tenemos: <span class="math display">\[V = \int_0^{2\pi} \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \int_1^2 \frac{1}{(x^2 + y^2 + z^2)^2} r^2 \sin \phi \; dr d\phi d\theta\]</span></p>
+<h1 id="parcial" class="unnumbered">Parcial</h1>
+<h2 id="uno" class="unnumbered">Uno</h2>
+<p>Sea <span class="math inline">\(f : \mathbb{R}^3 \to \mathbb{R}\)</span> la función <span class="math inline">\(f(x,y,z) = z^3 - 2yz + x\)</span></p>
+<ol>
+<li><p>Probar que la ecuación <span class="math inline">\(f(x,y,z) = 0\)</span> define una función <span class="math inline">\(z = \phi(x,y)\)</span> de clase <span class="math inline">\(\mathcal{C}^1\)</span> en un entorno del punto <span class="math inline">\((1,0)\)</span> tal que <span class="math inline">\(f(x, y, \phi(x,y)) = 0\)</span> para todo <span class="math inline">\((x,y)\)</span> en un entorno.</p></li>
+<li><p>Suponiendo que <span class="math inline">\(\phi\)</span> es <span class="math inline">\(\mathcal{C}^2\)</span>, determinar su polinomio de taylor de orden 2 alrededos del punto <span class="math inline">\((1,0)\)</span></p></li>
+</ol>
+<h2 id="dos" class="unnumbered">Dos</h2>
+<p>Sea <span class="math inline">\(f : \mathbb{R}^2 \to \mathbb{R}\)</span> dada por <span class="math inline">\(f(x,y) = x^2 + y^2 - 2x\)</span></p>
+<p>Encontrar todos los extremos locales de <span class="math inline">\(f\)</span> en: <span class="math display">\[D = \{(x,y) \in \mathbb{R}^2 : x^2 + y^2 &lt; 2, x &gt; 0\}\]</span> Y analizar la existencia de extremos absolutos en <span class="math inline">\(D\)</span>.</p>
+<h2 id="tres" class="unnumbered">Tres</h2>
+<p>Probar que si <span class="math inline">\(\alpha &gt; 1\)</span>, la integral: <span class="math display">\[\int_3^{+\infty}\;^3\sqrt{\frac{|\sin (x - 3)|}{x^\alpha(x^2 - 6x + 9)}}\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

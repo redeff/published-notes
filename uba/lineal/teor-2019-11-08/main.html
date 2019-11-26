@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="producto-interno" class="unnumbered">Producto Interno</h1>
+<p>Dado un cuerpo <span class="math inline">\(\mathbb{K}\)</span> que es <span class="math inline">\(\mathbb{R}\)</span> ó <span class="math inline">\(\mathbb{C}\)</span>, Un producto interno de <span class="math inline">\(\mathbb{V}\)</span> como <span class="math inline">\(\mathbb{K}\)</span>-ev es una función <span class="math inline">\(\langle \cdot , \cdot \rangle : \mathbb{V}^2 \to \mathbb{K}\)</span> que cumple:</p>
+<ol>
+<li><p><span class="math inline">\(\forall v_1, v_2, v_3 \in \mathbb{V}: \langle v_1 + v_2, v_3 \rangle = \langle v_1, v_3 \rangle + \langle v_2, v_3\rangle\)</span></p></li>
+<li><p><span class="math inline">\(\langle \lambda v_1, v_2 \rangle = \lambda\langle v_2, v_2 \rangle\)</span></p>
+<p>Estas dos propiedades son equivalentes a que <span class="math inline">\(x \mapsto \langle x, v \rangle\)</span> con <span class="math inline">\(v\)</span> fijo sea lineal.</p></li>
+<li><p><span class="math inline">\(\forall v, w \in \mathbb{V}: \langle v, w \rangle = \overline {\langle v, w \rangle}\)</span></p></li>
+<li><p><span class="math inline">\(\forall v \in \mathbb{V}, v \neq 0 : \langle v, v \rangle &gt; 0\)</span> (si estamos en complejos, siempre da real)</p></li>
+</ol>
+<p>De estas propiedades se desprende:</p>
+<ul>
+<li><p><span class="math inline">\(\langle v_1, v_2 + v_3 \rangle = \langle v_1, v_2 \rangle + \langle v_1, v_3 \rangle\)</span></p></li>
+<li><p><span class="math inline">\(\langle v_1, \lambda v_2 \rangle = \overline \lambda\langle v_1, v_2 \rangle\)</span></p></li>
+<li><p><span class="math inline">\(\langle 0, v \rangle = 0\)</span>, en particular <span class="math inline">\(\langle 0, 0 \rangle = 0\)</span></p></li>
+</ul>
+<p>Cuando un <span class="math inline">\(\mathbb{V}\)</span> tiene un producto interno <span class="math inline">\(\langle \cdot , \cdot \rangle\)</span>, decimos que <span class="math inline">\((\mathbb{V}, \langle \cdot , \cdot \rangle)\)</span> es un EVPI (espacio vectorial con producto interno)</p>
+<h1 id="producto-interno-canónico" class="unnumbered">Producto Interno Canónico</h1>
+<p>Si <span class="math inline">\(\mathbb{V}= \mathbb{K}^n\)</span>, luego el PI canónico es: <span class="math display">\[\langle v, w \rangle = \sum\limits_i v_i \overline w_i\]</span> Y tenemos que: <span class="math display">\[\langle v, v \rangle = \sum\limits_i v_i \overline v_i = \sum\limits|v_i|^2 = ||v||^2\]</span></p>
+<h1 id="producto-interno-pesado" class="unnumbered">Producto Interno Pesado</h1>
+<p>Dado un <span class="math inline">\(z = (z_i)_i \in \mathbb{R}^{+n}\)</span>, tenemos que: <span class="math display">\[\langle v, w \rangle_z = \sum\limits z_iv_i\overline w_i\]</span></p>
+<h1 id="espacios-vectoriales-de-dimensión-infinita" class="unnumbered">Espacios Vectoriales de Dimensión Infinita</h1>
+<p>Si tenemos <span class="math inline">\(\mathbb{V}= \mathbb{K}[x]\)</span>, con <span class="math inline">\(a &lt; b \in \mathbb{R}\)</span>, tenemos que: <span class="math display">\[\langle p(x), q(x) \rangle = \int_a^b p(x)\overline {q(x)} \; dx\]</span></p>
+<h1 id="propiedades-del-producto-interno" class="unnumbered">Propiedades Del Producto Interno</h1>
+<p>Sea <span class="math inline">\(\mathbb{V}\)</span> un <span class="math inline">\(\mathbb{K}\)</span>-evpi, y sean <span class="math inline">\(a, b \in \mathbb{V}\)</span>, luego:</p>
+<ul>
+<li><p><span class="math inline">\(a = 0 \iff \forall v \in \mathbb{V}: \langle a, v \rangle = 0\)</span></p></li>
+<li><p><span class="math inline">\(a = b \iff \forall v \in \mathbb{V}: \langle a, v \rangle = \langle b, v \rangle\)</span></p></li>
+</ul>
+<h1 id="pi-sobre-subespacios" class="unnumbered">PI sobre Subespacios</h1>
+<p>Dado <span class="math inline">\(\mathbb{V}\)</span> un <span class="math inline">\(\mathbb{K}\)</span>-evpi, y <span class="math inline">\(S \subseteq_{\text{subesp.}} \mathbb{V}\)</span>, luego tenemos que <span class="math inline">\(\langle,\rangle|_S\)</span> es un producto interno de <span class="math inline">\(S\)</span>.</p>
+<h1 id="norma" class="unnumbered">Norma</h1>
+<p>Dado un <span class="math inline">\(\mathbb{V}\)</span> <span class="math inline">\(\mathbb{K}\)</span>-ev, una norma es una función <span class="math inline">\(|| \cdot || : \mathbb{V}\to \mathbb{R}^{\geq  0}\)</span> que satisface:</p>
+<ul>
+<li><p><span class="math inline">\(\forall v \in \mathbb{V}: ||v|| = 0 \iff v = 0\)</span></p></li>
+<li><p><span class="math inline">\(\forall \lambda\in \mathbb{K}, v \in \mathbb{V}: ||\lambda v|| = |\lambda| \cdot ||v||\)</span></p></li>
+<li><p><span class="math inline">\(\forall v, w \in \mathbb{V}: ||v+w|| \leq ||v|| + ||w||\)</span></p></li>
+</ul>
+<h1 id="cauchy-schwartz" class="unnumbered">Cauchy-Schwartz</h1>
+<p>Dice que <span class="math inline">\(\forall v, w \in \mathbb{V}\)</span>, luego <span class="math inline">\(|\langle v, w \rangle| \leq ||v|| \cdot ||w||\)</span></p>
+<p>Notemos que <span class="math display">\[||v - \lambda w||^2 = \langle v - \lambda w, v - \lambda w \rangle = \langle v, w \rangle - \langle v, \lambda w \rangle - \langle \lambda w, v \rangle + \langle \lambda w, \lambda w \rangle =\]</span> <span class="math display">\[||v||^2 + |\lambda|^2||w||^2 - \lambda\langle w, v \rangle - \overline \lambda\langle v, w \rangle\]</span></p>
+<p>Si tomamos <span class="math display">\[\lambda= \frac{\langle v, w \rangle}{||w||^2}\]</span> Entonces queda <span class="math display">\[||v||^2
+    + \left(\frac{\langle v, w \rangle}{||w||^2}\right)^2||w||^2
+- \frac{\langle v, w \rangle}{||w||^2}\langle w, v \rangle
+- \frac{\langle w, v \rangle}{||w||^2} \langle v, w \rangle\]</span></p>
+<p><span class="math display">\[||v||^2
+    + \frac{|\langle v, w \rangle|^2}{||w||^2}
+- 2\frac{|\langle v, w \rangle|^2}{||w||^2}\]</span></p>
+<p><span class="math display">\[||v||^2
+    - \frac{|\langle v, w \rangle|^2}{||w||^2} \geq 0\]</span></p>
+<p>Luego <span class="math display">\[|\langle v, w \rangle|^2 \leq ||v||^2||w||^2 \Rightarrow\]</span> <span class="math display">\[|\langle v, w \rangle| \leq ||v|| \cdot ||w||\]</span></p>
+<h1 id="demostración-de-desigualdad-triangular" class="unnumbered">Demostración de Desigualdad Triangular</h1>
+<p>Tenemos que demostrar <span class="math inline">\(||v+w|| \leq ||v|| + ||w||\)</span></p>
+<p>Tenemos: <span class="math display">\[||v+w|| \leq ||v|| + ||w|| \iff\]</span> <span class="math display">\[||v+w||^2 \leq ||v||^2 + 2||v|| \cdot ||w|| + ||w||^2 \iff\]</span> <span class="math display">\[\langle v, v \rangle + \langle v, w \rangle + \langle w, v \rangle + \langle w, w \rangle \leq ||v||^2 + 2||v|| \cdot ||w|| + ||w||^2 \iff\]</span> <span class="math display">\[||v||^2 + \langle v, w \rangle + \langle w, v \rangle + ||w||^2 \leq ||v||^2 + 2||v|| \cdot ||w|| + ||w||^2 \iff\]</span> <span class="math display">\[\langle v, w \rangle + \langle w, v \rangle\leq 2||v|| \cdot ||w|| \iff\]</span> <span class="math display">\[\langle v, w \rangle + \overline {\langle v, w \rangle} \leq 2||v|| \cdot ||w|| \iff\]</span> <span class="math display">\[2 \Re \langle v, w \rangle \leq 2||v|| \cdot ||w|| \Leftarrow\]</span> <span class="math display">\[|\langle v, w \rangle| \leq ||v|| \cdot ||w|| \iff\]</span></p>
+<h1 id="norma-dado-pi" class="unnumbered">Norma dado PI</h1>
+<p>Si <span class="math inline">\(\mathbb{V}\)</span> es un <span class="math inline">\(\mathbb{K}\)</span>-evpi, luego si <span class="math inline">\(\langle \cdot , \cdot \rangle\)</span> es un PI, entonces <span class="math inline">\(||v|| = \langle v, v \rangle^{\frac{1}{2}}\)</span> es una norma.</p>
+<p>Para probar la desigualdad triangular, vamos a usa cauchy swartz.</p>
+<h1 id="leyes-de-las-normlas" class="unnumbered">Leyes de las Normlas</h1>
+<p>Dados <span class="math inline">\(v, w \in \mathbb{V}\)</span>, tenemos que:</p>
+<ul>
+<li><p><span class="math inline">\(||v+w||^2 + ||v-w||^2 = 2(||v||^2 + ||w||^2)\)</span> (Ley del paralelogramo)</p></li>
+<li><p>Si <span class="math inline">\(\mathbb{K}= \mathbb{R}\)</span>, luego <span class="math inline">\(\langle v, w \rangle = \frac{1}{4}(||v+w||^2 - ||v-w||^2)\)</span></p></li>
+<li><p>Si <span class="math inline">\(\mathbb{K}= \mathbb{C}\)</span>, luego <span class="math display">\[\langle v, w \rangle = \frac{1}{4}(||v+w||^2 - ||v-w||^2)
+        + \frac{i}{4}(||v+iw||^2 - ||v-iw||^2)\]</span></p></li>
+</ul>
+<p>Notemos que estas son condiciones necesarias para que una norma <span class="math inline">\(|| \cdot ||\)</span> provenga de un producto interno.</p>
+<p>Además, la ley del paralelogramo es necesaria y suficiente para que provenga de una norma</p>
+<h1 id="pi-dada-norma-con-ley-del-paralelogramo" class="unnumbered">PI dada Norma con Ley del Paralelogramo</h1>
+<p>Dada una Norma <span class="math inline">\(|| \cdot || : \mathbb{V}\to \mathbb{R}\)</span>, vamos a demostrar que: <span class="math display">\[\exists \langle \cdot , \cdot \rangle : ||v||^2 = \langle v, v \rangle \iff \forall v, w : ||v+w||^2 + ||v-w||^2 = 2(||v||^2 + ||w||^2)\]</span></p>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>

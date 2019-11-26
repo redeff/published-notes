@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
+		<link rel="stylesheet" href="../../../stylesheet.css" type="text/css"/>
+		<title>Test</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML-full" type="text/javascript"></script>
+	</head>
+	<body>
+		<div class="wrapper">
+			<nav>
+				<h1> Template </h1>
+				<hr>
+				<a href="../../../index.html">
+					<div class="button">
+					<div class="navlink">
+						Home
+					</div>
+					</div>
+				</a>
+				<hr>
+				<a href="../../../notes.html">
+					<div class="button">
+					<div class="navlink">
+						Notas
+					</div>
+					</div>
+				</a>
+				<hr>
+			</nav>
+			<main>
+				<div class="center">
+					<h1 id="vectores-cíclicos" class="unnumbered">Vectores Cíclicos</h1>
+<p>Si tenemos <span class="math inline">\(f : \mathbb{V}\to \mathbb{V}\)</span>, luego existe un <span class="math inline">\(v \in \mathbb{V}\)</span> tal que <span class="math inline">\(m_{f,v} = m_f\)</span>.</p>
+<p>Tomemos la factorización <span class="math display">\[m_f = \prod P_i^{r_i}\]</span> con <span class="math inline">\(P_i\)</span> distintos e irreducibles en <span class="math inline">\(\mathbb{K}\)</span>.</p>
+<p>Luego sea: <span class="math display">\[Q_i = \frac{m_f}{P_i^{r_i}}\]</span> Notemos que: <span class="math display">\[\exists v_i : m_{Q_i(f), v_i} = P_i^{r_i}\]</span> Ya que <span class="math display">\[\forall v_i : m_{Q_i(f), v_i} \mid P_i^{r_i}\]</span> Y además se alcanza porque osinó el minimal no era mínimo. Luego tomemos <span class="math display">\[v = \sum\limits v_i\]</span></p>
+<h1 id="semejanza-en-mathbbc3-times-3" class="unnumbered">Semejanza en <span class="math inline">\(\mathbb{C}^{3 \times 3}\)</span></h1>
+<p>Si tenemos dos matrices <span class="math inline">\(A, B \in \mathbb{C}^{3 \times 3}\)</span>, luego: <span class="math display">\[A,B \text{ semejantes} \iff \chi_A = \chi_B \text{ y } m_a = m_b\]</span></p>
+<h1 id="condiciones-para-que-exista-matriz" class="unnumbered">Condiciones para que exista matriz</h1>
+<p>Si tenemos una matriz <span class="math inline">\(A\)</span>, luego</p>
+<ul>
+<li><p><span class="math inline">\(\dim \ker A = \#\)</span> bloques</p></li>
+<li><p><span class="math inline">\(\dim \ker A^{i+1} - \dim \ker A^i = \#\)</span> bloques de tamaño <span class="math inline">\(&gt; i\)</span></p></li>
+<li><p><span class="math inline">\(\mathop{\mathrm{rg}}A^{i+1} - 2\rgA^i + \mathop{\mathrm{rg}}A^{i-1} = \#\)</span> bloques de tamaño <span class="math inline">\(= i\)</span></p></li>
+</ul>
+
+				</div>
+			</main>
+		</div>
+	</body>
+</html>
