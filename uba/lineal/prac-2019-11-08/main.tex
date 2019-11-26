@@ -1,0 +1,69 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Exponencial de Matriz}
+Dada $A \in \C^{k \times k}$, decimos:
+\[
+	e^A = \sum^\infty \frac{A^n}{n!}
+\]
+
+Alternativamente, si tenemos $f : \C \to \C^k$, luego la ecuación diferencial:
+\[
+	f'(t) = Ax(t)
+\]
+Tiene como únicas soluciónes $f(t) = e^{At} \cdot v$. Para cualquier condición inicial $v$.
+
+\section*{Exponencial con Jordan}
+Tomemos una matriz, por ejemplo
+\[
+	A =
+	\begin{bmatrix}
+		3 & 1 \\
+		-1 & 1
+	\end{bmatrix}
+\]
+Luego tenemos:
+\[
+A = C^{-1} J_A C\]
+Con \[
+	J_A =
+	\begin{bmatrix}
+		2 & 0 \\
+		1 & 2
+	\end{bmatrix}
+\]
+
+Además:
+\[
+	J_A^n = \sum_{i = 0}^n {n \choose i} D^{n-i} N^i
+\]
+Pero la nilpotente se anula para $i \geq 2$, luego:
+\[
+	J_A^n = D^n + nD^{n-1}N =
+	\begin{bmatrix}
+		2^n & 0 \\
+		n2^{n-1} & 2^n
+	\end{bmatrix}
+\]
+Luego $A^n = C^{-1} J_a^n C$, luego:
+\[
+	e^{At} = C^{-1} \left(\sum \frac{1}{n!}
+		\begin{bmatrix}
+			t^n2^n & 0 \\
+			t^nn2^{n-1} & t^n2^n
+		\end{bmatrix}
+	\right) C
+\]
+\[
+	e^{At} = C^{-1} \left(\sum
+		\begin{bmatrix}
+			\frac{t^n2^n}{n!} & 0 \\
+			\frac{nt^n2^{n-1}}{(n-1)!} & \frac{t^n2^n}{n!}
+		\end{bmatrix}
+	\right) C
+\]
+Sabemos que $\sum \frac{t^n2^n}{n!} = e^{2t}$, además:
+\[
+	\sum \frac{nt^n2^{n-1}}{(n-1)!} = te^{2t}
+\]
+\end{document}

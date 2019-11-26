@@ -1,0 +1,90 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Integración en Varias variables}
+Dado un rectángulo $D = [a,b] \times [c,d]$, y una función $f : D \to \R$, vamos a definir:
+\[I = \iint\limits_D f(x,y) \; dx \; dy\]
+Geométricamente, $I$ representa el volumen de los puntos en $\R^3$ debajo del gráfico de la función.
+
+Formalmente, se define parecido a la integral de riemann.
+Dada dos funciones crecientes $\pi : \{n\} \to [a,b]$, $\tau : \{m\} \to [c,d]$ particiones, decimos que:
+\[s(f,\pi,\tau) = \sum_i \sum_j |\pi_{i+1} - \pi_i| \cdot |\tau_{i+1} - \tau_i| \cdot k_{ij}\]
+Con
+\[k_{ij} = \inf \{f(x,y) : \pi_i \leq x \leq \pi_{i+1}, \tau_j \leq y \leq \tau_{j+1}\}\]
+Y además,
+\[S(f,\pi,\tau) = \sum_i \sum_j |\pi_{i+1} - \pi_i| \cdot |\tau_{i+1} - \tau_i| \cdot K_{ij}\]
+Con
+\[K_{ij} = \sup \{f(x,y) : \pi_i \leq x \leq \pi_{i+1}, \tau_j \leq y \leq \tau_{j+1}\}\]
+
+Luego tomamos
+\[\iint\limits_D f(x,y) \; dx \; dy = \sup_{\pi, \tau} s(f, \pi, \tau) = \inf_{\pi, \tau} S(f, \pi, \tau)\]
+Cuando estos valores coinciden.
+
+\subsection*{Integrabilidad de Contínuas}
+Toda función contínua es integrable.
+
+\section*{Teorema de Fubini}
+Para toda función contínua $f : [a,b] \times [c, d] \to \R$, se cumple que:
+\[
+	\iint\limits_{[a,b] \times [c,d]} f(x,y) \; dx \; dy = \int_c^d \left[\int_a^b f(x,y) \; dx\right] \; dy
+\]
+Y
+\[
+	\iint\limits_{[a,b] \times [c,d]} f(x,y) \; dx \; dy = \int_a^b \left[\int_c^d f(x,y) \; dy\right] \; dx
+\]
+
+\section*{Integral de Variables Separadas}
+Por fubini, trivialmente:
+\[
+	\iint\limits_D f(x) \cdot g(y) \; dx \; dy = \left(\int f(x) \; dx\right) \left(\int g(y) \; dy\right)
+\]
+
+\section*{Integral sobre Regiones no Rectangulares}
+Supongamos que tenemos una función $f : C \to \R$, con $C \inn \R^2$ acotada, luego va a existir un rectángulo $D : C \inn D$. Luego extendemos la función de tal forma que:
+
+\[
+	f'(x) =
+	\begin{cases}
+		f(x) & \text{Si $x \in C$} \\
+		0 & \text{Si $x \notin C$} \\
+	\end{cases}
+\]
+
+Y definimos:
+\[
+	\iint\limits_C f(x,y) \; dxdy = \iint\limits_D f'(x,y) \; dxdy
+\]
+
+\section*{Dominios Simples}
+Un dominio simple es un subconjunto de $\R^2$ de la forma:
+\[D = \{(x,y) : a \leq x \leq b, \phi_1(x) \leq y \leq \phi_2(x)\}\]
+
+Por fubini, tenemos que que:
+\[
+	\iint\limits_D f(x,y) \; dxdy = \int_a^b \left[\int_{\phi_1(x)}^{\phi_2(x)} f(x,y) \; dy\right] dx
+\]
+\section*{Ejemplo}
+Ponele que queremos calcular el volumen de un cono de altura $h$, y base de radio $r$, luego tenemos que su base es:
+\[D = \{(x,y) : x^2 + y^2 \leq r^2\}\]
+Y la integral que queremos es:
+\[\iint\limits_D h \left(1 - \frac{\sqrt{x^2 + y^2}}{r}\right) =\]
+\[h \pi r^2 - h\iint\limits_D \frac{\sqrt{x^2 + y^2}}{r} =\]
+\[h \pi r^2 - \frac{h}{r}\iint\limits_D \sqrt{x^2 + y^2}\]
+\[\iint\limits_D \sqrt{x^2 + y^2} =\]
+\[\int_{-r}^r \int_{-\sqrt{r^2-x^2}}^{\sqrt{r^2-x^2}} \sqrt{x^2 + y^2} \; dydx\]
+
+\section*{Regiones de Área $0$}
+Un subconjunto $A \in \R^2$ se dice de \emph{Contenido, o área $0$}, si para todo $\e > 0$, existe un conjunto \emph{finito} $\DD$ de rectángulos, tal que $A \inn \bigcup \DD$, y $\sum_{d \in \D} \text{area}(d) \leq \e$.
+
+Alternativamente, decimos que tiene área 0 sii:
+\[0 = \inf_{\pi, \tau} \sum_{(i,j) \in K} |\pi_{i+1} - \pi_i| \cdot |\tau_{i+1} - \tau_i|\]
+Dónde:
+\[K = \{(i,j) : [\pi_i, \pi_{i+1}] \times [\tau_i, \tau_{i+1}] \cap A \neq \emptyset\}\]
+
+\section*{Funciones que difieren en Conjuntos de Área 0}
+Si tenemos un conjunto $A$ de área $0$, luego si:
+\[\forall (x,y) \notin A : f(x,y) = g(x,y)\]
+Entonces:
+\[\iint\limits_D f = \iint\limits_D g\]
+Para todo $D$.
+\end{document}

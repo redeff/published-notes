@@ -1,0 +1,133 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Producto Interno}
+Dado un cuerpo $\K$ que es $\R$ ó $\C$,
+Un producto interno de $\V$ como $\K$-ev es una función $\langle \cdot , \cdot \rangle : \V^2 \to \K$ que cumple:
+\begin{enumerate}
+	\item $\forall v_1, v_2, v_3 \in \V : \langle v_1 + v_2, v_3 \rangle = \langle v_1, v_3 \rangle + \langle v_2, v_3\rangle$
+	\item $\langle \l v_1, v_2 \rangle = \l \langle v_2, v_2 \rangle$
+
+	Estas dos propiedades son equivalentes a que $x \mapsto \langle x, v \rangle$ con $v$ fijo sea lineal.
+	\item $\forall v, w \in \V: \langle v, w \rangle = \overline {\langle v, w \rangle}$
+	\item $\forall v \in \V, v \neq 0 : \langle v, v \rangle > 0$ (si estamos en complejos, siempre da real)
+\end{enumerate}
+
+De estas propiedades se desprende:
+\begin{itemize}
+\item $\langle v_1, v_2 + v_3 \rangle = \langle v_1, v_2 \rangle + \langle v_1, v_3 \rangle$
+\item $\langle v_1, \l v_2 \rangle = \overline \l \langle v_1, v_2 \rangle$
+\item $\langle 0, v \rangle = 0$, en particular $\langle 0, 0 \rangle = 0$
+\end{itemize}
+
+Cuando un $\V$ tiene un producto interno $\langle \cdot , \cdot \rangle$, decimos que $(\V, \langle \cdot , \cdot \rangle)$ es un EVPI (espacio vectorial con producto interno)
+
+\section*{Producto Interno Canónico}
+Si $\V = \K^n$, luego el PI canónico es:
+\[
+	\langle v, w \rangle = \sum_i v_i \overline w_i
+\]
+Y tenemos que:
+\[
+	\langle v, v \rangle = \sum_i v_i \overline v_i = \sum |v_i|^2 = ||v||^2
+\]
+
+\section*{Producto Interno Pesado}
+Dado un $z = (z_i)_i \in \R^{+n}$, tenemos que:
+\[
+	\langle v, w \rangle_z = \sum z_iv_i\overline w_i
+\]
+
+\section*{Espacios Vectoriales de Dimensión Infinita}
+Si tenemos $\V = \K[x]$, con $a < b \in \R$, tenemos que:
+\[
+	\langle p(x), q(x) \rangle = \int_a^b p(x)\overline {q(x)} \; dx
+\]
+
+\section*{Propiedades Del Producto Interno}
+Sea $\V$ un $\K$-evpi, y sean $a, b \in \V$, luego:
+\begin{itemize}
+	\item $a = 0 \iff \forall v \in \V : \langle a, v \rangle = 0$
+	\item $a = b \iff \forall v \in \V : \langle a, v \rangle = \langle b, v \rangle$
+\end{itemize}
+
+\section*{PI sobre Subespacios}
+Dado $\V$ un $\K$-evpi, y $S \inn_{\text{subesp.}} \V$, luego tenemos que $\langle,\rangle|_S$ es un producto interno de $S$.
+
+\section*{Norma}
+Dado un $\V$ $\K$-ev, una norma es una función $|| \cdot || : \V \to \R^{\geq  0}$ que satisface:
+\begin{itemize}
+	\item $\forall v \in \V : ||v|| = 0 \iff v = 0$
+	\item $\forall \l \in \K, v \in \V : ||\l v|| = |\l| \cdot ||v||$
+	\item $\forall v, w \in \V : ||v+w|| \leq ||v|| + ||w||$
+\end{itemize}
+
+\section*{Cauchy-Schwartz}
+Dice que $\forall v, w \in \V$, luego $|\langle v, w \rangle| \leq ||v|| \cdot ||w||$
+
+Notemos que
+\[||v - \l w||^2 = \langle v - \l w, v - \l w \rangle = \langle v, w \rangle - \langle v, \l w \rangle - \langle \l w, v \rangle + \langle \l w, \l w \rangle =\]
+\[||v||^2 + |\l|^2||w||^2 - \l \langle w, v \rangle - \overline \l \langle v, w \rangle\]
+
+Si tomamos \[\l = \frac{\langle v, w \rangle}{||w||^2}\]
+Entonces queda
+\[||v||^2
+	+ \left(\frac{\langle v, w \rangle}{||w||^2}\right)^2||w||^2
+- \frac{\langle v, w \rangle}{||w||^2}\langle w, v \rangle
+- \frac{\langle w, v \rangle}{||w||^2} \langle v, w \rangle\]
+
+\[||v||^2
+	+ \frac{|\langle v, w \rangle|^2}{||w||^2}
+- 2\frac{|\langle v, w \rangle|^2}{||w||^2}
+\]
+
+\[||v||^2
+	- \frac{|\langle v, w \rangle|^2}{||w||^2} \geq 0
+\]
+
+Luego
+\[
+	|\langle v, w \rangle|^2 \leq ||v||^2||w||^2 \To
+\]
+\[
+	|\langle v, w \rangle| \leq ||v|| \cdot ||w||
+\]
+
+\section*{Demostración de Desigualdad Triangular}
+Tenemos que demostrar $||v+w|| \leq ||v|| + ||w||$
+
+Tenemos:
+\[||v+w|| \leq ||v|| + ||w|| \iff\]
+\[||v+w||^2 \leq ||v||^2 + 2||v|| \cdot ||w|| + ||w||^2 \iff\]
+\[\langle v, v \rangle + \langle v, w \rangle + \langle w, v \rangle + \langle w, w \rangle \leq ||v||^2 + 2||v|| \cdot ||w|| + ||w||^2 \iff\]
+\[||v||^2 + \langle v, w \rangle + \langle w, v \rangle + ||w||^2 \leq ||v||^2 + 2||v|| \cdot ||w|| + ||w||^2 \iff\]
+\[\langle v, w \rangle + \langle w, v \rangle\leq 2||v|| \cdot ||w|| \iff\]
+\[\langle v, w \rangle + \overline {\langle v, w \rangle} \leq 2||v|| \cdot ||w|| \iff\]
+\[2 \Re \langle v, w \rangle \leq 2||v|| \cdot ||w|| \From\]
+\[|\langle v, w \rangle| \leq ||v|| \cdot ||w|| \iff\]
+
+\section*{Norma dado PI}
+Si $\V$ es un $\K$-evpi, luego si $\langle \cdot , \cdot \rangle$ es un PI, entonces $||v|| = \langle v, v \rangle^{\frac{1}{2}}$ es una norma.
+
+Para probar la desigualdad triangular, vamos a usa cauchy swartz.
+
+\section*{Leyes de las Normlas}
+Dados $v, w \in \V$, tenemos que:
+\begin{itemize}
+	\item $||v+w||^2 + ||v-w||^2 = 2(||v||^2 + ||w||^2)$ (Ley del paralelogramo)
+	\item Si $\K = \R$, luego $\langle v, w \rangle = \frac{1}{4}(||v+w||^2 - ||v-w||^2)$
+	\item Si $\K = \C$, luego
+		\[\langle v, w \rangle = \frac{1}{4}(||v+w||^2 - ||v-w||^2)
+		+ \frac{i}{4}(||v+iw||^2 - ||v-iw||^2)\]
+\end{itemize}
+
+Notemos que estas son condiciones necesarias para que una norma $|| \cdot ||$ provenga de un producto interno.
+
+Además, la ley del paralelogramo es necesaria y suficiente para que provenga de una norma
+
+\section*{PI dada Norma con Ley del Paralelogramo}
+Dada una Norma $|| \cdot || : \V \to \R$, vamos a demostrar que:
+\[
+	\exists \langle \cdot , \cdot \rangle : ||v||^2 = \langle v, v \rangle \iff \forall v, w : ||v+w||^2 + ||v-w||^2 = 2(||v||^2 + ||w||^2)
+\]
+\end{document}

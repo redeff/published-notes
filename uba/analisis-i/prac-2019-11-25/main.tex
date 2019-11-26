@@ -1,0 +1,106 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Ejercicio 1}
+Dado el elipsoide
+\[E = \left\{(x,y,z) : \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} \leq 1\right\}\]
+Calcular su volumen.
+Tomemeos la esfera unitaria $B$, y la función inyectiva $\CC^1$ $T(x,y,z) = (ax, by, cz)$, luego:
+\[
+    \iiint\limits_{T(B)} 1 \; dB= \iiint\limits_B JT \; dB
+\]
+Pero $T(B) = E$, luego:
+\[
+    \iiint\limits_{E} 1 \; dE = \iiint\limits_{T(B)} 1 \; dB= \iiint\limits_B JT \; dB = JT \cdot \iiint\limits_B 1 \; dB
+\]
+Y el volumen de la esfera $B$ lo sé (es $\frac{4}{3}\pi$), y el Jacobiano de mi transformación es claramente $abc$, luego ya estamos. El resultado final es:
+\[
+    \frac{4}{3} \pi \cdot abc
+\]
+\section*{Ejercicio 2}
+Calcular:
+\[V = \iiint\limits_W z \; dV\]
+Donde:
+\[W = \left\{x^2 + y^2 + z^2 \leq 1, z \geq \frac{1}{2}\right\}\]
+Con coordenadas esféricas queda:
+\begin{itemize}
+    \item $0 \leq \theta \leq 2\pi$
+    \item $\frac{1}{2 \cos \phi} \leq r \leq 1$
+    \item $0 \leq \phi \leq \cos^{-1} \frac{1}{2} = \frac{\pi}{3}$
+\end{itemize}
+Luego tenemos:
+\[
+    V = \int_0^{2\pi} \int_0^{\frac{\pi}{3}} \int_0^{\frac{1}{2\cos\phi}} z \cdot r^2 \cdot \sin \phi \; drd\phi d\theta
+\]
+Pero $z = r \cos \phi$, luego:
+\[
+    V = \int_0^{2\pi} \int_0^{\frac{\pi}{3}} \int_{\frac{1}{2\cos\phi}}^1 r^3 \cdot \sin \phi \cdot \cos \phi \; drd\phi d\theta
+\]
+\[
+    \frac{V}{2\pi} = \int_0^{\frac{\pi}{3}} \int_{\frac{1}{2\cos\phi}}^1 r^3 \cdot \sin \phi \cdot \cos \phi \; drd\phi
+\]
+\[
+    \frac{V}{2\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot \int_{\frac{1}{2\cos\phi}}^1 r^3\; drd\phi
+\]
+\[
+    \frac{V}{2\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot \left(\frac{r^4}{4}\right|_{\frac{1}{2\cos\phi}}^1\; d\phi
+\]
+\[
+    \frac{2V}{\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot \left(r^4\right|_{\frac{1}{2\cos\phi}}^1\; d\phi
+\]
+\[
+    \frac{2V}{\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot \left(1 - \frac{1}{16\cos^4 \phi}\right)\; d\phi
+\]
+\[
+    \frac{2V}{\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot d\phi
+    -\int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot \frac{1}{16\cos^4 \phi}\; d\phi
+\]
+\[
+    \frac{2V}{\pi} = \int_0^{\frac{\pi}{3}} \sin \phi \cdot \cos \phi \cdot d\phi
+    -\int_0^{\frac{\pi}{3}} \sin \phi \cdot \frac{1}{16\cos^3 \phi}\; d\phi
+\]
+Que sale haciendo sustitución $u = \cos \phi$, y $du = -\sin \phi$, queda:
+\[
+    \frac{2V}{\pi} = \int_0^{\frac{1}{2}} - u \cdot du
+    -\int_0^{\frac{1}{2}} - \frac{1}{16u^3}\; du
+\]
+\[
+    \frac{2V}{\pi} = -\int_0^{\frac{1}{2}} u \cdot du
+    +\frac{1}{16}\int_0^{\frac{1}{2}} u^{-3}\; du
+\]
+Que sale.
+\section*{Ejercicio 3}
+Dado:
+\[W = \left\{
+        1 \leq x^2 + y^2 + z^2 \leq 4,
+        \frac{1}{3}(x^2 + y^2) \leq z^2 \leq 3(x^2 + y^2),
+        z \geq 0
+\right\}\]
+Calcular:
+\[
+    V = \iiint\limits_W \frac{1}{(x^2 + y^2 + z^2)^2}
+\]
+Notemos que esto es una corona esférica intersecada con el espacio entre dos conos.
+Los ángulos de los conos son, $\phi_2 = \tan^{-1}\sqrt 3 = \frac{\pi}{3}$, y $\phi_1 = \tan^{-1}\frac{1}{\sqrt 3} = \frac{\pi}{6}$
+Luego tenemos:
+\[
+    V = \int_0^{2\pi} \int_{\frac{\pi}{6}}^{\frac{\pi}{3}} \int_1^2 \frac{1}{(x^2 + y^2 + z^2)^2} r^2 \sin \phi \; dr d\phi d\theta
+\]
+\section*{Parcial}
+\subsection*{Uno}
+Sea $f : \R^3 \to \R$ la función $f(x,y,z) = z^3 - 2yz + x$
+\begin{enumerate}
+    \item Probar que la ecuación $f(x,y,z) = 0$ define una función $z = \phi(x,y)$ de clase $\CC^1$ en un entorno del punto $(1,0)$ tal que $f(x, y, \phi(x,y)) = 0$ para todo $(x,y)$ en un entorno.
+    \item Suponiendo que $\phi$ es $\CC^2$, determinar su polinomio de taylor de orden 2 alrededos del punto $(1,0)$
+\end{enumerate}
+\subsection*{Dos}
+Sea $f : \R^2 \to \R$ dada por $f(x,y) = x^2 + y^2 - 2x$
+\begin{enumerate}
+    Encontrar todos los extremos locales de $f$ en:
+    \[D = \{(x,y) \in \R^2 : x^2 + y^2 < 2, x > 0\}\]
+    Y analizar la existencia de extremos absolutos en $D$.
+\end{enumerate}
+\subsection*{Tres}
+Probar que si $\alpha > 1$, la integral:
+\[\int_3^{+\infty}\;^3\sqrt{\frac{|\sin (x - 3)|}{x^\alpha(x^2 - 6x + 9)}}\]
+\end{document}

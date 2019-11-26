@@ -1,0 +1,153 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Complemento Ortogonal}
+Dado $S \inn \V$, decimos $S^\perp = \{ v \in \V : v \perp s \forall s \in \S \}$.
+
+Cuando es finito $\V$, tenemos que $S \oplus S^\perp = \V$
+
+Para calcular $\S^\perp$, tomamos una base de $S$ extendida a una de $\V$, y aplicamos el algoritmo para hacerla ortogonal.
+
+\section*{Proyectores}
+Se define $p_S : \V \to \V$ al proyector que cumple:
+\begin{itemize}
+    \item $\Ima p = S$
+    \item $\ker p = S^\perp$
+\end{itemize}
+
+\section*{Descomposición en base Ortonormal}
+Si tenemos una base ortonormal $\BB$ de $\V$, tenemos que:
+\[
+    v = \sum \langle v, \BB_i \rangle \cdot \BB_i
+\]
+
+\section*{Ejercicio 1}
+Dado $\V = \R^{3 \times 3}$, $\langle A, B\rangle = \tr(AB^t)$:
+\begin{enumerate}
+    \item Calcular $S^\perp$, donde $S = \{A \in \R^{3 \times 3} : A_{ij} = 0 \forall i \neq 1\}$
+    \item Dada $A = 
+        \begin{bmatrix}
+            1 & 2 & 3 \\
+            3 & 1 & 2 \\
+            2 & 3 & 1 \\
+        \end{bmatrix}$, calcular el $B \in S^\perp$ más cercano a $A$.
+\end{enumerate}
+
+Notemos que, si $A \in S$, luego
+\[\tr (AB^t) = 0\]
+\[\sum_i (AB^t)_{ii} = 0\]
+\[\sum_i \sum_j A_{ij} B^t_{ji} = 0\]
+\[\sum_i \sum_j A_{ij} B_{ij} = 0\]
+\[\sum_j A_{1j} B_{1j} = 0\]
+Luego $S^\perp = \{B : \forall j : B_{1j} = 0\}$
+
+Notemos que demás la canónica $E_{ij}$ es BON, entonces:
+\[p_S(A) = \sum \langle A, E_{1j} \rangle E_{1j} =\]
+\[p_S(A) = \sum A_{1j} E_{1j} =\]
+\[
+    \begin{bmatrix}
+        1 & 2 & 3 \\
+        0 & 0 & 0 \\
+        0 & 0 & 0 \\
+    \end{bmatrix}
+\]
+
+\section*{Ejercicio 2}
+Probar que existe pi en $\R^{3 \times 3}$ tq:
+\begin{itemize}
+    \item $S^\perp$ = $\{(x \; y \; z) : x+y-z = 0\}^\perp = \langle(0 \; 0 \; 1)\rangle$
+    \item $\langle (2 \; 2 \; 17), (1 \; 0 \; 1) \rangle = 0$
+\end{itemize}
+Calcular $\langle (1 \; 1 \; 2) \rangle ^ \perp$
+
+\section*{Caracterización de los Productos Internos}
+Si $\BB$ es una base, y $A$ una matriz simétrica y definida positiva, luego:
+\[
+    \Phi(x,y) = (x)_\BB A((y)_\BB)^t
+\]
+
+Vamos a querer construirnos una base ortonormal para trabajar, que queremos que tenga subbases de $S$ y de $S^\perp$. Pongamos entonces a $(0 \; 0 \; 1) \in S^\perp$ en la base, y además pongamos a $(1 \; 0 \; 1)$ en la base, y queremos unomás, ortogonal a los otros dos. Podemos elejirnos $(2 \; 2 \; 17) - 13 \cdot (0 \; 0 \; 1)$
+
+Luego dada esta base ortogonal, el producto interno queda definido sólo por la matriz de producto interno (que no nos importa), y además, como $(1 \; 1 \; 2)$ estaba ya en la base, tenemos que el ortogonal al generado por él es $\langle (1 \; 0 \; 1) \quad (0 \; 0 \; 1) \rangle$
+
+\section*{Ejercicio 3}
+Si $f : \C^2 \to \C^2$, $f(x,y) = (x - iy, 3x - 4iy)$, con
+\[\langle (x,y), (z,w) \rangle = x\overline z + y \overline w\]
+Tenemos:
+\[\langle(x-iy, 3x-4iy, (z,w)\rangle =\]
+\[(x-iy)\overline z + (3x-4iy) \overline w =\]
+\[x\overline z-iy\overline z + 3x\overline w -4iy \overline w =\]
+\[x\overline {(z + 3w)} + y\overline {(-iz -4i w)} =\]
+\[\langle (x, y), (z + 3w, -iz -4i w \rangle =\]
+
+\section*{Ejercicio 4}
+Dado $\V = \R[x]$, $\langle p, q \rangle = \int_0^1 p(x)q(x) dx$, y $m_f(p) = f \cdot p$, calcular $m_f^*$
+\[\langle m_f p, q\rangle = \langle p, m_f^* q \rangle\]
+\[\int_0^1 f(x)p(x)q(x) dx = \int_0^1 p(x) m_f^*(q)(x) dx\]
+Si tomamos $m_f^* = m_f$, es claro que esto anda, luego ya estamos.
+
+\section*{Ejercicio 5}
+Dado $\V = \C^{n \times n}$, con $f(A) = P^{-1}AP$, hallar la adjunta y ver que es autoadjunta cuando $P$ es hermitiana
+\[\langle f(A), B \rangle =\]
+\[\tr P^{-1}APB^* =\]
+\[\tr AP^{-1}B^*P =\]
+\[\tr A(P^{-*}BP^*)^* =\]
+\[\langle A, P^{-*}BP^* \rangle =\]
+Luego $f^*(B) = P^{-*}BP^*$, que cumple $f = f^*$ cuando $P$ es hermitiana
+
+\section*{Identidades}
+\begin{itemize}
+    \item $(f \circ g)^* = g^* \circ f^*$
+    \item $(f^*)^* = f$
+    \item $\ker (f^*) = (\Ima f)^\perp$
+    \item $\Ima (f^*) = (\ker f)^\perp$ (Para finitos)
+    \item $\ker f = \ker (f^* \circ f)$
+    \item $\Ima f = \Ima (f \circ f^*)$
+\end{itemize}
+Notemos que 
+\[w \in \ker (f^*) \iff\]
+\[f^*(w) = 0 \iff\]
+\[\forall v : \langle v, f^*(w) \rangle = 0 \iff\]
+\[\forall v : \langle f(v), w \rangle = 0 \iff\]
+\[w \perp \Ima f\]
+
+Además, si $w \in \ker f$, queremos ver que $w \perp f^*(v)$, luego
+\[\langle w, f^*(v) \rangle =\]
+\[\langle fw, v \rangle =\]
+\[0\]
+Por lo que $\Ima f^* \inn (\ker f) ^ \perp$
+
+Tomemos $v \in \ker (f^* \circ f)$, luego:
+\[
+    0 = \langle v, f^*(f(v)) \rangle =
+\]
+\[
+    \langle f(v), f(v) \rangle
+\]
+Luego $f(v) = 0$
+
+Notemos además que:
+\[
+\Ima (f \circ f^*) = \]
+\[\ker (f \circ f^*)^\perp =\]
+\[\ker (f^{**} \circ f^*)^\perp =\]
+\[(\ker f^*)^\perp =\]
+\[(\Ima f)^{\perp\perp} =\]
+\[(\Ima f) =\]
+
+\section*{Transformaciones Normales}
+Una transformación $f : \V \to \V$ es normal sii $f \circ f^* = f^* \circ f$
+Notemos que:
+\begin{itemize}
+    \item $||f(v)||^2 = ||f^*(v)||^2$
+    \item $f$ normal, entonces $v$ autovector de autovalor $\l$ sii $v$ autovector de $f^*$ con autovalor $\overline \l$
+\end{itemize}
+\section*{Caracterización de las Normales}
+$f$ normal sii $f$ admine una BON de autovectores.
+
+Sea $\l \in \C$ un autovalor, de autovector $v$, luego tomamos $S = \langle v \rangle^\perp$. Tenemos que:
+\[\langle fs, v \rangle =\]
+\[\langle \l s, v \rangle =\]
+\[\l\langle s, v \rangle = 0\]
+Y así hacemos inducción.
+\end{document}

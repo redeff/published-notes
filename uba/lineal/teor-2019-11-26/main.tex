@@ -1,0 +1,212 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Autovalores de Autoadjuntas}
+\begin{teo}
+    Si $f : \V \to \V$, $\V$ finito autoadjunta, luego $f$ tienen algún autovalor.
+\end{teo}
+\begin{demo}
+    Si $\K = \C$ es trivial.
+    Si $\K = \R$, tomemos $\BB$ base ortonormal.
+
+    Sea $A = [f]_\BB$. Como $f$ es autoadjunta, $A$ es simétrica.
+
+    Vamos a construirnos una nueva transformación $C^n \to \C^n$ con la misma matriz. Tomemos $g : \C^n \to \C^n$ tal que:
+    \[
+        [g]_E = A
+    \]
+    Que es autoadjunta ya que $A$ es hermitiana, por lo que $g$ tiene un autovalor $\l$, que por ser autoadjunta debe ser real.
+    Luego $\l \in \R$ es raíz de $\chi_g$, pero:
+    \[\chi_g = \chi_A = \chi_f\]
+    Luego $\l$ es autovalor de $g$.
+\end{demo}
+\begin{teo}
+    Si $\dim \V = n$ y $f : \V \to \V$ autoadjunta, luego $f$ es diagonalizable, y con una base ortonormal de autovectores.
+\end{teo}
+\begin{demo}
+    Vamos a hacer inducción. Si $n = 0$ ya está.
+
+    Si no, tomemos algún autovalor $\l \in \R$ de $f$, y su autovector $v$. WLOG $v$ es unitario.
+
+    Si tomamos $\W = \langle v \rangle ^\perp$, nos gustaría que $\W$ fuese $f$-invariante para hacer inducción. Si $w \in \W$ tomemos:
+    % \[w \in \W \To\]
+    \[0 = \langle w, v\rangle \To\]
+    % \[0 = \l\langle w, v\rangle \To\]
+    \[0 = \langle w, \l v\rangle \To\]
+    \[0 = \langle w, fv\rangle \To\]
+    \[0 = \langle fw, v\rangle \To\]
+    \[fw \in \W\]
+    Luego $\W$ es $f$-invariante. Tomemos entonces $\tilde f : \W \to \W$ la restricción, que tendrá de dominio un espacio de dimensión $\dim \W = n-1$, y será claramente autoadjunta.
+
+    Por hipótesis inductiva, tomemos una base de autovectores de $\tilde f$. Sabemos que los de distinto autovalor son ortogonales, y dentro de cada autovalor los ortonormalizamos, luego tenemos una base ortonormal de autovalores de $\tilde f$. La extendemos con el vector $v$, que es ortogonal a todos los otros y es una autovector, luego tenemos una base ortonormal de autovectores de $f$.
+\end{demo}
+\begin{teo}
+    Si $f : \V \to \V$, $f$ es autoadjunta sii existe una bon $\BB$ tal que $[f]_\BB$ es diagonal y real.
+\end{teo}
+\begin{demo}
+    Un lado está por el teorema anterior. Y la vuelta es fácil, ya que si hay una bon que tiene como matriz una diagonal real $A$, sabemos que $A$ es hemitiana, luego $f$ es autoadjunta.
+\end{demo}
+\section*{Transformaciones Normales}
+\begin{defi}
+    Una transfomración lineal $f : \V \to \V$ es \emph{normal} sii tiene adjunta y conmuta con ella: $f \circ f^* = f^* \circ f$.
+
+    Notemos que las autoadjuntas son normales.
+\end{defi}
+\begin{ej}
+    Si Tengo $f : \R^2 \to \R^2$, luego:
+    \[
+        [f] =
+        \begin{bmatrix}
+            \cos \alpha & \sin \alpha \\
+            -\sin \alpha & \cos \alpha \\
+        \end{bmatrix}
+    \]
+    No es autoadjunta, al menos que $\sin \alpha = -\sin \alpha$. Sin embargo, $f \circ f^* = f^* \circ f = \id$, por lo que $f$ es normal.
+\end{ej}
+\section*{Propiedades de las Normales}
+\begin{teo}
+    Sea $f : \V \to \V$ normal, con $v \in \V$ y $\l \in \K$. Son equivalentes:
+    \begin{enumerate}
+        \item $v$ es $\l$-autovector de $f$.
+        \item $v$ es $\overline \l$-autovector de $f^*$.
+    \end{enumerate}
+\end{teo}
+\begin{demo}
+    Tomemos $g = f - \l \id$, con $g^* = f^* - \overline \l \id$, que claramente será normal.
+
+    Tenemos que:
+    \[v \in \ker g\]
+    \[\iff \langle gv, gv\rangle = 0\]
+    \[\iff \langle v, g^*gv\rangle = 0\]
+    \[\iff \langle v, gg^*v\rangle = 0\]
+    \[\iff \langle g^*v, g^*v\rangle = 0\]
+    \[v \in \ker g^*\]
+    Luego $v \in \ker g \iff v \in \ker g^*$, luego estamos.
+\end{demo}
+\begin{teo}
+    Dada $f : \V \to \V$ con $\V$ un $\C$-evpi (no anda con $\R$) y $f$ normal, se tiene una bon $\BB$ de autovectores de $f$.
+\end{teo}
+\begin{demo}
+    (Es la misma demo que para autoadjuntas)
+
+    Vamos a hacer inducción. Si $n = 0$ ya está.
+
+    Si no, tomemos algún autovalor $\l$ de $f$, que sabemos que existe ya que estamos en $\C$, y su autovector $v$. WLOG $v$ es unitario.
+
+    Si tomamos $\W = \langle v \rangle ^\perp$, nos gustaría que $\W$ fuese $f$-invariante para hacer inducción. Si $w \in \W$ tomemos:
+    % \[w \in \W \To\]
+    \[0 = \langle w, v\rangle \To\]
+    % \[0 = \l\langle w, v\rangle \To\]
+    \[0 = \langle w, \overline \l v\rangle \To\]
+    \[0 = \langle w, f^*v\rangle \To\]
+    Ya que $v$ es $\overline \l$-autovector de $f^*$.
+    \[0 = \langle fw, v\rangle \To\]
+    \[fw \in \W\]
+    Luego $\W$ es $f$-invariante, y análogamente $\W$ es $f^*$-invariante. Tomemos entonces $\tilde f : \W \to \W$ la restricción, que tendrá de dominio un espacio de dimensión $\dim \W = n-1$, y será claramente normal con adjunta $\tilde {f^*} : \W \to \W$.
+
+    Por hipótesis inductiva, tomemos una base de autovectores de $\tilde f$. Sabemos que los de distinto autovalor son ortogonales, y dentro de cada autovalor los ortonormalizamos, luego tenemos una base ortonormal de autovalores de $\tilde f$. La extendemos con el vector $v$, que es ortogonal a todos los otros y es una autovector, luego tenemos una base ortonormal de autovectores de $f$.
+\end{demo}
+\begin{teo}
+    Una dada una $f : \V \to \V$, con $\V$ un $\C$-evpi, luego es lo mismo:
+    \begin{enumerate}
+        \item $f$ normal
+        \item Existe base bon de autovectores.
+    \end{enumerate}
+\end{teo}
+\begin{demo}
+    $1) \To 2)$ ya está.
+
+    $2) \To 1)$ sale ya que tomamos $[f]_\BB$ con $\BB$ bon de autovectores, que será diagonal, luego:
+    \[[f^*]_\BB =
+        \overline {[f]_\BB^t} =
+        \overline {[f]_\BB}
+    \]
+    Luego la matriz de la adjunta también es diagonal, por lo que conmutan.
+\end{demo}
+\section*{Teorema Espectral para Normales}
+\begin{teo}
+    Dado $\V$ un $\C$-evpi, $\dim \V = n < \infty$, con $f : \V \to \V$ normal.
+
+    Luego si $\l_i$ son los autovectores (sin repetidos), definimos:
+    \begin{itemize}
+        \item $\V_i = \ker f - \l_i \id$
+        \item $p_i$ proyección ortogonal hacia $\V_i$
+    \end{itemize}
+    Luego para todo $i \neq j$, tenemos que:
+    \begin{enumerate}
+        \item $
+        \V_i \perp \V_j \quad \text{y} \quad p_i \circ p_j = 0
+    $
+\item $
+        \V = \bigoplus \V_i
+    $
+\item $
+        \id = \sum p_i
+    $
+\item $
+        f = \sum \l_i p_i
+    $
+    \end{enumerate}
+\end{teo}
+\begin{demo}
+    Tomemos $i \neq j$, luego sean $v_i$ y $v_j$ autovectores correspondientes tenemos:
+    \[\langle v_i, f^* v_j \rangle = \langle fv_i, v_j \rangle\]
+    \[\langle v_i, \overline \l_j v_j \rangle = \langle \l_i v_i, v_j \rangle\]
+    \[\l_j \langle v_i, v_j \rangle = \l_i \langle v_i, v_j \rangle\]
+    Luego como $\l_i \neq \l_j$, tenemos que $\langle v_i , v_j\rangle = 0$, luego estamos para $1)$ (la otra parte es inmediata).
+
+    Parte $2)$ es inmediata por la existencia de una bon de autovectores.
+
+    Para la parte $3)$, notemos que $p_iv_j = 0$ si $i \neq j$, y $p_ix_j = x_j$ si $i = j$, luego como existe una bon de autovalores, todo $v \in \V$ se puede expresar como:
+    \[
+        v = \sum v_i
+    \]
+    Por $2)$, con $v_i$ autovector de autovalor $\l_i$, luego:
+    \[
+        \left(\sum p_i\right) \left(\sum v_i\right) =
+    \]
+    \[
+        \left(\sum p_i \left(\sum v_j\right) \right)=
+    \]
+    \[
+        \left(\sum_{i,j} p_i v_j \right)=
+    \]
+Como se anula para ditintos,
+    \[
+        \left(\sum p_i v_i \right) =
+    \]
+    \[
+        \left(\sum v_i \right) = v
+    \]
+    Luego $\sum _pi = \id$. Similarmente:
+    \[
+        \left(\sum \l_i p_i\right) \left(\sum v_i\right) =
+    \]
+    \[
+        \left(\sum \l_i p_i \left(\sum v_j\right) \right)=
+    \]
+    \[
+        \left(\sum_{i,j} \l_i p_i v_j \right)=
+    \]
+Como se anula para ditintos,
+    \[
+        \left(\sum \l_i p_i v_i \right) =
+    \]
+    \[
+        \left(\sum \l_i v_i \right) =
+    \]
+Como son autovectores,
+    \[
+        \left(\sum f v_i \right) = f(v)
+    \]
+Luego $\sum \l_i p_i = f$
+\end{demo}
+\section*{Caracterización de las Normales}
+\begin{teo}
+    Dado $\V$ un $\C$-evpi de $\dim$ finita, con $f: \V \to \V$, luego son equivalentes:
+    \begin{enumerate}
+        \item $f$ normal
+        \item Hay un polinomio $h(x) \in \C[x]$ tal que $h(f) = f^*$.
+    \end{enumerate}
+\end{teo}
+\end{document}

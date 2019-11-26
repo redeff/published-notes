@@ -1,9 +1,12 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
+\usepackage[most]{tcolorbox}
 
 \everymath{\displaystyle}
 \setlength{\parskip}{3mm}
 \setlength{\parindent}{0mm}
+
+% \pagenumbering{gobble}
 
 \def\R{\mathbb{R}}
 \def\K{\mathbb{K}}
@@ -68,5 +71,64 @@
 \DeclareMathOperator{\ev}{ev}
 \DeclareMathOperator{\sg}{sg}
 
+\newenvironment{teo}{\begin{tcolorbox}[
+    breakable,
+    enhanced,
+    arc=0mm,
+    colback=white,
+    parbox=false,
+    colframe=green!60!black,
+    title=Teorema%,
+    % fonttitle=\sffamily
+    % breakable
+]}{\end{tcolorbox}}
+
+\newenvironment{demo}{\begin{tcolorbox}[
+    breakable,
+    enhanced,
+    parbox=false,
+    arc=0mm,
+    colback=white,
+    colframe=orange!90!black,
+    title=Demostración%,
+    % fonttitle=\sffamily
+    % breakable
+]}{\end{tcolorbox}}
+
+\newenvironment{defi}{\begin{tcolorbox}[
+    breakable,
+    enhanced,
+    arc=0mm,
+    colback=white,
+    parbox=false,
+    colframe=blue!70!white,
+    title=Definición%,
+    % fonttitle=\sffamily
+    % breakable
+]}{\end{tcolorbox}}
+
+\newenvironment{nota}{\begin{tcolorbox}[
+    breakable,
+    enhanced,
+    arc=0mm,
+    colback=white,
+    parbox=false,
+    colframe=magenta!70!white,
+    title=Notación%,
+    % fonttitle=\sffamily
+    % breakable
+]}{\end{tcolorbox}}
+
+\newenvironment{ej}{\begin{tcolorbox}[
+    breakable,
+    enhanced,
+    arc=0mm,
+    colback=white,
+    parbox=false,
+    colframe=black!70!white,
+    title=Ejemplo%,
+    % fonttitle=\sffamily
+    % breakable
+]}{\end{tcolorbox}}
 \date{}
 \author{}

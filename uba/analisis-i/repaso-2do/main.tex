@@ -1,0 +1,333 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\title{Repaso de Análisis I, Segundo Parcial}
+\begin{document}
+    \maketitle
+    \section*{Derivadas Unidimensionales}
+    \begin{defi}
+    Dada $f : (I \inn \R) \to \R$, se define:
+    \[
+        f'(x) = \lim_{h \to 0} \frac{f(x) + f(x+h)}{h}
+    \]
+    Como la derivada de $f$ en $x$, para cualquier $x \in I^\circ$. En general, cuando hablamos de derivada, siempre tomamos el punto en el interior del dominio
+    \end{defi}
+    \section*{Derivadas con Imagen Multidimensional}
+    Si tenemos una función $f : \R \to \R^n$, definida por $f(x_i)_i = (f_i(x_i))_i$, definimos $f'(x_i)_i = (f_i'(x_i))_i$; es decir, derivando cada componente.
+
+    \section*{Derivadas con Dominio Multidimensional}
+    Tomemos una $f : \R^n \to \R$
+    \subsection*{Derivadas Direccionales}
+    Si $v \in \R^n$, $||v|| = 1$, decimos que:
+    \[
+        \frac{\partial f}{\partial v}(p) = f_v(p) = \lim_{t \to 0} \frac{f(p + vt) - f(p)}{t}
+    \]
+    Notemos que la recta que pasa por $p$ y tiene director $(v, f_v(p))$ derá la recta ``tangente'' en esa dirección que pasa por $p$.
+    \subsubsection*{Derivadas Parciales}
+    No son más que las derivadas direccionales pero con vector director un canónico, y se notan:
+    \begin{nota}
+    \[
+        \frac{\partial f}{\partial x_i}(p) = f_{x_i}(p) = f_{e_i}(p)
+    \]
+    \end{nota}
+    \subsection*{Diferenciabilidad}
+    Queremos aproximar a la función $f : \R^n \to \R$ alrededor de un punto $p \in \R^n$ con un plano tangente. La normal al plano debe ser perpendiular a los $(e_i, f_{x_i}(p))$, y la que cumple es $(f_{x_i}(p), \dots_i, -1)$ Luego tenemos que la ecuación del plano está dada por:
+    \[\Pi : \R^n \to \R, \Pi(v_i)_i = fp + \sum (v_i - p_i)f_{x_i}(p)\]
+    Para que este plano sea tangente, y la dunción sea diferenciable, necesitamos que:
+    \[
+        \lim_{v \to p} \frac{|f(v) - \Pi(v)|}{||v-p||} = 0
+    \]
+    Entonces:
+    \begin{defi}
+        Una función se llama diferenciable sii:
+    \[
+        \lim_{v \to p} \frac{|f(v) - \Pi(v)|}{||v-p||} = 0
+    \]
+    \end{defi}
+    Al vector $(f_{x_i})_i$ se lo llama:
+    \[
+        (f_{x_i})_i = \nabla f(p)
+    \]
+    Y tenemos
+    \[\Pi(v) = f(p) + \langle v - p, \nabla f(p) \rangle\]
+
+    Se define además $\D f(p) : \R^n \to \R$ como la transformación lineal dada por:
+    \[
+        \D f(p)(v) = \langle v, \nabla f(p) \rangle
+    \]
+    \subsubsection*{Propiedades}
+    Si $f$ es diferenciable, luego
+    \[
+        f_v(p) = \D f(p)(v)
+    \]
+    \subsection*{Criterio de Diferenciabilidad}
+    \begin{teo}
+    Supongamos que $f : \R^n \to \R$, y tenemos las $n$ derivadas parciales $(f_i)_i$ definidas en el origen $p$, y además las primeras $n-1$ están definidas en un entorno y con contínuas en $p$. Luego $f$ es diferenciable en $p$.
+    \end{teo}
+
+    \begin{demo}
+    WLOG $f_i(p) = f_i(p) = 0$ y $p$ es el origen.
+    Tomamos:
+    \[
+        f(0, 0, \dots, x_i, x_{i+1}, \dots, x_n) =
+    \]
+    \[
+        f(0, 0, \dots, 0, x_{i+1}, \dots, x_n) +
+        f_i(0, 0, \dots, c_i, x_{i+1}, \dots, x_n)x_i =
+    \]
+    Por Lagrange, para algún $c_i \in (0, x_i)$, luego:
+    \[
+        f(x_i) = f(0, \dots, 0, x_n) + \sum_{i=1}^{n-1} f_i(0, 0, \dots, c_i, x_{i+1}, \dots, x_n) x_i
+    \]
+
+    Tenemos que probar que:
+    \[
+    \frac{f(p)}{||p||} \to 0
+    \]
+    Cada uno de los sumandos es:
+    \[
+        \frac{f_i(0, 0, \dots, c_i, x_{i+1}, \dots, x_n) x_i}{||(x_j)_j||} \leq
+    \]
+    \[
+        \frac{f_i(0, 0, \dots, c_i, x_{i+1}, \dots, x_n) x_i}{|x_i|} \leq
+    \]
+    \[
+        f_i(0, 0, \dots, c_i, x_{i+1}, \dots, x_n)
+    \]
+    Que por continuidad (la hipótesis), tiende a $0$.
+    Además el término suelto es de la pinta:
+    \[
+        \lim_{x_n \to 0} \frac{f(0, 0, \dots, 0, x_n)}{|x_n|}
+    \]
+    Que es justamente $f_n(0)_i$, que asusmimos que es $0$. Luego por álgebra de límites ya estamos.
+    \end{demo}
+    \subsection*{Diferenciabilidad Multivariable}
+    \begin{defi}
+        Dada una función $f : \R^n \to \R^m$, se dice que $Df(p) : \R^n \to \R^m$ es la única transformación lineal que cumple
+        \[
+            \lim_{x \to p} \frac{f(x) - f(p) - Df(p)(x-p)}{||x-p||} = 0
+        \]
+    \end{defi}
+    \section*{Regla de La Cadena}
+    \begin{teo}
+        Dadas $f : \R^n \to \R^m$, y $g : \R^m \to \R^k$, con $f$ diferenciable en $p$ y $g$ diferenciable en $f(p)$, luego
+        \[\D (f \circ g)(p) = (\D g)(f(p)) \cdot \D f(p)\]
+    \end{teo}
+    \section*{Fermat}
+    \begin{teo}
+        Si $p$ es un mínimo local de $f : \R^n \to \R$, luego tenemos que $Df(p) = 0$.
+    \end{teo}
+    \section*{Función Inversa}
+    \begin{teo}
+        Dada una función $f : \R^n \to \R^n$, y $p \in \R^n$ con $f$ de clase $\CC^1$ en un entorno de $p$ y $\D f(p)$ inversible, luego existen $V, W$ entornos de $p$ y $f(p)$ resp. tal que $f : V \to W$ biyectiva y:
+        \[
+            \forall q \in V : (\D f^{-1})(f(q)) = (\D f(q))^{-1}
+        \]
+    \end{teo}
+    \begin{demo}
+        WLOG $\D f(p) = I$. Por continuidad tomamos entorno $V$ tal que
+        \[\forall q \in V : ||\D f(q) - I|| \leq \frac{1}{2}\]
+        Luego por teorema de valor medio en $f - \id$ queda que:
+        \[\forall x, y \in V : ||(f - \id)(x) - (f - \id)(y)|| \leq \frac{1}{2}||x-y||\iff\]
+        \[\forall x, y \in V : ||(x - y) - (f(x) - f(y))|| \leq \frac{1}{2}||x-y||\iff\]
+        \[\forall x, y \in V : ||x - y|| - ||f(x) - f(y)|| \leq \frac{1}{2}||x-y||\iff\]
+        \[\forall x, y \in V : ||x - y|| \leq 2||f(x) - f(y)||\]
+        Luego es inyectiva y la inversa es contínua.
+        Ahora queremos ver que hay un entorno de $f(p)$ que está en al imagen de $f(V)$.
+
+        Para esto tomemos una bola $B$ en $V$ y tomemos $C$ su borde (una circunferencia). Tenemos que $||\cdot|| \circ f : C \to \R$ tiene dominio compacto, luego alcanza su mínimo y éste no es $0$ por inyectividad
+
+        Sea $2d > 0$ este mínimo. Vamos a trabajar sobre la bola $K = B_d(f(p))$. Vamos a pobar que todo $y \in K$, hay una preimagen $f^{-1}(y) \in B$.
+
+        Tomemos la función $h : B \to \R$, definida por $h(x) = ||f(x) - y||^2$. Por compactidad alcanza su mínimo, además por como definimos $K$ tenemos que para $x \in C$, $h(x) > d^2$, y además para $x = p$ se tiene $f(x) < d^2$, luego el mínimo se alcanza en el interior.
+
+        Sea $x$ su mínimo. Por Fermat, tenemos entonces:
+        \[
+            \D h(x) = 0
+        \]
+        \[
+            \D (x \mapsto \langle f(x) - y, f(x) - y \rangle)(x) = 0
+        \]
+        \[
+            (x \mapsto 2 \cdot \langle \D f(x), f(x) - y \rangle)(x) = 0
+        \]
+        \[
+            \langle \D f(x), f(x) - y \rangle = 0
+        \]
+        \[
+            \D f(x) \times (f(x) - y)^t = 0
+        \]
+        Y como $\D f(x)$ es inversible por estar en $B$, tenemos que esto implica que $f(x) - y = 0$, luego ya estamos.
+    \end{demo}
+    \section*{Función Implícita}
+    \begin{teo}
+    Dada una función $f : \R^{n+1} \to \R$, $f \in \CC^1$ con $p \in \R^{n+1}$ si $f_1(p) \neq 0$, entonces existe $\phi : (B \inn \R^n) \to \R$ y un abierto $p \in A$ tal que:
+    \[
+        \{x : f(x) = 0\} \cap A = \{(\phi(x), x) : x \in B\}
+    \]
+    Donde $\{x : f(x) = 0\}$ es una superficie de nivel y $\{(\phi(x), x) : x \in B\}$ es el gráfico de una función.
+
+    Se tiene además:
+    \[
+        \forall y \in B : \phi_i(y) = -\frac{f_i(y)}{f_1(y)}
+    \]
+    Y que el plano tangente a todo punto $q \in A$ es:
+    \[
+        x \mapsto (\langle \nabla f(q), x - q \rangle = 0)
+    \]
+    \end{teo}
+    \begin{demo}
+        Sale fácil con inversa. Tomemos la auxiliar
+        \[t : \R^{n+1} \to \R^{n+1}, \; t(x_i)_i = (f(x_i)_i, x_2, x_3, \dots)\]
+        Si $f_1(p) \neq 0$, claramente $\D t(p)$ es inversible, luego existe su unversa $h$. Tendremos que si nos movemos por el hiperplano $(0, x_2, x_3, \dots)$ en el dominio de $h$, se cumplirá que las imágenes (en el dominio de $t$), estarán en la superficie de nivel. Nos tomamos entonces
+        \[\phi(x_2,x_3,\dots) = h(0,x_2,x_3,\dots)\]
+        Además, por inyectividad, son los únicos en un entorno y ya estamos.
+
+        Además, aplicando regla de la cadena a $f(\phi(x), x)$, tenemos:
+        \[\nabla (x \mapsto f(\phi(x), x))(x) = 0\]
+        \[\nabla f(\phi(x), x) \cdot (\nabla \phi(x), 1) = 0\]
+        Pero $\phi(x)$ era la primer coordenada si estábamos en la superficie de nivel, osea que tenemos:
+        \[\nabla f(x_1,x_2,\dots) \cdot (\nabla \phi(x_2,x_3,\dots), I) = 0\]
+        \[\nabla f(x_1,x_2,\dots) \cdot (\nabla \phi(x_2,x_3,\dots), I) = 0\]
+        Dónde $(\nabla \phi(x_2,x_3,\dots), I)$ es una matriz. Tomando la $i$-ésima coordenada del vector resultante tenemos:
+        \[f_i(x) + f_1(x)\phi_i(x_{\geq 2}) = 0\]
+        \[\phi_i(x_{\geq 2}) = -\frac{f_i(x)}{f_1(x)}\]
+        Entonces ya estamos.
+    \end{demo}
+    \section*{Taylor Una Variable}
+    \begin{defi}
+        Dada una función $f : \R \to \R$, con $f \in \CC^n$ y un $p \in \R$, el polinomio de taylor $P(x)$ es el único polinomio de grado menor o igual a $n$ que verifica:
+        \[
+            \forall k \leq n : P^{(k)}(p) = f^{(k)}(p)
+        \]
+        Y su expresión es:
+        \[
+            P(x) = \sum_{i=0}^n \frac{1}{i!} \cdot f^{(i)}(p) \cdot (x-p)^i
+        \]
+        Y se dice que $R(x) = f(x) - P(x)$ es el resto de Taylor
+    \end{defi}
+    \begin{teo}
+        Aproximación del resto de taylor.
+        Dada $f : \R \to \R$ $n+1$ veces derivable, se tiene que:
+        \[
+            R(x) = (x-p)^{n+1} \cdot \frac{f^{(n+1)}(\xi)}{(n+1)!}
+        \]
+    \end{teo}
+    \begin{demo}
+        Tomemos la función auxiliar
+        \[g(t) = f(x) - \frac{\omega}{(n+1)!}(x-t)^{n+1} -\sum \frac{1}{i!} \cdot f^{(i)}(t) \cdot (x-t)^i\]
+        Con $\omega$ tal que $g(p) = 0$. Como $g(p) = g(x) = 0$, tenemos que:
+        \[
+            g'(\xi) = 0
+        \]
+        Para algún $\xi$ entre $p$ y $x$. Luego, por regla del producto:
+        \[
+            g'(\xi) = 0 \iff
+        \]
+        \[
+            0 = - \frac{\omega}{n!}(\xi-t)^{n} - \sum \frac{1}{i!} \cdot f^{(i+1)}(t) \cdot (\xi-t)^i - \frac{1}{(i-1)!}f^{(i)}(t) \cdot (\xi - t)^{i-1} \iff
+        \]
+        Por telescópica
+        \[
+            0 = - \frac{\omega}{n!}(\xi-t)^{n} - \frac{1}{n!} \cdot f^{(n+1)}(t) \cdot (\xi-t)^n\iff
+        \]
+        Luego $\omega = f^{(n+1)}(t)$, por lo que, reemplazando $\omega$ en $g(p)$ tenemos:
+        \[0 = g(p) = f(x) - \frac{f^{(n+1)}(t)}{(n+1)!}(x-p)^{n+1} -\sum \frac{1}{i!} \cdot f^{(i)}(t) \cdot (x-p)^i\]
+        \[
+            \frac{f^{(n+1)}(t)}{(n+1)!}(x-p)^{n+1} =
+            f(x) - P(x)
+        \]
+        Entonces estamos.
+    \end{demo}
+    \section*{Formas Cuadráticas}
+    \begin{defi}
+        Dada una matriz $T \in \R^{n \times n}$, decimo que su forma cuadrática asociada esa dada por:
+        \[
+            Q_T : \R^n \to \R^n, \quad Q_T(x) = x^t \cdot T \cdot x
+        \]
+    \end{defi}
+    \begin{teo}
+        El compotamiento de las formas cuadráticas está dada por sus autovalores.
+    \end{teo}
+    \begin{demo}
+        Si tenemos $T$ simétrica, luego tomemos una base $\{v_i\}$ ortonormal de autovectores, con autovalores $\l_i$, tenemos:
+        \[
+            x = \sum \alpha_i v_i
+        \]
+        Luego:
+        \[
+            Q_T(x) = \sum_{i,j} (\alpha_i v_i)^t \cdot T \cdot \alpha_j v_j
+        \]
+        \[
+            Q_T(x) = \sum_{i,j} \alpha_i \alpha_j (v_i^t \cdot T \cdot v_j)
+        \]
+        \[
+            Q_T(x) = \sum_{i,j} \alpha_i \alpha_j (v_i^t \cdot \l_j v_j)
+        \]
+        \[
+            Q_T(x) = \sum_{i,j} \alpha_i \alpha_j \l_j (v_i^t \cdot v_j)
+        \]
+        Pero $v_i^t \cdot v_j = 0$ para $i \neq j$, y es $1$ cuando son iguales, luego:
+        \[
+            Q_T(x) = \sum_i \alpha_i^2 \l_i
+        \]
+    \end{demo}
+    \begin{defi}
+        Se dice que
+        \begin{itemize}
+            \item $Q_T$ es \emph{degenerada} cuando hay autovalores nulos.
+            \item $Q_T$ es \emph{indefinida} cuando hay autovalores positivos y negativos.
+            \item $Q_T$ es \emph{definida positiva} cuando $\l_i > 0$.
+            \item $Q_T$ es \emph{definida negativa} cuando $\l_i < 0$.
+            \item $Q_T$ es \emph{semidefinida positiva} cuando $\l_i \geq 0$.
+            \item $Q_T$ es \emph{semidefinida negativa} cuando $\l_i \leq 0$.
+        \end{itemize}
+    \end{defi}
+    \section*{Extremos}
+    \begin{defi}
+        Dada una función $f : \R^n \to \R$, decimos que $p \in \R^n$ es un \emph{extremo local} sii $f(p) \leq f(a)$ para todo $a$ en un abierto que contenga a $p$.
+
+        Decimos que es un \emph{extremo local estricto} sii pasa lo mismo pero estricto (con $p \neq a$).
+    \end{defi}
+    \begin{teo}
+        Ya vimos que para que $p$ sea extremo local su diferencial tiene que ser $0$. Pero eso no alcanza. Si $\D f(p) = 0$, Tenemos que:
+        \begin{itemize}
+            \item Si $\Hs f(p)$ es \emph{definido positivo}, entonces $p$ es mínimo local estricto.
+            \item Si $\Hs f(p)$ es \emph{definido negativo}, entonces $p$ es máximo local estricto.
+            \item Si $\Hs f(p)$ es \emph{indefinido}, entonces $p$ es un punto silla.
+            \item Si no se cumple nada de esto, no sabemos nada.
+        \end{itemize}
+    \end{teo}
+    \begin{teo}
+        Una matriz $T \in \R^{n \times n}$ es definida prositiva sii todos los determinantes menores principales (los de las matrices cuadradas que están en la parte suerior izquierda de la matriz) son estrictamente positivos.
+
+        Asimismo, una matriz es definida negativa si todos esos determinantes son de signos alternados (el de la esquina superior iquierda tiene que comenzar siendo negativo).
+    \end{teo}
+    \section*{Mínimos en Conjuntos Arbitrarios}
+    Los multiplicadores de lagrange sirven para hallar mínimos locales y absolutos de funciones $f : (A \in \R^n) \to \R$. Para esto, se separa en dos casos:
+    \begin{itemize}
+        \item El interior $A^\circ$, en el cual se pueden hallar puntos críticos uzando fermat (donde el diferencial se anula)
+    \item El borde $\partial A$, el cual se puede estudiar parmetrizándolo por una (o varias) funciones $\phi : \R^{n-1} \to \R^n$, y luego estudiando la composición $f \circ \phi$ recursivamente. Si no es posible parmetrizarlo, hay que usar multiplicadores de lagrange.
+    \end{itemize}
+    \section*{Multiplicadores de Lagrange}
+    \begin{teo}
+        Dada una función $f : \R^n \to \R$ que queremos minimizar sobre una superficie de nivel $S = \{x \in \R^n : g(x) = 0\}$ de una función $g : \R^n \to \R$, los candidatos a extremos serán los $p \in \R^n$ donde:
+        \[
+            \nabla f(p) = \l \cdot \nabla g(p) \quad \text{Para algún $\l \in \R$}
+        \]
+        O los $p$ que anulan $\nabla g(p)$.
+
+        En general, si tenemos $k$ restricciones $g_{1, \dots, k}$, luego los puntos críticos son los $p \in \R^n$ tal que:
+        \[
+            \{\nabla f(p), \nabla g_1(p), \dots, \nabla g_k(p) \} \; \text{Son li.}
+        \]
+    \end{teo}
+    \section*{Integrales de Riemann}
+    Se definen de manera usual.
+    \section*{Teorema Fundamental de Cálculo}
+    \begin{teo}
+        Si $f : [a, b] \to \R$ es contínua, sea $F : [a, b] \to \R$ dada por:
+        \[F(x) = \int_a^x f\]
+        Luego $F$ es contínua en $[a,b]$, derivable en $(a,b)$, y además:
+        \[\forall x \in (a,b) : F'(x) = f(x)\]
+    \end{teo}
+\end{document}

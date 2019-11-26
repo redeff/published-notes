@@ -1,0 +1,38 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Vectores Cíclicos}
+Si tenemos $f : \V \to \V$, luego existe un $v \in \V$ tal que $m_{f,v} = m_f$.
+
+Tomemos la factorización
+\[m_f = \prod P_i^{r_i}\]
+con $P_i$ distintos e irreducibles en $\K$.
+
+Luego sea:
+\[Q_i = \frac{m_f}{P_i^{r_i}}\]
+Notemos que:
+\[
+	\exists v_i : m_{Q_i(f), v_i} = P_i^{r_i}
+\]
+Ya que
+\[
+	\forall v_i : m_{Q_i(f), v_i} \mid P_i^{r_i}
+\]
+Y además se alcanza porque osinó el minimal no era mínimo.
+Luego tomemos
+\[v = \sum v_i\]
+
+\section*{Semejanza en $\C^{3 \times 3}$}
+Si tenemos dos matrices $A, B \in \C^{3 \times 3}$, luego:
+\[
+	A,B \text{ semejantes} \iff \chi_A = \chi_B \text{ y } m_a = m_b
+\]
+
+\section*{Condiciones para que exista matriz}
+Si tenemos una matriz $A$, luego
+\begin{itemize}
+	\item $\dim \ker A = \#$ bloques
+	\item $\dim \ker A^{i+1} - \dim \ker A^i = \#$ bloques de tamaño $> i$
+	\item $\rg A^{i+1} - 2\rgA^i + \rg A^{i-1} = \#$ bloques de tamaño $= i$
+\end{itemize}
+\end{document}

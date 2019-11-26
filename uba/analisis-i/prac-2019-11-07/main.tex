@@ -1,0 +1,111 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Convergencia de integrales}
+Dada $f : [1, \infty) \to \R$ contínua y positiva, tenemos que la integral $\int f$ converge sii la seria $\sum_{n \in \N} f(n)$ converge.
+\section*{Ejercicio 1}
+Sea $B = \{(x,y) \in \R^2 : 0 \leq x \leq 1, 0 \leq y \leq x^2\}$. Calcular $
+\iint\limits_D
+x^2 + y^3x  \; dA$
+
+Esto es lo mismo que:
+\[
+	\int_0^1 \int_0^{x^2} x^2 + y^3x \; dy \; dx
+\]
+\[
+	\int_0^1 \left(\int_0^{x^2} x^2 + y^3x \; dy \right)\; dx
+\]
+\[
+	\int_0^1 \left. x^2y + \frac{1}{4}y^4x\right|_0^{x^2}\; dx
+\]
+\[
+	\int_0^1 x^4 + \frac{1}{4}x^9\; dx
+\]
+\[
+	\left. \frac{1}{4}x^5 + \frac{1}{40}x^{10} \right|_0^1
+\]
+\[
+	\frac{1}{4} + \frac{1}{40} = \frac{9}{40}
+\]
+
+\section*{Integrales Dobles}
+Dada $C = \{(x,y) \in \R^2 : a \leq x \leq b, \phi_1 x < y < \phi_2 x\}$, luego:
+\[
+	\iint\limits_D f(x,y) \; dA = \int_a^b \left(\int_{\phi_1 x}^{\phi_2 x} f(x, y) \; dy\right) \; dx
+\]
+Si $f$ contínua.
+
+\section*{Ejercicio 2}
+Calcular el área de la región encerrada por las curvas $y = 2|x|$, y $y = -|x|$.
+
+La cuenta queda:
+\[
+	\int_0^2 3x \; dx + \int_{-1}^2 -3x \; dx = \frac{15}{2}
+\]
+
+Alternativamente, podemos hacer:
+\[
+	D = \{(x,y) : -1 \leq x \leq 2, -|x| \leq y \leq 2|x|\}
+\]
+Luego el área es:
+\[
+	\iint\limits_D 1
+\]
+
+\section*{Ejercicio 3}
+Tengo:
+\[D = \left\{(x,y) : y \geq 0. \frac{4}{3} y \leq x \leq \sqrt{25 - y^2}\right\}\]
+
+A esto lo escribimos como:
+\[D = D_1 \cup D_2\]
+Con
+\[
+	D_1 = \left\{(x,y) : 0 \leq x \leq 4, 0 \leq y \leq \frac{3}{4}x\right\}
+\]
+\[
+	D_2 = \left\{(x,y) : 4 \leq x \leq 5, 0 \leq y \leq \sqrt{25 - x^2}\right\}
+\]
+
+\section*{Ejercicio 4}
+Calcular:
+\[\iint\limits_D 4e^{x^2} - 5 \sin y \; dA\]
+Con
+\[D = \{(x,y) : 0 \leq x \leq 4, 0 \leq y \leq x\}\]
+\[D = \{(x,y) : 0 \leq y \leq 4, y \leq x \leq 4\}\]
+Tenemos:
+\[\iint_D 4e^{x^2} - 5\sin y \; dA =\]
+\[
+	\int_0^4 \left(\int_0^x 4e^{x^2} - 5 \sin y \; dy\right) \; dx =
+\]
+\[
+	\int_0^4 \left(4ye^{x^2} + 5 \cos y \;\right|_0^x \; dx =
+\]
+\[
+	\int_0^4 4xe^{x^2} + 5 \cos x - 5 \cos 0  \; dx =
+\]
+\[
+	\int_0^4 4xe^{x^2} + 5 \cos x - 5 \; dx =
+\]
+\[
+	\left( 2e^{x^2} + 5 \sin x - 5x \; \right|_0^4 \; =
+\]
+\[
+	2e^{4^2} + 5 \sin 4 - 5 \cdot 4 - 2e^0 - 5 \sin 0 - 5 \cdot 0 =
+\]
+\[
+	2e^{16} + 5 \sin 4 - 22 =
+\]
+
+\section*{Ejercicio 4}
+Calcular $\iint\limits_D x + x^2y \; dx \; dy$ con $D = \{(x,y) : x^2 + y^2 \leq 1, x \geq 0\}$
+
+Por tipo II, queda:
+\[A = \int\limits_{-1}^1\left(\int\limits_0^{\sqrt{1 - y^2}} x + x^2y \; dx \right) \; dy =\]
+\[\int_{-1}^1 \frac{1-y^2}{2} + \frac{(1 - y^2)^{\frac{3}{2}} y}{3} \; dy\]
+
+Tenemos que:
+\[\int (1-y^2)^\frac{3}{2} y\]
+Si tomamos $f(y) = 1 - y^2$, queda:
+\[\int f(y)^\frac{3}{2} f'(y) =\]
+\[f(y)^\frac{5}{2} = (1 - y^2)^\frac{5}{2}\]
+\end{document}

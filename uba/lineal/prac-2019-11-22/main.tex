@@ -1,0 +1,115 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Transformaciones ortogonales}
+Decimos que $f : \V \to \V$ es ortogonal sii $f^{-1} = f^* \iff f\circ f^* = \id$. Esto es equivalente a:
+\begin{enumerate}
+    \item Existe una $B$ bon tal que $f(B)$ es bon.
+    \item $\langle fv, fw \rangle = \langle v, w \rangle$.
+    \item $||fv|| = ||v||$.
+    \item Para todo $B$ bon cumple que $f(B)$ es bon.
+\end{enumerate}
+
+Notemos que $f$ ortogonal implica $f \circ f^* \iff f^* \circ f$, luego $f$ normal. Es decir que $f$ tiene una base bon de autovectores.
+
+\section*{Ortogonales en $\R^2$}
+Todas las ortogonales en $\R^2$ son de la forma:
+\[
+    f_\BB =
+\begin{bmatrix}
+    1 & 0 \\
+    0 & -1 \\
+\end{bmatrix}
+\]
+ó
+\[
+    f_\BB =
+\begin{bmatrix}
+    \cos \theta & -\sin \theta \\
+    \sin \theta & \cos \theta \\
+\end{bmatrix}
+\]
+La que tiene determinante $1$ es rotación.
+\section*{Ortogonales en $\R^3$}
+Si o sí debe tener autovalores reales. Supongamos $\l = 1$ es autovalor. Sea $v$ autovector de autovalor $1$. Luego es claro que $S = \langle v \rangle^\perp$ es $f$ invariante, luego $f|_S : S \to S$ es una ortonormal de un espacio de dimensión $2$. Luego es o una reflexión o una rotación.
+Luego, existe alguna $\BB$ bon tal que:
+\[
+    f_\BB =
+    \begin{bmatrix}
+        1 & 0 & 0 \\
+        0 & 1 & 0 \\
+        0 & 0 & -1 \\
+    \end{bmatrix} \text{ ó }
+    f_\BB =
+\begin{bmatrix}
+    1 & 0 & 0 \\
+    0 & \cos \theta & -\sin \theta \\
+    0 & \sin \theta & \cos \theta \\
+\end{bmatrix}
+\]
+En el caso en el que $\l = 1$ no es autovalor, tendremos que la matriz tiene que ser de la pinta:
+\[
+    f_\BB =
+\begin{bmatrix}
+    -1 & 0 & 0 \\
+    0 & \cos \theta & -\sin \theta \\
+    0 & \sin \theta & \cos \theta \\
+\end{bmatrix}
+\]
+Que es una composición entre una rotación y una simetría.
+
+\section*{Ejercicio 1}
+Definir $f : \R^3 \to \R^3$ tal que $f(1,1,0) = (0,1,1)$ y el eje de rotación sea perpendicular a $(1,1,0)$ y a $(0,1,1)$.
+
+El eje de rotación lo podemos calcular como el producto vectorial entre $(1,1,0)$ y $(0,1,1)$, que queda $v = (1,-1,1)$.
+
+Además, tenemos que calcular el ángulo de rotación que es:
+\[
+    \cos^{-1} \frac{\langle (1,1,0), (0,1,1) \rangle}{||(1,1,0)|| \cdot ||(0,1,1)||} = \frac{1}{3}\pi
+\]
+
+armemos una base bon. El primer vector será $\frac{v}{||v||}$, el eje de rotación.
+
+El otro será $\left(\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}, 0\right)$ y el otro será uno ortogonal a los dos.
+
+Sabemos que $f$ manda bon a bon, luego queremos ver a qué bon es.
+
+Sabemos que $f\left(\frac{v}{||v||}\right) = \frac{v}{||v||}$, y ya sabemos para el segundo de la base, luego el tercero está casi determinado (hay dos opciones), y tomamos la que hace que la matriz sea de determinante 1.
+
+\section*{Ejercicio 2}
+Sea $f : \R^3 \to \R^3$ ortogonal. Demostrar que $f(v \times w) \cdot \det f = fv \times fw$
+
+Notemos que
+\[
+    \langle f(v \times w), z\rangle =
+\]
+\[
+    \langle v \times w, f^*z\rangle
+\]
+Además,
+\[
+    \langle fv \times fw, z\rangle =
+\]
+\[
+    \langle fv \times fw, ff^*z\rangle =
+\]
+\[
+    \det f \cdot \langle v \times w, f^*z\rangle =
+\]
+Entonces ya estamos
+\section*{Ejercicio 3}
+Encontrar una rotación compuesta con una simetría tal que:
+\[f(4,0,0) = (2\sqrt{3}, 2, 0)\]
+\[f(0,4,0) = (-\sqrt{3}, 3, 2)\]
+
+Tenemos que, por ele ejercicio anterior:
+\[
+    f((4,0,0) \times (0,4,0)) = \det f \cdot ((2\sqrt{3}, 2, 0) \times (-\sqrt{3}, 3, 2))
+\]
+Y el determinante es $-1$, ya que es una composición de rotación y reflexión. Luego ya estamos.
+\section*{Ejercicio 4}
+Determinar en alguna base $\BB$ de $\R^3$:
+\begin{itemize}
+    \item Suna simetría $f : \R^3 \to \R^3$ tq $f(1,1,0) = (0,-1,-1)$ Probar que si $g$ es una rotación, luego $f \circ g$ es una simetría.
+\end{itemize}
+\end{document}

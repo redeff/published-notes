@@ -1,0 +1,123 @@
+\documentclass{article}
+\input{../../../style/header.tex}
+\begin{document}
+\section*{Proyectores ortogonales}
+Un $p : \V \to \V$ es un proyector $\perp$ cuando $(\Ima p)^\perp = \ker p$, y $(\ker p)^\perp = \Ima p$
+\section*{Doble ortogonal}
+Si tengo $S \inn \V$, y un proyector $\perp$ con $\Ima p = S$, luego $S^{\perp\perp} = S$
+\section*{Condición de Doble ortogonalidad}
+Sea $S \inn \V$ de dimensión finita, luego tenemos que $\V = S + S^\perp$ y $\exists p\perp : \Ima p = S, \ker p = S^\perp$
+
+\subsection*{Demo}
+Sea $\BB$ una base ortonormal de de $S$. Tomemos un $p : \V \to \V$ definido por:
+\[
+    pv = \sum_{v_i \in \BB} \langle v_i, v \rangle \cdot v_i
+\]
+Es claro que $\Ima p \inn S$, y que $v - pv \in S^\perp$. También, para todo $w \in S^\perp$, tenemos $pw = 0$, luego $\ker p = S^\perp$
+
+Además, $pv_i = v_i$, para todo $v_i \in \BB$, luego $\Ima p = S$
+
+\section*{Caraterización de los Productos Internos (Riesz)}
+Sea $\V$ un $\K$-evpi finitamente generado, y sea $f \in \V^*$, luego existe un único $v_f \in \V$ tal que $\forall w : fw = \langle w, v_f \rangle$.
+
+\subsection*{Demo}
+Sea $\BB$ una base ortonormal de $\V$. Sea $v_f = \sum_{v \in \BB} v \cdot \overline{fv}$
+
+Notemos que:
+\[
+    fw = f \left(\sum \langle w, v \rangle \cdot v\right) =
+\]
+\[
+    fw = \sum \langle w, v \rangle \cdot fv=
+\]
+\[
+    fw = \sum \langle w, v\overline{fv} \rangle =
+\]
+\[
+    fw = \left\langle w, \sum v\overline{fv} \right\rangle =
+\]
+\[
+    fw = \left\langle w, v_f\right\rangle
+\]
+
+Ahora veamos la unicidad: si tenemos $v_f$, $v'_f$ que cumplen, luego:
+\[
+    \langle w, v_f \rangle = fw = \langle v, v'f \rangle
+\]
+Para todo $w$, luego $v_f = v'_f$.
+
+Notemos además que podemos definir entonces $\phi : \V \to \V^*$, tal que $\phi v = x \mapsto \langle x, v \rangle$. Por lo que demostramos, $\phi$ es una biyección.
+
+\section*{Función Adjunta}
+Sea $\V$, $\W$ $\K$-epvis, y sea $f : \V \to \W$. Luego dados $v \in \V, w \in \W$, podemos calcular $\langle fv, w \rangle$
+
+Tomemos además otra $g : \W \to \V$, luego podemos calcular $\langle v, gw \rangle$.
+
+Decimos que $g$ es la adjunta de $f$ sii:
+\[
+    \forall v \in \V, w \in \W, \langle fv, w \rangle = \langle v, gw \rangle
+\]
+
+Es trivial que la adjunta, si existe, es única. A la única adjunta de $f$ la notamos $f^*$.
+
+\subsection*{Ejemplo}
+Si tenemos $\V = \W$, y $f = \l \cdot \id$, luego es fácil ver que $f^* = \overline{\l} \cdot \id$
+
+\section*{Autoadjuntas}
+Si $f : \V \to \V$ cumple $f = f^*$, decimos que $f$ es \emph{autoadjunta}.
+
+\subsection*{Corolario}
+\begin{enumerate}
+    \item Si $f, g : \V \to \W$, luego $(af+bg)^* = \overline af + \overline b g$.
+    \item Además, si $f : \V \to \W, g : \W \to \U$, luego $(g \circ f)^* = f^* \circ g^*$
+    \item Si $f : \V \to \W$, y existe $f^*$, entonces $f^{**} = f$.
+\end{enumerate}
+
+\section*{Condiciones de Adjuntabilidad}
+Sea $\V, \W$ $\K$-evpis, con $\dim \V < \infty$, luego toda $f : \V \to \W$ tiene adjunta.
+
+\subsection*{Demo}
+Dado $y \in \V$, sea $\psi_y : \V^*$, definida por $\psi_y(v) = \langle fv, y\rangle$. Por Riesz, existe $w$ tal que $\phi_y(x) = \langle x, w \rangle$
+Luego:
+\[\forall x, \langle x, w\rangle = \langle fx, y \rangle\]
+Luego definimos la adjunta por $f^*w = y$.
+
+\section*{Calculando la Adjunta}
+Sean $\V$, $\W$ con $n = \dim \V$, $m = \dim \W$, y sean $\BB$ y $\BB'$ las bases ortonormales de $\V$ y $\W$ resp, y tomemos $f : \V \to \W$, luego tenemos que:
+
+\[
+    [f^*]_{\BB'\BB} = \overline{[f]_{\BB\BB'}}^t
+\]
+
+Sea $A = [f^*]_{\BB'\BB}, B = [f]_{\BB\BB'}$.
+Notemos que
+\[A_{ij} = \langle f^*\BB'_j , \BB_i \rangle\]
+\[\overline {A_{ij}} = \langle \BB_i, f^*\BB'_j\rangle\]
+\[\overline {A_{ij}} = \langle f\BB_i, \BB'_j\rangle\]
+\[B_{ji} = \langle f\BB_i, \BB'_j\rangle\]
+Luego
+\[\overline{A_{ij}} = B_{ji}\]
+\[A = \overline B ^ t\]
+
+\subsection*{Para Autoadjuntas}
+Si tenemos $f : \V \to \V$ autoadjunta, tomo una BON $\BB$ y tengo que si $A = [f]_\BB$, luego:
+\[
+    A = \overline A^t
+\]
+Que se dice que $A$ es \emph{hermitiana}.
+
+\section*{Autoadjuntas}
+Si $f : \V \to \V$ es autoadjunta, luego todos sus autovalores son reales, y además, para cualquier $\l, \mu$ autovalores distintos, se cumple que $\V_\l \perp \V_\mu$.
+
+Supongamos que $v$ es autovector de autovalor $\l$, luego:
+\[
+    \overline \l \langle v, v \rangle = \langle v, fv\rangle = \langle fv, v\rangle = \l \langle v, v \rangle
+\]
+Luego $\l = \overline \l$.
+
+Sean $\l, \mu$, y $v \in \V_\l, w \in \V_\mu$, tenemos:
+\[
+    \mu \langle v, w \rangle = \langle v, fw \rangle = \langle fv, w \rangle = \l \langle v, w \rangle
+\]
+Luego $\langle v, w \rangle = 0$.
+\end{document}
